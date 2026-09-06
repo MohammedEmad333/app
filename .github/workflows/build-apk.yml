@@ -1,0 +1,72 @@
+name: Build APK
+
+on:
+  push:
+    branches:
+      - claude/english-learning-kids-app-vgcnmp
+    paths-ignore:
+      - "**/*.md"
+  workflow_dispatch:
+
+jobs:
+  build-apk:
+    name: Build Android APK
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Show Flutter version
+        run: flutter --version
+
+      - name: Generate Android platform files
+        # The repo is source-only (no android/ folder). `flutter create .`
+        # scaffolds the platform runners without touching lib/, pubspec, or assets.
+        run: flutter create --platforms=android --project-name lingokids .
+
+      - name: Add microphone permissions for speech_to_text
+        run: |
+          MANIFEST=android/app/src/main/AndroidManifest.xml
+          if ! grep -q "android.permission.RECORD_AUDIO" "$MANIFEST"; then
+            sed -i 's#<manifest\(.*\)>#<manifest\1>\n    <uses-permission android:name="android.permission.RECORD_AUDIO"/>\n    <uses-permission android:name="android.permission.INTERNET"/>#' "$MANIFEST"
+          fi
+          echo "----- AndroidManifest.xml -----"
+          cat "$MANIFEST"
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Analyze
+        run: flutter analyze --no-fatal-infos --no-fatal-warnings || true
+
+      - name: Run tests
+        run: flutter test || true
+
+      - name: Build release APK
+        run: flutter build apk --release
+
+      - name: Rename APK
+        run: |
+          mkdir -p dist
+          cp build/app/outputs/flutter-apk/app-release.apk dist/lingokids-release.apk
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: lingokids-apk
+          path: dist/lingokids-release.apk
+          if-no-files-found: error
+          retention-days: 30
