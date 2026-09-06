@@ -1,0 +1,189 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../core/theme/app_colors.dart';
+import '../../core/theme/app_text_styles.dart';
+import '../../data/models/lesson.dart';
+import '../../data/models/unit.dart';
+import '../../data/models/user_progress.dart';
+import '../../data/repositories/content_repository.dart';
+import '../lesson/lesson_runner_screen.dart';
+import '../progress/progress_cubit.dart';
+import 'widgets/lesson_node.dart';
+import 'widgets/stats_header.dart';
+
+/// The map / skill-tree home screen: a winding path of lesson nodes grouped
+/// under units, with live locked / current / completed status.
+class SkillTreeScreen extends StatefulWidget {
+  const SkillTreeScreen({super.key});
+
+  @override
+  State<SkillTreeScreen> createState() => _SkillTreeScreenState();
+}
+
+class _SkillTreeScreenState extends State<SkillTreeScreen> {
+  late Future<List<Unit>> _unitsFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _unitsFuture = ContentRepository.instance.loadUnits();
+    // Regenerate hearts based on elapsed time when returning to the map.
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => context.read<ProgressCubit>().refresh(),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xFFF7F7F7),
+      body: SafeArea(
+        child: FutureBuilder<List<Unit>>(
+          future: _unitsFuture,
+          builder: (context, snapshot) {
+            if (!snapshot.hasData) {
+              return const Center(child: CircularProgressIndicator());
+            }
+            final units = snapshot.data!;
+            return Column(
+              children: [
+                const StatsHeader(),
+                const Divider(height: 1, color: AppColors.border),
+                Expanded(
+                  child: BlocBuilder<ProgressCubit, UserProgress>(
+                    builder: (context, progress) {
+                      return ListView(
+                        padding: const EdgeInsets.only(bottom: 40),
+                        children: [
+                          for (final unit in units)
+                            _UnitSection(
+                              unit: unit,
+                              progress: progress,
+                              onTapLesson: (lesson) =>
+                                  _openLesson(context, lesson, progress),
+                            ),
+                        ],
+                      );
+                    },
+                  ),
+                ),
+              ],
+            );
+          },
+        ),
+      ),
+    );
+  }
+
+  void _openLesson(
+      BuildContext context, Lesson lesson, UserProgress progress) {
+    if (progress.hearts <= 0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('No hearts left! They refill over time. ❤️',
+              style: AppTextStyles.body.copyWith(color: Colors.white)),
+          backgroundColor: AppColors.wrong,
+        ),
+      );
+      return;
+    }
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (_) => LessonRunnerScreen(lesson: lesson)),
+    );
+  }
+}
+
+class _UnitSection extends StatelessWidget {
+  const _UnitSection({
+    required this.unit,
+    required this.progress,
+    required this.onTapLesson,
+  });
+
+  final Unit unit;
+  final UserProgress progress;
+  final ValueChanged<Lesson> onTapLesson;
+
+  @override
+  Widget build(BuildContext context) {
+    final unitColor = Color(unit.colorValue);
+    // The current lesson is the first not-yet-completed one in order.
+    final currentIndex =
+        unit.lessons.indexWhere((l) => !progress.isLessonCompleted(l.id));
+
+    return Column(
+      children: [
+        _banner(unitColor),
+        const SizedBox(height: 8),
+        for (int i = 0; i < unit.lessons.length; i++)
+          Padding(
+            padding: EdgeInsets.only(
+              top: i == 0 ? 8 : 20,
+              // Alternate left/right to create a winding path.
+              left: i.isEven ? 0 : 90,
+              right: i.isEven ? 90 : 0,
+            ),
+            child: LessonNode(
+              title: unit.lessons[i].title,
+              icon: unit.lessons[i].icon,
+              color: unitColor,
+              status: _statusFor(i, currentIndex),
+              onTap: () => onTapLesson(unit.lessons[i]),
+            ),
+          ),
+        const SizedBox(height: 12),
+      ],
+    );
+  }
+
+  NodeStatus _statusFor(int index, int currentIndex) {
+    if (progress.isLessonCompleted(unit.lessons[index].id)) {
+      return NodeStatus.completed;
+    }
+    // All lessons done -> currentIndex == -1, nothing is "current".
+    if (index == currentIndex) return NodeStatus.current;
+    if (currentIndex == -1) return NodeStatus.completed;
+    return index < currentIndex ? NodeStatus.completed : NodeStatus.locked;
+  }
+
+  Widget _banner(Color unitColor) {
+    return Container(
+      margin: const EdgeInsets.fromLTRB(16, 12, 16, 0),
+      padding: const EdgeInsets.all(18),
+      decoration: BoxDecoration(
+        color: unitColor,
+        borderRadius: BorderRadius.circular(20),
+        border: Border(
+          bottom: BorderSide(color: _darken(unitColor), width: 5),
+        ),
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(unit.title,
+                    style: AppTextStyles.heading
+                        .copyWith(color: Colors.white)),
+                const SizedBox(height: 4),
+                Text(unit.subtitle,
+                    style: AppTextStyles.body.copyWith(
+                        color: Colors.white.withValues(alpha: 0.9))),
+              ],
+            ),
+          ),
+          const Icon(Icons.school_rounded, color: Colors.white, size: 34),
+        ],
+      ),
+    );
+  }
+
+  static Color _darken(Color c, [double amount = 0.18]) {
+    final hsl = HSLColor.fromColor(c);
+    return hsl
+        .withLightness((hsl.lightness - amount).clamp(0.0, 1.0))
+        .toColor();
+  }
+}

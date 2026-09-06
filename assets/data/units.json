@@ -1,0 +1,181 @@
+[
+  {
+    "id": "unit_1",
+    "title": "Unit 1: Animals & Greetings",
+    "subtitle": "Say hello and meet the animals",
+    "colorValue": 4284009474,
+    "lessons": [
+      {
+        "id": "u1_l1",
+        "title": "Greetings",
+        "icon": "👋",
+        "xpReward": 20,
+        "questions": [
+          {
+            "id": "u1_l1_q1",
+            "type": "imageMatching",
+            "prompt": "Which one means \"Hello\"?",
+            "instruction": "Tap the matching picture",
+            "promptEmoji": "👋",
+            "correctOptionId": "o1",
+            "explanation": "\"Hello\" is a friendly greeting — the waving hand 👋.",
+            "options": [
+              { "id": "o1", "label": "Hello", "emoji": "👋" },
+              { "id": "o2", "label": "Apple", "emoji": "🍎" },
+              { "id": "o3", "label": "Dog", "emoji": "🐶" },
+              { "id": "o4", "label": "Sun", "emoji": "☀️" }
+            ]
+          },
+          {
+            "id": "u1_l1_q2",
+            "type": "wordJumble",
+            "prompt": "Build the sentence: \"Good morning\"",
+            "instruction": "Tap the words in the right order",
+            "promptEmoji": "🌅",
+            "answer": "Good morning",
+            "wordBank": ["morning", "Good", "night", "bye"],
+            "explanation": "We say \"Good morning\" to greet someone early in the day."
+          },
+          {
+            "id": "u1_l1_q3",
+            "type": "audioListening",
+            "prompt": "Listen and choose what you hear",
+            "instruction": "Tap the play button, then pick the word",
+            "audioText": "Goodbye",
+            "correctOptionId": "o2",
+            "explanation": "\"Goodbye\" is what we say when we leave.",
+            "options": [
+              { "id": "o1", "label": "Hello", "emoji": "👋" },
+              { "id": "o2", "label": "Goodbye", "emoji": "🙋" },
+              { "id": "o3", "label": "Please", "emoji": "🙏" },
+              { "id": "o4", "label": "Sorry", "emoji": "😔" }
+            ]
+          },
+          {
+            "id": "u1_l1_q4",
+            "type": "speechRecognition",
+            "prompt": "Say the word out loud",
+            "instruction": "Tap the mic and say it clearly",
+            "promptEmoji": "🗣️",
+            "answer": "Thank you",
+            "explanation": "\"Thank you\" is how we show we are grateful."
+          }
+        ]
+      },
+      {
+        "id": "u1_l2",
+        "title": "Farm Animals",
+        "icon": "🐄",
+        "xpReward": 25,
+        "questions": [
+          {
+            "id": "u1_l2_q1",
+            "type": "imageMatching",
+            "prompt": "Which one is a \"Cow\"?",
+            "instruction": "Tap the matching picture",
+            "promptEmoji": "🐄",
+            "correctOptionId": "o3",
+            "explanation": "A cow 🐄 gives us milk on the farm.",
+            "options": [
+              { "id": "o1", "label": "Cat", "emoji": "🐱" },
+              { "id": "o2", "label": "Duck", "emoji": "🦆" },
+              { "id": "o3", "label": "Cow", "emoji": "🐄" },
+              { "id": "o4", "label": "Pig", "emoji": "🐷" }
+            ]
+          },
+          {
+            "id": "u1_l2_q2",
+            "type": "audioListening",
+            "prompt": "Listen and choose the animal",
+            "instruction": "Tap the play button, then pick the picture",
+            "audioText": "Sheep",
+            "correctOptionId": "o1",
+            "explanation": "A sheep 🐑 gives us wool and says \"baa\".",
+            "options": [
+              { "id": "o1", "label": "Sheep", "emoji": "🐑" },
+              { "id": "o2", "label": "Horse", "emoji": "🐴" },
+              { "id": "o3", "label": "Hen", "emoji": "🐔" },
+              { "id": "o4", "label": "Goat", "emoji": "🐐" }
+            ]
+          },
+          {
+            "id": "u1_l2_q3",
+            "type": "wordJumble",
+            "prompt": "Build the sentence: \"The pig is pink\"",
+            "instruction": "Tap the words in the right order",
+            "promptEmoji": "🐷",
+            "answer": "The pig is pink",
+            "wordBank": ["pig", "The", "pink", "is", "blue"],
+            "explanation": "The little farm pig 🐷 is pink!"
+          },
+          {
+            "id": "u1_l2_q4",
+            "type": "speechRecognition",
+            "prompt": "Say the animal's name",
+            "instruction": "Tap the mic and say it clearly",
+            "promptEmoji": "🐴",
+            "answer": "Horse",
+            "explanation": "A horse 🐴 can run very fast."
+          }
+        ]
+      },
+      {
+        "id": "u1_l3",
+        "title": "Wild Animals",
+        "icon": "🦁",
+        "xpReward": 30,
+        "questions": [
+          {
+            "id": "u1_l3_q1",
+            "type": "imageMatching",
+            "prompt": "Which one is a \"Lion\"?",
+            "instruction": "Tap the matching picture",
+            "promptEmoji": "🦁",
+            "correctOptionId": "o2",
+            "explanation": "The lion 🦁 is the king of the jungle.",
+            "options": [
+              { "id": "o1", "label": "Monkey", "emoji": "🐵" },
+              { "id": "o2", "label": "Lion", "emoji": "🦁" },
+              { "id": "o3", "label": "Zebra", "emoji": "🦓" },
+              { "id": "o4", "label": "Frog", "emoji": "🐸" }
+            ]
+          },
+          {
+            "id": "u1_l3_q2",
+            "type": "wordJumble",
+            "prompt": "Build the sentence: \"I see an elephant\"",
+            "instruction": "Tap the words in the right order",
+            "promptEmoji": "🐘",
+            "answer": "I see an elephant",
+            "wordBank": ["see", "I", "elephant", "an", "tiny"],
+            "explanation": "The elephant 🐘 is the biggest animal on land."
+          },
+          {
+            "id": "u1_l3_q3",
+            "type": "audioListening",
+            "prompt": "Listen and choose the animal",
+            "instruction": "Tap the play button, then pick the picture",
+            "audioText": "Monkey",
+            "correctOptionId": "o4",
+            "explanation": "A monkey 🐵 loves to climb and eat bananas.",
+            "options": [
+              { "id": "o1", "label": "Bear", "emoji": "🐻" },
+              { "id": "o2", "label": "Snake", "emoji": "🐍" },
+              { "id": "o3", "label": "Giraffe", "emoji": "🦒" },
+              { "id": "o4", "label": "Monkey", "emoji": "🐵" }
+            ]
+          },
+          {
+            "id": "u1_l3_q4",
+            "type": "speechRecognition",
+            "prompt": "Say the animal's name",
+            "instruction": "Tap the mic and say it clearly",
+            "promptEmoji": "🐯",
+            "answer": "Tiger",
+            "explanation": "A tiger 🐯 has orange fur with black stripes."
+          }
+        ]
+      }
+    ]
+  }
+]

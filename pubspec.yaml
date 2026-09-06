@@ -1,0 +1,51 @@
+name: lingokids
+description: A gamified cross-platform app for teaching English to kids, inspired by Duolingo.
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.6.0 <4.0.0"
+  flutter: ">=3.27.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+
+  # State management
+  flutter_bloc: ^8.1.5
+  equatable: ^2.0.5
+
+  # Local storage (progress, streaks, XP, hearts)
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  path_provider: ^2.1.3
+
+  # Animations (mascot + celebrations)
+  lottie: ^3.1.2
+
+  # Audio: sound effects & pronunciation
+  audioplayers: ^6.0.0
+
+  # TTS / Speech interaction
+  flutter_tts: ^4.0.2
+  speech_to_text: ^6.6.2
+
+  # Utilities
+  google_fonts: ^6.2.1
+  confetti: ^0.7.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  hive_generator: ^2.0.1
+  build_runner: ^2.4.11
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/data/
+    - assets/lottie/
+    - assets/audio/
+    - assets/images/

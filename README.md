@@ -1,0 +1,147 @@
+# 🦉 LingoKids — Learn English, the fun way
+
+A cross-platform (iOS / Android / Web / Desktop) mobile app that teaches
+English to kids, heavily inspired by Duolingo's gamified learning mechanics.
+Built with **Flutter** + **flutter_bloc**.
+
+<p align="center"><em>Skill tree → Lesson runner → Celebration 🎉</em></p>
+
+---
+
+## ✨ Features
+
+### 1. Skill Tree / Map screen
+- A winding path of **lesson nodes** grouped under units.
+- Node status indicators:
+  - 🔒 **Locked** — greyed-out padlock
+  - 🟢 **Current** — pulsing animated ring
+  - ⭐ **Completed** — golden star
+- Live **stats header**: 🔥 streak · ⚡ XP · ❤️ hearts.
+
+### 2. Lesson Runner Engine (Quiz Engine)
+- Step-by-step flow with a **progress bar** and a **hearts/lives counter** (starts at 5).
+- Four interactive question widget types:
+  | Type | Interaction |
+  |------|-------------|
+  | **Image Matching** | Visual 4-grid option selection |
+  | **Word Jumble / Sentence Builder** | Tap word chips to assemble a phrase |
+  | **Audio Listening** | Play audio (TTS) and pick the matching answer |
+  | **Speech Recognition** | Tap the mic, speak, and get validated |
+- Immediate feedback **bottom sheet**: green + success sound when correct,
+  red + explanation + heart loss when wrong.
+
+### 3. Gamification & Rewards
+- **XP** awarded on lesson completion.
+- **Streak** tracking (daily activity counter, resets if a day is missed).
+- **Hearts** that deplete on mistakes and **regenerate over time**.
+- **Lesson Completion screen** with **confetti** and an **openable reward chest**.
+
+### 4. Kid-friendly UI/UX
+- Colorful design system, **3D "pop" buttons** (Duolingo style), large touch
+  targets, bold rounded typography (Nunito), and playful micro-animations.
+
+---
+
+## 🏗️ Architecture
+
+```
+lib/
+├── main.dart                       # Entry point (init Hive, run app)
+├── app.dart                        # MaterialApp + global ProgressCubit
+├── core/
+│   ├── theme/                      # Colors, text styles, ThemeData
+│   └── widgets/                    # PopButton, HeartsIndicator, LessonProgressBar
+├── data/
+│   ├── models/                     # Unit, Lesson, Question, UserProgress
+│   └── repositories/               # ContentRepository (loads seed JSON)
+├── services/
+│   ├── storage_service.dart        # Hive persistence + streak/hearts rules
+│   ├── audio_service.dart          # audioplayers sound effects
+│   ├── tts_service.dart            # flutter_tts pronunciation
+│   └── speech_service.dart         # speech_to_text validation
+└── features/
+    ├── home/                       # Skill tree + nodes + stats header
+    ├── lesson/                     # Lesson runner, cubit, question widgets
+    └── progress/                   # ProgressCubit (global XP/streak/hearts)
+
+assets/
+└── data/units.json                 # Seed: Unit 1 — Animals & Greetings (3 lessons)
+```
+
+- **State management:** `flutter_bloc` (Cubits) — `ProgressCubit` (global) and
+  `LessonCubit` (per-lesson runner).
+- **Local storage:** `hive` / `hive_flutter` — progress, streaks, XP, hearts,
+  completed lessons (stored as a plain map, no codegen required).
+- **Animations:** `confetti` package (celebration) + Lottie-ready asset slot.
+- **Audio / speech:** `audioplayers`, `flutter_tts`, `speech_to_text`.
+
+---
+
+## 📊 Content schema
+
+Units → Lessons → Questions are defined in `assets/data/units.json` and parsed
+by the model classes. Seeded with **Unit 1: Animals & Greetings** containing
+**3 lessons** (Greetings, Farm Animals, Wild Animals) and realistic questions of
+all four types. Add new units by appending to the JSON — no code changes needed.
+
+---
+
+## 🚀 Getting started
+
+> Requires the [Flutter SDK](https://docs.flutter.dev/get-started/install)
+> (stable channel, Dart ≥ 3.3).
+
+```bash
+# 1. Generate the platform runners (android/ios/web/...) for this source tree.
+#    This does NOT overwrite lib/, pubspec.yaml, or assets/.
+flutter create .
+
+# 2. Install dependencies
+flutter pub get
+
+# 3. Run on your device / emulator / browser
+flutter run                 # attached device
+flutter run -d chrome       # web
+```
+
+Run the tests with:
+
+```bash
+flutter test
+```
+
+### 🔐 Permissions for Speech Recognition
+
+`speech_to_text` needs microphone permission. After `flutter create .`, add:
+
+**Android** — `android/app/src/main/AndroidManifest.xml`:
+```xml
+<uses-permission android:name="android.permission.RECORD_AUDIO"/>
+<uses-permission android:name="android.permission.INTERNET"/>
+```
+
+**iOS** — `ios/Runner/Info.plist`:
+```xml
+<key>NSMicrophoneUsageDescription</key>
+<string>We use the microphone so kids can practice speaking English.</string>
+<key>NSSpeechRecognitionUsageDescription</key>
+<string>We use speech recognition to check pronunciation.</string>
+```
+
+The speech question degrades gracefully (offers a tap-to-continue fallback) if
+the microphone is unavailable, so the app remains fully playable everywhere.
+
+### 🔊 Optional media
+
+Sound effects (`assets/audio/`) and Lottie files (`assets/lottie/`) are
+optional — see the READMEs in those folders. The app ships working audio via
+device TTS and a code-driven confetti celebration, so nothing extra is required.
+
+---
+
+## 🧩 Extending the app
+- **Add a lesson/unit:** append to `assets/data/units.json`.
+- **Add a question type:** add a value to `QuestionType`, a widget implementing
+  the `QuestionWidget` contract, and a branch in `buildQuestionWidget`.
+- **Swap emoji for artwork:** set `imageAsset` on options and render
+  `Image.asset` in the question widgets.
