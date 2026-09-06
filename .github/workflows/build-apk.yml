@@ -26,6 +26,10 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
+          # Pinned to a stable release on AGP/Gradle 8.x. The latest `stable`
+          # currently ships AGP 9 preview, which breaks the Flutter Gradle
+          # plugin and older plugins that still reference jcenter().
+          flutter-version: "3.29.3"
           channel: stable
           cache: true
 
