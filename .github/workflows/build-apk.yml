@@ -63,6 +63,28 @@ jobs:
             grep -n "minSdk" "$GRADLE_GROOVY" || true
           fi
 
+      - name: Bump Kotlin Gradle plugin to 2.2.20
+        run: |
+          # The 3.29 template ships an older Kotlin compiler that cannot read
+          # the newer kotlin-stdlib (metadata 2.2.0) AGP puts on the classpath,
+          # which breaks compiling flutter_tts / speech_to_text. Align Kotlin.
+          KOTLIN_VERSION=2.2.20
+          SETTINGS_KTS=android/settings.gradle.kts
+          SETTINGS_GROOVY=android/settings.gradle
+          LEGACY_BUILD=android/build.gradle
+          if [ -f "$SETTINGS_KTS" ]; then
+            sed -i -E "s/(id\(\"org\.jetbrains\.kotlin\.android\"\) version \")[^\"]+(\")/\1${KOTLIN_VERSION}\2/" "$SETTINGS_KTS"
+            grep -n "kotlin.android" "$SETTINGS_KTS" || true
+          fi
+          if [ -f "$SETTINGS_GROOVY" ]; then
+            sed -i -E "s/(id \"org\.jetbrains\.kotlin\.android\" version \")[^\"]+(\")/\1${KOTLIN_VERSION}\2/" "$SETTINGS_GROOVY"
+            grep -n "kotlin.android" "$SETTINGS_GROOVY" || true
+          fi
+          if [ -f "$LEGACY_BUILD" ] && grep -q "ext.kotlin_version" "$LEGACY_BUILD"; then
+            sed -i -E "s/(ext\.kotlin_version = ')[^']+(')/\1${KOTLIN_VERSION}\2/" "$LEGACY_BUILD"
+            grep -n "kotlin_version" "$LEGACY_BUILD" || true
+          fi
+
       - name: Install dependencies
         run: flutter pub get
 
