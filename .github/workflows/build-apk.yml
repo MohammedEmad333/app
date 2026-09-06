@@ -50,6 +50,19 @@ jobs:
           echo "----- AndroidManifest.xml -----"
           cat "$MANIFEST"
 
+      - name: Set minSdk to 24 (required by flutter_tts)
+        run: |
+          # Flutter 3.29 uses the Kotlin DSL app build file.
+          GRADLE_KTS=android/app/build.gradle.kts
+          GRADLE_GROOVY=android/app/build.gradle
+          if [ -f "$GRADLE_KTS" ]; then
+            sed -i 's/minSdk = flutter.minSdkVersion/minSdk = 24/' "$GRADLE_KTS"
+            grep -n "minSdk" "$GRADLE_KTS" || true
+          elif [ -f "$GRADLE_GROOVY" ]; then
+            sed -i 's/minSdkVersion flutter.minSdkVersion/minSdkVersion 24/' "$GRADLE_GROOVY"
+            grep -n "minSdk" "$GRADLE_GROOVY" || true
+          fi
+
       - name: Install dependencies
         run: flutter pub get
 
