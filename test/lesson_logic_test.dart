@@ -35,6 +35,28 @@ void main() {
     });
   });
 
+  group('Unit difficulty', () {
+    test('defaults to 1 and round-trips through JSON', () {
+      final u = Unit.fromJson({
+        'id': 'u',
+        'title': 't',
+        'colorValue': 0xFF000000,
+        'lessons': [],
+      });
+      expect(u.difficulty, 1);
+
+      final u2 = Unit.fromJson({
+        'id': 'u2',
+        'title': 't2',
+        'colorValue': 0xFF000000,
+        'difficulty': 4,
+        'lessons': [],
+      });
+      expect(u2.difficulty, 4);
+      expect(Unit.fromJson(u2.toJson()).difficulty, 4);
+    });
+  });
+
   group('Lesson model', () {
     test('reports question count', () {
       const lesson = Lesson(

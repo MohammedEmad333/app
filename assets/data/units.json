@@ -4,6 +4,7 @@
     "title": "الوحدة ١: الحيوانات والتحيات",
     "subtitle": "قل مرحباً وتعرّف على الحيوانات",
     "colorValue": 4284009474,
+    "difficulty": 1,
     "lessons": [
       {
         "id": "u1_l1",
@@ -20,10 +21,26 @@
             "correctOptionId": "o1",
             "explanation": "كلمة \"Hello\" تعني تحية ودودة 👋.",
             "options": [
-              { "id": "o1", "label": "Hello", "emoji": "👋" },
-              { "id": "o2", "label": "Apple", "emoji": "🍎" },
-              { "id": "o3", "label": "Dog", "emoji": "🐶" },
-              { "id": "o4", "label": "Sun", "emoji": "☀️" }
+              {
+                "id": "o1",
+                "label": "Hello",
+                "emoji": "👋"
+              },
+              {
+                "id": "o2",
+                "label": "Apple",
+                "emoji": "🍎"
+              },
+              {
+                "id": "o3",
+                "label": "Dog",
+                "emoji": "🐶"
+              },
+              {
+                "id": "o4",
+                "label": "Sun",
+                "emoji": "☀️"
+              }
             ]
           },
           {
@@ -33,7 +50,12 @@
             "instruction": "رتّب الكلمات لتكوين الجملة",
             "promptEmoji": "🌅",
             "answer": "Good morning",
-            "wordBank": ["morning", "Good", "night", "bye"],
+            "wordBank": [
+              "morning",
+              "Good",
+              "night",
+              "bye"
+            ],
             "explanation": "نقول \"Good morning\" لتحية شخص في الصباح."
           },
           {
@@ -45,10 +67,26 @@
             "correctOptionId": "o2",
             "explanation": "كلمة \"Goodbye\" نقولها عند المغادرة.",
             "options": [
-              { "id": "o1", "label": "Hello", "emoji": "👋" },
-              { "id": "o2", "label": "Goodbye", "emoji": "🙋" },
-              { "id": "o3", "label": "Please", "emoji": "🙏" },
-              { "id": "o4", "label": "Sorry", "emoji": "😔" }
+              {
+                "id": "o1",
+                "label": "Hello",
+                "emoji": "👋"
+              },
+              {
+                "id": "o2",
+                "label": "Goodbye",
+                "emoji": "🙋"
+              },
+              {
+                "id": "o3",
+                "label": "Please",
+                "emoji": "🙏"
+              },
+              {
+                "id": "o4",
+                "label": "Sorry",
+                "emoji": "😔"
+              }
             ]
           },
           {
@@ -77,10 +115,26 @@
             "correctOptionId": "o3",
             "explanation": "الـ \"Cow\" 🐄 تعطينا الحليب في المزرعة.",
             "options": [
-              { "id": "o1", "label": "Cat", "emoji": "🐱" },
-              { "id": "o2", "label": "Duck", "emoji": "🦆" },
-              { "id": "o3", "label": "Cow", "emoji": "🐄" },
-              { "id": "o4", "label": "Pig", "emoji": "🐷" }
+              {
+                "id": "o1",
+                "label": "Cat",
+                "emoji": "🐱"
+              },
+              {
+                "id": "o2",
+                "label": "Duck",
+                "emoji": "🦆"
+              },
+              {
+                "id": "o3",
+                "label": "Cow",
+                "emoji": "🐄"
+              },
+              {
+                "id": "o4",
+                "label": "Pig",
+                "emoji": "🐷"
+              }
             ]
           },
           {
@@ -92,10 +146,26 @@
             "correctOptionId": "o1",
             "explanation": "الـ \"Sheep\" 🐑 يعطينا الصوف ويقول \"باع\".",
             "options": [
-              { "id": "o1", "label": "Sheep", "emoji": "🐑" },
-              { "id": "o2", "label": "Horse", "emoji": "🐴" },
-              { "id": "o3", "label": "Hen", "emoji": "🐔" },
-              { "id": "o4", "label": "Goat", "emoji": "🐐" }
+              {
+                "id": "o1",
+                "label": "Sheep",
+                "emoji": "🐑"
+              },
+              {
+                "id": "o2",
+                "label": "Horse",
+                "emoji": "🐴"
+              },
+              {
+                "id": "o3",
+                "label": "Hen",
+                "emoji": "🐔"
+              },
+              {
+                "id": "o4",
+                "label": "Goat",
+                "emoji": "🐐"
+              }
             ]
           },
           {
@@ -105,7 +175,13 @@
             "instruction": "رتّب الكلمات لتكوين الجملة",
             "promptEmoji": "🐷",
             "answer": "The pig is pink",
-            "wordBank": ["pig", "The", "pink", "is", "blue"],
+            "wordBank": [
+              "pig",
+              "The",
+              "pink",
+              "is",
+              "blue"
+            ],
             "explanation": "الخنزير الصغير \"pig\" 🐷 لونه وردي!"
           },
           {
@@ -134,10 +210,26 @@
             "correctOptionId": "o2",
             "explanation": "الأسد \"Lion\" 🦁 ملك الغابة.",
             "options": [
-              { "id": "o1", "label": "Monkey", "emoji": "🐵" },
-              { "id": "o2", "label": "Lion", "emoji": "🦁" },
-              { "id": "o3", "label": "Zebra", "emoji": "🦓" },
-              { "id": "o4", "label": "Frog", "emoji": "🐸" }
+              {
+                "id": "o1",
+                "label": "Monkey",
+                "emoji": "🐵"
+              },
+              {
+                "id": "o2",
+                "label": "Lion",
+                "emoji": "🦁"
+              },
+              {
+                "id": "o3",
+                "label": "Zebra",
+                "emoji": "🦓"
+              },
+              {
+                "id": "o4",
+                "label": "Frog",
+                "emoji": "🐸"
+              }
             ]
           },
           {
@@ -147,7 +239,13 @@
             "instruction": "رتّب الكلمات لتكوين الجملة",
             "promptEmoji": "🐘",
             "answer": "I see an elephant",
-            "wordBank": ["see", "I", "elephant", "an", "tiny"],
+            "wordBank": [
+              "see",
+              "I",
+              "elephant",
+              "an",
+              "tiny"
+            ],
             "explanation": "الفيل \"elephant\" 🐘 أكبر حيوان على اليابسة."
           },
           {
@@ -159,10 +257,26 @@
             "correctOptionId": "o4",
             "explanation": "القرد \"Monkey\" 🐵 يحب التسلق وأكل الموز.",
             "options": [
-              { "id": "o1", "label": "Bear", "emoji": "🐻" },
-              { "id": "o2", "label": "Snake", "emoji": "🐍" },
-              { "id": "o3", "label": "Giraffe", "emoji": "🦒" },
-              { "id": "o4", "label": "Monkey", "emoji": "🐵" }
+              {
+                "id": "o1",
+                "label": "Bear",
+                "emoji": "🐻"
+              },
+              {
+                "id": "o2",
+                "label": "Snake",
+                "emoji": "🐍"
+              },
+              {
+                "id": "o3",
+                "label": "Giraffe",
+                "emoji": "🦒"
+              },
+              {
+                "id": "o4",
+                "label": "Monkey",
+                "emoji": "🐵"
+              }
             ]
           },
           {
@@ -183,6 +297,7 @@
     "title": "الوحدة ٢: الأرقام والألوان",
     "subtitle": "عُدّ وسمِّ ألوان العالم",
     "colorValue": 4280070390,
+    "difficulty": 1,
     "lessons": [
       {
         "id": "u2_l1",
@@ -199,10 +314,26 @@
             "correctOptionId": "o2",
             "explanation": "\"Three\" تعني ٣ — عُدّ: ١، ٢، ٣!",
             "options": [
-              { "id": "o1", "label": "Two", "emoji": "2️⃣" },
-              { "id": "o2", "label": "Three", "emoji": "3️⃣" },
-              { "id": "o3", "label": "Five", "emoji": "5️⃣" },
-              { "id": "o4", "label": "One", "emoji": "1️⃣" }
+              {
+                "id": "o1",
+                "label": "Two",
+                "emoji": "2️⃣"
+              },
+              {
+                "id": "o2",
+                "label": "Three",
+                "emoji": "3️⃣"
+              },
+              {
+                "id": "o3",
+                "label": "Five",
+                "emoji": "5️⃣"
+              },
+              {
+                "id": "o4",
+                "label": "One",
+                "emoji": "1️⃣"
+              }
             ]
           },
           {
@@ -214,10 +345,26 @@
             "correctOptionId": "o4",
             "explanation": "\"Four\" تعني ٤ — أكبر من ثلاثة بواحد.",
             "options": [
-              { "id": "o1", "label": "One", "emoji": "1️⃣" },
-              { "id": "o2", "label": "Two", "emoji": "2️⃣" },
-              { "id": "o3", "label": "Three", "emoji": "3️⃣" },
-              { "id": "o4", "label": "Four", "emoji": "4️⃣" }
+              {
+                "id": "o1",
+                "label": "One",
+                "emoji": "1️⃣"
+              },
+              {
+                "id": "o2",
+                "label": "Two",
+                "emoji": "2️⃣"
+              },
+              {
+                "id": "o3",
+                "label": "Three",
+                "emoji": "3️⃣"
+              },
+              {
+                "id": "o4",
+                "label": "Four",
+                "emoji": "4️⃣"
+              }
             ]
           },
           {
@@ -227,7 +374,13 @@
             "instruction": "رتّب الكلمات لتكوين الجملة",
             "promptEmoji": "🐱",
             "answer": "I have two cats",
-            "wordBank": ["have", "I", "cats", "two", "ten"],
+            "wordBank": [
+              "have",
+              "I",
+              "cats",
+              "two",
+              "ten"
+            ],
             "explanation": "\"two cats\" تعني قطتين 🐱🐱."
           },
           {
@@ -256,10 +409,26 @@
             "correctOptionId": "o3",
             "explanation": "\"Ten\" تعني ١٠ — عُدّ كل أصابعك!",
             "options": [
-              { "id": "o1", "label": "Six", "emoji": "6️⃣" },
-              { "id": "o2", "label": "Eight", "emoji": "8️⃣" },
-              { "id": "o3", "label": "Ten", "emoji": "🔟" },
-              { "id": "o4", "label": "Seven", "emoji": "7️⃣" }
+              {
+                "id": "o1",
+                "label": "Six",
+                "emoji": "6️⃣"
+              },
+              {
+                "id": "o2",
+                "label": "Eight",
+                "emoji": "8️⃣"
+              },
+              {
+                "id": "o3",
+                "label": "Ten",
+                "emoji": "🔟"
+              },
+              {
+                "id": "o4",
+                "label": "Seven",
+                "emoji": "7️⃣"
+              }
             ]
           },
           {
@@ -280,10 +449,26 @@
             "correctOptionId": "o1",
             "explanation": "\"Nine\" تعني ٩ — أقل من عشرة بواحد.",
             "options": [
-              { "id": "o1", "label": "Nine", "emoji": "9️⃣" },
-              { "id": "o2", "label": "Six", "emoji": "6️⃣" },
-              { "id": "o3", "label": "Eight", "emoji": "8️⃣" },
-              { "id": "o4", "label": "Ten", "emoji": "🔟" }
+              {
+                "id": "o1",
+                "label": "Nine",
+                "emoji": "9️⃣"
+              },
+              {
+                "id": "o2",
+                "label": "Six",
+                "emoji": "6️⃣"
+              },
+              {
+                "id": "o3",
+                "label": "Eight",
+                "emoji": "8️⃣"
+              },
+              {
+                "id": "o4",
+                "label": "Ten",
+                "emoji": "🔟"
+              }
             ]
           },
           {
@@ -293,7 +478,13 @@
             "instruction": "رتّب الكلمات لتكوين الجملة",
             "promptEmoji": "🎂",
             "answer": "I am six years old",
-            "wordBank": ["am", "I", "old", "six", "years"],
+            "wordBank": [
+              "am",
+              "I",
+              "old",
+              "six",
+              "years"
+            ],
             "explanation": "نستخدم \"years old\" للتعبير عن العمر 🎂."
           }
         ]
@@ -313,10 +504,26 @@
             "correctOptionId": "o1",
             "explanation": "\"Red\" هو لون الفراولة 🍓.",
             "options": [
-              { "id": "o1", "label": "Red", "emoji": "🔴" },
-              { "id": "o2", "label": "Blue", "emoji": "🔵" },
-              { "id": "o3", "label": "Green", "emoji": "🟢" },
-              { "id": "o4", "label": "Yellow", "emoji": "🟡" }
+              {
+                "id": "o1",
+                "label": "Red",
+                "emoji": "🔴"
+              },
+              {
+                "id": "o2",
+                "label": "Blue",
+                "emoji": "🔵"
+              },
+              {
+                "id": "o3",
+                "label": "Green",
+                "emoji": "🟢"
+              },
+              {
+                "id": "o4",
+                "label": "Yellow",
+                "emoji": "🟡"
+              }
             ]
           },
           {
@@ -328,10 +535,26 @@
             "correctOptionId": "o3",
             "explanation": "\"Blue\" هو لون السماء 🌌.",
             "options": [
-              { "id": "o1", "label": "Green", "emoji": "🟢" },
-              { "id": "o2", "label": "Purple", "emoji": "🟣" },
-              { "id": "o3", "label": "Blue", "emoji": "🔵" },
-              { "id": "o4", "label": "Orange", "emoji": "🟠" }
+              {
+                "id": "o1",
+                "label": "Green",
+                "emoji": "🟢"
+              },
+              {
+                "id": "o2",
+                "label": "Purple",
+                "emoji": "🟣"
+              },
+              {
+                "id": "o3",
+                "label": "Blue",
+                "emoji": "🔵"
+              },
+              {
+                "id": "o4",
+                "label": "Orange",
+                "emoji": "🟠"
+              }
             ]
           },
           {
@@ -341,7 +564,13 @@
             "instruction": "رتّب الكلمات لتكوين الجملة",
             "promptEmoji": "☀️",
             "answer": "The sun is yellow",
-            "wordBank": ["sun", "The", "yellow", "is", "green"],
+            "wordBank": [
+              "sun",
+              "The",
+              "yellow",
+              "is",
+              "green"
+            ],
             "explanation": "الشمس \"sun\" ☀️ لونها أصفر لامع."
           },
           {
@@ -362,6 +591,7 @@
     "title": "الوحدة ٣: الطعام والشراب",
     "subtitle": "كلمات لذيذة لوقت الوجبة",
     "colorValue": 4291724031,
+    "difficulty": 2,
     "lessons": [
       {
         "id": "u3_l1",
@@ -378,10 +608,26 @@
             "correctOptionId": "o2",
             "explanation": "الموزة \"Banana\" 🍌 فاكهة صفراء طويلة.",
             "options": [
-              { "id": "o1", "label": "Apple", "emoji": "🍎" },
-              { "id": "o2", "label": "Banana", "emoji": "🍌" },
-              { "id": "o3", "label": "Grapes", "emoji": "🍇" },
-              { "id": "o4", "label": "Orange", "emoji": "🍊" }
+              {
+                "id": "o1",
+                "label": "Apple",
+                "emoji": "🍎"
+              },
+              {
+                "id": "o2",
+                "label": "Banana",
+                "emoji": "🍌"
+              },
+              {
+                "id": "o3",
+                "label": "Grapes",
+                "emoji": "🍇"
+              },
+              {
+                "id": "o4",
+                "label": "Orange",
+                "emoji": "🍊"
+              }
             ]
           },
           {
@@ -391,7 +637,12 @@
             "instruction": "رتّب الكلمات لتكوين الجملة",
             "promptEmoji": "🍎",
             "answer": "I like apples",
-            "wordBank": ["like", "I", "apples", "run"],
+            "wordBank": [
+              "like",
+              "I",
+              "apples",
+              "run"
+            ],
             "explanation": "نقول \"I like\" للأشياء التي نحبها 🍎."
           },
           {
@@ -403,10 +654,26 @@
             "correctOptionId": "o4",
             "explanation": "الفراولة \"Strawberry\" 🍓 صغيرة وحمراء وحلوة.",
             "options": [
-              { "id": "o1", "label": "Grapes", "emoji": "🍇" },
-              { "id": "o2", "label": "Lemon", "emoji": "🍋" },
-              { "id": "o3", "label": "Cherry", "emoji": "🍒" },
-              { "id": "o4", "label": "Strawberry", "emoji": "🍓" }
+              {
+                "id": "o1",
+                "label": "Grapes",
+                "emoji": "🍇"
+              },
+              {
+                "id": "o2",
+                "label": "Lemon",
+                "emoji": "🍋"
+              },
+              {
+                "id": "o3",
+                "label": "Cherry",
+                "emoji": "🍒"
+              },
+              {
+                "id": "o4",
+                "label": "Strawberry",
+                "emoji": "🍓"
+              }
             ]
           },
           {
@@ -435,10 +702,26 @@
             "correctOptionId": "o1",
             "explanation": "الخبز \"Bread\" 🍞 طري ومصنوع من الطحين.",
             "options": [
-              { "id": "o1", "label": "Bread", "emoji": "🍞" },
-              { "id": "o2", "label": "Egg", "emoji": "🥚" },
-              { "id": "o3", "label": "Cheese", "emoji": "🧀" },
-              { "id": "o4", "label": "Rice", "emoji": "🍚" }
+              {
+                "id": "o1",
+                "label": "Bread",
+                "emoji": "🍞"
+              },
+              {
+                "id": "o2",
+                "label": "Egg",
+                "emoji": "🥚"
+              },
+              {
+                "id": "o3",
+                "label": "Cheese",
+                "emoji": "🧀"
+              },
+              {
+                "id": "o4",
+                "label": "Rice",
+                "emoji": "🍚"
+              }
             ]
           },
           {
@@ -450,10 +733,26 @@
             "correctOptionId": "o3",
             "explanation": "البيتزا \"Pizza\" 🍕 عليها جبن وقاعدة مستديرة.",
             "options": [
-              { "id": "o1", "label": "Soup", "emoji": "🍲" },
-              { "id": "o2", "label": "Egg", "emoji": "🥚" },
-              { "id": "o3", "label": "Pizza", "emoji": "🍕" },
-              { "id": "o4", "label": "Rice", "emoji": "🍚" }
+              {
+                "id": "o1",
+                "label": "Soup",
+                "emoji": "🍲"
+              },
+              {
+                "id": "o2",
+                "label": "Egg",
+                "emoji": "🥚"
+              },
+              {
+                "id": "o3",
+                "label": "Pizza",
+                "emoji": "🍕"
+              },
+              {
+                "id": "o4",
+                "label": "Rice",
+                "emoji": "🍚"
+              }
             ]
           },
           {
@@ -463,7 +762,12 @@
             "instruction": "رتّب الكلمات لتكوين الجملة",
             "promptEmoji": "🍳",
             "answer": "I eat breakfast",
-            "wordBank": ["eat", "I", "breakfast", "sleep"],
+            "wordBank": [
+              "eat",
+              "I",
+              "breakfast",
+              "sleep"
+            ],
             "explanation": "\"breakfast\" 🍳 هو أول وجبة في اليوم."
           },
           {
@@ -492,10 +796,26 @@
             "correctOptionId": "o2",
             "explanation": "الحليب \"Milk\" 🥛 مشروب أبيض يساعدنا على النمو.",
             "options": [
-              { "id": "o1", "label": "Juice", "emoji": "🧃" },
-              { "id": "o2", "label": "Milk", "emoji": "🥛" },
-              { "id": "o3", "label": "Tea", "emoji": "🍵" },
-              { "id": "o4", "label": "Water", "emoji": "💧" }
+              {
+                "id": "o1",
+                "label": "Juice",
+                "emoji": "🧃"
+              },
+              {
+                "id": "o2",
+                "label": "Milk",
+                "emoji": "🥛"
+              },
+              {
+                "id": "o3",
+                "label": "Tea",
+                "emoji": "🍵"
+              },
+              {
+                "id": "o4",
+                "label": "Water",
+                "emoji": "💧"
+              }
             ]
           },
           {
@@ -505,7 +825,12 @@
             "instruction": "رتّب الكلمات لتكوين الجملة",
             "promptEmoji": "💧",
             "answer": "I drink water",
-            "wordBank": ["drink", "I", "water", "jump"],
+            "wordBank": [
+              "drink",
+              "I",
+              "water",
+              "jump"
+            ],
             "explanation": "الماء \"water\" 💧 يبقينا أصحاء كل يوم."
           },
           {
@@ -517,10 +842,26 @@
             "correctOptionId": "o1",
             "explanation": "العصير \"Juice\" 🧃 مشروب حلو مصنوع من الفاكهة.",
             "options": [
-              { "id": "o1", "label": "Juice", "emoji": "🧃" },
-              { "id": "o2", "label": "Milk", "emoji": "🥛" },
-              { "id": "o3", "label": "Water", "emoji": "💧" },
-              { "id": "o4", "label": "Tea", "emoji": "🍵" }
+              {
+                "id": "o1",
+                "label": "Juice",
+                "emoji": "🧃"
+              },
+              {
+                "id": "o2",
+                "label": "Milk",
+                "emoji": "🥛"
+              },
+              {
+                "id": "o3",
+                "label": "Water",
+                "emoji": "💧"
+              },
+              {
+                "id": "o4",
+                "label": "Tea",
+                "emoji": "🍵"
+              }
             ]
           },
           {
@@ -541,6 +882,7 @@
     "title": "الوحدة ٤: العائلة والمنزل",
     "subtitle": "الأشخاص والأماكن التي نحبها",
     "colorValue": 4294940160,
+    "difficulty": 2,
     "lessons": [
       {
         "id": "u4_l1",
@@ -557,10 +899,26 @@
             "correctOptionId": "o1",
             "explanation": "\"Mother\" 👩 تعني أمّك.",
             "options": [
-              { "id": "o1", "label": "Mother", "emoji": "👩" },
-              { "id": "o2", "label": "Father", "emoji": "👨" },
-              { "id": "o3", "label": "Baby", "emoji": "👶" },
-              { "id": "o4", "label": "Sister", "emoji": "👧" }
+              {
+                "id": "o1",
+                "label": "Mother",
+                "emoji": "👩"
+              },
+              {
+                "id": "o2",
+                "label": "Father",
+                "emoji": "👨"
+              },
+              {
+                "id": "o3",
+                "label": "Baby",
+                "emoji": "👶"
+              },
+              {
+                "id": "o4",
+                "label": "Sister",
+                "emoji": "👧"
+              }
             ]
           },
           {
@@ -572,10 +930,26 @@
             "correctOptionId": "o2",
             "explanation": "\"Father\" 👨 يعني أباك.",
             "options": [
-              { "id": "o1", "label": "Brother", "emoji": "👦" },
-              { "id": "o2", "label": "Father", "emoji": "👨" },
-              { "id": "o3", "label": "Baby", "emoji": "👶" },
-              { "id": "o4", "label": "Mother", "emoji": "👩" }
+              {
+                "id": "o1",
+                "label": "Brother",
+                "emoji": "👦"
+              },
+              {
+                "id": "o2",
+                "label": "Father",
+                "emoji": "👨"
+              },
+              {
+                "id": "o3",
+                "label": "Baby",
+                "emoji": "👶"
+              },
+              {
+                "id": "o4",
+                "label": "Mother",
+                "emoji": "👩"
+              }
             ]
           },
           {
@@ -585,7 +959,13 @@
             "instruction": "رتّب الكلمات لتكوين الجملة",
             "promptEmoji": "👧",
             "answer": "This is my sister",
-            "wordBank": ["is", "This", "sister", "my", "car"],
+            "wordBank": [
+              "is",
+              "This",
+              "sister",
+              "my",
+              "car"
+            ],
             "explanation": "الأخت \"sister\" 👧 بنت في عائلتك."
           },
           {
@@ -614,10 +994,26 @@
             "correctOptionId": "o4",
             "explanation": "المنزل \"House\" 🏠 حيث تعيش العائلة.",
             "options": [
-              { "id": "o1", "label": "Bed", "emoji": "🛏️" },
-              { "id": "o2", "label": "Door", "emoji": "🚪" },
-              { "id": "o3", "label": "Window", "emoji": "🪟" },
-              { "id": "o4", "label": "House", "emoji": "🏠" }
+              {
+                "id": "o1",
+                "label": "Bed",
+                "emoji": "🛏️"
+              },
+              {
+                "id": "o2",
+                "label": "Door",
+                "emoji": "🚪"
+              },
+              {
+                "id": "o3",
+                "label": "Window",
+                "emoji": "🪟"
+              },
+              {
+                "id": "o4",
+                "label": "House",
+                "emoji": "🏠"
+              }
             ]
           },
           {
@@ -627,7 +1023,13 @@
             "instruction": "رتّب الكلمات لتكوين الجملة",
             "promptEmoji": "🛏️",
             "answer": "I sleep in my bed",
-            "wordBank": ["sleep", "I", "bed", "in", "my"],
+            "wordBank": [
+              "sleep",
+              "I",
+              "bed",
+              "in",
+              "my"
+            ],
             "explanation": "ننام في السرير \"bed\" 🛏️ في الليل."
           },
           {
@@ -639,10 +1041,26 @@
             "correctOptionId": "o2",
             "explanation": "الباب \"Door\" 🚪 يسمح لنا بالدخول والخروج.",
             "options": [
-              { "id": "o1", "label": "Window", "emoji": "🪟" },
-              { "id": "o2", "label": "Door", "emoji": "🚪" },
-              { "id": "o3", "label": "Chair", "emoji": "🪑" },
-              { "id": "o4", "label": "Lamp", "emoji": "💡" }
+              {
+                "id": "o1",
+                "label": "Window",
+                "emoji": "🪟"
+              },
+              {
+                "id": "o2",
+                "label": "Door",
+                "emoji": "🚪"
+              },
+              {
+                "id": "o3",
+                "label": "Chair",
+                "emoji": "🪑"
+              },
+              {
+                "id": "o4",
+                "label": "Lamp",
+                "emoji": "💡"
+              }
             ]
           },
           {
@@ -671,10 +1089,26 @@
             "correctOptionId": "o3",
             "explanation": "الكرسي \"Chair\" 🪑 حيث نجلس.",
             "options": [
-              { "id": "o1", "label": "Clock", "emoji": "🕐" },
-              { "id": "o2", "label": "Book", "emoji": "📖" },
-              { "id": "o3", "label": "Chair", "emoji": "🪑" },
-              { "id": "o4", "label": "Cup", "emoji": "☕" }
+              {
+                "id": "o1",
+                "label": "Clock",
+                "emoji": "🕐"
+              },
+              {
+                "id": "o2",
+                "label": "Book",
+                "emoji": "📖"
+              },
+              {
+                "id": "o3",
+                "label": "Chair",
+                "emoji": "🪑"
+              },
+              {
+                "id": "o4",
+                "label": "Cup",
+                "emoji": "☕"
+              }
             ]
           },
           {
@@ -686,10 +1120,26 @@
             "correctOptionId": "o1",
             "explanation": "الكتاب \"Book\" 📖 مليء بالقصص للقراءة.",
             "options": [
-              { "id": "o1", "label": "Book", "emoji": "📖" },
-              { "id": "o2", "label": "Ball", "emoji": "⚽" },
-              { "id": "o3", "label": "Clock", "emoji": "🕐" },
-              { "id": "o4", "label": "Cup", "emoji": "☕" }
+              {
+                "id": "o1",
+                "label": "Book",
+                "emoji": "📖"
+              },
+              {
+                "id": "o2",
+                "label": "Ball",
+                "emoji": "⚽"
+              },
+              {
+                "id": "o3",
+                "label": "Clock",
+                "emoji": "🕐"
+              },
+              {
+                "id": "o4",
+                "label": "Cup",
+                "emoji": "☕"
+              }
             ]
           },
           {
@@ -699,7 +1149,13 @@
             "instruction": "رتّب الكلمات لتكوين الجملة",
             "promptEmoji": "📖",
             "answer": "I read a book",
-            "wordBank": ["read", "I", "book", "a", "sing"],
+            "wordBank": [
+              "read",
+              "I",
+              "book",
+              "a",
+              "sing"
+            ],
             "explanation": "نقرأ كتاباً \"book\" 📖 لنتعلم أشياء جديدة."
           },
           {
@@ -720,6 +1176,7 @@
     "title": "الوحدة ٥: الأفعال والمشاعر",
     "subtitle": "ما نفعله وكيف نشعر",
     "colorValue": 4294921035,
+    "difficulty": 3,
     "lessons": [
       {
         "id": "u5_l1",
@@ -736,10 +1193,26 @@
             "correctOptionId": "o2",
             "explanation": "\"Run\" 🏃 تعني الجري بسرعة على قدميك.",
             "options": [
-              { "id": "o1", "label": "Sleep", "emoji": "😴" },
-              { "id": "o2", "label": "Run", "emoji": "🏃" },
-              { "id": "o3", "label": "Eat", "emoji": "🍽️" },
-              { "id": "o4", "label": "Swim", "emoji": "🏊" }
+              {
+                "id": "o1",
+                "label": "Sleep",
+                "emoji": "😴"
+              },
+              {
+                "id": "o2",
+                "label": "Run",
+                "emoji": "🏃"
+              },
+              {
+                "id": "o3",
+                "label": "Eat",
+                "emoji": "🍽️"
+              },
+              {
+                "id": "o4",
+                "label": "Swim",
+                "emoji": "🏊"
+              }
             ]
           },
           {
@@ -751,10 +1224,26 @@
             "correctOptionId": "o3",
             "explanation": "\"Jump\" 🤸 تعني القفز عالياً عن الأرض.",
             "options": [
-              { "id": "o1", "label": "Read", "emoji": "📖" },
-              { "id": "o2", "label": "Sing", "emoji": "🎤" },
-              { "id": "o3", "label": "Jump", "emoji": "🤸" },
-              { "id": "o4", "label": "Walk", "emoji": "🚶" }
+              {
+                "id": "o1",
+                "label": "Read",
+                "emoji": "📖"
+              },
+              {
+                "id": "o2",
+                "label": "Sing",
+                "emoji": "🎤"
+              },
+              {
+                "id": "o3",
+                "label": "Jump",
+                "emoji": "🤸"
+              },
+              {
+                "id": "o4",
+                "label": "Walk",
+                "emoji": "🚶"
+              }
             ]
           },
           {
@@ -764,7 +1253,12 @@
             "instruction": "رتّب الكلمات لتكوين الجملة",
             "promptEmoji": "🏊",
             "answer": "I can swim",
-            "wordBank": ["can", "I", "swim", "fly"],
+            "wordBank": [
+              "can",
+              "I",
+              "swim",
+              "fly"
+            ],
             "explanation": "نقول \"I can\" للأشياء التي نستطيع فعلها 🏊."
           },
           {
@@ -793,10 +1287,26 @@
             "correctOptionId": "o1",
             "explanation": "\"Happy\" 😊 هو شعورنا عندما نبتسم.",
             "options": [
-              { "id": "o1", "label": "Happy", "emoji": "😊" },
-              { "id": "o2", "label": "Sad", "emoji": "😢" },
-              { "id": "o3", "label": "Angry", "emoji": "😠" },
-              { "id": "o4", "label": "Tired", "emoji": "😴" }
+              {
+                "id": "o1",
+                "label": "Happy",
+                "emoji": "😊"
+              },
+              {
+                "id": "o2",
+                "label": "Sad",
+                "emoji": "😢"
+              },
+              {
+                "id": "o3",
+                "label": "Angry",
+                "emoji": "😠"
+              },
+              {
+                "id": "o4",
+                "label": "Tired",
+                "emoji": "😴"
+              }
             ]
           },
           {
@@ -808,10 +1318,26 @@
             "correctOptionId": "o4",
             "explanation": "\"Sad\" 😢 هو شعورنا عندما نبكي.",
             "options": [
-              { "id": "o1", "label": "Happy", "emoji": "😊" },
-              { "id": "o2", "label": "Angry", "emoji": "😠" },
-              { "id": "o3", "label": "Scared", "emoji": "😨" },
-              { "id": "o4", "label": "Sad", "emoji": "😢" }
+              {
+                "id": "o1",
+                "label": "Happy",
+                "emoji": "😊"
+              },
+              {
+                "id": "o2",
+                "label": "Angry",
+                "emoji": "😠"
+              },
+              {
+                "id": "o3",
+                "label": "Scared",
+                "emoji": "😨"
+              },
+              {
+                "id": "o4",
+                "label": "Sad",
+                "emoji": "😢"
+              }
             ]
           },
           {
@@ -821,7 +1347,12 @@
             "instruction": "رتّب الكلمات لتكوين الجملة",
             "promptEmoji": "😊",
             "answer": "I am happy",
-            "wordBank": ["am", "I", "happy", "box"],
+            "wordBank": [
+              "am",
+              "I",
+              "happy",
+              "box"
+            ],
             "explanation": "نقول \"I am happy\" عندما نشعر بالسعادة 😊."
           },
           {
@@ -850,10 +1381,26 @@
             "correctOptionId": "o2",
             "explanation": "ننام \"sleep\" 😴 ليلاً في سريرنا.",
             "options": [
-              { "id": "o1", "label": "Wash", "emoji": "🧼" },
-              { "id": "o2", "label": "Sleep", "emoji": "😴" },
-              { "id": "o3", "label": "Play", "emoji": "🧸" },
-              { "id": "o4", "label": "Eat", "emoji": "🍽️" }
+              {
+                "id": "o1",
+                "label": "Wash",
+                "emoji": "🧼"
+              },
+              {
+                "id": "o2",
+                "label": "Sleep",
+                "emoji": "😴"
+              },
+              {
+                "id": "o3",
+                "label": "Play",
+                "emoji": "🧸"
+              },
+              {
+                "id": "o4",
+                "label": "Eat",
+                "emoji": "🍽️"
+              }
             ]
           },
           {
@@ -863,7 +1410,13 @@
             "instruction": "رتّب الكلمات لتكوين الجملة",
             "promptEmoji": "🪥",
             "answer": "I brush my teeth",
-            "wordBank": ["brush", "I", "teeth", "my", "run"],
+            "wordBank": [
+              "brush",
+              "I",
+              "teeth",
+              "my",
+              "run"
+            ],
             "explanation": "ننظّف أسناننا \"teeth\" 🪥 لتبقى نظيفة."
           },
           {
@@ -875,10 +1428,26 @@
             "correctOptionId": "o1",
             "explanation": "نغسل \"wash\" 🧼 أيدينا لتبقى نظيفة.",
             "options": [
-              { "id": "o1", "label": "Wash", "emoji": "🧼" },
-              { "id": "o2", "label": "Play", "emoji": "🧸" },
-              { "id": "o3", "label": "Sleep", "emoji": "😴" },
-              { "id": "o4", "label": "Sing", "emoji": "🎤" }
+              {
+                "id": "o1",
+                "label": "Wash",
+                "emoji": "🧼"
+              },
+              {
+                "id": "o2",
+                "label": "Play",
+                "emoji": "🧸"
+              },
+              {
+                "id": "o3",
+                "label": "Sleep",
+                "emoji": "😴"
+              },
+              {
+                "id": "o4",
+                "label": "Sing",
+                "emoji": "🎤"
+              }
             ]
           },
           {
@@ -889,6 +1458,681 @@
             "promptEmoji": "🧸",
             "answer": "Play",
             "explanation": "نلعب \"play\" 🧸 بألعابنا ونستمتع."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit_6",
+    "title": "الوحدة ٦: جُمل ومحادثات",
+    "subtitle": "كوّن جُملاً وتحدّث بثقة",
+    "colorValue": 4279548070,
+    "difficulty": 3,
+    "lessons": [
+      {
+        "id": "u6_l1",
+        "title": "أسئلة ومحادثة",
+        "icon": "💬",
+        "xpReward": 35,
+        "questions": [
+          {
+            "id": "u6_l1_q1",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"What is your name\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "What is your name",
+            "wordBank": [
+              "is",
+              "What",
+              "your",
+              "name",
+              "where",
+              "my"
+            ],
+            "explanation": "نسأل \"What is your name\" لنعرف اسم شخص.",
+            "promptEmoji": "🙋"
+          },
+          {
+            "id": "u6_l1_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "How are you",
+            "correctOptionId": "o1",
+            "explanation": "نسأل \"How are you\" للاطمئنان على شخص.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "How are you"
+              },
+              {
+                "id": "o2",
+                "label": "What is this"
+              },
+              {
+                "id": "o3",
+                "label": "Where are you"
+              },
+              {
+                "id": "o4",
+                "label": "Who is he"
+              }
+            ]
+          },
+          {
+            "id": "u6_l1_q3",
+            "type": "imageMatching",
+            "prompt": "أي جملة تعني \"I am fine\"؟",
+            "instruction": "اختر الجملة الصحيحة",
+            "correctOptionId": "o1",
+            "explanation": "نقول \"I am fine\" عندما نكون بخير 😊.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "I am fine",
+                "emoji": "😊"
+              },
+              {
+                "id": "o2",
+                "label": "I am sad",
+                "emoji": "😢"
+              },
+              {
+                "id": "o3",
+                "label": "I am hungry",
+                "emoji": "🍽️"
+              },
+              {
+                "id": "o4",
+                "label": "I am tired",
+                "emoji": "😴"
+              }
+            ],
+            "promptEmoji": "🙂"
+          },
+          {
+            "id": "u6_l1_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Where is my book\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Where is my book",
+            "wordBank": [
+              "is",
+              "Where",
+              "my",
+              "book",
+              "the",
+              "pen"
+            ],
+            "explanation": "نسأل \"Where is my book\" للبحث عن كتابنا 📖.",
+            "promptEmoji": "🔎"
+          },
+          {
+            "id": "u6_l1_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🤝",
+            "answer": "Nice to meet you",
+            "explanation": "نقول \"Nice to meet you\" عند مقابلة شخص جديد."
+          }
+        ]
+      },
+      {
+        "id": "u6_l2",
+        "title": "أفعل الأشياء",
+        "icon": "🧩",
+        "xpReward": 40,
+        "questions": [
+          {
+            "id": "u6_l2_q1",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"I go to school\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "I go to school",
+            "wordBank": [
+              "go",
+              "I",
+              "to",
+              "school",
+              "home",
+              "play"
+            ],
+            "explanation": "نقول \"I go to school\" كل صباح 🏫.",
+            "promptEmoji": "🏫"
+          },
+          {
+            "id": "u6_l2_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "Please sit down",
+            "correctOptionId": "o1",
+            "explanation": "\"Please sit down\" تعني اجلس من فضلك.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Please sit down"
+              },
+              {
+                "id": "o2",
+                "label": "Please stand up"
+              },
+              {
+                "id": "o3",
+                "label": "Open the door"
+              },
+              {
+                "id": "o4",
+                "label": "Close your book"
+              }
+            ]
+          },
+          {
+            "id": "u6_l2_q3",
+            "type": "imageMatching",
+            "prompt": "أي جملة تعني \"Wash your hands\"؟",
+            "instruction": "اختر الجملة الصحيحة",
+            "correctOptionId": "o1",
+            "explanation": "\"Wash your hands\" 🧼 تعني اغسل يديك.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Wash your hands",
+                "emoji": "🧼"
+              },
+              {
+                "id": "o2",
+                "label": "Brush your teeth",
+                "emoji": "🪥"
+              },
+              {
+                "id": "o3",
+                "label": "Comb your hair",
+                "emoji": "💇"
+              },
+              {
+                "id": "o4",
+                "label": "Tie your shoes",
+                "emoji": "👟"
+              }
+            ],
+            "promptEmoji": "🧼"
+          },
+          {
+            "id": "u6_l2_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"The dog is very big\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "The dog is very big",
+            "wordBank": [
+              "dog",
+              "The",
+              "is",
+              "very",
+              "big",
+              "small"
+            ],
+            "explanation": "\"very big\" تعني كبير جداً 🐕.",
+            "promptEmoji": "🐕"
+          },
+          {
+            "id": "u6_l2_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "💧",
+            "answer": "Can I have some water",
+            "explanation": "نقول \"Can I have some water\" لنطلب ماءً بأدب 💧."
+          }
+        ]
+      },
+      {
+        "id": "u6_l3",
+        "title": "الوصف",
+        "icon": "🎨",
+        "xpReward": 45,
+        "questions": [
+          {
+            "id": "u6_l3_q1",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"I have a red ball\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "I have a red ball",
+            "wordBank": [
+              "have",
+              "I",
+              "a",
+              "red",
+              "ball",
+              "blue"
+            ],
+            "explanation": "نصف الأشياء بالألوان: \"a red ball\" ⚽.",
+            "promptEmoji": "⚽"
+          },
+          {
+            "id": "u6_l3_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "This is my house",
+            "correctOptionId": "o1",
+            "explanation": "\"This is my house\" 🏠 تعني هذا منزلي.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "This is my house"
+              },
+              {
+                "id": "o2",
+                "label": "That is your car"
+              },
+              {
+                "id": "o3",
+                "label": "Here is the book"
+              },
+              {
+                "id": "o4",
+                "label": "Where is the cat"
+              }
+            ]
+          },
+          {
+            "id": "u6_l3_q3",
+            "type": "imageMatching",
+            "prompt": "أي جملة تعني \"The cat is small\"؟",
+            "instruction": "اختر الجملة الصحيحة",
+            "correctOptionId": "o1",
+            "explanation": "\"small\" تعني صغير 🐱.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "The cat is small",
+                "emoji": "🐱"
+              },
+              {
+                "id": "o2",
+                "label": "The cat is big",
+                "emoji": "🐯"
+              },
+              {
+                "id": "o3",
+                "label": "The dog is fast",
+                "emoji": "🐕"
+              },
+              {
+                "id": "o4",
+                "label": "The bird is red",
+                "emoji": "🐦"
+              }
+            ],
+            "promptEmoji": "🐱"
+          },
+          {
+            "id": "u6_l3_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"She has a new bag\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "She has a new bag",
+            "wordBank": [
+              "has",
+              "She",
+              "a",
+              "new",
+              "bag",
+              "old"
+            ],
+            "explanation": "\"new\" تعني جديد 🎒.",
+            "promptEmoji": "🎒"
+          },
+          {
+            "id": "u6_l3_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🔵",
+            "answer": "My favorite color is blue",
+            "explanation": "نقول \"My favorite color is blue\" لنخبر عن لوننا المفضّل 🔵."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit_7",
+    "title": "الوحدة ٧: الوقت والطقس",
+    "subtitle": "تحدّث عن يومك والطقس",
+    "colorValue": 4284704497,
+    "difficulty": 4,
+    "lessons": [
+      {
+        "id": "u7_l1",
+        "title": "الطقس",
+        "icon": "🌦️",
+        "xpReward": 45,
+        "questions": [
+          {
+            "id": "u7_l1_q1",
+            "type": "imageMatching",
+            "prompt": "أي جملة تعني \"It is sunny today\"؟",
+            "instruction": "اختر الجملة الصحيحة",
+            "correctOptionId": "o1",
+            "explanation": "\"sunny\" تعني مشمس ☀️.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "It is sunny today",
+                "emoji": "☀️"
+              },
+              {
+                "id": "o2",
+                "label": "It is rainy today",
+                "emoji": "🌧️"
+              },
+              {
+                "id": "o3",
+                "label": "It is snowy today",
+                "emoji": "❄️"
+              },
+              {
+                "id": "o4",
+                "label": "It is windy today",
+                "emoji": "💨"
+              }
+            ],
+            "promptEmoji": "☀️"
+          },
+          {
+            "id": "u7_l1_q2",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"The sky is very cloudy\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "The sky is very cloudy",
+            "wordBank": [
+              "sky",
+              "The",
+              "is",
+              "very",
+              "cloudy",
+              "clear"
+            ],
+            "explanation": "\"cloudy\" تعني غائم ☁️.",
+            "promptEmoji": "☁️"
+          },
+          {
+            "id": "u7_l1_q3",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "It is raining outside",
+            "correctOptionId": "o1",
+            "explanation": "\"raining\" تعني تمطر 🌧️.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "It is raining outside"
+              },
+              {
+                "id": "o2",
+                "label": "The sun is very hot"
+              },
+              {
+                "id": "o3",
+                "label": "It is cold today"
+              },
+              {
+                "id": "o4",
+                "label": "The wind is strong"
+              }
+            ]
+          },
+          {
+            "id": "u7_l1_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"I like sunny days\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "I like sunny days",
+            "wordBank": [
+              "like",
+              "I",
+              "sunny",
+              "days",
+              "rainy",
+              "cold"
+            ],
+            "explanation": "نقول \"I like sunny days\" لأننا نحب الأيام المشمسة 😎.",
+            "promptEmoji": "😎"
+          },
+          {
+            "id": "u7_l1_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🌤️",
+            "answer": "Today the weather is nice",
+            "explanation": "\"weather\" تعني الطقس 🌤️."
+          }
+        ]
+      },
+      {
+        "id": "u7_l2",
+        "title": "الوقت واليوم",
+        "icon": "⏰",
+        "xpReward": 50,
+        "questions": [
+          {
+            "id": "u7_l2_q1",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"I wake up early\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "I wake up early",
+            "wordBank": [
+              "wake",
+              "I",
+              "up",
+              "early",
+              "late",
+              "sleep"
+            ],
+            "explanation": "\"wake up early\" تعني أستيقظ مبكراً ⏰.",
+            "promptEmoji": "⏰"
+          },
+          {
+            "id": "u7_l2_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "What time is it",
+            "correctOptionId": "o1",
+            "explanation": "نسأل \"What time is it\" لنعرف الوقت 🕐.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "What time is it"
+              },
+              {
+                "id": "o2",
+                "label": "What day is it"
+              },
+              {
+                "id": "o3",
+                "label": "How old are you"
+              },
+              {
+                "id": "o4",
+                "label": "Where do you live"
+              }
+            ]
+          },
+          {
+            "id": "u7_l2_q3",
+            "type": "imageMatching",
+            "prompt": "أي جملة تعني \"I eat lunch at noon\"؟",
+            "instruction": "اختر الجملة الصحيحة",
+            "correctOptionId": "o1",
+            "explanation": "\"noon\" تعني الظهر 🍽️.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "I eat lunch at noon",
+                "emoji": "🍽️"
+              },
+              {
+                "id": "o2",
+                "label": "I sleep at night",
+                "emoji": "😴"
+              },
+              {
+                "id": "o3",
+                "label": "I go home at three",
+                "emoji": "🏠"
+              },
+              {
+                "id": "o4",
+                "label": "I play in the park",
+                "emoji": "🧸"
+              }
+            ],
+            "promptEmoji": "🍽️"
+          },
+          {
+            "id": "u7_l2_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"We go to bed at night\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "We go to bed at night",
+            "wordBank": [
+              "go",
+              "We",
+              "to",
+              "bed",
+              "at",
+              "night",
+              "day"
+            ],
+            "explanation": "\"at night\" تعني في الليل 🌙.",
+            "promptEmoji": "🌙"
+          },
+          {
+            "id": "u7_l2_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🪥",
+            "answer": "I brush my teeth every morning",
+            "explanation": "\"every morning\" تعني كل صباح 🪥."
+          }
+        ]
+      },
+      {
+        "id": "u7_l3",
+        "title": "يومي",
+        "icon": "🌟",
+        "xpReward": 55,
+        "questions": [
+          {
+            "id": "u7_l3_q1",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"In the morning I eat breakfast\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "In the morning I eat breakfast",
+            "wordBank": [
+              "morning",
+              "In",
+              "the",
+              "I",
+              "eat",
+              "breakfast",
+              "dinner"
+            ],
+            "explanation": "\"In the morning\" تعني في الصباح 🌅.",
+            "promptEmoji": "🌅"
+          },
+          {
+            "id": "u7_l3_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "I am reading a book",
+            "correctOptionId": "o1",
+            "explanation": "\"reading\" تعني أقرأ 📖.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "I am reading a book"
+              },
+              {
+                "id": "o2",
+                "label": "I am writing a letter"
+              },
+              {
+                "id": "o3",
+                "label": "I am playing a game"
+              },
+              {
+                "id": "o4",
+                "label": "I am singing a song"
+              }
+            ]
+          },
+          {
+            "id": "u7_l3_q3",
+            "type": "imageMatching",
+            "prompt": "أي جملة تعني \"She is drinking water\"؟",
+            "instruction": "اختر الجملة الصحيحة",
+            "correctOptionId": "o1",
+            "explanation": "\"drinking\" تعني تشرب 💧.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "She is drinking water",
+                "emoji": "💧"
+              },
+              {
+                "id": "o2",
+                "label": "He is eating an apple",
+                "emoji": "🍎"
+              },
+              {
+                "id": "o3",
+                "label": "They are running fast",
+                "emoji": "🏃"
+              },
+              {
+                "id": "o4",
+                "label": "We are watching TV",
+                "emoji": "📺"
+              }
+            ],
+            "promptEmoji": "💧"
+          },
+          {
+            "id": "u7_l3_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"My family loves to travel together\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "My family loves to travel together",
+            "wordBank": [
+              "family",
+              "My",
+              "loves",
+              "to",
+              "travel",
+              "together",
+              "alone"
+            ],
+            "explanation": "\"together\" تعني معاً ✈️.",
+            "promptEmoji": "✈️"
+          },
+          {
+            "id": "u7_l3_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🎉",
+            "answer": "I want to learn English very well",
+            "explanation": "نقول هذه الجملة لنعبّر عن حبّنا لتعلّم الإنجليزية 🎉."
           }
         ]
       }

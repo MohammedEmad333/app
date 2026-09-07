@@ -16,6 +16,20 @@ class AppStrings {
   static const String profileTooltip = 'ملفي';
   static const String noHeartsLeft = 'لا توجد قلوب! ستعود مع الوقت ❤️';
 
+  // Difficulty tiers (by unit)
+  static String difficultyLabel(int tier) {
+    switch (tier) {
+      case 1:
+        return 'سهل';
+      case 2:
+        return 'متوسط';
+      case 3:
+        return 'صعب';
+      default:
+        return 'متقدّم';
+    }
+  }
+
   // Daily goal
   static const String dailyGoal = 'الهدف اليومي';
   static String dailyGoalRemaining(int remaining, int xp, int goal) =>

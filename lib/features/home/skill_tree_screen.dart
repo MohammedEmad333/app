@@ -216,8 +216,15 @@ class _UnitSection extends StatelessWidget {
                   ],
                 ),
               ),
-              Icon(done ? Icons.emoji_events_rounded : Icons.school_rounded,
-                  color: done ? AppColors.yellow : Colors.white, size: 34),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Icon(done ? Icons.emoji_events_rounded : Icons.school_rounded,
+                      color: done ? AppColors.yellow : Colors.white, size: 34),
+                  const SizedBox(height: 8),
+                  _difficultyPill(unit.difficulty),
+                ],
+              ),
             ],
           ),
           const SizedBox(height: 14),
@@ -249,6 +256,38 @@ class _UnitSection extends StatelessWidget {
               ),
             ],
           ),
+        ],
+      ),
+    );
+  }
+
+  /// Small pill showing the unit's difficulty as filled/empty dots plus an
+  /// Arabic label (سهل / متوسط / صعب / متقدّم).
+  Widget _difficultyPill(int difficulty) {
+    const maxTier = 4;
+    final tier = difficulty.clamp(1, maxTier);
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+      decoration: BoxDecoration(
+        color: Colors.white.withValues(alpha: 0.22),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          for (int i = 0; i < maxTier; i++)
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 1),
+              child: Icon(
+                i < tier ? Icons.circle : Icons.circle_outlined,
+                size: 9,
+                color: Colors.white,
+              ),
+            ),
+          const SizedBox(width: 6),
+          Text(AppStrings.difficultyLabel(tier),
+              style: AppTextStyles.caption
+                  .copyWith(color: Colors.white, fontSize: 12)),
         ],
       ),
     );

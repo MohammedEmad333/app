@@ -94,19 +94,25 @@ assets/
 ## 📊 Content schema
 
 Units → Lessons → Questions are defined in `assets/data/units.json` and parsed
-by the model classes. Seeded with **5 units, 15 lessons and 60 questions**
-spanning all four question types:
+by the model classes. Seeded with **7 units, 21 lessons and 90 questions**
+spanning all four question types, with a **difficulty that ramps up** as the
+child advances (each unit carries a `difficulty` tier shown on its banner):
 
-| Unit | Theme | Lessons |
-|------|-------|---------|
-| 1 | Animals & Greetings | Greetings · Farm Animals · Wild Animals |
-| 2 | Numbers & Colors | Numbers 1-5 · Numbers 6-10 · Colors |
-| 3 | Food & Drinks | Fruits · Meals · Drinks |
-| 4 | Family & Home | Family · Rooms & Home · Everyday Objects |
-| 5 | Actions & Feelings | Action Verbs · Feelings · Daily Routines |
+| Unit | Theme | Difficulty |
+|------|-------|-----------|
+| 1 | Animals & Greetings | سهل (easy) |
+| 2 | Numbers & Colors | سهل (easy) |
+| 3 | Food & Drinks | متوسط (medium) |
+| 4 | Family & Home | متوسط (medium) |
+| 5 | Actions & Feelings | صعب (hard) |
+| 6 | Sentences & Conversations | صعب (hard) |
+| 7 | Time & Weather | متقدّم (advanced) |
 
-Units unlock in order and each lesson awards escalating XP. Add new units or
-lessons by appending to the JSON — no code changes needed.
+Early units teach single words with short 4-word sentences; later units move to
+full sentences and questions — longer word-jumbles (up to 6 words with extra
+decoy chips), phrase-level audio/image choices, and 5 questions per lesson with
+higher XP. Units unlock in order. Add new units or lessons by appending to the
+JSON — no code changes needed.
 
 ---
 
