@@ -12,6 +12,12 @@ class ProgressCubit extends Cubit<UserProgress> {
 
   void refresh() => emit(_storage.load());
 
+  Future<void> setName(String name) async {
+    final updated = state.copyWith(name: name.trim());
+    await _storage.save(updated);
+    emit(updated);
+  }
+
   Future<void> completeLesson(
     String lessonId,
     int xpReward, {
@@ -35,7 +41,9 @@ class ProgressCubit extends Cubit<UserProgress> {
   }
 
   Future<void> reset() async {
-    await _storage.reset();
-    emit(const UserProgress());
+    // Keep the learner's name; only clear their learning progress.
+    final kept = UserProgress(name: state.name);
+    await _storage.save(kept);
+    emit(kept);
   }
 }

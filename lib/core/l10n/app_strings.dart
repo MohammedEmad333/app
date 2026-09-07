@@ -12,6 +12,13 @@ class AppStrings {
   static const String appName = 'LingoKids';
   static const String appTagline = 'تعلّم الإنجليزية باللعب';
 
+  // Onboarding
+  static const String onboardingTitle = 'أهلاً بك! أنا البومة لينغو 🦉';
+  static const String onboardingSubtitle = 'ما اسمك؟';
+  static const String nameHint = 'اكتب اسمك هنا';
+  static const String onboardingStart = 'هيّا نبدأ!';
+  static String greeting(String name) => 'مرحباً، $name 👋';
+
   // Home / map
   static const String profileTooltip = 'ملفي';
   static const String noHeartsLeft = 'لا توجد قلوب! ستعود مع الوقت ❤️';

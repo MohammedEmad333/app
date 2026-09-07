@@ -76,6 +76,7 @@ void main() {
   group('UserProgress', () {
     test('round-trips through map serialization', () {
       final p = UserProgress(
+        name: 'Sara',
         xp: 40,
         streak: 3,
         hearts: 4,
@@ -83,11 +84,18 @@ void main() {
         lastActiveDate: DateTime(2026, 1, 1),
       );
       final restored = UserProgress.fromMap(p.toMap());
+      expect(restored.name, 'Sara');
       expect(restored.xp, 40);
       expect(restored.streak, 3);
       expect(restored.hearts, 4);
       expect(restored.isLessonCompleted('u1_l1'), isTrue);
       expect(restored.lastActiveDate, DateTime(2026, 1, 1));
+    });
+
+    test('hasOnboarded reflects a non-empty name', () {
+      expect(const UserProgress().hasOnboarded, isFalse);
+      expect(const UserProgress(name: '  ').hasOnboarded, isFalse);
+      expect(const UserProgress(name: 'Omar').hasOnboarded, isTrue);
     });
   });
 

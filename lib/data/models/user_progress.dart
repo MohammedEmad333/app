@@ -5,6 +5,7 @@ import 'package:equatable/equatable.dart';
 /// read/written through [StorageService] without codegen.
 class UserProgress extends Equatable {
   const UserProgress({
+    this.name = '',
     this.xp = 0,
     this.streak = 0,
     this.hearts = maxHearts,
@@ -14,6 +15,11 @@ class UserProgress extends Equatable {
     this.dailyXp = 0,
     this.dailyXpDate,
   });
+
+  /// The learner's name, collected during onboarding. Empty until set.
+  final String name;
+
+  bool get hasOnboarded => name.trim().isNotEmpty;
 
   static const int maxHearts = 5;
 
@@ -43,6 +49,7 @@ class UserProgress extends Equatable {
   bool get dailyGoalMet => dailyXp >= dailyGoal;
 
   UserProgress copyWith({
+    String? name,
     int? xp,
     int? streak,
     int? hearts,
@@ -53,6 +60,7 @@ class UserProgress extends Equatable {
     DateTime? dailyXpDate,
   }) {
     return UserProgress(
+      name: name ?? this.name,
       xp: xp ?? this.xp,
       streak: streak ?? this.streak,
       hearts: hearts ?? this.hearts,
@@ -65,6 +73,7 @@ class UserProgress extends Equatable {
   }
 
   Map<String, dynamic> toMap() => {
+        'name': name,
         'xp': xp,
         'streak': streak,
         'hearts': hearts,
@@ -77,6 +86,7 @@ class UserProgress extends Equatable {
 
   factory UserProgress.fromMap(Map<dynamic, dynamic> map) {
     return UserProgress(
+      name: (map['name'] as String?) ?? '',
       xp: (map['xp'] as int?) ?? 0,
       streak: (map['streak'] as int?) ?? 0,
       hearts: (map['hearts'] as int?) ?? maxHearts,
@@ -97,6 +107,7 @@ class UserProgress extends Equatable {
 
   @override
   List<Object?> get props => [
+        name,
         xp,
         streak,
         hearts,

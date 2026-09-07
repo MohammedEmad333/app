@@ -97,8 +97,16 @@ class _SkillTreeScreenState extends State<SkillTreeScreen> {
         children: [
           const Text('🦉', style: TextStyle(fontSize: 26)),
           const SizedBox(width: 8),
-          Text(AppStrings.appName, style: AppTextStyles.heading),
-          const Spacer(),
+          Expanded(
+            child: BlocBuilder<ProgressCubit, UserProgress>(
+              buildWhen: (a, b) => a.name != b.name,
+              builder: (context, p) => Text(
+                p.hasOnboarded ? AppStrings.greeting(p.name) : AppStrings.appName,
+                style: AppTextStyles.heading,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+          ),
           IconButton(
             tooltip: AppStrings.profileTooltip,
             icon: const Icon(Icons.account_circle_rounded,

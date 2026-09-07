@@ -109,6 +109,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    if (p.hasOnboarded)
+                      Text(AppStrings.greeting(p.name),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: AppTextStyles.caption
+                              .copyWith(color: Colors.white)),
                     Text(AppStrings.levelLabel(level),
                         style: AppTextStyles.display
                             .copyWith(color: Colors.white)),
