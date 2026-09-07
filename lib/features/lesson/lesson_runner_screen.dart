@@ -20,6 +20,7 @@ class LessonRunnerScreen extends StatelessWidget {
     super.key,
     required this.lesson,
     this.practice = false,
+    this.review = false,
   });
 
   final Lesson lesson;
@@ -27,23 +28,31 @@ class LessonRunnerScreen extends StatelessWidget {
   /// When true, runs the lesson as a no-stakes practice replay.
   final bool practice;
 
+  /// When true, runs a no-stakes review of previously-missed questions.
+  final bool review;
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => LessonCubit(
         lesson: lesson,
         practice: practice,
+        review: review,
         progressCubit: context.read<ProgressCubit>(),
       ),
-      child: _LessonRunnerView(practice: practice),
+      child: _LessonRunnerView(practice: practice, review: review),
     );
   }
 }
 
 class _LessonRunnerView extends StatefulWidget {
-  const _LessonRunnerView({required this.practice});
+  const _LessonRunnerView({required this.practice, required this.review});
 
   final bool practice;
+  final bool review;
+
+  /// A no-stakes run hides hearts and shows a mode chip instead.
+  bool get noStakes => practice || review;
 
   @override
   State<_LessonRunnerView> createState() => _LessonRunnerViewState();
@@ -97,11 +106,11 @@ class _LessonRunnerViewState extends State<_LessonRunnerView> {
           Navigator.of(context).pushReplacement(
             MaterialPageRoute(
               builder: (_) => LessonCompleteScreen(
-                xpEarned: widget.practice
+                xpEarned: widget.noStakes
                     ? LessonCubit.practiceXp
                     : state.lesson.xpReward,
                 accuracyPercent: state.accuracyPercent,
-                practice: widget.practice,
+                practice: widget.noStakes,
               ),
             ),
           );
@@ -171,11 +180,11 @@ class _LessonRunnerViewState extends State<_LessonRunnerView> {
           Expanded(
             child: LessonProgressBar(
               progress: state.progress,
-              color: widget.practice ? AppColors.blue : AppColors.primary,
+              color: widget.noStakes ? AppColors.blue : AppColors.primary,
             ),
           ),
           const SizedBox(width: 12),
-          if (widget.practice)
+          if (widget.noStakes)
             Container(
               padding:
                   const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
@@ -186,10 +195,14 @@ class _LessonRunnerViewState extends State<_LessonRunnerView> {
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Icon(Icons.fitness_center_rounded,
-                      color: AppColors.blue, size: 18),
+                  Icon(
+                      widget.review
+                          ? Icons.refresh_rounded
+                          : Icons.fitness_center_rounded,
+                      color: AppColors.blue,
+                      size: 18),
                   const SizedBox(width: 4),
-                  Text(AppStrings.practice,
+                  Text(widget.review ? AppStrings.review : AppStrings.practice,
                       style: AppTextStyles.caption
                           .copyWith(color: AppColors.blue)),
                 ],

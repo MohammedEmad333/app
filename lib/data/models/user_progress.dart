@@ -14,6 +14,7 @@ class UserProgress extends Equatable {
     this.completedLessonIds = const {},
     this.dailyXp = 0,
     this.dailyXpDate,
+    this.mistakeQuestionIds = const {},
   });
 
   /// The learner's name, collected during onboarding. Empty until set.
@@ -42,6 +43,13 @@ class UserProgress extends Equatable {
   final int dailyXp;
   final DateTime? dailyXpDate;
 
+  /// Question ids the learner has answered incorrectly and not yet re-mastered.
+  /// Drives the "review your mistakes" flow.
+  final Set<String> mistakeQuestionIds;
+
+  bool get hasMistakes => mistakeQuestionIds.isNotEmpty;
+  int get mistakeCount => mistakeQuestionIds.length;
+
   bool isLessonCompleted(String id) => completedLessonIds.contains(id);
 
   /// Fraction (0–1) of today's XP goal that has been reached.
@@ -58,6 +66,7 @@ class UserProgress extends Equatable {
     Set<String>? completedLessonIds,
     int? dailyXp,
     DateTime? dailyXpDate,
+    Set<String>? mistakeQuestionIds,
   }) {
     return UserProgress(
       name: name ?? this.name,
@@ -69,6 +78,7 @@ class UserProgress extends Equatable {
       completedLessonIds: completedLessonIds ?? this.completedLessonIds,
       dailyXp: dailyXp ?? this.dailyXp,
       dailyXpDate: dailyXpDate ?? this.dailyXpDate,
+      mistakeQuestionIds: mistakeQuestionIds ?? this.mistakeQuestionIds,
     );
   }
 
@@ -82,6 +92,7 @@ class UserProgress extends Equatable {
         'completedLessonIds': completedLessonIds.toList(),
         'dailyXp': dailyXp,
         'dailyXpDate': dailyXpDate?.toIso8601String(),
+        'mistakeQuestionIds': mistakeQuestionIds.toList(),
       };
 
   factory UserProgress.fromMap(Map<dynamic, dynamic> map) {
@@ -97,6 +108,10 @@ class UserProgress extends Equatable {
           .toSet(),
       dailyXp: (map['dailyXp'] as int?) ?? 0,
       dailyXpDate: _parseDate(map['dailyXpDate']),
+      mistakeQuestionIds:
+          ((map['mistakeQuestionIds'] as List<dynamic>?) ?? [])
+              .map((e) => e.toString())
+              .toSet(),
     );
   }
 
@@ -116,5 +131,6 @@ class UserProgress extends Equatable {
         completedLessonIds,
         dailyXp,
         dailyXpDate,
+        mistakeQuestionIds,
       ];
 }

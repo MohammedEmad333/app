@@ -64,6 +64,8 @@ class _SkillTreeScreenState extends State<SkillTreeScreen> {
                             dailyXp: progress.dailyXp,
                             goal: UserProgress.dailyGoal,
                           ),
+                          if (progress.hasMistakes)
+                            _reviewBanner(context, progress),
                           for (int u = 0; u < units.length; u++)
                             _UnitSection(
                               unit: units[u],
@@ -116,6 +118,68 @@ class _SkillTreeScreenState extends State<SkillTreeScreen> {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _reviewBanner(BuildContext context, UserProgress progress) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 4, 16, 4),
+      child: GestureDetector(
+        onTap: () => _startReview(context, progress),
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          decoration: BoxDecoration(
+            color: AppColors.purple,
+            borderRadius: BorderRadius.circular(16),
+            border: const Border(
+              bottom: BorderSide(color: AppColors.purpleDark, width: 4),
+            ),
+          ),
+          child: Row(
+            children: [
+              const Text('🔁', style: TextStyle(fontSize: 30)),
+              const SizedBox(width: 14),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(AppStrings.reviewBannerTitle,
+                        style: AppTextStyles.title
+                            .copyWith(color: Colors.white)),
+                    const SizedBox(height: 2),
+                    Text(AppStrings.reviewBannerSubtitle(progress.mistakeCount),
+                        style: AppTextStyles.caption.copyWith(
+                            color: Colors.white.withValues(alpha: 0.9))),
+                  ],
+                ),
+              ),
+              const Icon(Icons.arrow_forward_rounded, color: Colors.white),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Future<void> _startReview(
+      BuildContext context, UserProgress progress) async {
+    final lesson = await ContentRepository.instance
+        .buildReviewLesson(progress.mistakeQuestionIds);
+    if (!context.mounted) return;
+    if (lesson.questions.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(AppStrings.reviewEmpty,
+              style: AppTextStyles.body.copyWith(color: Colors.white)),
+          backgroundColor: AppColors.primary,
+        ),
+      );
+      return;
+    }
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) => LessonRunnerScreen(lesson: lesson, review: true),
       ),
     );
   }

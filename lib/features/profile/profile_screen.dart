@@ -63,6 +63,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   const SizedBox(height: 12),
                   _achievements(p, units),
                   const SizedBox(height: 28),
+                  if (p.hasMistakes) ...[
+                    PopButton(
+                      label: AppStrings.reviewButton(p.mistakeCount),
+                      color: AppColors.purple,
+                      shadowColor: AppColors.purpleDark,
+                      icon: Icons.refresh_rounded,
+                      onPressed: () => _startReview(context, p),
+                    ),
+                    const SizedBox(height: 14),
+                  ],
                   if (p.completedLessonIds.isNotEmpty) ...[
                     PopButton(
                       label: AppStrings.practiceALesson,
@@ -262,6 +272,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
           const SizedBox(height: 2),
           Text(label, style: AppTextStyles.caption),
         ],
+      ),
+    );
+  }
+
+  Future<void> _startReview(BuildContext context, UserProgress p) async {
+    final lesson = await ContentRepository.instance
+        .buildReviewLesson(p.mistakeQuestionIds);
+    if (!context.mounted || lesson.questions.isEmpty) return;
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) => LessonRunnerScreen(lesson: lesson, review: true),
       ),
     );
   }

@@ -46,6 +46,9 @@ mechanics. Built with **Flutter** + **flutter_bloc**.
   units cleared, champion…) derived live from progress.
 - **Practice mode** — replay any completed lesson with no hearts at stake for
   bonus XP (from a completed node, or "Practice a lesson" on the profile).
+- **Review mistakes** — every wrong answer is flagged; a review banner on the
+  map (and a profile button) builds a no-stakes lesson from the missed
+  questions, and answering one correctly removes it from the review list.
 - **Profile screen** — level, daily goal, lifetime stats, badges, and reset.
 - **Sound + haptics** — bundled tone SFX for correct/wrong/celebrate plus
   vibration feedback on answers.

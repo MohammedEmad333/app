@@ -97,6 +97,15 @@ void main() {
       expect(const UserProgress(name: '  ').hasOnboarded, isFalse);
       expect(const UserProgress(name: 'Omar').hasOnboarded, isTrue);
     });
+
+    test('mistake set tracks review items and survives serialization', () {
+      const p = UserProgress(mistakeQuestionIds: {'u1_l1_q1', 'u2_l3_q4'});
+      expect(p.hasMistakes, isTrue);
+      expect(p.mistakeCount, 2);
+      final restored = UserProgress.fromMap(p.toMap());
+      expect(restored.mistakeQuestionIds, {'u1_l1_q1', 'u2_l3_q4'});
+      expect(const UserProgress().hasMistakes, isFalse);
+    });
   });
 
   group('ProfileScreen leveling', () {

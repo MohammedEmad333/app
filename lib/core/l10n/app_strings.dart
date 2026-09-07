@@ -50,6 +50,14 @@ class AppStrings {
   static const String continueLabel = 'متابعة';
   static const String gotIt = 'فهمت';
   static const String practice = 'تدريب';
+  static const String review = 'مراجعة';
+
+  // Review mistakes
+  static const String reviewTitle = 'مراجعة الأخطاء';
+  static const String reviewBannerTitle = 'راجع أخطاءك';
+  static String reviewBannerSubtitle(int n) => '${_ar(n)} كلمة تحتاج مراجعة';
+  static String reviewButton(int n) => 'راجع أخطاءك (${_ar(n)})';
+  static const String reviewEmpty = 'لا أخطاء لمراجعتها الآن 🎉';
   static const String correctTitle = 'أحسنت! 🎉';
   static const String wrongTitle = 'ليست صحيحة';
   static const String correctAnswerLabel = 'الإجابة الصحيحة:';

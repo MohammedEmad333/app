@@ -36,6 +36,26 @@ class ProgressCubit extends Cubit<UserProgress> {
     emit(await _storage.loseHeart(state));
   }
 
+  /// Flags a question the learner answered incorrectly for later review.
+  Future<void> addMistake(String questionId) async {
+    if (state.mistakeQuestionIds.contains(questionId)) return;
+    final updated = state.copyWith(
+      mistakeQuestionIds: {...state.mistakeQuestionIds, questionId},
+    );
+    await _storage.save(updated);
+    emit(updated);
+  }
+
+  /// Clears a question from the review list once it's answered correctly.
+  Future<void> clearMistake(String questionId) async {
+    if (!state.mistakeQuestionIds.contains(questionId)) return;
+    final updated = state.copyWith(
+      mistakeQuestionIds: {...state.mistakeQuestionIds}..remove(questionId),
+    );
+    await _storage.save(updated);
+    emit(updated);
+  }
+
   Future<void> refillHearts() async {
     emit(await _storage.refillHearts(state));
   }
