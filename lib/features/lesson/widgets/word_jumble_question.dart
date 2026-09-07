@@ -107,19 +107,26 @@ class _WordJumbleQuestionState extends State<WordJumbleQuestion> {
               right: BorderSide(color: AppColors.border, width: 2),
             ),
           ),
-          child: Wrap(
-            spacing: 8,
-            runSpacing: 8,
-            children:
-                _answer.map((c) => _wordChip(c, filled: true)).toList(),
+          // English sentence is assembled left-to-right even in the RTL UI.
+          child: Directionality(
+            textDirection: TextDirection.ltr,
+            child: Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children:
+                  _answer.map((c) => _wordChip(c, filled: true)).toList(),
+            ),
           ),
         ),
         const SizedBox(height: 28),
         // Word bank
-        Wrap(
-          spacing: 10,
-          runSpacing: 10,
-          children: _bank.map((c) => _wordChip(c, filled: false)).toList(),
+        Directionality(
+          textDirection: TextDirection.ltr,
+          child: Wrap(
+            spacing: 10,
+            runSpacing: 10,
+            children: _bank.map((c) => _wordChip(c, filled: false)).toList(),
+          ),
         ),
       ],
     );

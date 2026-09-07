@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../core/l10n/app_strings.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_text_styles.dart';
 import '../../core/widgets/daily_goal_ring.dart';
@@ -90,10 +91,10 @@ class _SkillTreeScreenState extends State<SkillTreeScreen> {
         children: [
           const Text('🦉', style: TextStyle(fontSize: 26)),
           const SizedBox(width: 8),
-          Text('LingoKids', style: AppTextStyles.heading),
+          Text(AppStrings.appName, style: AppTextStyles.heading),
           const Spacer(),
           IconButton(
-            tooltip: 'Profile',
+            tooltip: AppStrings.profileTooltip,
             icon: const Icon(Icons.account_circle_rounded,
                 color: AppColors.blue, size: 32),
             onPressed: () => Navigator.of(context).push(
@@ -113,7 +114,7 @@ class _SkillTreeScreenState extends State<SkillTreeScreen> {
     if (!isPractice && progress.hearts <= 0) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text('No hearts left! They refill over time. ❤️',
+          content: Text(AppStrings.noHeartsLeft,
               style: AppTextStyles.body.copyWith(color: Colors.white)),
           backgroundColor: AppColors.wrong,
         ),
@@ -240,7 +241,8 @@ class _UnitSection extends StatelessWidget {
                   const Icon(Icons.emoji_events_rounded,
                       color: AppColors.yellow, size: 18),
                   const SizedBox(width: 4),
-                  Text('$completed/$total',
+                  Text(
+                      '${AppStrings.arDigits(completed)}/${AppStrings.arDigits(total)}',
                       style: AppTextStyles.caption
                           .copyWith(color: Colors.white, fontSize: 14)),
                 ],

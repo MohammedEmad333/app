@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 
+import '../../core/l10n/app_strings.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_text_styles.dart';
 import '../../core/widgets/pop_button.dart';
@@ -70,14 +71,17 @@ class _LessonCompleteScreenState extends State<LessonCompleteScreen>
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(widget.practice ? 'Practice Done!' : 'Lesson Complete!',
+                  Text(
+                      widget.practice
+                          ? AppStrings.practiceDone
+                          : AppStrings.lessonComplete,
                       style:
                           AppTextStyles.display.copyWith(color: Colors.white)),
                   const SizedBox(height: 8),
                   Text(
                     _chestOpen
-                        ? 'Amazing work! 🌟'
-                        : 'Tap the chest to open your reward',
+                        ? AppStrings.amazingWork
+                        : AppStrings.tapChest,
                     style:
                         AppTextStyles.body.copyWith(color: Colors.white),
                     textAlign: TextAlign.center,
@@ -89,7 +93,7 @@ class _LessonCompleteScreenState extends State<LessonCompleteScreen>
                   const Spacer(),
                   if (_chestOpen)
                     PopButton(
-                      label: 'Continue',
+                      label: AppStrings.continueLabel,
                       color: Colors.white,
                       shadowColor: const Color(0xFFDDDDDD),
                       textColor: AppColors.primary,
@@ -150,9 +154,11 @@ class _LessonCompleteScreenState extends State<LessonCompleteScreen>
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        _statCard('⚡ XP', '+${widget.xpEarned}', AppColors.yellow),
+        _statCard(AppStrings.xpLabel,
+            '+${AppStrings.arDigits(widget.xpEarned)}', AppColors.yellow),
         const SizedBox(width: 16),
-        _statCard('🎯 Accuracy', '${widget.accuracyPercent}%', AppColors.blue),
+        _statCard(AppStrings.accuracyLabel,
+            '${AppStrings.arDigits(widget.accuracyPercent)}%', AppColors.blue),
       ],
     );
   }

@@ -16,7 +16,7 @@ class AppTheme {
         surface: AppColors.surface,
       ),
       scaffoldBackgroundColor: AppColors.background,
-      textTheme: GoogleFonts.nunitoTextTheme(),
+      textTheme: GoogleFonts.cairoTextTheme(),
     );
 
     return base.copyWith(

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
+import 'core/l10n/app_strings.dart';
 import 'core/theme/app_theme.dart';
 import 'features/home/skill_tree_screen.dart';
 import 'features/progress/progress_cubit.dart';
@@ -14,9 +16,18 @@ class LingoKidsApp extends StatelessWidget {
     return BlocProvider(
       create: (_) => ProgressCubit(StorageService.instance),
       child: MaterialApp(
-        title: 'LingoKids',
+        title: AppStrings.appName,
         debugShowCheckedModeBanner: false,
         theme: AppTheme.light,
+        // The interface is Arabic and lays out right-to-left; the English
+        // learning content stays LTR within its own widgets.
+        locale: const Locale('ar'),
+        supportedLocales: const [Locale('ar'), Locale('en')],
+        localizationsDelegates: const [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
         home: const SkillTreeScreen(),
       ),
     );

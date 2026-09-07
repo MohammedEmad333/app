@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../core/l10n/app_strings.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../data/models/user_progress.dart';
@@ -20,9 +21,9 @@ class StatsHeader extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              _stat('🔥', '${p.streak}', AppColors.orange),
-              _stat('⚡', '${p.xp}', AppColors.yellowDark),
-              _stat('❤️', '${p.hearts}', AppColors.heart),
+              _stat('🔥', AppStrings.arDigits(p.streak), AppColors.orange),
+              _stat('⚡', AppStrings.arDigits(p.xp), AppColors.yellowDark),
+              _stat('❤️', AppStrings.arDigits(p.hearts), AppColors.heart),
             ],
           ),
         );

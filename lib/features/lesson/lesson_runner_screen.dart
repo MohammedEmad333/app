@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../core/l10n/app_strings.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_text_styles.dart';
 import '../../core/widgets/hearts_indicator.dart';
@@ -68,20 +69,17 @@ class _LessonRunnerViewState extends State<_LessonRunnerView> {
       builder: (ctx) => AlertDialog(
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        title: Text('Quit lesson?', style: AppTextStyles.title),
-        content: Text(
-          "Your progress in this lesson won't be saved.",
-          style: AppTextStyles.body,
-        ),
+        title: Text(AppStrings.quitTitle, style: AppTextStyles.title),
+        content: Text(AppStrings.quitBody, style: AppTextStyles.body),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
-            child: Text('Stay', style: AppTextStyles.button
+            child: Text(AppStrings.stay, style: AppTextStyles.button
                 .copyWith(color: AppColors.inkLight)),
           ),
           TextButton(
             onPressed: () => Navigator.pop(ctx, true),
-            child: Text('Quit', style: AppTextStyles.button
+            child: Text(AppStrings.quit, style: AppTextStyles.button
                 .copyWith(color: AppColors.wrong)),
           ),
         ],
@@ -191,7 +189,7 @@ class _LessonRunnerViewState extends State<_LessonRunnerView> {
                   const Icon(Icons.fitness_center_rounded,
                       color: AppColors.blue, size: 18),
                   const SizedBox(width: 4),
-                  Text('Practice',
+                  Text(AppStrings.practice,
                       style: AppTextStyles.caption
                           .copyWith(color: AppColors.blue)),
                 ],
@@ -214,7 +212,7 @@ class _LessonRunnerViewState extends State<_LessonRunnerView> {
       child: SafeArea(
         top: false,
         child: PopButton(
-          label: 'Check',
+          label: AppStrings.check,
           enabled: ready,
           onPressed: ready ? _onCheck : null,
         ),
@@ -248,20 +246,17 @@ class _LessonRunnerViewState extends State<_LessonRunnerView> {
           children: [
             const Icon(Icons.heart_broken_rounded, color: AppColors.heart),
             const SizedBox(width: 8),
-            Text('Out of hearts!', style: AppTextStyles.title),
+            Text(AppStrings.outOfHeartsTitle, style: AppTextStyles.title),
           ],
         ),
-        content: Text(
-          "You've run out of hearts. Refill to keep practicing!",
-          style: AppTextStyles.body,
-        ),
+        content: Text(AppStrings.outOfHeartsBody, style: AppTextStyles.body),
         actions: [
           TextButton(
             onPressed: () {
               Navigator.pop(ctx); // dialog
               Navigator.of(context).pop(); // lesson
             },
-            child: Text('Leave',
+            child: Text(AppStrings.leave,
                 style: AppTextStyles.button
                     .copyWith(color: AppColors.inkLight)),
           ),
@@ -271,7 +266,7 @@ class _LessonRunnerViewState extends State<_LessonRunnerView> {
               if (ctx.mounted) Navigator.pop(ctx);
               if (context.mounted) Navigator.of(context).pop();
             },
-            child: Text('Refill',
+            child: Text(AppStrings.refill,
                 style:
                     AppTextStyles.button.copyWith(color: AppColors.primary)),
           ),

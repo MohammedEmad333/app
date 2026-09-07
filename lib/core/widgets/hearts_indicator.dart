@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../l10n/app_strings.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_text_styles.dart';
 
@@ -12,7 +13,7 @@ class HeartsIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Semantics(
-      label: '$hearts hearts remaining',
+      label: AppStrings.heartsRemaining(hearts),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
         decoration: BoxDecoration(
@@ -25,7 +26,7 @@ class HeartsIndicator extends StatelessWidget {
             const Icon(Icons.favorite, color: AppColors.heart, size: 22),
             const SizedBox(width: 4),
             Text(
-              '$hearts',
+              AppStrings.arDigits(hearts),
               style: AppTextStyles.title.copyWith(color: AppColors.heart),
             ),
           ],

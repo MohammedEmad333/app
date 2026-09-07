@@ -1,24 +1,24 @@
 [
   {
     "id": "unit_1",
-    "title": "Unit 1: Animals & Greetings",
-    "subtitle": "Say hello and meet the animals",
+    "title": "الوحدة ١: الحيوانات والتحيات",
+    "subtitle": "قل مرحباً وتعرّف على الحيوانات",
     "colorValue": 4284009474,
     "lessons": [
       {
         "id": "u1_l1",
-        "title": "Greetings",
+        "title": "التحيات",
         "icon": "👋",
         "xpReward": 20,
         "questions": [
           {
             "id": "u1_l1_q1",
             "type": "imageMatching",
-            "prompt": "Which one means \"Hello\"?",
-            "instruction": "Tap the matching picture",
+            "prompt": "أي صورة تعني \"Hello\"؟",
+            "instruction": "اختر الصورة الصحيحة",
             "promptEmoji": "👋",
             "correctOptionId": "o1",
-            "explanation": "\"Hello\" is a friendly greeting — the waving hand 👋.",
+            "explanation": "كلمة \"Hello\" تعني تحية ودودة 👋.",
             "options": [
               { "id": "o1", "label": "Hello", "emoji": "👋" },
               { "id": "o2", "label": "Apple", "emoji": "🍎" },
@@ -29,21 +29,21 @@
           {
             "id": "u1_l1_q2",
             "type": "wordJumble",
-            "prompt": "Build the sentence: \"Good morning\"",
-            "instruction": "Tap the words in the right order",
+            "prompt": "كوّن الجملة: \"Good morning\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
             "promptEmoji": "🌅",
             "answer": "Good morning",
             "wordBank": ["morning", "Good", "night", "bye"],
-            "explanation": "We say \"Good morning\" to greet someone early in the day."
+            "explanation": "نقول \"Good morning\" لتحية شخص في الصباح."
           },
           {
             "id": "u1_l1_q3",
             "type": "audioListening",
-            "prompt": "Listen and choose what you hear",
-            "instruction": "Tap the play button, then pick the word",
+            "prompt": "استمع واختر ما تسمع",
+            "instruction": "اضغط زر التشغيل ثم اختر الإجابة",
             "audioText": "Goodbye",
             "correctOptionId": "o2",
-            "explanation": "\"Goodbye\" is what we say when we leave.",
+            "explanation": "كلمة \"Goodbye\" نقولها عند المغادرة.",
             "options": [
               { "id": "o1", "label": "Hello", "emoji": "👋" },
               { "id": "o2", "label": "Goodbye", "emoji": "🙋" },
@@ -54,28 +54,28 @@
           {
             "id": "u1_l1_q4",
             "type": "speechRecognition",
-            "prompt": "Say the word out loud",
-            "instruction": "Tap the mic and say it clearly",
+            "prompt": "انطق الكلمة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
             "promptEmoji": "🗣️",
             "answer": "Thank you",
-            "explanation": "\"Thank you\" is how we show we are grateful."
+            "explanation": "كلمة \"Thank you\" تعني الشكر والامتنان."
           }
         ]
       },
       {
         "id": "u1_l2",
-        "title": "Farm Animals",
+        "title": "حيوانات المزرعة",
         "icon": "🐄",
         "xpReward": 25,
         "questions": [
           {
             "id": "u1_l2_q1",
             "type": "imageMatching",
-            "prompt": "Which one is a \"Cow\"?",
-            "instruction": "Tap the matching picture",
+            "prompt": "أي صورة هي \"Cow\"؟",
+            "instruction": "اختر الصورة الصحيحة",
             "promptEmoji": "🐄",
             "correctOptionId": "o3",
-            "explanation": "A cow 🐄 gives us milk on the farm.",
+            "explanation": "الـ \"Cow\" 🐄 تعطينا الحليب في المزرعة.",
             "options": [
               { "id": "o1", "label": "Cat", "emoji": "🐱" },
               { "id": "o2", "label": "Duck", "emoji": "🦆" },
@@ -86,11 +86,11 @@
           {
             "id": "u1_l2_q2",
             "type": "audioListening",
-            "prompt": "Listen and choose the animal",
-            "instruction": "Tap the play button, then pick the picture",
+            "prompt": "استمع واختر الحيوان",
+            "instruction": "اضغط زر التشغيل ثم اختر الصورة",
             "audioText": "Sheep",
             "correctOptionId": "o1",
-            "explanation": "A sheep 🐑 gives us wool and says \"baa\".",
+            "explanation": "الـ \"Sheep\" 🐑 يعطينا الصوف ويقول \"باع\".",
             "options": [
               { "id": "o1", "label": "Sheep", "emoji": "🐑" },
               { "id": "o2", "label": "Horse", "emoji": "🐴" },
@@ -101,38 +101,38 @@
           {
             "id": "u1_l2_q3",
             "type": "wordJumble",
-            "prompt": "Build the sentence: \"The pig is pink\"",
-            "instruction": "Tap the words in the right order",
+            "prompt": "كوّن الجملة: \"The pig is pink\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
             "promptEmoji": "🐷",
             "answer": "The pig is pink",
             "wordBank": ["pig", "The", "pink", "is", "blue"],
-            "explanation": "The little farm pig 🐷 is pink!"
+            "explanation": "الخنزير الصغير \"pig\" 🐷 لونه وردي!"
           },
           {
             "id": "u1_l2_q4",
             "type": "speechRecognition",
-            "prompt": "Say the animal's name",
-            "instruction": "Tap the mic and say it clearly",
+            "prompt": "انطق اسم الحيوان",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
             "promptEmoji": "🐴",
             "answer": "Horse",
-            "explanation": "A horse 🐴 can run very fast."
+            "explanation": "الحصان \"Horse\" 🐴 يجري بسرعة كبيرة."
           }
         ]
       },
       {
         "id": "u1_l3",
-        "title": "Wild Animals",
+        "title": "الحيوانات البرية",
         "icon": "🦁",
         "xpReward": 30,
         "questions": [
           {
             "id": "u1_l3_q1",
             "type": "imageMatching",
-            "prompt": "Which one is a \"Lion\"?",
-            "instruction": "Tap the matching picture",
+            "prompt": "أي صورة هي \"Lion\"؟",
+            "instruction": "اختر الصورة الصحيحة",
             "promptEmoji": "🦁",
             "correctOptionId": "o2",
-            "explanation": "The lion 🦁 is the king of the jungle.",
+            "explanation": "الأسد \"Lion\" 🦁 ملك الغابة.",
             "options": [
               { "id": "o1", "label": "Monkey", "emoji": "🐵" },
               { "id": "o2", "label": "Lion", "emoji": "🦁" },
@@ -143,21 +143,21 @@
           {
             "id": "u1_l3_q2",
             "type": "wordJumble",
-            "prompt": "Build the sentence: \"I see an elephant\"",
-            "instruction": "Tap the words in the right order",
+            "prompt": "كوّن الجملة: \"I see an elephant\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
             "promptEmoji": "🐘",
             "answer": "I see an elephant",
             "wordBank": ["see", "I", "elephant", "an", "tiny"],
-            "explanation": "The elephant 🐘 is the biggest animal on land."
+            "explanation": "الفيل \"elephant\" 🐘 أكبر حيوان على اليابسة."
           },
           {
             "id": "u1_l3_q3",
             "type": "audioListening",
-            "prompt": "Listen and choose the animal",
-            "instruction": "Tap the play button, then pick the picture",
+            "prompt": "استمع واختر الحيوان",
+            "instruction": "اضغط زر التشغيل ثم اختر الصورة",
             "audioText": "Monkey",
             "correctOptionId": "o4",
-            "explanation": "A monkey 🐵 loves to climb and eat bananas.",
+            "explanation": "القرد \"Monkey\" 🐵 يحب التسلق وأكل الموز.",
             "options": [
               { "id": "o1", "label": "Bear", "emoji": "🐻" },
               { "id": "o2", "label": "Snake", "emoji": "🐍" },
@@ -168,11 +168,11 @@
           {
             "id": "u1_l3_q4",
             "type": "speechRecognition",
-            "prompt": "Say the animal's name",
-            "instruction": "Tap the mic and say it clearly",
+            "prompt": "انطق اسم الحيوان",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
             "promptEmoji": "🐯",
             "answer": "Tiger",
-            "explanation": "A tiger 🐯 has orange fur with black stripes."
+            "explanation": "النمر \"Tiger\" 🐯 له فراء برتقالي بخطوط سوداء."
           }
         ]
       }
@@ -180,24 +180,24 @@
   },
   {
     "id": "unit_2",
-    "title": "Unit 2: Numbers & Colors",
-    "subtitle": "Count and name the colors of the world",
+    "title": "الوحدة ٢: الأرقام والألوان",
+    "subtitle": "عُدّ وسمِّ ألوان العالم",
     "colorValue": 4280070390,
     "lessons": [
       {
         "id": "u2_l1",
-        "title": "Numbers 1-5",
+        "title": "الأرقام ١-٥",
         "icon": "🔢",
         "xpReward": 20,
         "questions": [
           {
             "id": "u2_l1_q1",
             "type": "imageMatching",
-            "prompt": "Which one shows \"Three\"?",
-            "instruction": "Tap the matching picture",
+            "prompt": "أي صورة تدل على \"Three\"؟",
+            "instruction": "اختر الصورة الصحيحة",
             "promptEmoji": "3️⃣",
             "correctOptionId": "o2",
-            "explanation": "Three is 3 — count them: 1, 2, 3!",
+            "explanation": "\"Three\" تعني ٣ — عُدّ: ١، ٢، ٣!",
             "options": [
               { "id": "o1", "label": "Two", "emoji": "2️⃣" },
               { "id": "o2", "label": "Three", "emoji": "3️⃣" },
@@ -208,11 +208,11 @@
           {
             "id": "u2_l1_q2",
             "type": "audioListening",
-            "prompt": "Listen and choose the number",
-            "instruction": "Tap play, then pick the number",
+            "prompt": "استمع واختر الرقم",
+            "instruction": "اضغط زر التشغيل ثم اختر الرقم",
             "audioText": "Four",
             "correctOptionId": "o4",
-            "explanation": "Four is 4 — one more than three.",
+            "explanation": "\"Four\" تعني ٤ — أكبر من ثلاثة بواحد.",
             "options": [
               { "id": "o1", "label": "One", "emoji": "1️⃣" },
               { "id": "o2", "label": "Two", "emoji": "2️⃣" },
@@ -223,38 +223,38 @@
           {
             "id": "u2_l1_q3",
             "type": "wordJumble",
-            "prompt": "Build the sentence: \"I have two cats\"",
-            "instruction": "Tap the words in the right order",
+            "prompt": "كوّن الجملة: \"I have two cats\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
             "promptEmoji": "🐱",
             "answer": "I have two cats",
             "wordBank": ["have", "I", "cats", "two", "ten"],
-            "explanation": "Two cats means 2 cats. 🐱🐱"
+            "explanation": "\"two cats\" تعني قطتين 🐱🐱."
           },
           {
             "id": "u2_l1_q4",
             "type": "speechRecognition",
-            "prompt": "Say the number out loud",
-            "instruction": "Tap the mic and say it clearly",
+            "prompt": "انطق الرقم بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
             "promptEmoji": "5️⃣",
             "answer": "Five",
-            "explanation": "Five is 5 — count your fingers on one hand!"
+            "explanation": "\"Five\" تعني ٥ — عدد أصابع يدٍ واحدة!"
           }
         ]
       },
       {
         "id": "u2_l2",
-        "title": "Numbers 6-10",
+        "title": "الأرقام ٦-١٠",
         "icon": "🔟",
         "xpReward": 25,
         "questions": [
           {
             "id": "u2_l2_q1",
             "type": "imageMatching",
-            "prompt": "Which one shows \"Ten\"?",
-            "instruction": "Tap the matching picture",
+            "prompt": "أي صورة تدل على \"Ten\"؟",
+            "instruction": "اختر الصورة الصحيحة",
             "promptEmoji": "🔟",
             "correctOptionId": "o3",
-            "explanation": "Ten is 10 — count all your fingers!",
+            "explanation": "\"Ten\" تعني ١٠ — عُدّ كل أصابعك!",
             "options": [
               { "id": "o1", "label": "Six", "emoji": "6️⃣" },
               { "id": "o2", "label": "Eight", "emoji": "8️⃣" },
@@ -265,20 +265,20 @@
           {
             "id": "u2_l2_q2",
             "type": "speechRecognition",
-            "prompt": "Say the number out loud",
-            "instruction": "Tap the mic and say it clearly",
+            "prompt": "انطق الرقم بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
             "promptEmoji": "7️⃣",
             "answer": "Seven",
-            "explanation": "Seven is 7 — a lucky number!"
+            "explanation": "\"Seven\" تعني ٧ — رقم محظوظ!"
           },
           {
             "id": "u2_l2_q3",
             "type": "audioListening",
-            "prompt": "Listen and choose the number",
-            "instruction": "Tap play, then pick the number",
+            "prompt": "استمع واختر الرقم",
+            "instruction": "اضغط زر التشغيل ثم اختر الرقم",
             "audioText": "Nine",
             "correctOptionId": "o1",
-            "explanation": "Nine is 9 — one less than ten.",
+            "explanation": "\"Nine\" تعني ٩ — أقل من عشرة بواحد.",
             "options": [
               { "id": "o1", "label": "Nine", "emoji": "9️⃣" },
               { "id": "o2", "label": "Six", "emoji": "6️⃣" },
@@ -289,29 +289,29 @@
           {
             "id": "u2_l2_q4",
             "type": "wordJumble",
-            "prompt": "Build the sentence: \"I am six years old\"",
-            "instruction": "Tap the words in the right order",
+            "prompt": "كوّن الجملة: \"I am six years old\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
             "promptEmoji": "🎂",
             "answer": "I am six years old",
             "wordBank": ["am", "I", "old", "six", "years"],
-            "explanation": "We use \"years old\" to say our age. 🎂"
+            "explanation": "نستخدم \"years old\" للتعبير عن العمر 🎂."
           }
         ]
       },
       {
         "id": "u2_l3",
-        "title": "Colors",
+        "title": "الألوان",
         "icon": "🎨",
         "xpReward": 30,
         "questions": [
           {
             "id": "u2_l3_q1",
             "type": "imageMatching",
-            "prompt": "Which one is \"Red\"?",
-            "instruction": "Tap the matching picture",
+            "prompt": "أي لون هو \"Red\"؟",
+            "instruction": "اختر الصورة الصحيحة",
             "promptEmoji": "🎨",
             "correctOptionId": "o1",
-            "explanation": "Red is the color of a strawberry 🍓.",
+            "explanation": "\"Red\" هو لون الفراولة 🍓.",
             "options": [
               { "id": "o1", "label": "Red", "emoji": "🔴" },
               { "id": "o2", "label": "Blue", "emoji": "🔵" },
@@ -322,11 +322,11 @@
           {
             "id": "u2_l3_q2",
             "type": "audioListening",
-            "prompt": "Listen and choose the color",
-            "instruction": "Tap play, then pick the color",
+            "prompt": "استمع واختر اللون",
+            "instruction": "اضغط زر التشغيل ثم اختر اللون",
             "audioText": "Blue",
             "correctOptionId": "o3",
-            "explanation": "Blue is the color of the sky 🌌.",
+            "explanation": "\"Blue\" هو لون السماء 🌌.",
             "options": [
               { "id": "o1", "label": "Green", "emoji": "🟢" },
               { "id": "o2", "label": "Purple", "emoji": "🟣" },
@@ -337,21 +337,21 @@
           {
             "id": "u2_l3_q3",
             "type": "wordJumble",
-            "prompt": "Build the sentence: \"The sun is yellow\"",
-            "instruction": "Tap the words in the right order",
+            "prompt": "كوّن الجملة: \"The sun is yellow\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
             "promptEmoji": "☀️",
             "answer": "The sun is yellow",
             "wordBank": ["sun", "The", "yellow", "is", "green"],
-            "explanation": "The sun ☀️ looks bright yellow."
+            "explanation": "الشمس \"sun\" ☀️ لونها أصفر لامع."
           },
           {
             "id": "u2_l3_q4",
             "type": "speechRecognition",
-            "prompt": "Say the color out loud",
-            "instruction": "Tap the mic and say it clearly",
+            "prompt": "انطق اللون بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
             "promptEmoji": "🟢",
             "answer": "Green",
-            "explanation": "Green is the color of grass and leaves 🌿."
+            "explanation": "\"Green\" هو لون العشب والأوراق 🌿."
           }
         ]
       }
@@ -359,24 +359,24 @@
   },
   {
     "id": "unit_3",
-    "title": "Unit 3: Food & Drinks",
-    "subtitle": "Yummy words for snack time",
+    "title": "الوحدة ٣: الطعام والشراب",
+    "subtitle": "كلمات لذيذة لوقت الوجبة",
     "colorValue": 4291724031,
     "lessons": [
       {
         "id": "u3_l1",
-        "title": "Fruits",
+        "title": "الفواكه",
         "icon": "🍎",
         "xpReward": 20,
         "questions": [
           {
             "id": "u3_l1_q1",
             "type": "imageMatching",
-            "prompt": "Which one is a \"Banana\"?",
-            "instruction": "Tap the matching picture",
+            "prompt": "أي صورة هي \"Banana\"؟",
+            "instruction": "اختر الصورة الصحيحة",
             "promptEmoji": "🍌",
             "correctOptionId": "o2",
-            "explanation": "A banana 🍌 is a long, yellow fruit.",
+            "explanation": "الموزة \"Banana\" 🍌 فاكهة صفراء طويلة.",
             "options": [
               { "id": "o1", "label": "Apple", "emoji": "🍎" },
               { "id": "o2", "label": "Banana", "emoji": "🍌" },
@@ -387,21 +387,21 @@
           {
             "id": "u3_l1_q2",
             "type": "wordJumble",
-            "prompt": "Build the sentence: \"I like apples\"",
-            "instruction": "Tap the words in the right order",
+            "prompt": "كوّن الجملة: \"I like apples\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
             "promptEmoji": "🍎",
             "answer": "I like apples",
             "wordBank": ["like", "I", "apples", "run"],
-            "explanation": "We say \"I like\" for things we enjoy. 🍎"
+            "explanation": "نقول \"I like\" للأشياء التي نحبها 🍎."
           },
           {
             "id": "u3_l1_q3",
             "type": "audioListening",
-            "prompt": "Listen and choose the fruit",
-            "instruction": "Tap play, then pick the picture",
+            "prompt": "استمع واختر الفاكهة",
+            "instruction": "اضغط زر التشغيل ثم اختر الصورة",
             "audioText": "Strawberry",
             "correctOptionId": "o4",
-            "explanation": "A strawberry 🍓 is small, red, and sweet.",
+            "explanation": "الفراولة \"Strawberry\" 🍓 صغيرة وحمراء وحلوة.",
             "options": [
               { "id": "o1", "label": "Grapes", "emoji": "🍇" },
               { "id": "o2", "label": "Lemon", "emoji": "🍋" },
@@ -412,28 +412,28 @@
           {
             "id": "u3_l1_q4",
             "type": "speechRecognition",
-            "prompt": "Say the fruit's name",
-            "instruction": "Tap the mic and say it clearly",
+            "prompt": "انطق اسم الفاكهة",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
             "promptEmoji": "🍊",
             "answer": "Orange",
-            "explanation": "An orange 🍊 is round and full of juice."
+            "explanation": "البرتقالة \"Orange\" 🍊 مستديرة ومليئة بالعصير."
           }
         ]
       },
       {
         "id": "u3_l2",
-        "title": "Meals",
+        "title": "الوجبات",
         "icon": "🍽️",
         "xpReward": 25,
         "questions": [
           {
             "id": "u3_l2_q1",
             "type": "imageMatching",
-            "prompt": "Which one is \"Bread\"?",
-            "instruction": "Tap the matching picture",
+            "prompt": "أي صورة هي \"Bread\"؟",
+            "instruction": "اختر الصورة الصحيحة",
             "promptEmoji": "🍞",
             "correctOptionId": "o1",
-            "explanation": "Bread 🍞 is soft and made from flour.",
+            "explanation": "الخبز \"Bread\" 🍞 طري ومصنوع من الطحين.",
             "options": [
               { "id": "o1", "label": "Bread", "emoji": "🍞" },
               { "id": "o2", "label": "Egg", "emoji": "🥚" },
@@ -444,11 +444,11 @@
           {
             "id": "u3_l2_q2",
             "type": "audioListening",
-            "prompt": "Listen and choose the food",
-            "instruction": "Tap play, then pick the picture",
+            "prompt": "استمع واختر الطعام",
+            "instruction": "اضغط زر التشغيل ثم اختر الصورة",
             "audioText": "Pizza",
             "correctOptionId": "o3",
-            "explanation": "Pizza 🍕 has cheese and a round crust.",
+            "explanation": "البيتزا \"Pizza\" 🍕 عليها جبن وقاعدة مستديرة.",
             "options": [
               { "id": "o1", "label": "Soup", "emoji": "🍲" },
               { "id": "o2", "label": "Egg", "emoji": "🥚" },
@@ -459,38 +459,38 @@
           {
             "id": "u3_l2_q3",
             "type": "wordJumble",
-            "prompt": "Build the sentence: \"I eat breakfast\"",
-            "instruction": "Tap the words in the right order",
+            "prompt": "كوّن الجملة: \"I eat breakfast\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
             "promptEmoji": "🍳",
             "answer": "I eat breakfast",
             "wordBank": ["eat", "I", "breakfast", "sleep"],
-            "explanation": "Breakfast 🍳 is the first meal of the day."
+            "explanation": "\"breakfast\" 🍳 هو أول وجبة في اليوم."
           },
           {
             "id": "u3_l2_q4",
             "type": "speechRecognition",
-            "prompt": "Say the food's name",
-            "instruction": "Tap the mic and say it clearly",
+            "prompt": "انطق اسم الطعام",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
             "promptEmoji": "🍚",
             "answer": "Rice",
-            "explanation": "Rice 🍚 is small white grains we cook and eat."
+            "explanation": "الأرز \"Rice\" 🍚 حبوب بيضاء صغيرة نطبخها ونأكلها."
           }
         ]
       },
       {
         "id": "u3_l3",
-        "title": "Drinks",
+        "title": "المشروبات",
         "icon": "🥤",
         "xpReward": 30,
         "questions": [
           {
             "id": "u3_l3_q1",
             "type": "imageMatching",
-            "prompt": "Which one is \"Milk\"?",
-            "instruction": "Tap the matching picture",
+            "prompt": "أي صورة هي \"Milk\"؟",
+            "instruction": "اختر الصورة الصحيحة",
             "promptEmoji": "🥛",
             "correctOptionId": "o2",
-            "explanation": "Milk 🥛 is a white drink that helps us grow.",
+            "explanation": "الحليب \"Milk\" 🥛 مشروب أبيض يساعدنا على النمو.",
             "options": [
               { "id": "o1", "label": "Juice", "emoji": "🧃" },
               { "id": "o2", "label": "Milk", "emoji": "🥛" },
@@ -501,21 +501,21 @@
           {
             "id": "u3_l3_q2",
             "type": "wordJumble",
-            "prompt": "Build the sentence: \"I drink water\"",
-            "instruction": "Tap the words in the right order",
+            "prompt": "كوّن الجملة: \"I drink water\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
             "promptEmoji": "💧",
             "answer": "I drink water",
             "wordBank": ["drink", "I", "water", "jump"],
-            "explanation": "Water 💧 keeps us healthy every day."
+            "explanation": "الماء \"water\" 💧 يبقينا أصحاء كل يوم."
           },
           {
             "id": "u3_l3_q3",
             "type": "audioListening",
-            "prompt": "Listen and choose the drink",
-            "instruction": "Tap play, then pick the picture",
+            "prompt": "استمع واختر المشروب",
+            "instruction": "اضغط زر التشغيل ثم اختر الصورة",
             "audioText": "Juice",
             "correctOptionId": "o1",
-            "explanation": "Juice 🧃 is a sweet drink made from fruit.",
+            "explanation": "العصير \"Juice\" 🧃 مشروب حلو مصنوع من الفاكهة.",
             "options": [
               { "id": "o1", "label": "Juice", "emoji": "🧃" },
               { "id": "o2", "label": "Milk", "emoji": "🥛" },
@@ -526,11 +526,11 @@
           {
             "id": "u3_l3_q4",
             "type": "speechRecognition",
-            "prompt": "Say the drink's name",
-            "instruction": "Tap the mic and say it clearly",
+            "prompt": "انطق اسم المشروب",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
             "promptEmoji": "🍵",
             "answer": "Tea",
-            "explanation": "Tea 🍵 is a warm drink grown-ups love."
+            "explanation": "الشاي \"Tea\" 🍵 مشروب دافئ يحبه الكبار."
           }
         ]
       }
@@ -538,24 +538,24 @@
   },
   {
     "id": "unit_4",
-    "title": "Unit 4: Family & Home",
-    "subtitle": "The people and places we love",
+    "title": "الوحدة ٤: العائلة والمنزل",
+    "subtitle": "الأشخاص والأماكن التي نحبها",
     "colorValue": 4294940160,
     "lessons": [
       {
         "id": "u4_l1",
-        "title": "Family",
+        "title": "العائلة",
         "icon": "👪",
         "xpReward": 20,
         "questions": [
           {
             "id": "u4_l1_q1",
             "type": "imageMatching",
-            "prompt": "Which one is \"Mother\"?",
-            "instruction": "Tap the matching picture",
+            "prompt": "أي صورة هي \"Mother\"؟",
+            "instruction": "اختر الصورة الصحيحة",
             "promptEmoji": "👩",
             "correctOptionId": "o1",
-            "explanation": "Mother 👩 is your mom.",
+            "explanation": "\"Mother\" 👩 تعني أمّك.",
             "options": [
               { "id": "o1", "label": "Mother", "emoji": "👩" },
               { "id": "o2", "label": "Father", "emoji": "👨" },
@@ -566,11 +566,11 @@
           {
             "id": "u4_l1_q2",
             "type": "audioListening",
-            "prompt": "Listen and choose the person",
-            "instruction": "Tap play, then pick the picture",
+            "prompt": "استمع واختر الشخص",
+            "instruction": "اضغط زر التشغيل ثم اختر الصورة",
             "audioText": "Father",
             "correctOptionId": "o2",
-            "explanation": "Father 👨 is your dad.",
+            "explanation": "\"Father\" 👨 يعني أباك.",
             "options": [
               { "id": "o1", "label": "Brother", "emoji": "👦" },
               { "id": "o2", "label": "Father", "emoji": "👨" },
@@ -581,38 +581,38 @@
           {
             "id": "u4_l1_q3",
             "type": "wordJumble",
-            "prompt": "Build the sentence: \"This is my sister\"",
-            "instruction": "Tap the words in the right order",
+            "prompt": "كوّن الجملة: \"This is my sister\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
             "promptEmoji": "👧",
             "answer": "This is my sister",
             "wordBank": ["is", "This", "sister", "my", "car"],
-            "explanation": "A sister 👧 is a girl in your family."
+            "explanation": "الأخت \"sister\" 👧 بنت في عائلتك."
           },
           {
             "id": "u4_l1_q4",
             "type": "speechRecognition",
-            "prompt": "Say the family word",
-            "instruction": "Tap the mic and say it clearly",
+            "prompt": "انطق كلمة العائلة",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
             "promptEmoji": "👦",
             "answer": "Brother",
-            "explanation": "A brother 👦 is a boy in your family."
+            "explanation": "الأخ \"Brother\" 👦 ولد في عائلتك."
           }
         ]
       },
       {
         "id": "u4_l2",
-        "title": "Rooms & Home",
+        "title": "الغرف والمنزل",
         "icon": "🏠",
         "xpReward": 25,
         "questions": [
           {
             "id": "u4_l2_q1",
             "type": "imageMatching",
-            "prompt": "Which one is a \"House\"?",
-            "instruction": "Tap the matching picture",
+            "prompt": "أي صورة هي \"House\"؟",
+            "instruction": "اختر الصورة الصحيحة",
             "promptEmoji": "🏠",
             "correctOptionId": "o4",
-            "explanation": "A house 🏠 is where a family lives.",
+            "explanation": "المنزل \"House\" 🏠 حيث تعيش العائلة.",
             "options": [
               { "id": "o1", "label": "Bed", "emoji": "🛏️" },
               { "id": "o2", "label": "Door", "emoji": "🚪" },
@@ -623,21 +623,21 @@
           {
             "id": "u4_l2_q2",
             "type": "wordJumble",
-            "prompt": "Build the sentence: \"I sleep in my bed\"",
-            "instruction": "Tap the words in the right order",
+            "prompt": "كوّن الجملة: \"I sleep in my bed\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
             "promptEmoji": "🛏️",
             "answer": "I sleep in my bed",
             "wordBank": ["sleep", "I", "bed", "in", "my"],
-            "explanation": "We sleep in a bed 🛏️ at night."
+            "explanation": "ننام في السرير \"bed\" 🛏️ في الليل."
           },
           {
             "id": "u4_l2_q3",
             "type": "audioListening",
-            "prompt": "Listen and choose the object",
-            "instruction": "Tap play, then pick the picture",
+            "prompt": "استمع واختر الشيء",
+            "instruction": "اضغط زر التشغيل ثم اختر الصورة",
             "audioText": "Door",
             "correctOptionId": "o2",
-            "explanation": "A door 🚪 lets us go in and out.",
+            "explanation": "الباب \"Door\" 🚪 يسمح لنا بالدخول والخروج.",
             "options": [
               { "id": "o1", "label": "Window", "emoji": "🪟" },
               { "id": "o2", "label": "Door", "emoji": "🚪" },
@@ -648,28 +648,28 @@
           {
             "id": "u4_l2_q4",
             "type": "speechRecognition",
-            "prompt": "Say the room word",
-            "instruction": "Tap the mic and say it clearly",
+            "prompt": "انطق كلمة الغرفة",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
             "promptEmoji": "🍳",
             "answer": "Kitchen",
-            "explanation": "The kitchen 🍳 is where we cook food."
+            "explanation": "المطبخ \"Kitchen\" 🍳 حيث نطبخ الطعام."
           }
         ]
       },
       {
         "id": "u4_l3",
-        "title": "Everyday Objects",
+        "title": "الأشياء اليومية",
         "icon": "🪑",
         "xpReward": 30,
         "questions": [
           {
             "id": "u4_l3_q1",
             "type": "imageMatching",
-            "prompt": "Which one is a \"Chair\"?",
-            "instruction": "Tap the matching picture",
+            "prompt": "أي صورة هي \"Chair\"؟",
+            "instruction": "اختر الصورة الصحيحة",
             "promptEmoji": "🪑",
             "correctOptionId": "o3",
-            "explanation": "A chair 🪑 is where we sit down.",
+            "explanation": "الكرسي \"Chair\" 🪑 حيث نجلس.",
             "options": [
               { "id": "o1", "label": "Clock", "emoji": "🕐" },
               { "id": "o2", "label": "Book", "emoji": "📖" },
@@ -680,11 +680,11 @@
           {
             "id": "u4_l3_q2",
             "type": "audioListening",
-            "prompt": "Listen and choose the object",
-            "instruction": "Tap play, then pick the picture",
+            "prompt": "استمع واختر الشيء",
+            "instruction": "اضغط زر التشغيل ثم اختر الصورة",
             "audioText": "Book",
             "correctOptionId": "o1",
-            "explanation": "A book 📖 is full of stories to read.",
+            "explanation": "الكتاب \"Book\" 📖 مليء بالقصص للقراءة.",
             "options": [
               { "id": "o1", "label": "Book", "emoji": "📖" },
               { "id": "o2", "label": "Ball", "emoji": "⚽" },
@@ -695,21 +695,21 @@
           {
             "id": "u4_l3_q3",
             "type": "wordJumble",
-            "prompt": "Build the sentence: \"I read a book\"",
-            "instruction": "Tap the words in the right order",
+            "prompt": "كوّن الجملة: \"I read a book\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
             "promptEmoji": "📖",
             "answer": "I read a book",
             "wordBank": ["read", "I", "book", "a", "sing"],
-            "explanation": "We read a book 📖 to learn new things."
+            "explanation": "نقرأ كتاباً \"book\" 📖 لنتعلم أشياء جديدة."
           },
           {
             "id": "u4_l3_q4",
             "type": "speechRecognition",
-            "prompt": "Say the object's name",
-            "instruction": "Tap the mic and say it clearly",
+            "prompt": "انطق اسم الشيء",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
             "promptEmoji": "⚽",
             "answer": "Ball",
-            "explanation": "A ball ⚽ is round and fun to play with."
+            "explanation": "الكرة \"Ball\" ⚽ مستديرة وممتعة للّعب."
           }
         ]
       }
@@ -717,24 +717,24 @@
   },
   {
     "id": "unit_5",
-    "title": "Unit 5: Actions & Feelings",
-    "subtitle": "What we do and how we feel",
+    "title": "الوحدة ٥: الأفعال والمشاعر",
+    "subtitle": "ما نفعله وكيف نشعر",
     "colorValue": 4294921035,
     "lessons": [
       {
         "id": "u5_l1",
-        "title": "Action Verbs",
+        "title": "أفعال الحركة",
         "icon": "🏃",
         "xpReward": 25,
         "questions": [
           {
             "id": "u5_l1_q1",
             "type": "imageMatching",
-            "prompt": "Which one means \"Run\"?",
-            "instruction": "Tap the matching picture",
+            "prompt": "أي صورة تعني \"Run\"؟",
+            "instruction": "اختر الصورة الصحيحة",
             "promptEmoji": "🏃",
             "correctOptionId": "o2",
-            "explanation": "Run 🏃 means to move very fast on your feet.",
+            "explanation": "\"Run\" 🏃 تعني الجري بسرعة على قدميك.",
             "options": [
               { "id": "o1", "label": "Sleep", "emoji": "😴" },
               { "id": "o2", "label": "Run", "emoji": "🏃" },
@@ -745,11 +745,11 @@
           {
             "id": "u5_l1_q2",
             "type": "audioListening",
-            "prompt": "Listen and choose the action",
-            "instruction": "Tap play, then pick the picture",
+            "prompt": "استمع واختر الفعل",
+            "instruction": "اضغط زر التشغيل ثم اختر الصورة",
             "audioText": "Jump",
             "correctOptionId": "o3",
-            "explanation": "Jump 🤸 means to push off the ground high.",
+            "explanation": "\"Jump\" 🤸 تعني القفز عالياً عن الأرض.",
             "options": [
               { "id": "o1", "label": "Read", "emoji": "📖" },
               { "id": "o2", "label": "Sing", "emoji": "🎤" },
@@ -760,38 +760,38 @@
           {
             "id": "u5_l1_q3",
             "type": "wordJumble",
-            "prompt": "Build the sentence: \"I can swim\"",
-            "instruction": "Tap the words in the right order",
+            "prompt": "كوّن الجملة: \"I can swim\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
             "promptEmoji": "🏊",
             "answer": "I can swim",
             "wordBank": ["can", "I", "swim", "fly"],
-            "explanation": "We say \"I can\" for things we are able to do. 🏊"
+            "explanation": "نقول \"I can\" للأشياء التي نستطيع فعلها 🏊."
           },
           {
             "id": "u5_l1_q4",
             "type": "speechRecognition",
-            "prompt": "Say the action word",
-            "instruction": "Tap the mic and say it clearly",
+            "prompt": "انطق كلمة الفعل",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
             "promptEmoji": "🎤",
             "answer": "Sing",
-            "explanation": "Sing 🎤 means to make music with your voice."
+            "explanation": "\"Sing\" 🎤 تعني الغناء بصوتك."
           }
         ]
       },
       {
         "id": "u5_l2",
-        "title": "Feelings",
+        "title": "المشاعر",
         "icon": "😊",
         "xpReward": 30,
         "questions": [
           {
             "id": "u5_l2_q1",
             "type": "imageMatching",
-            "prompt": "Which one is \"Happy\"?",
-            "instruction": "Tap the matching picture",
+            "prompt": "أي صورة تعني \"Happy\"؟",
+            "instruction": "اختر الصورة الصحيحة",
             "promptEmoji": "😊",
             "correctOptionId": "o1",
-            "explanation": "Happy 😊 is how we feel when we smile.",
+            "explanation": "\"Happy\" 😊 هو شعورنا عندما نبتسم.",
             "options": [
               { "id": "o1", "label": "Happy", "emoji": "😊" },
               { "id": "o2", "label": "Sad", "emoji": "😢" },
@@ -802,11 +802,11 @@
           {
             "id": "u5_l2_q2",
             "type": "audioListening",
-            "prompt": "Listen and choose the feeling",
-            "instruction": "Tap play, then pick the picture",
+            "prompt": "استمع واختر الشعور",
+            "instruction": "اضغط زر التشغيل ثم اختر الصورة",
             "audioText": "Sad",
             "correctOptionId": "o4",
-            "explanation": "Sad 😢 is how we feel when we cry.",
+            "explanation": "\"Sad\" 😢 هو شعورنا عندما نبكي.",
             "options": [
               { "id": "o1", "label": "Happy", "emoji": "😊" },
               { "id": "o2", "label": "Angry", "emoji": "😠" },
@@ -817,38 +817,38 @@
           {
             "id": "u5_l2_q3",
             "type": "wordJumble",
-            "prompt": "Build the sentence: \"I am happy\"",
-            "instruction": "Tap the words in the right order",
+            "prompt": "كوّن الجملة: \"I am happy\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
             "promptEmoji": "😊",
             "answer": "I am happy",
             "wordBank": ["am", "I", "happy", "box"],
-            "explanation": "We say \"I am happy\" when we feel good. 😊"
+            "explanation": "نقول \"I am happy\" عندما نشعر بالسعادة 😊."
           },
           {
             "id": "u5_l2_q4",
             "type": "speechRecognition",
-            "prompt": "Say the feeling word",
-            "instruction": "Tap the mic and say it clearly",
+            "prompt": "انطق كلمة الشعور",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
             "promptEmoji": "😴",
             "answer": "Tired",
-            "explanation": "Tired 😴 is how we feel when we need to rest."
+            "explanation": "\"Tired\" 😴 هو شعورنا عندما نحتاج للراحة."
           }
         ]
       },
       {
         "id": "u5_l3",
-        "title": "Daily Routines",
+        "title": "الروتين اليومي",
         "icon": "⏰",
         "xpReward": 35,
         "questions": [
           {
             "id": "u5_l3_q1",
             "type": "imageMatching",
-            "prompt": "Which one means \"Sleep\"?",
-            "instruction": "Tap the matching picture",
+            "prompt": "أي صورة تعني \"Sleep\"؟",
+            "instruction": "اختر الصورة الصحيحة",
             "promptEmoji": "😴",
             "correctOptionId": "o2",
-            "explanation": "We sleep 😴 at night in our bed.",
+            "explanation": "ننام \"sleep\" 😴 ليلاً في سريرنا.",
             "options": [
               { "id": "o1", "label": "Wash", "emoji": "🧼" },
               { "id": "o2", "label": "Sleep", "emoji": "😴" },
@@ -859,21 +859,21 @@
           {
             "id": "u5_l3_q2",
             "type": "wordJumble",
-            "prompt": "Build the sentence: \"I brush my teeth\"",
-            "instruction": "Tap the words in the right order",
+            "prompt": "كوّن الجملة: \"I brush my teeth\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
             "promptEmoji": "🪥",
             "answer": "I brush my teeth",
             "wordBank": ["brush", "I", "teeth", "my", "run"],
-            "explanation": "We brush our teeth 🪥 to keep them clean."
+            "explanation": "ننظّف أسناننا \"teeth\" 🪥 لتبقى نظيفة."
           },
           {
             "id": "u5_l3_q3",
             "type": "audioListening",
-            "prompt": "Listen and choose the action",
-            "instruction": "Tap play, then pick the picture",
+            "prompt": "استمع واختر الفعل",
+            "instruction": "اضغط زر التشغيل ثم اختر الصورة",
             "audioText": "Wash",
             "correctOptionId": "o1",
-            "explanation": "We wash 🧼 our hands to keep them clean.",
+            "explanation": "نغسل \"wash\" 🧼 أيدينا لتبقى نظيفة.",
             "options": [
               { "id": "o1", "label": "Wash", "emoji": "🧼" },
               { "id": "o2", "label": "Play", "emoji": "🧸" },
@@ -884,11 +884,11 @@
           {
             "id": "u5_l3_q4",
             "type": "speechRecognition",
-            "prompt": "Say the routine word",
-            "instruction": "Tap the mic and say it clearly",
+            "prompt": "انطق كلمة الروتين",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
             "promptEmoji": "🧸",
             "answer": "Play",
-            "explanation": "We play 🧸 with our toys and have fun."
+            "explanation": "نلعب \"play\" 🧸 بألعابنا ونستمتع."
           }
         ]
       }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../l10n/app_strings.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_text_styles.dart';
 
@@ -24,7 +25,8 @@ class DailyGoalRing extends StatelessWidget {
     final ringColor = met ? AppColors.primary : AppColors.yellow;
 
     return Semantics(
-      label: 'Daily goal: $dailyXp of $goal XP',
+      label: AppStrings.dailyGoalRemaining(
+          (goal - dailyXp).clamp(0, goal), dailyXp, goal),
       child: SizedBox(
         width: size,
         height: size,
@@ -85,12 +87,12 @@ class DailyGoalBanner extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Daily Goal', style: AppTextStyles.title),
+                Text(AppStrings.dailyGoal, style: AppTextStyles.title),
                 const SizedBox(height: 2),
                 Text(
                   met
-                      ? 'Done for today — great work! 🎉'
-                      : '$remaining XP to go ($dailyXp/$goal)',
+                      ? AppStrings.dailyGoalDone
+                      : AppStrings.dailyGoalRemaining(remaining, dailyXp, goal),
                   style: AppTextStyles.caption,
                 ),
               ],

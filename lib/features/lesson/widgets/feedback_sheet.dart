@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/l10n/app_strings.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../core/widgets/pop_button.dart';
@@ -51,18 +52,22 @@ class FeedbackSheet extends StatelessWidget {
                 ),
                 const SizedBox(width: 12),
                 Text(
-                  isCorrect ? 'Great job! 🎉' : 'Not quite',
+                  isCorrect ? AppStrings.correctTitle : AppStrings.wrongTitle,
                   style: AppTextStyles.heading.copyWith(color: accent),
                 ),
               ],
             ),
             if (!isCorrect) ...[
               const SizedBox(height: 12),
-              Text('Correct answer:',
+              Text(AppStrings.correctAnswerLabel,
                   style: AppTextStyles.caption.copyWith(color: accent)),
               const SizedBox(height: 2),
-              Text(correctAnswer,
-                  style: AppTextStyles.title.copyWith(color: accent)),
+              // The correct answer is English content — keep it LTR.
+              Directionality(
+                textDirection: TextDirection.ltr,
+                child: Text(correctAnswer,
+                    style: AppTextStyles.title.copyWith(color: accent)),
+              ),
               if (explanation != null) ...[
                 const SizedBox(height: 8),
                 Text(explanation!,
@@ -71,7 +76,7 @@ class FeedbackSheet extends StatelessWidget {
             ],
             const SizedBox(height: 18),
             PopButton(
-              label: isCorrect ? 'Continue' : 'Got it',
+              label: isCorrect ? AppStrings.continueLabel : AppStrings.gotIt,
               color: accent,
               shadowColor: isCorrect
                   ? AppColors.primaryDark

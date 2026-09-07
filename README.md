@@ -1,8 +1,14 @@
-# 🦉 LingoKids — Learn English, the fun way
+# 🦉 LingoKids — تعلّم الإنجليزية باللعب
 
 A cross-platform (iOS / Android / Web / Desktop) mobile app that teaches
-English to kids, heavily inspired by Duolingo's gamified learning mechanics.
-Built with **Flutter** + **flutter_bloc**.
+**English to Arab kids**, heavily inspired by Duolingo's gamified learning
+mechanics. Built with **Flutter** + **flutter_bloc**.
+
+> **Bilingual by design.** The interface is fully **Arabic and right-to-left**
+> (via `flutter_localizations`, Arabic-Indic digits, and the Cairo font), while
+> the **words being taught stay in English** — options, sentence chips, audio
+> and speech targets. English sentences are always assembled left-to-right even
+> inside the RTL layout.
 
 <p align="center"><em>Skill tree → Lesson runner → Celebration 🎉</em></p>
 

@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../core/l10n/app_strings.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_text_styles.dart';
 import '../../core/widgets/daily_goal_ring.dart';
@@ -41,7 +42,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF7F7F7),
-      appBar: AppBar(title: Text('My Profile', style: AppTextStyles.title)),
+      appBar:
+          AppBar(title: Text(AppStrings.profileTitle, style: AppTextStyles.title)),
       body: FutureBuilder<List<Unit>>(
         future: _unitsFuture,
         builder: (context, snapshot) {
@@ -57,13 +59,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   const SizedBox(height: 20),
                   _statsGrid(p),
                   const SizedBox(height: 28),
-                  _sectionTitle('Achievements'),
+                  _sectionTitle(AppStrings.achievements),
                   const SizedBox(height: 12),
                   _achievements(p, units),
                   const SizedBox(height: 28),
                   if (p.completedLessonIds.isNotEmpty) ...[
                     PopButton(
-                      label: 'Practice a lesson',
+                      label: AppStrings.practiceALesson,
                       color: AppColors.blue,
                       shadowColor: AppColors.blueDark,
                       icon: Icons.fitness_center_rounded,
@@ -72,7 +74,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     const SizedBox(height: 14),
                   ],
                   PopButton(
-                    label: 'Reset progress',
+                    label: AppStrings.resetProgress,
                     color: AppColors.wrong,
                     shadowColor: AppColors.wrongDark,
                     icon: Icons.refresh_rounded,
@@ -107,10 +109,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Level $level',
+                    Text(AppStrings.levelLabel(level),
                         style: AppTextStyles.display
                             .copyWith(color: Colors.white)),
-                    Text('$xpIntoLevel / 100 XP to next level',
+                    Text(AppStrings.xpToNextLevel(xpIntoLevel),
                         style: AppTextStyles.caption
                             .copyWith(color: Colors.white)),
                   ],
@@ -145,12 +147,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
         Row(
           children: [
             Expanded(
-                child: _statTile(
-                    '🔥', '${p.streak}', 'Day streak', AppColors.orange)),
+                child: _statTile('🔥', AppStrings.arDigits(p.streak),
+                    AppStrings.statStreak, AppColors.orange)),
             const SizedBox(width: 14),
             Expanded(
-                child: _statTile(
-                    '⚡', '${p.xp}', 'Total XP', AppColors.yellowDark)),
+                child: _statTile('⚡', AppStrings.arDigits(p.xp),
+                    AppStrings.statXp, AppColors.yellowDark)),
           ],
         ),
         const SizedBox(height: 14),
@@ -159,13 +161,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Expanded(
                 child: _statTile(
                     '❤️',
-                    '${p.hearts}/${UserProgress.maxHearts}',
-                    'Hearts',
+                    '${AppStrings.arDigits(p.hearts)}/${AppStrings.arDigits(UserProgress.maxHearts)}',
+                    AppStrings.statHearts,
                     AppColors.heart)),
             const SizedBox(width: 14),
             Expanded(
-                child: _statTile('🏅', '${p.completedLessonIds.length}',
-                    'Lessons done', AppColors.blue)),
+                child: _statTile(
+                    '🏅',
+                    AppStrings.arDigits(p.completedLessonIds.length),
+                    AppStrings.statLessons,
+                    AppColors.blue)),
           ],
         ),
       ],
@@ -181,7 +186,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('$unlocked of ${list.length} unlocked',
+        Text(AppStrings.achievementsUnlocked(unlocked, list.length),
             style: AppTextStyles.caption),
         const SizedBox(height: 12),
         Wrap(
@@ -195,7 +200,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   Widget _badge(Achievement a) {
     return Semantics(
-      label: '${a.title}, ${a.unlocked ? "unlocked" : "locked"}: ${a.description}',
+      label: '${a.title}، ${a.unlocked ? "مفتوح" : "مغلق"}: ${a.description}',
       child: Container(
         width: 100,
         padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 8),
@@ -277,21 +282,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
       builder: (ctx) => AlertDialog(
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        title: Text('Reset progress?', style: AppTextStyles.title),
-        content: Text(
-          'This clears your XP, streak and completed lessons. This cannot be undone.',
-          style: AppTextStyles.body,
-        ),
+        title: Text(AppStrings.resetTitle, style: AppTextStyles.title),
+        content: Text(AppStrings.resetBody, style: AppTextStyles.body),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
-            child: Text('Cancel',
+            child: Text(AppStrings.cancel,
                 style: AppTextStyles.button
                     .copyWith(color: AppColors.inkLight)),
           ),
           TextButton(
             onPressed: () => Navigator.pop(ctx, true),
-            child: Text('Reset',
+            child: Text(AppStrings.reset,
                 style:
                     AppTextStyles.button.copyWith(color: AppColors.wrong)),
           ),
@@ -303,7 +305,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Progress reset. Fresh start! 🌱',
+            content: Text(AppStrings.resetDone,
                 style: AppTextStyles.body.copyWith(color: Colors.white)),
             backgroundColor: AppColors.primary,
           ),
