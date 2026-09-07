@@ -8,6 +8,7 @@ import '../../data/models/unit.dart';
 import '../../data/models/user_progress.dart';
 import '../../data/repositories/content_repository.dart';
 import '../lesson/lesson_runner_screen.dart';
+import '../profile/profile_screen.dart';
 import '../progress/progress_cubit.dart';
 import 'widgets/lesson_node.dart';
 import 'widgets/stats_header.dart';
@@ -48,6 +49,7 @@ class _SkillTreeScreenState extends State<SkillTreeScreen> {
             final units = snapshot.data!;
             return Column(
               children: [
+                _topBar(context),
                 const StatsHeader(),
                 const Divider(height: 1, color: AppColors.border),
                 Expanded(
@@ -72,6 +74,28 @@ class _SkillTreeScreenState extends State<SkillTreeScreen> {
             );
           },
         ),
+      ),
+    );
+  }
+
+  Widget _topBar(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(20, 10, 12, 0),
+      child: Row(
+        children: [
+          const Text('🦉', style: TextStyle(fontSize: 26)),
+          const SizedBox(width: 8),
+          Text('LingoKids', style: AppTextStyles.heading),
+          const Spacer(),
+          IconButton(
+            tooltip: 'Profile',
+            icon: const Icon(Icons.account_circle_rounded,
+                color: AppColors.blue, size: 32),
+            onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => const ProfileScreen()),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -112,9 +136,12 @@ class _UnitSection extends StatelessWidget {
     final currentIndex =
         unit.lessons.indexWhere((l) => !progress.isLessonCompleted(l.id));
 
+    final completedInUnit =
+        unit.lessons.where((l) => progress.isLessonCompleted(l.id)).length;
+
     return Column(
       children: [
-        _banner(unitColor),
+        _banner(unitColor, completedInUnit, unit.lessons.length),
         const SizedBox(height: 8),
         for (int i = 0; i < unit.lessons.length; i++)
           Padding(
@@ -147,7 +174,8 @@ class _UnitSection extends StatelessWidget {
     return index < currentIndex ? NodeStatus.completed : NodeStatus.locked;
   }
 
-  Widget _banner(Color unitColor) {
+  Widget _banner(Color unitColor, int completed, int total) {
+    final done = total > 0 && completed >= total;
     return Container(
       margin: const EdgeInsets.fromLTRB(16, 12, 16, 0),
       padding: const EdgeInsets.all(18),
@@ -158,23 +186,57 @@ class _UnitSection extends StatelessWidget {
           bottom: BorderSide(color: _darken(unitColor), width: 5),
         ),
       ),
-      child: Row(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(unit.title,
-                    style: AppTextStyles.heading
-                        .copyWith(color: Colors.white)),
-                const SizedBox(height: 4),
-                Text(unit.subtitle,
-                    style: AppTextStyles.body.copyWith(
-                        color: Colors.white.withValues(alpha: 0.9))),
-              ],
-            ),
+          Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(unit.title,
+                        style: AppTextStyles.heading
+                            .copyWith(color: Colors.white)),
+                    const SizedBox(height: 4),
+                    Text(unit.subtitle,
+                        style: AppTextStyles.body.copyWith(
+                            color: Colors.white.withValues(alpha: 0.9))),
+                  ],
+                ),
+              ),
+              Icon(done ? Icons.emoji_events_rounded : Icons.school_rounded,
+                  color: done ? AppColors.yellow : Colors.white, size: 34),
+            ],
           ),
-          const Icon(Icons.school_rounded, color: Colors.white, size: 34),
+          const SizedBox(height: 14),
+          Row(
+            children: [
+              Expanded(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: LinearProgressIndicator(
+                    value: total == 0 ? 0 : completed / total,
+                    minHeight: 10,
+                    backgroundColor: Colors.white.withValues(alpha: 0.35),
+                    valueColor: AlwaysStoppedAnimation<Color>(
+                        done ? AppColors.yellow : Colors.white),
+                  ),
+                ),
+              ),
+              const SizedBox(width: 10),
+              Row(
+                children: [
+                  const Icon(Icons.emoji_events_rounded,
+                      color: AppColors.yellow, size: 18),
+                  const SizedBox(width: 4),
+                  Text('$completed/$total',
+                      style: AppTextStyles.caption
+                          .copyWith(color: Colors.white, fontSize: 14)),
+                ],
+              ),
+            ],
+          ),
         ],
       ),
     );

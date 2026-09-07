@@ -2,6 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:lingokids/data/models/lesson.dart';
 import 'package:lingokids/data/models/question.dart';
 import 'package:lingokids/data/models/user_progress.dart';
+import 'package:lingokids/features/profile/profile_screen.dart';
 import 'package:lingokids/services/speech_service.dart';
 
 void main() {
@@ -63,6 +64,21 @@ void main() {
       expect(restored.hearts, 4);
       expect(restored.isLessonCompleted('u1_l1'), isTrue);
       expect(restored.lastActiveDate, DateTime(2026, 1, 1));
+    });
+  });
+
+  group('ProfileScreen leveling', () {
+    test('level increments every 100 XP', () {
+      expect(ProfileScreen.levelFor(0), 1);
+      expect(ProfileScreen.levelFor(99), 1);
+      expect(ProfileScreen.levelFor(100), 2);
+      expect(ProfileScreen.levelFor(250), 3);
+    });
+
+    test('xpIntoLevel is the remainder toward the next level', () {
+      expect(ProfileScreen.xpIntoLevel(0), 0);
+      expect(ProfileScreen.xpIntoLevel(150), 50);
+      expect(ProfileScreen.xpIntoLevel(295), 95);
     });
   });
 
