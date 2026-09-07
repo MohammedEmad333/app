@@ -15,10 +15,12 @@ class LessonCompleteScreen extends StatefulWidget {
     super.key,
     required this.xpEarned,
     required this.accuracyPercent,
+    this.practice = false,
   });
 
   final int xpEarned;
   final int accuracyPercent;
+  final bool practice;
 
   @override
   State<LessonCompleteScreen> createState() => _LessonCompleteScreenState();
@@ -68,7 +70,7 @@ class _LessonCompleteScreenState extends State<LessonCompleteScreen>
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Lesson Complete!',
+                  Text(widget.practice ? 'Practice Done!' : 'Lesson Complete!',
                       style:
                           AppTextStyles.display.copyWith(color: Colors.white)),
                   const SizedBox(height: 8),

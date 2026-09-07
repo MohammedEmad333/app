@@ -1,12 +1,14 @@
-# Sound effects (optional)
+# Sound effects
 
-Drop short `.mp3` files here to enable sound effects. The app references:
+Short synthesized `.wav` tones ship with the app and play during lessons:
 
-- `correct.mp3` — plays on a correct answer
-- `wrong.mp3` — plays on a wrong answer
-- `celebrate.mp3` — plays on lesson completion
-- `tap.mp3` — UI tap feedback
+- `correct.wav` — plays on a correct answer
+- `wrong.wav` — plays on a wrong answer
+- `celebrate.wav` — plays on lesson completion
+- `tap.wav` — UI tap feedback
 
-`AudioService` fails silently if a file is missing, so the app runs fine
-without them. Word/sentence pronunciation is handled live by device TTS
-(`TtsService`), so no recorded voice files are needed.
+They were generated as simple tones so the demo has sound with no external
+assets. Swap in your own `.wav` files with the same names to change them.
+`AudioService` fails silently if a file is missing, and haptic feedback fires
+alongside these on supported devices. Word/sentence pronunciation is handled
+live by device TTS (`TtsService`), so no recorded voice files are needed.

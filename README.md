@@ -31,9 +31,17 @@ Built with **Flutter** + **flutter_bloc**.
   red + explanation + heart loss when wrong.
 
 ### 3. Gamification & Rewards
-- **XP** awarded on lesson completion.
+- **XP** awarded on lesson completion, with a **level** every 100 XP.
 - **Streak** tracking (daily activity counter, resets if a day is missed).
 - **Hearts** that deplete on mistakes and **regenerate over time**.
+- **Daily goal ring** — a per-day XP target shown on the map and profile.
+- **Achievements** — 10 unlockable badges (first lesson, streaks, XP milestones,
+  units cleared, champion…) derived live from progress.
+- **Practice mode** — replay any completed lesson with no hearts at stake for
+  bonus XP (from a completed node, or "Practice a lesson" on the profile).
+- **Profile screen** — level, daily goal, lifetime stats, badges, and reset.
+- **Sound + haptics** — bundled tone SFX for correct/wrong/celebrate plus
+  vibration feedback on answers.
 - **Lesson Completion screen** with **confetti** and an **openable reward chest**.
 
 ### 4. Kid-friendly UI/UX

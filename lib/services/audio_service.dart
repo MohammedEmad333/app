@@ -19,10 +19,10 @@ class AudioService {
     }
   }
 
-  Future<void> correct() => _play('audio/correct.mp3');
-  Future<void> wrong() => _play('audio/wrong.mp3');
-  Future<void> celebrate() => _play('audio/celebrate.mp3');
-  Future<void> tap() => _play('audio/tap.mp3');
+  Future<void> correct() => _play('audio/correct.wav');
+  Future<void> wrong() => _play('audio/wrong.wav');
+  Future<void> celebrate() => _play('audio/celebrate.wav');
+  Future<void> tap() => _play('audio/tap.wav');
 
   Future<void> dispose() async => _sfxPlayer.dispose();
 }

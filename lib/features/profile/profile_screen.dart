@@ -1,14 +1,23 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_text_styles.dart';
+import '../../core/widgets/daily_goal_ring.dart';
 import '../../core/widgets/pop_button.dart';
+import '../../data/models/lesson.dart';
+import '../../data/models/unit.dart';
 import '../../data/models/user_progress.dart';
+import '../../data/repositories/content_repository.dart';
+import '../lesson/lesson_runner_screen.dart';
 import '../progress/progress_cubit.dart';
+import 'achievements.dart';
 
-/// Learner profile: level, lifetime stats, and a progress reset.
-class ProfileScreen extends StatelessWidget {
+/// Learner profile: level, daily goal, lifetime stats, achievement badges,
+/// a practice shortcut, and a progress reset.
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
   /// Simple leveling curve: a new level every 100 XP.
@@ -16,62 +25,69 @@ class ProfileScreen extends StatelessWidget {
   static int xpIntoLevel(int xp) => xp % 100;
 
   @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  late final Future<List<Unit>> _unitsFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _unitsFuture = ContentRepository.instance.loadUnits();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF7F7F7),
       appBar: AppBar(title: Text('My Profile', style: AppTextStyles.title)),
-      body: BlocBuilder<ProgressCubit, UserProgress>(
-        builder: (context, p) {
-          final level = levelFor(p.xp);
-          final into = xpIntoLevel(p.xp);
-          return ListView(
-            padding: const EdgeInsets.all(20),
-            children: [
-              _levelCard(level, into),
-              const SizedBox(height: 20),
-              Row(
+      body: FutureBuilder<List<Unit>>(
+        future: _unitsFuture,
+        builder: (context, snapshot) {
+          final units = snapshot.data ?? const <Unit>[];
+          return BlocBuilder<ProgressCubit, UserProgress>(
+            builder: (context, p) {
+              final level = ProfileScreen.levelFor(p.xp);
+              final into = ProfileScreen.xpIntoLevel(p.xp);
+              return ListView(
+                padding: const EdgeInsets.all(20),
                 children: [
-                  Expanded(
-                    child: _statTile(
-                        '🔥', '${p.streak}', 'Day streak', AppColors.orange),
-                  ),
-                  const SizedBox(width: 14),
-                  Expanded(
-                    child: _statTile('⚡', '${p.xp}', 'Total XP',
-                        AppColors.yellowDark),
+                  _levelCard(level, into, p),
+                  const SizedBox(height: 20),
+                  _statsGrid(p),
+                  const SizedBox(height: 28),
+                  _sectionTitle('Achievements'),
+                  const SizedBox(height: 12),
+                  _achievements(p, units),
+                  const SizedBox(height: 28),
+                  if (p.completedLessonIds.isNotEmpty) ...[
+                    PopButton(
+                      label: 'Practice a lesson',
+                      color: AppColors.blue,
+                      shadowColor: AppColors.blueDark,
+                      icon: Icons.fitness_center_rounded,
+                      onPressed: () => _practiceRandom(context, units, p),
+                    ),
+                    const SizedBox(height: 14),
+                  ],
+                  PopButton(
+                    label: 'Reset progress',
+                    color: AppColors.wrong,
+                    shadowColor: AppColors.wrongDark,
+                    icon: Icons.refresh_rounded,
+                    onPressed: () => _confirmReset(context),
                   ),
                 ],
-              ),
-              const SizedBox(height: 14),
-              Row(
-                children: [
-                  Expanded(
-                    child: _statTile('❤️', '${p.hearts}/${UserProgress.maxHearts}',
-                        'Hearts', AppColors.heart),
-                  ),
-                  const SizedBox(width: 14),
-                  Expanded(
-                    child: _statTile('🏅', '${p.completedLessonIds.length}',
-                        'Lessons done', AppColors.blue),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 32),
-              PopButton(
-                label: 'Reset progress',
-                color: AppColors.wrong,
-                shadowColor: AppColors.wrongDark,
-                icon: Icons.refresh_rounded,
-                onPressed: () => _confirmReset(context),
-              ),
-            ],
+              );
+            },
           );
         },
       ),
     );
   }
 
-  Widget _levelCard(int level, int xpIntoLevel) {
+  Widget _levelCard(int level, int xpIntoLevel, UserProgress p) {
     return Container(
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
@@ -83,11 +99,31 @@ class ProfileScreen extends StatelessWidget {
       ),
       child: Column(
         children: [
-          const Text('🦉', style: TextStyle(fontSize: 64)),
-          const SizedBox(height: 8),
-          Text('Level $level',
-              style: AppTextStyles.display.copyWith(color: Colors.white)),
-          const SizedBox(height: 12),
+          Row(
+            children: [
+              const Text('🦉', style: TextStyle(fontSize: 56)),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Level $level',
+                        style: AppTextStyles.display
+                            .copyWith(color: Colors.white)),
+                    Text('$xpIntoLevel / 100 XP to next level',
+                        style: AppTextStyles.caption
+                            .copyWith(color: Colors.white)),
+                  ],
+                ),
+              ),
+              DailyGoalRing(
+                dailyXp: p.dailyXp,
+                goal: UserProgress.dailyGoal,
+                size: 60,
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
           ClipRRect(
             borderRadius: BorderRadius.circular(10),
             child: LinearProgressIndicator(
@@ -98,10 +134,103 @@ class ProfileScreen extends StatelessWidget {
                   const AlwaysStoppedAnimation<Color>(AppColors.yellow),
             ),
           ),
-          const SizedBox(height: 8),
-          Text('$xpIntoLevel / 100 XP to next level',
-              style: AppTextStyles.caption.copyWith(color: Colors.white)),
         ],
+      ),
+    );
+  }
+
+  Widget _statsGrid(UserProgress p) {
+    return Column(
+      children: [
+        Row(
+          children: [
+            Expanded(
+                child: _statTile(
+                    '🔥', '${p.streak}', 'Day streak', AppColors.orange)),
+            const SizedBox(width: 14),
+            Expanded(
+                child: _statTile(
+                    '⚡', '${p.xp}', 'Total XP', AppColors.yellowDark)),
+          ],
+        ),
+        const SizedBox(height: 14),
+        Row(
+          children: [
+            Expanded(
+                child: _statTile(
+                    '❤️',
+                    '${p.hearts}/${UserProgress.maxHearts}',
+                    'Hearts',
+                    AppColors.heart)),
+            const SizedBox(width: 14),
+            Expanded(
+                child: _statTile('🏅', '${p.completedLessonIds.length}',
+                    'Lessons done', AppColors.blue)),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Widget _sectionTitle(String text) =>
+      Align(alignment: Alignment.centerLeft, child: Text(text, style: AppTextStyles.heading));
+
+  Widget _achievements(UserProgress p, List<Unit> units) {
+    final list = computeAchievements(p, units);
+    final unlocked = list.where((a) => a.unlocked).length;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text('$unlocked of ${list.length} unlocked',
+            style: AppTextStyles.caption),
+        const SizedBox(height: 12),
+        Wrap(
+          spacing: 12,
+          runSpacing: 12,
+          children: list.map(_badge).toList(),
+        ),
+      ],
+    );
+  }
+
+  Widget _badge(Achievement a) {
+    return Semantics(
+      label: '${a.title}, ${a.unlocked ? "unlocked" : "locked"}: ${a.description}',
+      child: Container(
+        width: 100,
+        padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 8),
+        decoration: BoxDecoration(
+          color: a.unlocked ? Colors.white : const Color(0xFFF0F0F0),
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(
+            color: a.unlocked ? AppColors.yellow : AppColors.border,
+            width: 2,
+          ),
+        ),
+        child: Column(
+          children: [
+            Opacity(
+              opacity: a.unlocked ? 1 : 0.35,
+              child: Text(a.emoji, style: const TextStyle(fontSize: 36)),
+            ),
+            const SizedBox(height: 6),
+            Text(
+              a.title,
+              textAlign: TextAlign.center,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: AppTextStyles.caption.copyWith(
+                color: a.unlocked ? AppColors.ink : AppColors.disabledText,
+              ),
+            ),
+            if (!a.unlocked)
+              const Padding(
+                padding: EdgeInsets.only(top: 4),
+                child: Icon(Icons.lock_rounded,
+                    size: 14, color: AppColors.disabledText),
+              ),
+          ],
+        ),
       ),
     );
   }
@@ -122,6 +251,22 @@ class ProfileScreen extends StatelessWidget {
           const SizedBox(height: 2),
           Text(label, style: AppTextStyles.caption),
         ],
+      ),
+    );
+  }
+
+  void _practiceRandom(
+      BuildContext context, List<Unit> units, UserProgress p) {
+    final completed = <Lesson>[
+      for (final u in units)
+        for (final l in u.lessons)
+          if (p.isLessonCompleted(l.id)) l,
+    ];
+    if (completed.isEmpty) return;
+    final lesson = completed[Random().nextInt(completed.length)];
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) => LessonRunnerScreen(lesson: lesson, practice: true),
       ),
     );
   }

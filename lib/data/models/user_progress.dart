@@ -11,9 +11,14 @@ class UserProgress extends Equatable {
     this.lastActiveDate,
     this.heartsRefilledAt,
     this.completedLessonIds = const {},
+    this.dailyXp = 0,
+    this.dailyXpDate,
   });
 
   static const int maxHearts = 5;
+
+  /// XP the learner aims to earn each day (drives the daily-goal ring).
+  static const int dailyGoal = 30;
 
   final int xp;
   final int streak;
@@ -27,7 +32,15 @@ class UserProgress extends Equatable {
 
   final Set<String> completedLessonIds;
 
+  /// XP earned so far on [dailyXpDate]; resets when a new day starts.
+  final int dailyXp;
+  final DateTime? dailyXpDate;
+
   bool isLessonCompleted(String id) => completedLessonIds.contains(id);
+
+  /// Fraction (0–1) of today's XP goal that has been reached.
+  double get dailyGoalProgress => (dailyXp / dailyGoal).clamp(0.0, 1.0);
+  bool get dailyGoalMet => dailyXp >= dailyGoal;
 
   UserProgress copyWith({
     int? xp,
@@ -36,6 +49,8 @@ class UserProgress extends Equatable {
     DateTime? lastActiveDate,
     DateTime? heartsRefilledAt,
     Set<String>? completedLessonIds,
+    int? dailyXp,
+    DateTime? dailyXpDate,
   }) {
     return UserProgress(
       xp: xp ?? this.xp,
@@ -44,6 +59,8 @@ class UserProgress extends Equatable {
       lastActiveDate: lastActiveDate ?? this.lastActiveDate,
       heartsRefilledAt: heartsRefilledAt ?? this.heartsRefilledAt,
       completedLessonIds: completedLessonIds ?? this.completedLessonIds,
+      dailyXp: dailyXp ?? this.dailyXp,
+      dailyXpDate: dailyXpDate ?? this.dailyXpDate,
     );
   }
 
@@ -54,6 +71,8 @@ class UserProgress extends Equatable {
         'lastActiveDate': lastActiveDate?.toIso8601String(),
         'heartsRefilledAt': heartsRefilledAt?.toIso8601String(),
         'completedLessonIds': completedLessonIds.toList(),
+        'dailyXp': dailyXp,
+        'dailyXpDate': dailyXpDate?.toIso8601String(),
       };
 
   factory UserProgress.fromMap(Map<dynamic, dynamic> map) {
@@ -66,6 +85,8 @@ class UserProgress extends Equatable {
       completedLessonIds: ((map['completedLessonIds'] as List<dynamic>?) ?? [])
           .map((e) => e.toString())
           .toSet(),
+      dailyXp: (map['dailyXp'] as int?) ?? 0,
+      dailyXpDate: _parseDate(map['dailyXpDate']),
     );
   }
 
@@ -82,5 +103,7 @@ class UserProgress extends Equatable {
         lastActiveDate,
         heartsRefilledAt,
         completedLessonIds,
+        dailyXp,
+        dailyXpDate,
       ];
 }

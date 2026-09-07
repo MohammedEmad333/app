@@ -12,11 +12,16 @@ class ProgressCubit extends Cubit<UserProgress> {
 
   void refresh() => emit(_storage.load());
 
-  Future<void> completeLesson(String lessonId, int xpReward) async {
+  Future<void> completeLesson(
+    String lessonId,
+    int xpReward, {
+    bool markCompleted = true,
+  }) async {
     final updated = await _storage.completeLesson(
       current: state,
       lessonId: lessonId,
       xpReward: xpReward,
+      markCompleted: markCompleted,
     );
     emit(updated);
   }

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_text_styles.dart';
+import '../../core/widgets/daily_goal_ring.dart';
 import '../../data/models/lesson.dart';
 import '../../data/models/unit.dart';
 import '../../data/models/user_progress.dart';
@@ -56,8 +57,12 @@ class _SkillTreeScreenState extends State<SkillTreeScreen> {
                   child: BlocBuilder<ProgressCubit, UserProgress>(
                     builder: (context, progress) {
                       return ListView(
-                        padding: const EdgeInsets.only(bottom: 40),
+                        padding: const EdgeInsets.only(top: 8, bottom: 40),
                         children: [
+                          DailyGoalBanner(
+                            dailyXp: progress.dailyXp,
+                            goal: UserProgress.dailyGoal,
+                          ),
                           for (final unit in units)
                             _UnitSection(
                               unit: unit,
@@ -102,7 +107,10 @@ class _SkillTreeScreenState extends State<SkillTreeScreen> {
 
   void _openLesson(
       BuildContext context, Lesson lesson, UserProgress progress) {
-    if (progress.hearts <= 0) {
+    // A completed lesson re-opens as a no-stakes practice replay.
+    final isPractice = progress.isLessonCompleted(lesson.id);
+
+    if (!isPractice && progress.hearts <= 0) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text('No hearts left! They refill over time. ❤️',
@@ -113,7 +121,9 @@ class _SkillTreeScreenState extends State<SkillTreeScreen> {
       return;
     }
     Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => LessonRunnerScreen(lesson: lesson)),
+      MaterialPageRoute(
+        builder: (_) => LessonRunnerScreen(lesson: lesson, practice: isPractice),
+      ),
     );
   }
 }

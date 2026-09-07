@@ -15,24 +15,34 @@ import 'widgets/feedback_sheet.dart';
 import 'widgets/question_widget.dart';
 
 class LessonRunnerScreen extends StatelessWidget {
-  const LessonRunnerScreen({super.key, required this.lesson});
+  const LessonRunnerScreen({
+    super.key,
+    required this.lesson,
+    this.practice = false,
+  });
 
   final Lesson lesson;
+
+  /// When true, runs the lesson as a no-stakes practice replay.
+  final bool practice;
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => LessonCubit(
         lesson: lesson,
+        practice: practice,
         progressCubit: context.read<ProgressCubit>(),
       ),
-      child: const _LessonRunnerView(),
+      child: _LessonRunnerView(practice: practice),
     );
   }
 }
 
 class _LessonRunnerView extends StatefulWidget {
-  const _LessonRunnerView();
+  const _LessonRunnerView({required this.practice});
+
+  final bool practice;
 
   @override
   State<_LessonRunnerView> createState() => _LessonRunnerViewState();
@@ -89,8 +99,11 @@ class _LessonRunnerViewState extends State<_LessonRunnerView> {
           Navigator.of(context).pushReplacement(
             MaterialPageRoute(
               builder: (_) => LessonCompleteScreen(
-                xpEarned: state.lesson.xpReward,
+                xpEarned: widget.practice
+                    ? LessonCubit.practiceXp
+                    : state.lesson.xpReward,
                 accuracyPercent: state.accuracyPercent,
+                practice: widget.practice,
               ),
             ),
           );
@@ -157,9 +170,35 @@ class _LessonRunnerViewState extends State<_LessonRunnerView> {
               }
             },
           ),
-          Expanded(child: LessonProgressBar(progress: state.progress)),
+          Expanded(
+            child: LessonProgressBar(
+              progress: state.progress,
+              color: widget.practice ? AppColors.blue : AppColors.primary,
+            ),
+          ),
           const SizedBox(width: 12),
-          HeartsIndicator(hearts: state.hearts),
+          if (widget.practice)
+            Container(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+              decoration: BoxDecoration(
+                color: AppColors.blue.withValues(alpha: 0.12),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Icon(Icons.fitness_center_rounded,
+                      color: AppColors.blue, size: 18),
+                  const SizedBox(width: 4),
+                  Text('Practice',
+                      style: AppTextStyles.caption
+                          .copyWith(color: AppColors.blue)),
+                ],
+              ),
+            )
+          else
+            HeartsIndicator(hearts: state.hearts),
         ],
       ),
     );

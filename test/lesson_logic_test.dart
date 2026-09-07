@@ -2,6 +2,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:lingokids/data/models/lesson.dart';
 import 'package:lingokids/data/models/question.dart';
 import 'package:lingokids/data/models/user_progress.dart';
+import 'package:lingokids/data/models/unit.dart';
+import 'package:lingokids/features/profile/achievements.dart';
 import 'package:lingokids/features/profile/profile_screen.dart';
 import 'package:lingokids/services/speech_service.dart';
 
@@ -79,6 +81,70 @@ void main() {
       expect(ProfileScreen.xpIntoLevel(0), 0);
       expect(ProfileScreen.xpIntoLevel(150), 50);
       expect(ProfileScreen.xpIntoLevel(295), 95);
+    });
+  });
+
+  group('Daily goal', () {
+    test('progress and met flag track dailyXp against the goal', () {
+      const p = UserProgress(dailyXp: 15);
+      expect(p.dailyGoalProgress, closeTo(15 / UserProgress.dailyGoal, 1e-9));
+      expect(p.dailyGoalMet, isFalse);
+
+      const done = UserProgress(dailyXp: UserProgress.dailyGoal + 5);
+      expect(done.dailyGoalProgress, 1.0);
+      expect(done.dailyGoalMet, isTrue);
+    });
+
+    test('daily fields survive serialization', () {
+      final p = UserProgress(dailyXp: 20, dailyXpDate: DateTime(2026, 2, 3));
+      final restored = UserProgress.fromMap(p.toMap());
+      expect(restored.dailyXp, 20);
+      expect(restored.dailyXpDate, DateTime(2026, 2, 3));
+    });
+  });
+
+  group('Achievements', () {
+    final units = [
+      const Unit(
+        id: 'u1',
+        title: 'U1',
+        subtitle: '',
+        colorValue: 0xFF000000,
+        lessons: [
+          Lesson(id: 'a', title: 'A', icon: '', xpReward: 10, questions: []),
+          Lesson(id: 'b', title: 'B', icon: '', xpReward: 10, questions: []),
+        ],
+      ),
+    ];
+
+    bool unlocked(List<Achievement> l, String id) =>
+        l.firstWhere((a) => a.id == id).unlocked;
+
+    test('first lesson and unit clear unlock as progress is made', () {
+      final none = computeAchievements(const UserProgress(), units);
+      expect(unlocked(none, 'first_lesson'), isFalse);
+      expect(unlocked(none, 'unit_cleared'), isFalse);
+      expect(unlocked(none, 'champion'), isFalse);
+
+      const partial = UserProgress(completedLessonIds: {'a'});
+      expect(unlocked(computeAchievements(partial, units), 'first_lesson'),
+          isTrue);
+      expect(unlocked(computeAchievements(partial, units), 'unit_cleared'),
+          isFalse);
+
+      const full = UserProgress(completedLessonIds: {'a', 'b'});
+      final fa = computeAchievements(full, units);
+      expect(unlocked(fa, 'unit_cleared'), isTrue);
+      expect(unlocked(fa, 'champion'), isTrue);
+    });
+
+    test('streak and xp badges respond to thresholds', () {
+      const p = UserProgress(xp: 120, streak: 3);
+      final a = computeAchievements(p, units);
+      expect(unlocked(a, 'streak_3'), isTrue);
+      expect(unlocked(a, 'streak_7'), isFalse);
+      expect(unlocked(a, 'xp_100'), isTrue);
+      expect(unlocked(a, 'xp_500'), isFalse);
     });
   });
 

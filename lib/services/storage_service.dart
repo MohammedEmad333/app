@@ -55,12 +55,14 @@ class StorageService {
     return p.copyWith(hearts: newHearts, heartsRefilledAt: refilledAt);
   }
 
-  /// Records a completed lesson: awards XP, advances the daily streak and
-  /// marks the lesson done. Returns the updated progress.
+  /// Records a finished lesson: awards XP, advances the daily streak, adds to
+  /// today's goal progress, and (unless [markCompleted] is false, e.g. a
+  /// practice replay) marks the lesson done. Returns the updated progress.
   Future<UserProgress> completeLesson({
     required UserProgress current,
     required String lessonId,
     required int xpReward,
+    bool markCompleted = true,
   }) async {
     final today = _dateOnly(DateTime.now());
     final last = current.lastActiveDate == null
@@ -81,11 +83,20 @@ class StorageService {
       }
     }
 
+    // Reset the daily-goal counter when the day rolls over.
+    final sameDay = current.dailyXpDate != null &&
+        _dateOnly(current.dailyXpDate!) == today;
+    final dailyXp = (sameDay ? current.dailyXp : 0) + xpReward;
+
     final updated = current.copyWith(
       xp: current.xp + xpReward,
       streak: streak,
       lastActiveDate: today,
-      completedLessonIds: {...current.completedLessonIds, lessonId},
+      dailyXp: dailyXp,
+      dailyXpDate: today,
+      completedLessonIds: markCompleted
+          ? {...current.completedLessonIds, lessonId}
+          : current.completedLessonIds,
     );
     await save(updated);
     return updated;
