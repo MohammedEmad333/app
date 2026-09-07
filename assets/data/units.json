@@ -177,5 +177,721 @@
         ]
       }
     ]
+  },
+  {
+    "id": "unit_2",
+    "title": "Unit 2: Numbers & Colors",
+    "subtitle": "Count and name the colors of the world",
+    "colorValue": 4280070390,
+    "lessons": [
+      {
+        "id": "u2_l1",
+        "title": "Numbers 1-5",
+        "icon": "🔢",
+        "xpReward": 20,
+        "questions": [
+          {
+            "id": "u2_l1_q1",
+            "type": "imageMatching",
+            "prompt": "Which one shows \"Three\"?",
+            "instruction": "Tap the matching picture",
+            "promptEmoji": "3️⃣",
+            "correctOptionId": "o2",
+            "explanation": "Three is 3 — count them: 1, 2, 3!",
+            "options": [
+              { "id": "o1", "label": "Two", "emoji": "2️⃣" },
+              { "id": "o2", "label": "Three", "emoji": "3️⃣" },
+              { "id": "o3", "label": "Five", "emoji": "5️⃣" },
+              { "id": "o4", "label": "One", "emoji": "1️⃣" }
+            ]
+          },
+          {
+            "id": "u2_l1_q2",
+            "type": "audioListening",
+            "prompt": "Listen and choose the number",
+            "instruction": "Tap play, then pick the number",
+            "audioText": "Four",
+            "correctOptionId": "o4",
+            "explanation": "Four is 4 — one more than three.",
+            "options": [
+              { "id": "o1", "label": "One", "emoji": "1️⃣" },
+              { "id": "o2", "label": "Two", "emoji": "2️⃣" },
+              { "id": "o3", "label": "Three", "emoji": "3️⃣" },
+              { "id": "o4", "label": "Four", "emoji": "4️⃣" }
+            ]
+          },
+          {
+            "id": "u2_l1_q3",
+            "type": "wordJumble",
+            "prompt": "Build the sentence: \"I have two cats\"",
+            "instruction": "Tap the words in the right order",
+            "promptEmoji": "🐱",
+            "answer": "I have two cats",
+            "wordBank": ["have", "I", "cats", "two", "ten"],
+            "explanation": "Two cats means 2 cats. 🐱🐱"
+          },
+          {
+            "id": "u2_l1_q4",
+            "type": "speechRecognition",
+            "prompt": "Say the number out loud",
+            "instruction": "Tap the mic and say it clearly",
+            "promptEmoji": "5️⃣",
+            "answer": "Five",
+            "explanation": "Five is 5 — count your fingers on one hand!"
+          }
+        ]
+      },
+      {
+        "id": "u2_l2",
+        "title": "Numbers 6-10",
+        "icon": "🔟",
+        "xpReward": 25,
+        "questions": [
+          {
+            "id": "u2_l2_q1",
+            "type": "imageMatching",
+            "prompt": "Which one shows \"Ten\"?",
+            "instruction": "Tap the matching picture",
+            "promptEmoji": "🔟",
+            "correctOptionId": "o3",
+            "explanation": "Ten is 10 — count all your fingers!",
+            "options": [
+              { "id": "o1", "label": "Six", "emoji": "6️⃣" },
+              { "id": "o2", "label": "Eight", "emoji": "8️⃣" },
+              { "id": "o3", "label": "Ten", "emoji": "🔟" },
+              { "id": "o4", "label": "Seven", "emoji": "7️⃣" }
+            ]
+          },
+          {
+            "id": "u2_l2_q2",
+            "type": "speechRecognition",
+            "prompt": "Say the number out loud",
+            "instruction": "Tap the mic and say it clearly",
+            "promptEmoji": "7️⃣",
+            "answer": "Seven",
+            "explanation": "Seven is 7 — a lucky number!"
+          },
+          {
+            "id": "u2_l2_q3",
+            "type": "audioListening",
+            "prompt": "Listen and choose the number",
+            "instruction": "Tap play, then pick the number",
+            "audioText": "Nine",
+            "correctOptionId": "o1",
+            "explanation": "Nine is 9 — one less than ten.",
+            "options": [
+              { "id": "o1", "label": "Nine", "emoji": "9️⃣" },
+              { "id": "o2", "label": "Six", "emoji": "6️⃣" },
+              { "id": "o3", "label": "Eight", "emoji": "8️⃣" },
+              { "id": "o4", "label": "Ten", "emoji": "🔟" }
+            ]
+          },
+          {
+            "id": "u2_l2_q4",
+            "type": "wordJumble",
+            "prompt": "Build the sentence: \"I am six years old\"",
+            "instruction": "Tap the words in the right order",
+            "promptEmoji": "🎂",
+            "answer": "I am six years old",
+            "wordBank": ["am", "I", "old", "six", "years"],
+            "explanation": "We use \"years old\" to say our age. 🎂"
+          }
+        ]
+      },
+      {
+        "id": "u2_l3",
+        "title": "Colors",
+        "icon": "🎨",
+        "xpReward": 30,
+        "questions": [
+          {
+            "id": "u2_l3_q1",
+            "type": "imageMatching",
+            "prompt": "Which one is \"Red\"?",
+            "instruction": "Tap the matching picture",
+            "promptEmoji": "🎨",
+            "correctOptionId": "o1",
+            "explanation": "Red is the color of a strawberry 🍓.",
+            "options": [
+              { "id": "o1", "label": "Red", "emoji": "🔴" },
+              { "id": "o2", "label": "Blue", "emoji": "🔵" },
+              { "id": "o3", "label": "Green", "emoji": "🟢" },
+              { "id": "o4", "label": "Yellow", "emoji": "🟡" }
+            ]
+          },
+          {
+            "id": "u2_l3_q2",
+            "type": "audioListening",
+            "prompt": "Listen and choose the color",
+            "instruction": "Tap play, then pick the color",
+            "audioText": "Blue",
+            "correctOptionId": "o3",
+            "explanation": "Blue is the color of the sky 🌌.",
+            "options": [
+              { "id": "o1", "label": "Green", "emoji": "🟢" },
+              { "id": "o2", "label": "Purple", "emoji": "🟣" },
+              { "id": "o3", "label": "Blue", "emoji": "🔵" },
+              { "id": "o4", "label": "Orange", "emoji": "🟠" }
+            ]
+          },
+          {
+            "id": "u2_l3_q3",
+            "type": "wordJumble",
+            "prompt": "Build the sentence: \"The sun is yellow\"",
+            "instruction": "Tap the words in the right order",
+            "promptEmoji": "☀️",
+            "answer": "The sun is yellow",
+            "wordBank": ["sun", "The", "yellow", "is", "green"],
+            "explanation": "The sun ☀️ looks bright yellow."
+          },
+          {
+            "id": "u2_l3_q4",
+            "type": "speechRecognition",
+            "prompt": "Say the color out loud",
+            "instruction": "Tap the mic and say it clearly",
+            "promptEmoji": "🟢",
+            "answer": "Green",
+            "explanation": "Green is the color of grass and leaves 🌿."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit_3",
+    "title": "Unit 3: Food & Drinks",
+    "subtitle": "Yummy words for snack time",
+    "colorValue": 4291724031,
+    "lessons": [
+      {
+        "id": "u3_l1",
+        "title": "Fruits",
+        "icon": "🍎",
+        "xpReward": 20,
+        "questions": [
+          {
+            "id": "u3_l1_q1",
+            "type": "imageMatching",
+            "prompt": "Which one is a \"Banana\"?",
+            "instruction": "Tap the matching picture",
+            "promptEmoji": "🍌",
+            "correctOptionId": "o2",
+            "explanation": "A banana 🍌 is a long, yellow fruit.",
+            "options": [
+              { "id": "o1", "label": "Apple", "emoji": "🍎" },
+              { "id": "o2", "label": "Banana", "emoji": "🍌" },
+              { "id": "o3", "label": "Grapes", "emoji": "🍇" },
+              { "id": "o4", "label": "Orange", "emoji": "🍊" }
+            ]
+          },
+          {
+            "id": "u3_l1_q2",
+            "type": "wordJumble",
+            "prompt": "Build the sentence: \"I like apples\"",
+            "instruction": "Tap the words in the right order",
+            "promptEmoji": "🍎",
+            "answer": "I like apples",
+            "wordBank": ["like", "I", "apples", "run"],
+            "explanation": "We say \"I like\" for things we enjoy. 🍎"
+          },
+          {
+            "id": "u3_l1_q3",
+            "type": "audioListening",
+            "prompt": "Listen and choose the fruit",
+            "instruction": "Tap play, then pick the picture",
+            "audioText": "Strawberry",
+            "correctOptionId": "o4",
+            "explanation": "A strawberry 🍓 is small, red, and sweet.",
+            "options": [
+              { "id": "o1", "label": "Grapes", "emoji": "🍇" },
+              { "id": "o2", "label": "Lemon", "emoji": "🍋" },
+              { "id": "o3", "label": "Cherry", "emoji": "🍒" },
+              { "id": "o4", "label": "Strawberry", "emoji": "🍓" }
+            ]
+          },
+          {
+            "id": "u3_l1_q4",
+            "type": "speechRecognition",
+            "prompt": "Say the fruit's name",
+            "instruction": "Tap the mic and say it clearly",
+            "promptEmoji": "🍊",
+            "answer": "Orange",
+            "explanation": "An orange 🍊 is round and full of juice."
+          }
+        ]
+      },
+      {
+        "id": "u3_l2",
+        "title": "Meals",
+        "icon": "🍽️",
+        "xpReward": 25,
+        "questions": [
+          {
+            "id": "u3_l2_q1",
+            "type": "imageMatching",
+            "prompt": "Which one is \"Bread\"?",
+            "instruction": "Tap the matching picture",
+            "promptEmoji": "🍞",
+            "correctOptionId": "o1",
+            "explanation": "Bread 🍞 is soft and made from flour.",
+            "options": [
+              { "id": "o1", "label": "Bread", "emoji": "🍞" },
+              { "id": "o2", "label": "Egg", "emoji": "🥚" },
+              { "id": "o3", "label": "Cheese", "emoji": "🧀" },
+              { "id": "o4", "label": "Rice", "emoji": "🍚" }
+            ]
+          },
+          {
+            "id": "u3_l2_q2",
+            "type": "audioListening",
+            "prompt": "Listen and choose the food",
+            "instruction": "Tap play, then pick the picture",
+            "audioText": "Pizza",
+            "correctOptionId": "o3",
+            "explanation": "Pizza 🍕 has cheese and a round crust.",
+            "options": [
+              { "id": "o1", "label": "Soup", "emoji": "🍲" },
+              { "id": "o2", "label": "Egg", "emoji": "🥚" },
+              { "id": "o3", "label": "Pizza", "emoji": "🍕" },
+              { "id": "o4", "label": "Rice", "emoji": "🍚" }
+            ]
+          },
+          {
+            "id": "u3_l2_q3",
+            "type": "wordJumble",
+            "prompt": "Build the sentence: \"I eat breakfast\"",
+            "instruction": "Tap the words in the right order",
+            "promptEmoji": "🍳",
+            "answer": "I eat breakfast",
+            "wordBank": ["eat", "I", "breakfast", "sleep"],
+            "explanation": "Breakfast 🍳 is the first meal of the day."
+          },
+          {
+            "id": "u3_l2_q4",
+            "type": "speechRecognition",
+            "prompt": "Say the food's name",
+            "instruction": "Tap the mic and say it clearly",
+            "promptEmoji": "🍚",
+            "answer": "Rice",
+            "explanation": "Rice 🍚 is small white grains we cook and eat."
+          }
+        ]
+      },
+      {
+        "id": "u3_l3",
+        "title": "Drinks",
+        "icon": "🥤",
+        "xpReward": 30,
+        "questions": [
+          {
+            "id": "u3_l3_q1",
+            "type": "imageMatching",
+            "prompt": "Which one is \"Milk\"?",
+            "instruction": "Tap the matching picture",
+            "promptEmoji": "🥛",
+            "correctOptionId": "o2",
+            "explanation": "Milk 🥛 is a white drink that helps us grow.",
+            "options": [
+              { "id": "o1", "label": "Juice", "emoji": "🧃" },
+              { "id": "o2", "label": "Milk", "emoji": "🥛" },
+              { "id": "o3", "label": "Tea", "emoji": "🍵" },
+              { "id": "o4", "label": "Water", "emoji": "💧" }
+            ]
+          },
+          {
+            "id": "u3_l3_q2",
+            "type": "wordJumble",
+            "prompt": "Build the sentence: \"I drink water\"",
+            "instruction": "Tap the words in the right order",
+            "promptEmoji": "💧",
+            "answer": "I drink water",
+            "wordBank": ["drink", "I", "water", "jump"],
+            "explanation": "Water 💧 keeps us healthy every day."
+          },
+          {
+            "id": "u3_l3_q3",
+            "type": "audioListening",
+            "prompt": "Listen and choose the drink",
+            "instruction": "Tap play, then pick the picture",
+            "audioText": "Juice",
+            "correctOptionId": "o1",
+            "explanation": "Juice 🧃 is a sweet drink made from fruit.",
+            "options": [
+              { "id": "o1", "label": "Juice", "emoji": "🧃" },
+              { "id": "o2", "label": "Milk", "emoji": "🥛" },
+              { "id": "o3", "label": "Water", "emoji": "💧" },
+              { "id": "o4", "label": "Tea", "emoji": "🍵" }
+            ]
+          },
+          {
+            "id": "u3_l3_q4",
+            "type": "speechRecognition",
+            "prompt": "Say the drink's name",
+            "instruction": "Tap the mic and say it clearly",
+            "promptEmoji": "🍵",
+            "answer": "Tea",
+            "explanation": "Tea 🍵 is a warm drink grown-ups love."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit_4",
+    "title": "Unit 4: Family & Home",
+    "subtitle": "The people and places we love",
+    "colorValue": 4294940160,
+    "lessons": [
+      {
+        "id": "u4_l1",
+        "title": "Family",
+        "icon": "👪",
+        "xpReward": 20,
+        "questions": [
+          {
+            "id": "u4_l1_q1",
+            "type": "imageMatching",
+            "prompt": "Which one is \"Mother\"?",
+            "instruction": "Tap the matching picture",
+            "promptEmoji": "👩",
+            "correctOptionId": "o1",
+            "explanation": "Mother 👩 is your mom.",
+            "options": [
+              { "id": "o1", "label": "Mother", "emoji": "👩" },
+              { "id": "o2", "label": "Father", "emoji": "👨" },
+              { "id": "o3", "label": "Baby", "emoji": "👶" },
+              { "id": "o4", "label": "Sister", "emoji": "👧" }
+            ]
+          },
+          {
+            "id": "u4_l1_q2",
+            "type": "audioListening",
+            "prompt": "Listen and choose the person",
+            "instruction": "Tap play, then pick the picture",
+            "audioText": "Father",
+            "correctOptionId": "o2",
+            "explanation": "Father 👨 is your dad.",
+            "options": [
+              { "id": "o1", "label": "Brother", "emoji": "👦" },
+              { "id": "o2", "label": "Father", "emoji": "👨" },
+              { "id": "o3", "label": "Baby", "emoji": "👶" },
+              { "id": "o4", "label": "Mother", "emoji": "👩" }
+            ]
+          },
+          {
+            "id": "u4_l1_q3",
+            "type": "wordJumble",
+            "prompt": "Build the sentence: \"This is my sister\"",
+            "instruction": "Tap the words in the right order",
+            "promptEmoji": "👧",
+            "answer": "This is my sister",
+            "wordBank": ["is", "This", "sister", "my", "car"],
+            "explanation": "A sister 👧 is a girl in your family."
+          },
+          {
+            "id": "u4_l1_q4",
+            "type": "speechRecognition",
+            "prompt": "Say the family word",
+            "instruction": "Tap the mic and say it clearly",
+            "promptEmoji": "👦",
+            "answer": "Brother",
+            "explanation": "A brother 👦 is a boy in your family."
+          }
+        ]
+      },
+      {
+        "id": "u4_l2",
+        "title": "Rooms & Home",
+        "icon": "🏠",
+        "xpReward": 25,
+        "questions": [
+          {
+            "id": "u4_l2_q1",
+            "type": "imageMatching",
+            "prompt": "Which one is a \"House\"?",
+            "instruction": "Tap the matching picture",
+            "promptEmoji": "🏠",
+            "correctOptionId": "o4",
+            "explanation": "A house 🏠 is where a family lives.",
+            "options": [
+              { "id": "o1", "label": "Bed", "emoji": "🛏️" },
+              { "id": "o2", "label": "Door", "emoji": "🚪" },
+              { "id": "o3", "label": "Window", "emoji": "🪟" },
+              { "id": "o4", "label": "House", "emoji": "🏠" }
+            ]
+          },
+          {
+            "id": "u4_l2_q2",
+            "type": "wordJumble",
+            "prompt": "Build the sentence: \"I sleep in my bed\"",
+            "instruction": "Tap the words in the right order",
+            "promptEmoji": "🛏️",
+            "answer": "I sleep in my bed",
+            "wordBank": ["sleep", "I", "bed", "in", "my"],
+            "explanation": "We sleep in a bed 🛏️ at night."
+          },
+          {
+            "id": "u4_l2_q3",
+            "type": "audioListening",
+            "prompt": "Listen and choose the object",
+            "instruction": "Tap play, then pick the picture",
+            "audioText": "Door",
+            "correctOptionId": "o2",
+            "explanation": "A door 🚪 lets us go in and out.",
+            "options": [
+              { "id": "o1", "label": "Window", "emoji": "🪟" },
+              { "id": "o2", "label": "Door", "emoji": "🚪" },
+              { "id": "o3", "label": "Chair", "emoji": "🪑" },
+              { "id": "o4", "label": "Lamp", "emoji": "💡" }
+            ]
+          },
+          {
+            "id": "u4_l2_q4",
+            "type": "speechRecognition",
+            "prompt": "Say the room word",
+            "instruction": "Tap the mic and say it clearly",
+            "promptEmoji": "🍳",
+            "answer": "Kitchen",
+            "explanation": "The kitchen 🍳 is where we cook food."
+          }
+        ]
+      },
+      {
+        "id": "u4_l3",
+        "title": "Everyday Objects",
+        "icon": "🪑",
+        "xpReward": 30,
+        "questions": [
+          {
+            "id": "u4_l3_q1",
+            "type": "imageMatching",
+            "prompt": "Which one is a \"Chair\"?",
+            "instruction": "Tap the matching picture",
+            "promptEmoji": "🪑",
+            "correctOptionId": "o3",
+            "explanation": "A chair 🪑 is where we sit down.",
+            "options": [
+              { "id": "o1", "label": "Clock", "emoji": "🕐" },
+              { "id": "o2", "label": "Book", "emoji": "📖" },
+              { "id": "o3", "label": "Chair", "emoji": "🪑" },
+              { "id": "o4", "label": "Cup", "emoji": "☕" }
+            ]
+          },
+          {
+            "id": "u4_l3_q2",
+            "type": "audioListening",
+            "prompt": "Listen and choose the object",
+            "instruction": "Tap play, then pick the picture",
+            "audioText": "Book",
+            "correctOptionId": "o1",
+            "explanation": "A book 📖 is full of stories to read.",
+            "options": [
+              { "id": "o1", "label": "Book", "emoji": "📖" },
+              { "id": "o2", "label": "Ball", "emoji": "⚽" },
+              { "id": "o3", "label": "Clock", "emoji": "🕐" },
+              { "id": "o4", "label": "Cup", "emoji": "☕" }
+            ]
+          },
+          {
+            "id": "u4_l3_q3",
+            "type": "wordJumble",
+            "prompt": "Build the sentence: \"I read a book\"",
+            "instruction": "Tap the words in the right order",
+            "promptEmoji": "📖",
+            "answer": "I read a book",
+            "wordBank": ["read", "I", "book", "a", "sing"],
+            "explanation": "We read a book 📖 to learn new things."
+          },
+          {
+            "id": "u4_l3_q4",
+            "type": "speechRecognition",
+            "prompt": "Say the object's name",
+            "instruction": "Tap the mic and say it clearly",
+            "promptEmoji": "⚽",
+            "answer": "Ball",
+            "explanation": "A ball ⚽ is round and fun to play with."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit_5",
+    "title": "Unit 5: Actions & Feelings",
+    "subtitle": "What we do and how we feel",
+    "colorValue": 4294921035,
+    "lessons": [
+      {
+        "id": "u5_l1",
+        "title": "Action Verbs",
+        "icon": "🏃",
+        "xpReward": 25,
+        "questions": [
+          {
+            "id": "u5_l1_q1",
+            "type": "imageMatching",
+            "prompt": "Which one means \"Run\"?",
+            "instruction": "Tap the matching picture",
+            "promptEmoji": "🏃",
+            "correctOptionId": "o2",
+            "explanation": "Run 🏃 means to move very fast on your feet.",
+            "options": [
+              { "id": "o1", "label": "Sleep", "emoji": "😴" },
+              { "id": "o2", "label": "Run", "emoji": "🏃" },
+              { "id": "o3", "label": "Eat", "emoji": "🍽️" },
+              { "id": "o4", "label": "Swim", "emoji": "🏊" }
+            ]
+          },
+          {
+            "id": "u5_l1_q2",
+            "type": "audioListening",
+            "prompt": "Listen and choose the action",
+            "instruction": "Tap play, then pick the picture",
+            "audioText": "Jump",
+            "correctOptionId": "o3",
+            "explanation": "Jump 🤸 means to push off the ground high.",
+            "options": [
+              { "id": "o1", "label": "Read", "emoji": "📖" },
+              { "id": "o2", "label": "Sing", "emoji": "🎤" },
+              { "id": "o3", "label": "Jump", "emoji": "🤸" },
+              { "id": "o4", "label": "Walk", "emoji": "🚶" }
+            ]
+          },
+          {
+            "id": "u5_l1_q3",
+            "type": "wordJumble",
+            "prompt": "Build the sentence: \"I can swim\"",
+            "instruction": "Tap the words in the right order",
+            "promptEmoji": "🏊",
+            "answer": "I can swim",
+            "wordBank": ["can", "I", "swim", "fly"],
+            "explanation": "We say \"I can\" for things we are able to do. 🏊"
+          },
+          {
+            "id": "u5_l1_q4",
+            "type": "speechRecognition",
+            "prompt": "Say the action word",
+            "instruction": "Tap the mic and say it clearly",
+            "promptEmoji": "🎤",
+            "answer": "Sing",
+            "explanation": "Sing 🎤 means to make music with your voice."
+          }
+        ]
+      },
+      {
+        "id": "u5_l2",
+        "title": "Feelings",
+        "icon": "😊",
+        "xpReward": 30,
+        "questions": [
+          {
+            "id": "u5_l2_q1",
+            "type": "imageMatching",
+            "prompt": "Which one is \"Happy\"?",
+            "instruction": "Tap the matching picture",
+            "promptEmoji": "😊",
+            "correctOptionId": "o1",
+            "explanation": "Happy 😊 is how we feel when we smile.",
+            "options": [
+              { "id": "o1", "label": "Happy", "emoji": "😊" },
+              { "id": "o2", "label": "Sad", "emoji": "😢" },
+              { "id": "o3", "label": "Angry", "emoji": "😠" },
+              { "id": "o4", "label": "Tired", "emoji": "😴" }
+            ]
+          },
+          {
+            "id": "u5_l2_q2",
+            "type": "audioListening",
+            "prompt": "Listen and choose the feeling",
+            "instruction": "Tap play, then pick the picture",
+            "audioText": "Sad",
+            "correctOptionId": "o4",
+            "explanation": "Sad 😢 is how we feel when we cry.",
+            "options": [
+              { "id": "o1", "label": "Happy", "emoji": "😊" },
+              { "id": "o2", "label": "Angry", "emoji": "😠" },
+              { "id": "o3", "label": "Scared", "emoji": "😨" },
+              { "id": "o4", "label": "Sad", "emoji": "😢" }
+            ]
+          },
+          {
+            "id": "u5_l2_q3",
+            "type": "wordJumble",
+            "prompt": "Build the sentence: \"I am happy\"",
+            "instruction": "Tap the words in the right order",
+            "promptEmoji": "😊",
+            "answer": "I am happy",
+            "wordBank": ["am", "I", "happy", "box"],
+            "explanation": "We say \"I am happy\" when we feel good. 😊"
+          },
+          {
+            "id": "u5_l2_q4",
+            "type": "speechRecognition",
+            "prompt": "Say the feeling word",
+            "instruction": "Tap the mic and say it clearly",
+            "promptEmoji": "😴",
+            "answer": "Tired",
+            "explanation": "Tired 😴 is how we feel when we need to rest."
+          }
+        ]
+      },
+      {
+        "id": "u5_l3",
+        "title": "Daily Routines",
+        "icon": "⏰",
+        "xpReward": 35,
+        "questions": [
+          {
+            "id": "u5_l3_q1",
+            "type": "imageMatching",
+            "prompt": "Which one means \"Sleep\"?",
+            "instruction": "Tap the matching picture",
+            "promptEmoji": "😴",
+            "correctOptionId": "o2",
+            "explanation": "We sleep 😴 at night in our bed.",
+            "options": [
+              { "id": "o1", "label": "Wash", "emoji": "🧼" },
+              { "id": "o2", "label": "Sleep", "emoji": "😴" },
+              { "id": "o3", "label": "Play", "emoji": "🧸" },
+              { "id": "o4", "label": "Eat", "emoji": "🍽️" }
+            ]
+          },
+          {
+            "id": "u5_l3_q2",
+            "type": "wordJumble",
+            "prompt": "Build the sentence: \"I brush my teeth\"",
+            "instruction": "Tap the words in the right order",
+            "promptEmoji": "🪥",
+            "answer": "I brush my teeth",
+            "wordBank": ["brush", "I", "teeth", "my", "run"],
+            "explanation": "We brush our teeth 🪥 to keep them clean."
+          },
+          {
+            "id": "u5_l3_q3",
+            "type": "audioListening",
+            "prompt": "Listen and choose the action",
+            "instruction": "Tap play, then pick the picture",
+            "audioText": "Wash",
+            "correctOptionId": "o1",
+            "explanation": "We wash 🧼 our hands to keep them clean.",
+            "options": [
+              { "id": "o1", "label": "Wash", "emoji": "🧼" },
+              { "id": "o2", "label": "Play", "emoji": "🧸" },
+              { "id": "o3", "label": "Sleep", "emoji": "😴" },
+              { "id": "o4", "label": "Sing", "emoji": "🎤" }
+            ]
+          },
+          {
+            "id": "u5_l3_q4",
+            "type": "speechRecognition",
+            "prompt": "Say the routine word",
+            "instruction": "Tap the mic and say it clearly",
+            "promptEmoji": "🧸",
+            "answer": "Play",
+            "explanation": "We play 🧸 with our toys and have fun."
+          }
+        ]
+      }
+    ]
   }
 ]

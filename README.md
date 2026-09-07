@@ -80,9 +80,19 @@ assets/
 ## 📊 Content schema
 
 Units → Lessons → Questions are defined in `assets/data/units.json` and parsed
-by the model classes. Seeded with **Unit 1: Animals & Greetings** containing
-**3 lessons** (Greetings, Farm Animals, Wild Animals) and realistic questions of
-all four types. Add new units by appending to the JSON — no code changes needed.
+by the model classes. Seeded with **5 units, 15 lessons and 60 questions**
+spanning all four question types:
+
+| Unit | Theme | Lessons |
+|------|-------|---------|
+| 1 | Animals & Greetings | Greetings · Farm Animals · Wild Animals |
+| 2 | Numbers & Colors | Numbers 1-5 · Numbers 6-10 · Colors |
+| 3 | Food & Drinks | Fruits · Meals · Drinks |
+| 4 | Family & Home | Family · Rooms & Home · Everyday Objects |
+| 5 | Actions & Feelings | Action Verbs · Feelings · Daily Routines |
+
+Units unlock in order and each lesson awards escalating XP. Add new units or
+lessons by appending to the JSON — no code changes needed.
 
 ---
 
