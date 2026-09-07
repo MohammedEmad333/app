@@ -15,6 +15,8 @@ class AppStrings {
   // Home / map
   static const String profileTooltip = 'ملفي';
   static const String noHeartsLeft = 'لا توجد قلوب! ستعود مع الوقت ❤️';
+  static const String unitLocked = 'أكمل الوحدة السابقة لفتح هذه الوحدة 🔒';
+  static const String unitLockedBanner = 'مقفلة — أكمل الوحدة السابقة';
 
   // Difficulty tiers (by unit)
   static String difficultyLabel(int tier) {

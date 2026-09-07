@@ -111,8 +111,10 @@ child advances (each unit carries a `difficulty` tier shown on its banner):
 Early units teach single words with short 4-word sentences; later units move to
 full sentences and questions — longer word-jumbles (up to 6 words with extra
 decoy chips), phrase-level audio/image choices, and 5 questions per lesson with
-higher XP. Units unlock in order. Add new units or lessons by appending to the
-JSON — no code changes needed.
+higher XP. **Units unlock one after another** — a unit stays locked (dimmed,
+with a lock badge) until the previous unit is fully completed, so the harder
+content is earned. Add new units or lessons by appending to the JSON — no code
+changes needed.
 
 ---
 

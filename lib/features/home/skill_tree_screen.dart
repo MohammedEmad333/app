@@ -64,12 +64,18 @@ class _SkillTreeScreenState extends State<SkillTreeScreen> {
                             dailyXp: progress.dailyXp,
                             goal: UserProgress.dailyGoal,
                           ),
-                          for (final unit in units)
+                          for (int u = 0; u < units.length; u++)
                             _UnitSection(
-                              unit: unit,
+                              unit: units[u],
                               progress: progress,
+                              // A unit is locked until the previous unit is
+                              // fully completed, so difficulty is earned.
+                              locked: u > 0 &&
+                                  !units[u - 1].lessons.every((l) =>
+                                      progress.isLessonCompleted(l.id)),
                               onTapLesson: (lesson) =>
                                   _openLesson(context, lesson, progress),
+                              onLockedTap: () => _showLocked(context),
                             ),
                         ],
                       );
@@ -106,6 +112,16 @@ class _SkillTreeScreenState extends State<SkillTreeScreen> {
     );
   }
 
+  void _showLocked(BuildContext context) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(AppStrings.unitLocked,
+            style: AppTextStyles.body.copyWith(color: Colors.white)),
+        backgroundColor: AppColors.inkLight,
+      ),
+    );
+  }
+
   void _openLesson(
       BuildContext context, Lesson lesson, UserProgress progress) {
     // A completed lesson re-opens as a no-stakes practice replay.
@@ -134,11 +150,15 @@ class _UnitSection extends StatelessWidget {
     required this.unit,
     required this.progress,
     required this.onTapLesson,
+    this.locked = false,
+    required this.onLockedTap,
   });
 
   final Unit unit;
   final UserProgress progress;
+  final bool locked;
   final ValueChanged<Lesson> onTapLesson;
+  final VoidCallback onLockedTap;
 
   @override
   Widget build(BuildContext context) {
@@ -150,9 +170,9 @@ class _UnitSection extends StatelessWidget {
     final completedInUnit =
         unit.lessons.where((l) => progress.isLessonCompleted(l.id)).length;
 
-    return Column(
+    final section = Column(
       children: [
-        _banner(unitColor, completedInUnit, unit.lessons.length),
+        _banner(unitColor, completedInUnit, unit.lessons.length, locked),
         const SizedBox(height: 8),
         for (int i = 0; i < unit.lessons.length; i++)
           Padding(
@@ -166,12 +186,22 @@ class _UnitSection extends StatelessWidget {
               title: unit.lessons[i].title,
               icon: unit.lessons[i].icon,
               color: unitColor,
-              status: _statusFor(i, currentIndex),
-              onTap: () => onTapLesson(unit.lessons[i]),
+              status: locked
+                  ? NodeStatus.locked
+                  : _statusFor(i, currentIndex),
+              onTap: () =>
+                  locked ? onLockedTap() : onTapLesson(unit.lessons[i]),
             ),
           ),
         const SizedBox(height: 12),
       ],
+    );
+
+    if (!locked) return section;
+    // Dim the locked unit and make the whole area explain why it's locked.
+    return GestureDetector(
+      onTap: onLockedTap,
+      child: Opacity(opacity: 0.55, child: section),
     );
   }
 
@@ -185,7 +215,7 @@ class _UnitSection extends StatelessWidget {
     return index < currentIndex ? NodeStatus.completed : NodeStatus.locked;
   }
 
-  Widget _banner(Color unitColor, int completed, int total) {
+  Widget _banner(Color unitColor, int completed, int total, bool locked) {
     final done = total > 0 && completed >= total;
     return Container(
       margin: const EdgeInsets.fromLTRB(16, 12, 16, 0),
@@ -219,8 +249,14 @@ class _UnitSection extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Icon(done ? Icons.emoji_events_rounded : Icons.school_rounded,
-                      color: done ? AppColors.yellow : Colors.white, size: 34),
+                  Icon(
+                      locked
+                          ? Icons.lock_rounded
+                          : (done
+                              ? Icons.emoji_events_rounded
+                              : Icons.school_rounded),
+                      color: done && !locked ? AppColors.yellow : Colors.white,
+                      size: 34),
                   const SizedBox(height: 8),
                   _difficultyPill(unit.difficulty),
                 ],
@@ -228,34 +264,45 @@ class _UnitSection extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 14),
-          Row(
-            children: [
-              Expanded(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: LinearProgressIndicator(
-                    value: total == 0 ? 0 : completed / total,
-                    minHeight: 10,
-                    backgroundColor: Colors.white.withValues(alpha: 0.35),
-                    valueColor: AlwaysStoppedAnimation<Color>(
-                        done ? AppColors.yellow : Colors.white),
+          if (locked)
+            Row(
+              children: [
+                const Icon(Icons.lock_rounded, color: Colors.white, size: 16),
+                const SizedBox(width: 6),
+                Text(AppStrings.unitLockedBanner,
+                    style: AppTextStyles.caption
+                        .copyWith(color: Colors.white, fontSize: 14)),
+              ],
+            )
+          else
+            Row(
+              children: [
+                Expanded(
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8),
+                    child: LinearProgressIndicator(
+                      value: total == 0 ? 0 : completed / total,
+                      minHeight: 10,
+                      backgroundColor: Colors.white.withValues(alpha: 0.35),
+                      valueColor: AlwaysStoppedAnimation<Color>(
+                          done ? AppColors.yellow : Colors.white),
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(width: 10),
-              Row(
-                children: [
-                  const Icon(Icons.emoji_events_rounded,
-                      color: AppColors.yellow, size: 18),
-                  const SizedBox(width: 4),
-                  Text(
-                      '${AppStrings.arDigits(completed)}/${AppStrings.arDigits(total)}',
-                      style: AppTextStyles.caption
-                          .copyWith(color: Colors.white, fontSize: 14)),
-                ],
-              ),
-            ],
-          ),
+                const SizedBox(width: 10),
+                Row(
+                  children: [
+                    const Icon(Icons.emoji_events_rounded,
+                        color: AppColors.yellow, size: 18),
+                    const SizedBox(width: 4),
+                    Text(
+                        '${AppStrings.arDigits(completed)}/${AppStrings.arDigits(total)}',
+                        style: AppTextStyles.caption
+                            .copyWith(color: Colors.white, fontSize: 14)),
+                  ],
+                ),
+              ],
+            ),
         ],
       ),
     );
