@@ -5,7 +5,8 @@ A cross-platform (iOS / Android / Web / Desktop) mobile app that teaches
 mechanics. Built with **Flutter** + **flutter_bloc**.
 
 > **Bilingual by design.** The interface is fully **Arabic and right-to-left**
-> (via `flutter_localizations`, Arabic-Indic digits, and the Cairo font), while
+> (via `flutter_localizations`, Arabic-Indic digits, and the **bundled** Cairo
+> font — SIL OFL 1.1, so the Arabic UI renders offline), while
 > the **words being taught stay in English** — options, sentence chips, audio
 > and speech targets. English sentences are always assembled left-to-right even
 > inside the RTL layout.

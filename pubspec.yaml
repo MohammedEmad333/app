@@ -34,7 +34,6 @@ dependencies:
   speech_to_text: ^7.0.0
 
   # Utilities
-  google_fonts: ^6.2.1
   confetti: ^0.7.0
 
 dev_dependencies:
@@ -51,3 +50,16 @@ flutter:
     - assets/lottie/
     - assets/audio/
     - assets/images/
+  # Cairo (SIL OFL 1.1) bundled so the Arabic UI renders offline. Each weight
+  # file covers Arabic + basic Latin, so English learning words render too.
+  fonts:
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/Cairo-400.ttf
+          weight: 400
+        - asset: assets/fonts/Cairo-600.ttf
+          weight: 600
+        - asset: assets/fonts/Cairo-700.ttf
+          weight: 700
+        - asset: assets/fonts/Cairo-800.ttf
+          weight: 800
