@@ -3281,5 +3281,770 @@
         ]
       }
     ]
+  },
+  {
+    "id": "unit_11",
+    "title": "الوحدة ١١: عالم الطبيعة",
+    "subtitle": "النباتات وحيوانات البحر والحشرات",
+    "colorValue": 4279080072,
+    "difficulty": 4,
+    "lessons": [
+      {
+        "id": "u11_l1",
+        "title": "في الطبيعة",
+        "icon": "🌳",
+        "xpReward": 50,
+        "questions": [
+          {
+            "id": "u11_l1_q1",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Tree\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "🌳",
+            "correctOptionId": "o1",
+            "explanation": "\"Tree\" تعني شجرة 🌳.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Tree",
+                "emoji": "🌳"
+              },
+              {
+                "id": "o2",
+                "label": "Flower",
+                "emoji": "🌸"
+              },
+              {
+                "id": "o3",
+                "label": "River",
+                "emoji": "🏞️"
+              },
+              {
+                "id": "o4",
+                "label": "Sun",
+                "emoji": "☀️"
+              }
+            ]
+          },
+          {
+            "id": "u11_l1_q2",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Flower\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "🌸",
+            "correctOptionId": "o2",
+            "explanation": "\"Flower\" تعني زهرة 🌸.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Mountain",
+                "emoji": "⛰️"
+              },
+              {
+                "id": "o2",
+                "label": "Flower",
+                "emoji": "🌸"
+              },
+              {
+                "id": "o3",
+                "label": "Cloud",
+                "emoji": "☁️"
+              },
+              {
+                "id": "o4",
+                "label": "Leaf",
+                "emoji": "🍃"
+              }
+            ]
+          },
+          {
+            "id": "u11_l1_q3",
+            "type": "audioListening",
+            "prompt": "استمع واختر الإجابة",
+            "instruction": "اضغط زر التشغيل ثم اختر الإجابة",
+            "audioText": "The sun is bright today",
+            "correctOptionId": "o1",
+            "explanation": "\"sun\" تعني الشمس ☀️.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "The sun is bright today"
+              },
+              {
+                "id": "o2",
+                "label": "The moon is high tonight"
+              },
+              {
+                "id": "o3",
+                "label": "The rain is cold today"
+              },
+              {
+                "id": "o4",
+                "label": "The wind is strong now"
+              }
+            ]
+          },
+          {
+            "id": "u11_l1_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"A tall tree grows in the garden\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "A tall tree grows in the garden",
+            "wordBank": [
+              "A",
+              "tall",
+              "tree",
+              "grows",
+              "in",
+              "the",
+              "garden",
+              "small"
+            ],
+            "explanation": "\"grows\" تعني ينمو 🌱.",
+            "promptEmoji": "🌱"
+          },
+          {
+            "id": "u11_l1_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🌿",
+            "answer": "I love to walk in nature",
+            "explanation": "\"nature\" تعني الطبيعة 🌿."
+          }
+        ]
+      },
+      {
+        "id": "u11_l2",
+        "title": "حيوانات البحر",
+        "icon": "🐠",
+        "xpReward": 55,
+        "questions": [
+          {
+            "id": "u11_l2_q1",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Fish\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "🐟",
+            "correctOptionId": "o1",
+            "explanation": "\"Fish\" تعني سمكة 🐟.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Fish",
+                "emoji": "🐟"
+              },
+              {
+                "id": "o2",
+                "label": "Crab",
+                "emoji": "🦀"
+              },
+              {
+                "id": "o3",
+                "label": "Whale",
+                "emoji": "🐋"
+              },
+              {
+                "id": "o4",
+                "label": "Turtle",
+                "emoji": "🐢"
+              }
+            ]
+          },
+          {
+            "id": "u11_l2_q2",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Whale\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "🐋",
+            "correctOptionId": "o2",
+            "explanation": "\"Whale\" تعني حوت 🐋.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Shark",
+                "emoji": "🦈"
+              },
+              {
+                "id": "o2",
+                "label": "Whale",
+                "emoji": "🐋"
+              },
+              {
+                "id": "o3",
+                "label": "Octopus",
+                "emoji": "🐙"
+              },
+              {
+                "id": "o4",
+                "label": "Fish",
+                "emoji": "🐟"
+              }
+            ]
+          },
+          {
+            "id": "u11_l2_q3",
+            "type": "audioListening",
+            "prompt": "استمع واختر الإجابة",
+            "instruction": "اضغط زر التشغيل ثم اختر الإجابة",
+            "audioText": "The whale is very big",
+            "correctOptionId": "o1",
+            "explanation": "\"big\" تعني كبير 🐋.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "The whale is very big"
+              },
+              {
+                "id": "o2",
+                "label": "The crab is very small"
+              },
+              {
+                "id": "o3",
+                "label": "The fish is very fast"
+              },
+              {
+                "id": "o4",
+                "label": "The turtle is very slow"
+              }
+            ]
+          },
+          {
+            "id": "u11_l2_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Many fish swim in the blue sea\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Many fish swim in the blue sea",
+            "wordBank": [
+              "Many",
+              "fish",
+              "swim",
+              "in",
+              "the",
+              "blue",
+              "sea",
+              "sky"
+            ],
+            "explanation": "\"swim\" تعني تسبح 🌊.",
+            "promptEmoji": "🌊"
+          },
+          {
+            "id": "u11_l2_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🦈",
+            "answer": "I saw a big shark in the water",
+            "explanation": "\"shark\" تعني قرش 🦈."
+          }
+        ]
+      },
+      {
+        "id": "u11_l3",
+        "title": "الحشرات الصغيرة",
+        "icon": "🐝",
+        "xpReward": 60,
+        "questions": [
+          {
+            "id": "u11_l3_q1",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Bee\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "🐝",
+            "correctOptionId": "o1",
+            "explanation": "\"Bee\" تعني نحلة 🐝.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Bee",
+                "emoji": "🐝"
+              },
+              {
+                "id": "o2",
+                "label": "Ant",
+                "emoji": "🐜"
+              },
+              {
+                "id": "o3",
+                "label": "Spider",
+                "emoji": "🕷️"
+              },
+              {
+                "id": "o4",
+                "label": "Butterfly",
+                "emoji": "🦋"
+              }
+            ]
+          },
+          {
+            "id": "u11_l3_q2",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Butterfly\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "🦋",
+            "correctOptionId": "o2",
+            "explanation": "\"Butterfly\" تعني فراشة 🦋.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Ant",
+                "emoji": "🐜"
+              },
+              {
+                "id": "o2",
+                "label": "Butterfly",
+                "emoji": "🦋"
+              },
+              {
+                "id": "o3",
+                "label": "Bee",
+                "emoji": "🐝"
+              },
+              {
+                "id": "o4",
+                "label": "Ladybug",
+                "emoji": "🐞"
+              }
+            ]
+          },
+          {
+            "id": "u11_l3_q3",
+            "type": "audioListening",
+            "prompt": "استمع واختر الإجابة",
+            "instruction": "اضغط زر التشغيل ثم اختر الإجابة",
+            "audioText": "The little ant carries a leaf",
+            "correctOptionId": "o1",
+            "explanation": "\"carries\" تعني يحمل 🐜.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "The little ant carries a leaf"
+              },
+              {
+                "id": "o2",
+                "label": "The busy bee makes sweet honey"
+              },
+              {
+                "id": "o3",
+                "label": "The butterfly flies away"
+              },
+              {
+                "id": "o4",
+                "label": "The spider builds a web"
+              }
+            ]
+          },
+          {
+            "id": "u11_l3_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"The butterfly has beautiful colourful wings\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "The butterfly has beautiful colourful wings",
+            "wordBank": [
+              "The",
+              "butterfly",
+              "has",
+              "beautiful",
+              "colourful",
+              "wings",
+              "legs"
+            ],
+            "explanation": "\"wings\" تعني أجنحة 🦋.",
+            "promptEmoji": "🦋"
+          },
+          {
+            "id": "u11_l3_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🍯",
+            "answer": "The bee makes sweet honey for us",
+            "explanation": "\"honey\" تعني عسل 🍯."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit_12",
+    "title": "الوحدة ١٢: الهوايات والرياضة",
+    "subtitle": "العب ومارس هواياتك المفضّلة",
+    "colorValue": 4293880832,
+    "difficulty": 4,
+    "lessons": [
+      {
+        "id": "u12_l1",
+        "title": "الرياضة",
+        "icon": "⚽",
+        "xpReward": 55,
+        "questions": [
+          {
+            "id": "u12_l1_q1",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Football\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "⚽",
+            "correctOptionId": "o1",
+            "explanation": "\"Football\" تعني كرة القدم ⚽.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Football",
+                "emoji": "⚽"
+              },
+              {
+                "id": "o2",
+                "label": "Basketball",
+                "emoji": "🏀"
+              },
+              {
+                "id": "o3",
+                "label": "Tennis",
+                "emoji": "🎾"
+              },
+              {
+                "id": "o4",
+                "label": "Swimming",
+                "emoji": "🏊"
+              }
+            ]
+          },
+          {
+            "id": "u12_l1_q2",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Swimming\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "🏊",
+            "correctOptionId": "o2",
+            "explanation": "\"Swimming\" تعني السباحة 🏊.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Running",
+                "emoji": "🏃"
+              },
+              {
+                "id": "o2",
+                "label": "Swimming",
+                "emoji": "🏊"
+              },
+              {
+                "id": "o3",
+                "label": "Cycling",
+                "emoji": "🚴"
+              },
+              {
+                "id": "o4",
+                "label": "Jumping",
+                "emoji": "🤸"
+              }
+            ]
+          },
+          {
+            "id": "u12_l1_q3",
+            "type": "audioListening",
+            "prompt": "استمع واختر الإجابة",
+            "instruction": "اضغط زر التشغيل ثم اختر الإجابة",
+            "audioText": "I play football with my friends",
+            "correctOptionId": "o1",
+            "explanation": "\"play football\" تعني ألعب كرة القدم ⚽.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "I play football with my friends"
+              },
+              {
+                "id": "o2",
+                "label": "I play tennis with my brother"
+              },
+              {
+                "id": "o3",
+                "label": "I go swimming every week"
+              },
+              {
+                "id": "o4",
+                "label": "I ride my bike to school"
+              }
+            ]
+          },
+          {
+            "id": "u12_l1_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"We play basketball after school today\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "We play basketball after school today",
+            "wordBank": [
+              "We",
+              "play",
+              "basketball",
+              "after",
+              "school",
+              "today",
+              "before"
+            ],
+            "explanation": "\"basketball\" تعني كرة السلة 🏀.",
+            "promptEmoji": "🏀"
+          },
+          {
+            "id": "u12_l1_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🏃",
+            "answer": "Running fast makes me feel strong",
+            "explanation": "\"running\" تعني الجري 🏃."
+          }
+        ]
+      },
+      {
+        "id": "u12_l2",
+        "title": "الهوايات",
+        "icon": "🎨",
+        "xpReward": 55,
+        "questions": [
+          {
+            "id": "u12_l2_q1",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Drawing\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "🎨",
+            "correctOptionId": "o1",
+            "explanation": "\"Drawing\" تعني الرسم 🎨.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Drawing",
+                "emoji": "🎨"
+              },
+              {
+                "id": "o2",
+                "label": "Reading",
+                "emoji": "📖"
+              },
+              {
+                "id": "o3",
+                "label": "Dancing",
+                "emoji": "💃"
+              },
+              {
+                "id": "o4",
+                "label": "Cooking",
+                "emoji": "🍳"
+              }
+            ]
+          },
+          {
+            "id": "u12_l2_q2",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Reading\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "📖",
+            "correctOptionId": "o2",
+            "explanation": "\"Reading\" تعني القراءة 📖.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Singing",
+                "emoji": "🎤"
+              },
+              {
+                "id": "o2",
+                "label": "Reading",
+                "emoji": "📖"
+              },
+              {
+                "id": "o3",
+                "label": "Painting",
+                "emoji": "🖌️"
+              },
+              {
+                "id": "o4",
+                "label": "Fishing",
+                "emoji": "🎣"
+              }
+            ]
+          },
+          {
+            "id": "u12_l2_q3",
+            "type": "audioListening",
+            "prompt": "استمع واختر الإجابة",
+            "instruction": "اضغط زر التشغيل ثم اختر الإجابة",
+            "audioText": "My hobby is drawing animals",
+            "correctOptionId": "o1",
+            "explanation": "\"hobby\" تعني هواية 🎨.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "My hobby is drawing animals"
+              },
+              {
+                "id": "o2",
+                "label": "My hobby is reading books"
+              },
+              {
+                "id": "o3",
+                "label": "My hobby is playing music"
+              },
+              {
+                "id": "o4",
+                "label": "My hobby is riding bikes"
+              }
+            ]
+          },
+          {
+            "id": "u12_l2_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"I like reading a good story book\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "I like reading a good story book",
+            "wordBank": [
+              "I",
+              "like",
+              "reading",
+              "a",
+              "good",
+              "story",
+              "book",
+              "bad"
+            ],
+            "explanation": "\"story book\" تعني كتاب قصص 📚.",
+            "promptEmoji": "📚"
+          },
+          {
+            "id": "u12_l2_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🖌️",
+            "answer": "Painting is my favourite hobby",
+            "explanation": "\"favourite hobby\" تعني الهواية المفضّلة 🖌️."
+          }
+        ]
+      },
+      {
+        "id": "u12_l3",
+        "title": "الموسيقى",
+        "icon": "🎵",
+        "xpReward": 60,
+        "questions": [
+          {
+            "id": "u12_l3_q1",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Guitar\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "🎸",
+            "correctOptionId": "o1",
+            "explanation": "\"Guitar\" تعني قيثارة 🎸.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Guitar",
+                "emoji": "🎸"
+              },
+              {
+                "id": "o2",
+                "label": "Drum",
+                "emoji": "🥁"
+              },
+              {
+                "id": "o3",
+                "label": "Piano",
+                "emoji": "🎹"
+              },
+              {
+                "id": "o4",
+                "label": "Violin",
+                "emoji": "🎻"
+              }
+            ]
+          },
+          {
+            "id": "u12_l3_q2",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Drum\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "🥁",
+            "correctOptionId": "o2",
+            "explanation": "\"Drum\" تعني طبل 🥁.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Piano",
+                "emoji": "🎹"
+              },
+              {
+                "id": "o2",
+                "label": "Drum",
+                "emoji": "🥁"
+              },
+              {
+                "id": "o3",
+                "label": "Trumpet",
+                "emoji": "🎺"
+              },
+              {
+                "id": "o4",
+                "label": "Guitar",
+                "emoji": "🎸"
+              }
+            ]
+          },
+          {
+            "id": "u12_l3_q3",
+            "type": "audioListening",
+            "prompt": "استمع واختر الإجابة",
+            "instruction": "اضغط زر التشغيل ثم اختر الإجابة",
+            "audioText": "She plays the piano every evening",
+            "correctOptionId": "o1",
+            "explanation": "\"plays the piano\" تعني تعزف البيانو 🎹.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "She plays the piano every evening"
+              },
+              {
+                "id": "o2",
+                "label": "He plays the guitar every day"
+              },
+              {
+                "id": "o3",
+                "label": "They sing a happy song"
+              },
+              {
+                "id": "o4",
+                "label": "We dance to the music"
+              }
+            ]
+          },
+          {
+            "id": "u12_l3_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"I want to learn to play music\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "I want to learn to play music",
+            "wordBank": [
+              "I",
+              "want",
+              "to",
+              "learn",
+              "play",
+              "music",
+              "the"
+            ],
+            "explanation": "\"play music\" تعني أعزف الموسيقى 🎵.",
+            "promptEmoji": "🎵"
+          },
+          {
+            "id": "u12_l3_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🎶",
+            "answer": "Music makes everyone feel happy",
+            "explanation": "\"music\" تعني الموسيقى 🎶."
+          }
+        ]
+      }
+    ]
   }
 ]
