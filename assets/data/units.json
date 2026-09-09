@@ -6998,5 +6998,737 @@
         ]
       }
     ]
+  },
+  {
+    "id": "unit_21",
+    "title": "الوحدة ٢١: المطبخ والطبخ",
+    "subtitle": "اطبخ خطوة بخطوة وتذوّق الطعام الصحي",
+    "colorValue": 4293548044,
+    "difficulty": 5,
+    "lessons": [
+      {
+        "id": "u21_l1",
+        "title": "أدوات المطبخ",
+        "icon": "🍳",
+        "xpReward": 60,
+        "questions": [
+          {
+            "id": "u21_l1_q1",
+            "type": "imageMatching",
+            "prompt": "أي كلمة تعني \"المقلاة\"؟",
+            "instruction": "اختر الإجابة الصحيحة",
+            "promptEmoji": "🍳",
+            "correctOptionId": "o1",
+            "explanation": "\"pan\" تعني مقلاة 🍳.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Pan",
+                "emoji": "🍳"
+              },
+              {
+                "id": "o2",
+                "label": "Plate",
+                "emoji": "🍽️"
+              },
+              {
+                "id": "o3",
+                "label": "Cup",
+                "emoji": "☕"
+              },
+              {
+                "id": "o4",
+                "label": "Fork",
+                "emoji": "🍴"
+              }
+            ]
+          },
+          {
+            "id": "u21_l1_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "I cut the vegetables with a sharp knife",
+            "correctOptionId": "o1",
+            "explanation": "\"knife\" تعني سكّين 🔪.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "I cut the vegetables with a sharp knife"
+              },
+              {
+                "id": "o2",
+                "label": "I stir the soup with a wooden spoon"
+              },
+              {
+                "id": "o3",
+                "label": "I pour the milk into a clean glass"
+              },
+              {
+                "id": "o4",
+                "label": "I bake the bread inside the hot oven"
+              }
+            ]
+          },
+          {
+            "id": "u21_l1_q3",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"We use a spoon to stir the warm soup\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "We use a spoon to stir the warm soup",
+            "wordBank": [
+              "We",
+              "use",
+              "a",
+              "spoon",
+              "to",
+              "stir",
+              "the",
+              "warm",
+              "soup",
+              "fork",
+              "cold"
+            ],
+            "explanation": "\"stir\" تعني نقلّب 🥄.",
+            "promptEmoji": "🥄"
+          },
+          {
+            "id": "u21_l1_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Be careful the oven is very hot right now\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Be careful the oven is very hot right now",
+            "wordBank": [
+              "Be",
+              "careful",
+              "the",
+              "oven",
+              "is",
+              "very",
+              "hot",
+              "right",
+              "now",
+              "cold",
+              "later"
+            ],
+            "explanation": "\"oven\" تعني فرن، ونحذّر لأنه ساخن 🔥.",
+            "promptEmoji": "🔥"
+          },
+          {
+            "id": "u21_l1_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🍳",
+            "answer": "I like to help my mother in the kitchen",
+            "explanation": "نعبّر عن حبّنا لمساعدة أهلنا في المطبخ 🍳."
+          }
+        ]
+      },
+      {
+        "id": "u21_l2",
+        "title": "خطوات الطبخ",
+        "icon": "📋",
+        "xpReward": 65,
+        "questions": [
+          {
+            "id": "u21_l2_q1",
+            "type": "imageMatching",
+            "prompt": "أي كلمة تعني \"نخلط\"؟",
+            "instruction": "اختر الإجابة الصحيحة",
+            "promptEmoji": "🥣",
+            "correctOptionId": "o1",
+            "explanation": "\"mix\" تعني نخلط 🥣.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Mix the flour and the eggs",
+                "emoji": "🥣"
+              },
+              {
+                "id": "o2",
+                "label": "Wash the dirty dishes",
+                "emoji": "🧽"
+              },
+              {
+                "id": "o3",
+                "label": "Open the kitchen window",
+                "emoji": "🪟"
+              },
+              {
+                "id": "o4",
+                "label": "Set the table for dinner",
+                "emoji": "🍽️"
+              }
+            ]
+          },
+          {
+            "id": "u21_l2_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "First we wash our hands and then we cook",
+            "correctOptionId": "o1",
+            "explanation": "\"first ... then\" تعني أولاً ثم 🧼.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "First we wash our hands and then we cook"
+              },
+              {
+                "id": "o2",
+                "label": "Later we clean the table after the meal"
+              },
+              {
+                "id": "o3",
+                "label": "Soon the pizza will be ready to eat"
+              },
+              {
+                "id": "o4",
+                "label": "Now the water is boiling in the pot"
+              }
+            ]
+          },
+          {
+            "id": "u21_l2_q3",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Add a little salt and mix it very well\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Add a little salt and mix it very well",
+            "wordBank": [
+              "Add",
+              "a",
+              "little",
+              "salt",
+              "and",
+              "mix",
+              "it",
+              "very",
+              "well",
+              "much",
+              "badly"
+            ],
+            "explanation": "\"add\" تعني أضف و\"mix\" تعني اخلط 🧂.",
+            "promptEmoji": "🧂"
+          },
+          {
+            "id": "u21_l2_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"The cake must bake for thirty minutes in the oven\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "The cake must bake for thirty minutes in the oven",
+            "wordBank": [
+              "The",
+              "cake",
+              "must",
+              "bake",
+              "for",
+              "thirty",
+              "minutes",
+              "in",
+              "the",
+              "oven",
+              "second",
+              "fridge"
+            ],
+            "explanation": "\"bake\" تعني نخبز 🍰.",
+            "promptEmoji": "🍰"
+          },
+          {
+            "id": "u21_l2_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "👩‍🍳",
+            "answer": "Follow each step carefully to make a tasty meal",
+            "explanation": "نتبع الخطوات بعناية لنطهو وجبة لذيذة 👩‍🍳."
+          }
+        ]
+      },
+      {
+        "id": "u21_l3",
+        "title": "المذاق والطعام الصحي",
+        "icon": "🥗",
+        "xpReward": 70,
+        "questions": [
+          {
+            "id": "u21_l3_q1",
+            "type": "imageMatching",
+            "prompt": "أي كلمة تعني \"حلو\"؟",
+            "instruction": "اختر الإجابة الصحيحة",
+            "promptEmoji": "🍯",
+            "correctOptionId": "o1",
+            "explanation": "\"sweet\" تعني حلو 🍯.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Sweet",
+                "emoji": "🍯"
+              },
+              {
+                "id": "o2",
+                "label": "Sour",
+                "emoji": "🍋"
+              },
+              {
+                "id": "o3",
+                "label": "Salty",
+                "emoji": "🧂"
+              },
+              {
+                "id": "o4",
+                "label": "Spicy",
+                "emoji": "🌶️"
+              }
+            ]
+          },
+          {
+            "id": "u21_l3_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "Eating fruit and vegetables keeps us healthy",
+            "correctOptionId": "o1",
+            "explanation": "\"healthy\" تعني صحّي 🥗.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Eating fruit and vegetables keeps us healthy"
+              },
+              {
+                "id": "o2",
+                "label": "Drinking cold water is nice on a hot day"
+              },
+              {
+                "id": "o3",
+                "label": "Cooking dinner takes about one whole hour"
+              },
+              {
+                "id": "o4",
+                "label": "Sharing food with friends is always fun"
+              }
+            ]
+          },
+          {
+            "id": "u21_l3_q3",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"This lemon tastes sour but the honey tastes sweet\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "This lemon tastes sour but the honey tastes sweet",
+            "wordBank": [
+              "This",
+              "lemon",
+              "tastes",
+              "sour",
+              "but",
+              "the",
+              "honey",
+              "tastes",
+              "sweet",
+              "salty",
+              "and"
+            ],
+            "explanation": "\"sour\" تعني حامض و\"sweet\" تعني حلو 🍋.",
+            "promptEmoji": "🍋"
+          },
+          {
+            "id": "u21_l3_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"We should eat healthy food to grow big and strong\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "We should eat healthy food to grow big and strong",
+            "wordBank": [
+              "We",
+              "should",
+              "eat",
+              "healthy",
+              "food",
+              "to",
+              "grow",
+              "big",
+              "and",
+              "strong",
+              "junk",
+              "weak"
+            ],
+            "explanation": "\"healthy food\" تعني طعام صحّي 🥦.",
+            "promptEmoji": "🥦"
+          },
+          {
+            "id": "u21_l3_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🥗",
+            "answer": "My favourite meal is both tasty and healthy",
+            "explanation": "نصف وجبتنا المفضّلة بأنها لذيذة وصحّية 🥗."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit_22",
+    "title": "الوحدة ٢٢: السفر والمغامرة",
+    "subtitle": "خطّط لرحلتك واستكشف العالم",
+    "colorValue": 4282595530,
+    "difficulty": 6,
+    "lessons": [
+      {
+        "id": "u22_l1",
+        "title": "التحضير للرحلة",
+        "icon": "🧳",
+        "xpReward": 70,
+        "questions": [
+          {
+            "id": "u22_l1_q1",
+            "type": "imageMatching",
+            "prompt": "أي كلمة تعني \"حقيبة سفر\"؟",
+            "instruction": "اختر الإجابة الصحيحة",
+            "promptEmoji": "🧳",
+            "correctOptionId": "o1",
+            "explanation": "\"suitcase\" تعني حقيبة سفر 🧳.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Suitcase",
+                "emoji": "🧳"
+              },
+              {
+                "id": "o2",
+                "label": "Ticket",
+                "emoji": "🎫"
+              },
+              {
+                "id": "o3",
+                "label": "Map",
+                "emoji": "🗺️"
+              },
+              {
+                "id": "o4",
+                "label": "Camera",
+                "emoji": "📷"
+              }
+            ]
+          },
+          {
+            "id": "u22_l1_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "Do not forget to pack your passport and ticket",
+            "correctOptionId": "o1",
+            "explanation": "\"passport\" تعني جواز سفر 🛂.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Do not forget to pack your passport and ticket"
+              },
+              {
+                "id": "o2",
+                "label": "Remember to close the windows before we leave"
+              },
+              {
+                "id": "o3",
+                "label": "Please carry the heavy bags to the car"
+              },
+              {
+                "id": "o4",
+                "label": "Try to sleep early so we can wake up"
+              }
+            ]
+          },
+          {
+            "id": "u22_l1_q3",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"We packed our bags and drove to the airport\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "We packed our bags and drove to the airport",
+            "wordBank": [
+              "We",
+              "packed",
+              "our",
+              "bags",
+              "and",
+              "drove",
+              "to",
+              "the",
+              "airport",
+              "station",
+              "unpacked"
+            ],
+            "explanation": "\"airport\" تعني مطار ✈️.",
+            "promptEmoji": "✈️"
+          },
+          {
+            "id": "u22_l1_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"The plane will take off in about two hours\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "The plane will take off in about two hours",
+            "wordBank": [
+              "The",
+              "plane",
+              "will",
+              "take",
+              "off",
+              "in",
+              "about",
+              "two",
+              "hours",
+              "land",
+              "days"
+            ],
+            "explanation": "\"take off\" تعني الإقلاع 🛫.",
+            "promptEmoji": "🛫"
+          },
+          {
+            "id": "u22_l1_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🏖️",
+            "answer": "I am so excited about our summer holiday trip",
+            "explanation": "نعبّر عن حماسنا لرحلة العطلة الصيفية 🏖️."
+          }
+        ]
+      },
+      {
+        "id": "u22_l2",
+        "title": "استكشاف الأماكن",
+        "icon": "🗺️",
+        "xpReward": 75,
+        "questions": [
+          {
+            "id": "u22_l2_q1",
+            "type": "imageMatching",
+            "prompt": "أي كلمة تعني \"الشاطئ\"؟",
+            "instruction": "اختر الإجابة الصحيحة",
+            "promptEmoji": "🏖️",
+            "correctOptionId": "o1",
+            "explanation": "\"beach\" تعني شاطئ 🏖️.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Beach",
+                "emoji": "🏖️"
+              },
+              {
+                "id": "o2",
+                "label": "Mountain",
+                "emoji": "⛰️"
+              },
+              {
+                "id": "o3",
+                "label": "Desert",
+                "emoji": "🏜️"
+              },
+              {
+                "id": "o4",
+                "label": "Forest",
+                "emoji": "🌲"
+              }
+            ]
+          },
+          {
+            "id": "u22_l2_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "We climbed the tall mountain to see the view",
+            "correctOptionId": "o1",
+            "explanation": "\"climbed\" تعني تسلّقنا ⛰️.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "We climbed the tall mountain to see the view"
+              },
+              {
+                "id": "o2",
+                "label": "We swam in the cool sea near the beach"
+              },
+              {
+                "id": "o3",
+                "label": "We walked through the green forest all day"
+              },
+              {
+                "id": "o4",
+                "label": "We rested in the shade under a big tree"
+              }
+            ]
+          },
+          {
+            "id": "u22_l2_q3",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Travelling to new places is an amazing adventure\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Travelling to new places is an amazing adventure",
+            "wordBank": [
+              "Travelling",
+              "to",
+              "new",
+              "places",
+              "is",
+              "an",
+              "amazing",
+              "adventure",
+              "boring",
+              "old"
+            ],
+            "explanation": "\"adventure\" تعني مغامرة 🧭.",
+            "promptEmoji": "🧭"
+          },
+          {
+            "id": "u22_l2_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"We took many photos of the beautiful old city\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "We took many photos of the beautiful old city",
+            "wordBank": [
+              "We",
+              "took",
+              "many",
+              "photos",
+              "of",
+              "the",
+              "beautiful",
+              "old",
+              "city",
+              "ugly",
+              "few"
+            ],
+            "explanation": "\"took photos\" تعني التقطنا صوراً 📸.",
+            "promptEmoji": "📸"
+          },
+          {
+            "id": "u22_l2_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🌍",
+            "answer": "Exploring different places teaches us so much",
+            "explanation": "استكشاف الأماكن المختلفة يعلّمنا الكثير 🌍."
+          }
+        ]
+      },
+      {
+        "id": "u22_l3",
+        "title": "ذكريات الرحلة",
+        "icon": "📸",
+        "xpReward": 80,
+        "questions": [
+          {
+            "id": "u22_l3_q1",
+            "type": "imageMatching",
+            "prompt": "أي جملة تعبّر عن ذكرى سعيدة؟",
+            "instruction": "اختر الإجابة الصحيحة",
+            "promptEmoji": "💭",
+            "correctOptionId": "o1",
+            "explanation": "\"memory\" تعني ذكرى 💭.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "This trip is my best memory ever",
+                "emoji": "💭"
+              },
+              {
+                "id": "o2",
+                "label": "The bus was late again this morning",
+                "emoji": "🚌"
+              },
+              {
+                "id": "o3",
+                "label": "My shoes got wet in the rain",
+                "emoji": "👟"
+              },
+              {
+                "id": "o4",
+                "label": "The shop was closed on Friday",
+                "emoji": "🏬"
+              }
+            ]
+          },
+          {
+            "id": "u22_l3_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "We made new friends from many different countries",
+            "correctOptionId": "o1",
+            "explanation": "\"made new friends\" تعني كوّنّا صداقات جديدة 🤝.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "We made new friends from many different countries"
+              },
+              {
+                "id": "o2",
+                "label": "We bought some gifts for our whole family"
+              },
+              {
+                "id": "o3",
+                "label": "We tasted new food at a small restaurant"
+              },
+              {
+                "id": "o4",
+                "label": "We watched the sunset from the high hill"
+              }
+            ]
+          },
+          {
+            "id": "u22_l3_q3",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"I will always remember this wonderful journey home\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "I will always remember this wonderful journey home",
+            "wordBank": [
+              "I",
+              "will",
+              "always",
+              "remember",
+              "this",
+              "wonderful",
+              "journey",
+              "home",
+              "forget",
+              "terrible"
+            ],
+            "explanation": "\"journey\" تعني رحلة، و\"remember\" تعني أتذكّر 🧳.",
+            "promptEmoji": "🧳"
+          },
+          {
+            "id": "u22_l3_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Every adventure teaches us something new about the world\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Every adventure teaches us something new about the world",
+            "wordBank": [
+              "Every",
+              "adventure",
+              "teaches",
+              "us",
+              "something",
+              "new",
+              "about",
+              "the",
+              "world",
+              "nothing",
+              "old"
+            ],
+            "explanation": "\"teaches us something new\" تعني تعلّمنا شيئاً جديداً 🌏.",
+            "promptEmoji": "🌏"
+          },
+          {
+            "id": "u22_l3_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🌍",
+            "answer": "One day I hope to travel all around the world",
+            "explanation": "نحلم بالسفر حول العالم يوماً ما 🌍."
+          }
+        ]
+      }
+    ]
   }
 ]
