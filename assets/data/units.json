@@ -7730,5 +7730,737 @@
         ]
       }
     ]
+  },
+  {
+    "id": "unit_23",
+    "title": "الوحدة ٢٣: المال والادّخار",
+    "subtitle": "وفّر وأنفق بحكمة وشارك الآخرين",
+    "colorValue": 4286331629,
+    "difficulty": 5,
+    "lessons": [
+      {
+        "id": "u23_l1",
+        "title": "المال الذكي",
+        "icon": "🏦",
+        "xpReward": 60,
+        "questions": [
+          {
+            "id": "u23_l1_q1",
+            "type": "imageMatching",
+            "prompt": "أي كلمة تعني \"توفير\"؟",
+            "instruction": "اختر الإجابة الصحيحة",
+            "promptEmoji": "🐷",
+            "correctOptionId": "o1",
+            "explanation": "\"saving\" تعني توفير 🐷.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Saving money in a piggy bank",
+                "emoji": "🐷"
+              },
+              {
+                "id": "o2",
+                "label": "Spending money on toys",
+                "emoji": "🧸"
+              },
+              {
+                "id": "o3",
+                "label": "Losing money on the bus",
+                "emoji": "🚌"
+              },
+              {
+                "id": "o4",
+                "label": "Finding money on the road",
+                "emoji": "🛣️"
+              }
+            ]
+          },
+          {
+            "id": "u23_l1_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "It is smart to save some money every week",
+            "correctOptionId": "o1",
+            "explanation": "\"save\" تعني نوفّر 💰.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "It is smart to save some money every week"
+              },
+              {
+                "id": "o2",
+                "label": "It is fun to buy a new game today"
+              },
+              {
+                "id": "o3",
+                "label": "It is easy to spend all your pocket money"
+              },
+              {
+                "id": "o4",
+                "label": "It is nice to give a gift to a friend"
+              }
+            ]
+          },
+          {
+            "id": "u23_l1_q3",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"I put a coin in my piggy bank daily\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "I put a coin in my piggy bank daily",
+            "wordBank": [
+              "I",
+              "put",
+              "a",
+              "coin",
+              "in",
+              "my",
+              "piggy",
+              "bank",
+              "daily",
+              "spend",
+              "never"
+            ],
+            "explanation": "\"coin\" تعني عملة معدنية 🪙.",
+            "promptEmoji": "🪙"
+          },
+          {
+            "id": "u23_l1_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Saving a little now helps a lot later\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Saving a little now helps a lot later",
+            "wordBank": [
+              "Saving",
+              "a",
+              "little",
+              "now",
+              "helps",
+              "a",
+              "lot",
+              "later",
+              "wasting",
+              "never"
+            ],
+            "explanation": "\"a little now, a lot later\" تعني القليل الآن يفيد كثيراً لاحقاً 📈.",
+            "promptEmoji": "📈"
+          },
+          {
+            "id": "u23_l1_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🚲",
+            "answer": "I am saving my money to buy a bike",
+            "explanation": "نوفّر المال لهدفٍ نريده 🚲."
+          }
+        ]
+      },
+      {
+        "id": "u23_l2",
+        "title": "الإنفاق الحكيم",
+        "icon": "🧾",
+        "xpReward": 65,
+        "questions": [
+          {
+            "id": "u23_l2_q1",
+            "type": "imageMatching",
+            "prompt": "أي كلمة تعني \"الميزانية\"؟",
+            "instruction": "اختر الإجابة الصحيحة",
+            "promptEmoji": "🧾",
+            "correctOptionId": "o1",
+            "explanation": "\"budget\" تعني ميزانية 🧾.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Budget",
+                "emoji": "🧾"
+              },
+              {
+                "id": "o2",
+                "label": "Present",
+                "emoji": "🎁"
+              },
+              {
+                "id": "o3",
+                "label": "Ticket",
+                "emoji": "🎫"
+              },
+              {
+                "id": "o4",
+                "label": "Coin",
+                "emoji": "🪙"
+              }
+            ]
+          },
+          {
+            "id": "u23_l2_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "We should compare prices before we buy something",
+            "correctOptionId": "o1",
+            "explanation": "\"compare prices\" تعني نقارن الأسعار 🔍.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "We should compare prices before we buy something"
+              },
+              {
+                "id": "o2",
+                "label": "We should thank the driver after every trip"
+              },
+              {
+                "id": "o3",
+                "label": "We should water the plants in the morning"
+              },
+              {
+                "id": "o4",
+                "label": "We should read a story before we sleep"
+              }
+            ]
+          },
+          {
+            "id": "u23_l2_q3",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"A wise shopper only buys the things they need\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "A wise shopper only buys the things they need",
+            "wordBank": [
+              "A",
+              "wise",
+              "shopper",
+              "only",
+              "buys",
+              "the",
+              "things",
+              "they",
+              "need",
+              "want",
+              "never"
+            ],
+            "explanation": "\"need\" تعني يحتاج، والتسوّق الحكيم يشتري الحاجات 🧠.",
+            "promptEmoji": "🧠"
+          },
+          {
+            "id": "u23_l2_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Making a list helps us not waste our money\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Making a list helps us not waste our money",
+            "wordBank": [
+              "Making",
+              "a",
+              "list",
+              "helps",
+              "us",
+              "not",
+              "waste",
+              "our",
+              "money",
+              "time",
+              "spend"
+            ],
+            "explanation": "\"waste\" تعني نهدر 🧾.",
+            "promptEmoji": "🧾"
+          },
+          {
+            "id": "u23_l2_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "💭",
+            "answer": "I always think carefully before I spend my money",
+            "explanation": "نفكّر جيداً قبل أن ننفق 💭."
+          }
+        ]
+      },
+      {
+        "id": "u23_l3",
+        "title": "العطاء والمشاركة",
+        "icon": "🤲",
+        "xpReward": 70,
+        "questions": [
+          {
+            "id": "u23_l3_q1",
+            "type": "imageMatching",
+            "prompt": "أي جملة تعبّر عن العطاء؟",
+            "instruction": "اختر الإجابة الصحيحة",
+            "promptEmoji": "🤲",
+            "correctOptionId": "o1",
+            "explanation": "\"give\" تعني نعطي 🤲.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "We give some money to help others",
+                "emoji": "🤲"
+              },
+              {
+                "id": "o2",
+                "label": "We keep all the toys for ourselves",
+                "emoji": "🧸"
+              },
+              {
+                "id": "o3",
+                "label": "We hide the sweets from our friends",
+                "emoji": "🍬"
+              },
+              {
+                "id": "o4",
+                "label": "We throw the old clothes away",
+                "emoji": "🗑️"
+              }
+            ]
+          },
+          {
+            "id": "u23_l3_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "Sharing what we have makes other people happy",
+            "correctOptionId": "o1",
+            "explanation": "\"sharing\" تعني المشاركة 💝.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Sharing what we have makes other people happy"
+              },
+              {
+                "id": "o2",
+                "label": "Counting all our coins takes a long time"
+              },
+              {
+                "id": "o3",
+                "label": "Buying a big toy costs a lot of money"
+              },
+              {
+                "id": "o4",
+                "label": "Walking to the shop is good for our health"
+              }
+            ]
+          },
+          {
+            "id": "u23_l3_q3",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Giving to people in need is a kind act\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Giving to people in need is a kind act",
+            "wordBank": [
+              "Giving",
+              "to",
+              "people",
+              "in",
+              "need",
+              "is",
+              "a",
+              "kind",
+              "act",
+              "cruel",
+              "taking"
+            ],
+            "explanation": "\"in need\" تعني المحتاجين 🤲.",
+            "promptEmoji": "🤲"
+          },
+          {
+            "id": "u23_l3_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"A small gift can make a big difference today\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "A small gift can make a big difference today",
+            "wordBank": [
+              "A",
+              "small",
+              "gift",
+              "can",
+              "make",
+              "a",
+              "big",
+              "difference",
+              "today",
+              "never",
+              "problem"
+            ],
+            "explanation": "\"make a difference\" تعني نُحدث فرقاً 💫.",
+            "promptEmoji": "💫"
+          },
+          {
+            "id": "u23_l3_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🤝",
+            "answer": "I like to share and help people around me",
+            "explanation": "نحبّ المشاركة ومساعدة من حولنا 🤝."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit_24",
+    "title": "الوحدة ٢٤: كوكبنا والبيئة",
+    "subtitle": "احمِ الأرض وكن بطلاً للطبيعة",
+    "colorValue": 4279599165,
+    "difficulty": 6,
+    "lessons": [
+      {
+        "id": "u24_l1",
+        "title": "كوكب الأرض",
+        "icon": "🌍",
+        "xpReward": 70,
+        "questions": [
+          {
+            "id": "u24_l1_q1",
+            "type": "imageMatching",
+            "prompt": "أي كلمة تعني \"الأرض\"؟",
+            "instruction": "اختر الإجابة الصحيحة",
+            "promptEmoji": "🌍",
+            "correctOptionId": "o1",
+            "explanation": "\"Earth\" تعني الأرض 🌍.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Earth",
+                "emoji": "🌍"
+              },
+              {
+                "id": "o2",
+                "label": "Ocean",
+                "emoji": "🌊"
+              },
+              {
+                "id": "o3",
+                "label": "Forest",
+                "emoji": "🌲"
+              },
+              {
+                "id": "o4",
+                "label": "Desert",
+                "emoji": "🏜️"
+              }
+            ]
+          },
+          {
+            "id": "u24_l1_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "Our planet is home to millions of living things",
+            "correctOptionId": "o1",
+            "explanation": "\"living things\" تعني الكائنات الحية 🐾.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Our planet is home to millions of living things"
+              },
+              {
+                "id": "o2",
+                "label": "Our school is close to the busy market"
+              },
+              {
+                "id": "o3",
+                "label": "Our garden is full of red and yellow roses"
+              },
+              {
+                "id": "o4",
+                "label": "Our city has many tall and modern buildings"
+              }
+            ]
+          },
+          {
+            "id": "u24_l1_q3",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"The oceans cover most of our blue planet\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "The oceans cover most of our blue planet",
+            "wordBank": [
+              "The",
+              "oceans",
+              "cover",
+              "most",
+              "of",
+              "our",
+              "blue",
+              "planet",
+              "green",
+              "little"
+            ],
+            "explanation": "\"oceans\" تعني المحيطات 🌊.",
+            "promptEmoji": "🌊"
+          },
+          {
+            "id": "u24_l1_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Trees give us fresh air and cool green shade\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Trees give us fresh air and cool green shade",
+            "wordBank": [
+              "Trees",
+              "give",
+              "us",
+              "fresh",
+              "air",
+              "and",
+              "cool",
+              "green",
+              "shade",
+              "smoke",
+              "hot"
+            ],
+            "explanation": "\"fresh air\" تعني هواء نقي 🌳.",
+            "promptEmoji": "🌳"
+          },
+          {
+            "id": "u24_l1_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🌍",
+            "answer": "The Earth is the only home that we have",
+            "explanation": "الأرض هي بيتنا الوحيد فلنعتنِ بها 🌍."
+          }
+        ]
+      },
+      {
+        "id": "u24_l2",
+        "title": "حماية البيئة",
+        "icon": "♻️",
+        "xpReward": 75,
+        "questions": [
+          {
+            "id": "u24_l2_q1",
+            "type": "imageMatching",
+            "prompt": "أي كلمة تعني \"إعادة التدوير\"؟",
+            "instruction": "اختر الإجابة الصحيحة",
+            "promptEmoji": "♻️",
+            "correctOptionId": "o1",
+            "explanation": "\"recycle\" تعني إعادة التدوير ♻️.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Recycle the bottles and cans",
+                "emoji": "♻️"
+              },
+              {
+                "id": "o2",
+                "label": "Throw the trash on the ground",
+                "emoji": "🗑️"
+              },
+              {
+                "id": "o3",
+                "label": "Cut down the big old trees",
+                "emoji": "🪓"
+              },
+              {
+                "id": "o4",
+                "label": "Leave the lights on all night",
+                "emoji": "💡"
+              }
+            ]
+          },
+          {
+            "id": "u24_l2_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "We must not waste water when we brush our teeth",
+            "correctOptionId": "o1",
+            "explanation": "\"waste water\" تعني نهدر الماء 💧.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "We must not waste water when we brush our teeth"
+              },
+              {
+                "id": "o2",
+                "label": "We must arrive at school before the bell rings"
+              },
+              {
+                "id": "o3",
+                "label": "We must finish our homework after dinner"
+              },
+              {
+                "id": "o4",
+                "label": "We must wear a warm coat in the winter"
+              }
+            ]
+          },
+          {
+            "id": "u24_l2_q3",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Turning off the lights saves a lot of energy\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Turning off the lights saves a lot of energy",
+            "wordBank": [
+              "Turning",
+              "off",
+              "the",
+              "lights",
+              "saves",
+              "a",
+              "lot",
+              "of",
+              "energy",
+              "wastes",
+              "little"
+            ],
+            "explanation": "\"saves energy\" تعني يوفّر الطاقة ⚡.",
+            "promptEmoji": "⚡"
+          },
+          {
+            "id": "u24_l2_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Planting trees helps keep the air clean and fresh\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Planting trees helps keep the air clean and fresh",
+            "wordBank": [
+              "Planting",
+              "trees",
+              "helps",
+              "keep",
+              "the",
+              "air",
+              "clean",
+              "and",
+              "fresh",
+              "dirty",
+              "cut"
+            ],
+            "explanation": "\"planting trees\" تعني زراعة الأشجار 🌱.",
+            "promptEmoji": "🌱"
+          },
+          {
+            "id": "u24_l2_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🌏",
+            "answer": "Every small action can help protect our environment",
+            "explanation": "كل فعل صغير يحمي بيئتنا 🌏."
+          }
+        ]
+      },
+      {
+        "id": "u24_l3",
+        "title": "أبطال الطبيعة",
+        "icon": "🌱",
+        "xpReward": 80,
+        "questions": [
+          {
+            "id": "u24_l3_q1",
+            "type": "imageMatching",
+            "prompt": "أي جملة تصف بطل بيئة؟",
+            "instruction": "اختر الإجابة الصحيحة",
+            "promptEmoji": "🦸",
+            "correctOptionId": "o1",
+            "explanation": "\"protect\" تعني نحمي 🦸.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "She works hard to protect wild animals",
+                "emoji": "🦸"
+              },
+              {
+                "id": "o2",
+                "label": "He plays football every afternoon",
+                "emoji": "⚽"
+              },
+              {
+                "id": "o3",
+                "label": "They watch cartoons after school",
+                "emoji": "📺"
+              },
+              {
+                "id": "o4",
+                "label": "We eat lunch in the big hall",
+                "emoji": "🍽️"
+              }
+            ]
+          },
+          {
+            "id": "u24_l3_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "If everyone helps we can save our beautiful planet",
+            "correctOptionId": "o1",
+            "explanation": "\"save our planet\" تعني ننقذ كوكبنا 🌍.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "If everyone helps we can save our beautiful planet"
+              },
+              {
+                "id": "o2",
+                "label": "If it rains a lot the river will rise"
+              },
+              {
+                "id": "o3",
+                "label": "If you study hard you will pass the test"
+              },
+              {
+                "id": "o4",
+                "label": "If we hurry we can catch the early bus"
+              }
+            ]
+          },
+          {
+            "id": "u24_l3_q3",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"We are the ones who can make the world greener\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "We are the ones who can make the world greener",
+            "wordBank": [
+              "We",
+              "are",
+              "the",
+              "ones",
+              "who",
+              "can",
+              "make",
+              "the",
+              "world",
+              "greener",
+              "dirtier",
+              "never"
+            ],
+            "explanation": "\"greener\" تعني أكثر خُضرة 🌿.",
+            "promptEmoji": "🌿"
+          },
+          {
+            "id": "u24_l3_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Caring for nature is a job for all of us\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Caring for nature is a job for all of us",
+            "wordBank": [
+              "Caring",
+              "for",
+              "nature",
+              "is",
+              "a",
+              "job",
+              "for",
+              "all",
+              "of",
+              "us",
+              "none",
+              "them"
+            ],
+            "explanation": "\"caring for nature\" تعني الاعتناء بالطبيعة 🌱.",
+            "promptEmoji": "🌱"
+          },
+          {
+            "id": "u24_l3_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🌍",
+            "answer": "I promise to keep my world clean and green",
+            "explanation": "نعِد بالحفاظ على عالمنا نظيفاً وأخضر 🌍."
+          }
+        ]
+      }
+    ]
   }
 ]
