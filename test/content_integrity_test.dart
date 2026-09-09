@@ -26,7 +26,7 @@ void main() {
   });
 
   test('units.json parses into at least the seeded units', () {
-    expect(units.length, greaterThanOrEqualTo(18));
+    expect(units.length, greaterThanOrEqualTo(20));
   });
 
   test('unit ids are unique and units have lessons', () {

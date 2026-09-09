@@ -6264,5 +6264,739 @@
         ]
       }
     ]
+  },
+  {
+    "id": "unit_19",
+    "title": "الوحدة ١٩: التكنولوجيا",
+    "subtitle": "الأجهزة والإنترنت والأمان الرقمي",
+    "colorValue": 4278751666,
+    "difficulty": 5,
+    "lessons": [
+      {
+        "id": "u19_l1",
+        "title": "الأجهزة",
+        "icon": "💻",
+        "xpReward": 60,
+        "questions": [
+          {
+            "id": "u19_l1_q1",
+            "type": "imageMatching",
+            "prompt": "أي كلمة تعني \"الحاسوب\"؟",
+            "instruction": "اختر الإجابة الصحيحة",
+            "promptEmoji": "💻",
+            "correctOptionId": "o1",
+            "explanation": "\"computer\" تعني حاسوب 💻.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Computer",
+                "emoji": "💻"
+              },
+              {
+                "id": "o2",
+                "label": "Phone",
+                "emoji": "📱"
+              },
+              {
+                "id": "o3",
+                "label": "Camera",
+                "emoji": "📷"
+              },
+              {
+                "id": "o4",
+                "label": "Clock",
+                "emoji": "⏰"
+              }
+            ]
+          },
+          {
+            "id": "u19_l1_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "I use my tablet to read stories",
+            "correctOptionId": "o1",
+            "explanation": "\"tablet\" تعني لوح إلكتروني 📱.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "I use my tablet to read stories"
+              },
+              {
+                "id": "o2",
+                "label": "I use my phone to call my friend"
+              },
+              {
+                "id": "o3",
+                "label": "I use my camera to take photos"
+              },
+              {
+                "id": "o4",
+                "label": "I use my radio to hear the news"
+              }
+            ]
+          },
+          {
+            "id": "u19_l1_q3",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"The keyboard and the mouse help me type fast\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "The keyboard and the mouse help me type fast",
+            "wordBank": [
+              "The",
+              "keyboard",
+              "and",
+              "the",
+              "mouse",
+              "help",
+              "me",
+              "type",
+              "fast",
+              "screen",
+              "slow"
+            ],
+            "explanation": "\"keyboard\" تعني لوحة المفاتيح و\"mouse\" تعني الفأرة ⌨️.",
+            "promptEmoji": "⌨️"
+          },
+          {
+            "id": "u19_l1_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"A robot can do many useful tasks for people\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "A robot can do many useful tasks for people",
+            "wordBank": [
+              "A",
+              "robot",
+              "can",
+              "do",
+              "many",
+              "useful",
+              "tasks",
+              "for",
+              "people",
+              "games",
+              "never"
+            ],
+            "explanation": "\"robot\" تعني روبوت 🤖.",
+            "promptEmoji": "🤖"
+          },
+          {
+            "id": "u19_l1_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "💻",
+            "answer": "I like to learn new things on the computer",
+            "explanation": "نعبّر عن حبّنا للتعلّم عبر الحاسوب 💻."
+          }
+        ]
+      },
+      {
+        "id": "u19_l2",
+        "title": "الإنترنت",
+        "icon": "🌐",
+        "xpReward": 65,
+        "questions": [
+          {
+            "id": "u19_l2_q1",
+            "type": "imageMatching",
+            "prompt": "أي كلمة تعني \"موقع إلكتروني\"؟",
+            "instruction": "اختر الإجابة الصحيحة",
+            "promptEmoji": "🌐",
+            "correctOptionId": "o1",
+            "explanation": "\"website\" تعني موقع إلكتروني 🌐.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Website",
+                "emoji": "🌐"
+              },
+              {
+                "id": "o2",
+                "label": "Letter",
+                "emoji": "✉️"
+              },
+              {
+                "id": "o3",
+                "label": "Book",
+                "emoji": "📖"
+              },
+              {
+                "id": "o4",
+                "label": "Map",
+                "emoji": "🗺️"
+              }
+            ]
+          },
+          {
+            "id": "u19_l2_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "We can find a lot of information online",
+            "correctOptionId": "o1",
+            "explanation": "\"information\" تعني معلومات 🔎.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "We can find a lot of information online"
+              },
+              {
+                "id": "o2",
+                "label": "We can watch a funny video after lunch"
+              },
+              {
+                "id": "o3",
+                "label": "We can send a message to our teacher"
+              },
+              {
+                "id": "o4",
+                "label": "We can play a new game with our cousins"
+              }
+            ]
+          },
+          {
+            "id": "u19_l2_q3",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"The internet connects people all around the world\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "The internet connects people all around the world",
+            "wordBank": [
+              "The",
+              "internet",
+              "connects",
+              "people",
+              "all",
+              "around",
+              "the",
+              "world",
+              "phone",
+              "alone"
+            ],
+            "explanation": "\"connects\" تعني يربط 🌍.",
+            "promptEmoji": "🌍"
+          },
+          {
+            "id": "u19_l2_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Sending an email is faster than sending a letter\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Sending an email is faster than sending a letter",
+            "wordBank": [
+              "Sending",
+              "an",
+              "email",
+              "is",
+              "faster",
+              "than",
+              "sending",
+              "a",
+              "letter",
+              "slower",
+              "stamp"
+            ],
+            "explanation": "\"email\" تعني بريد إلكتروني 📧.",
+            "promptEmoji": "📧"
+          },
+          {
+            "id": "u19_l2_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🌐",
+            "answer": "The internet helps us learn about everything",
+            "explanation": "الإنترنت يساعدنا على التعلّم 🌐."
+          }
+        ]
+      },
+      {
+        "id": "u19_l3",
+        "title": "الأمان الرقمي",
+        "icon": "🔒",
+        "xpReward": 70,
+        "questions": [
+          {
+            "id": "u19_l3_q1",
+            "type": "imageMatching",
+            "prompt": "أي كلمة تعني \"كلمة المرور\"؟",
+            "instruction": "اختر الإجابة الصحيحة",
+            "promptEmoji": "🔒",
+            "correctOptionId": "o1",
+            "explanation": "\"password\" تعني كلمة المرور 🔒.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Password",
+                "emoji": "🔒"
+              },
+              {
+                "id": "o2",
+                "label": "Screen",
+                "emoji": "🖥️"
+              },
+              {
+                "id": "o3",
+                "label": "Button",
+                "emoji": "🔘"
+              },
+              {
+                "id": "o4",
+                "label": "Cable",
+                "emoji": "🔌"
+              }
+            ]
+          },
+          {
+            "id": "u19_l3_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "Never share your password with a stranger",
+            "correctOptionId": "o1",
+            "explanation": "\"stranger\" تعني شخص غريب 🚫.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Never share your password with a stranger"
+              },
+              {
+                "id": "o2",
+                "label": "Always turn off the lights before you sleep"
+              },
+              {
+                "id": "o3",
+                "label": "Please put the books back on the shelf"
+              },
+              {
+                "id": "o4",
+                "label": "Remember to bring your lunch to school"
+              }
+            ]
+          },
+          {
+            "id": "u19_l3_q3",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"We should be kind and safe on the internet\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "We should be kind and safe on the internet",
+            "wordBank": [
+              "We",
+              "should",
+              "be",
+              "kind",
+              "and",
+              "safe",
+              "on",
+              "the",
+              "internet",
+              "rude",
+              "risky"
+            ],
+            "explanation": "\"safe\" تعني آمن، ونتعامل بلطف على الإنترنت 🔒.",
+            "promptEmoji": "🔒"
+          },
+          {
+            "id": "u19_l3_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Ask an adult before you download a new app\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Ask an adult before you download a new app",
+            "wordBank": [
+              "Ask",
+              "an",
+              "adult",
+              "before",
+              "you",
+              "download",
+              "a",
+              "new",
+              "app",
+              "after",
+              "buy"
+            ],
+            "explanation": "\"download\" تعني تحميل ⬇️.",
+            "promptEmoji": "⬇️"
+          },
+          {
+            "id": "u19_l3_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🔒",
+            "answer": "Being safe online is very important for everyone",
+            "explanation": "الأمان على الإنترنت مهمّ للجميع 🔒."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit_20",
+    "title": "الوحدة ٢٠: المشاعر والصداقة",
+    "subtitle": "عبّر عن مشاعرك وابنِ صداقات حقيقية",
+    "colorValue": 4292441862,
+    "difficulty": 6,
+    "lessons": [
+      {
+        "id": "u20_l1",
+        "title": "مشاعر أعمق",
+        "icon": "💛",
+        "xpReward": 70,
+        "questions": [
+          {
+            "id": "u20_l1_q1",
+            "type": "imageMatching",
+            "prompt": "أي جملة تعني الشعور بالفخر؟",
+            "instruction": "اختر الإجابة الصحيحة",
+            "promptEmoji": "🏅",
+            "correctOptionId": "o1",
+            "explanation": "\"proud\" تعني فخور 🏅.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "I feel proud of my hard work",
+                "emoji": "🏅"
+              },
+              {
+                "id": "o2",
+                "label": "I feel bored on a rainy day",
+                "emoji": "😑"
+              },
+              {
+                "id": "o3",
+                "label": "I feel hungry before my lunch",
+                "emoji": "🍽️"
+              },
+              {
+                "id": "o4",
+                "label": "I feel sleepy late at night",
+                "emoji": "😴"
+              }
+            ]
+          },
+          {
+            "id": "u20_l1_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "Sometimes I feel nervous before a big test",
+            "correctOptionId": "o1",
+            "explanation": "\"nervous\" تعني متوتّر 😬.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Sometimes I feel nervous before a big test"
+              },
+              {
+                "id": "o2",
+                "label": "Usually I feel happy when I see my friends"
+              },
+              {
+                "id": "o3",
+                "label": "Often I feel excited about the school trip"
+              },
+              {
+                "id": "o4",
+                "label": "Rarely I feel angry when I lose a game"
+              }
+            ]
+          },
+          {
+            "id": "u20_l1_q3",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"It is okay to feel sad and to ask for help\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "It is okay to feel sad and to ask for help",
+            "wordBank": [
+              "It",
+              "is",
+              "okay",
+              "to",
+              "feel",
+              "sad",
+              "and",
+              "to",
+              "ask",
+              "for",
+              "help",
+              "hide"
+            ],
+            "explanation": "\"it is okay\" تعني لا بأس، ونطلب المساعدة عند الحاجة 🤗.",
+            "promptEmoji": "🤗"
+          },
+          {
+            "id": "u20_l1_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Taking a deep breath helps me feel calm again\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Taking a deep breath helps me feel calm again",
+            "wordBank": [
+              "Taking",
+              "a",
+              "deep",
+              "breath",
+              "helps",
+              "me",
+              "feel",
+              "calm",
+              "again",
+              "angry",
+              "never"
+            ],
+            "explanation": "\"calm\" تعني هادئ 🌬️.",
+            "promptEmoji": "🌬️"
+          },
+          {
+            "id": "u20_l1_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "💛",
+            "answer": "I can understand how other people feel",
+            "explanation": "\"understand\" تعني أفهم، والتعاطف مهارة مهمّة 💛."
+          }
+        ]
+      },
+      {
+        "id": "u20_l2",
+        "title": "الصداقة الحقيقية",
+        "icon": "🤝",
+        "xpReward": 75,
+        "questions": [
+          {
+            "id": "u20_l2_q1",
+            "type": "imageMatching",
+            "prompt": "أي جملة تصف صديقاً جيداً؟",
+            "instruction": "اختر الإجابة الصحيحة",
+            "promptEmoji": "💗",
+            "correctOptionId": "o1",
+            "explanation": "\"kind\" تعني لطيف 💗.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "A good friend is kind and honest",
+                "emoji": "💗"
+              },
+              {
+                "id": "o2",
+                "label": "A tall tree gives us cool shade",
+                "emoji": "🌳"
+              },
+              {
+                "id": "o3",
+                "label": "A fast car drives down the road",
+                "emoji": "🚗"
+              },
+              {
+                "id": "o4",
+                "label": "A big house has many rooms",
+                "emoji": "🏠"
+              }
+            ]
+          },
+          {
+            "id": "u20_l2_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "A true friend helps you when you are in trouble",
+            "correctOptionId": "o1",
+            "explanation": "\"in trouble\" تعني في ورطة 🆘.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "A true friend helps you when you are in trouble"
+              },
+              {
+                "id": "o2",
+                "label": "A busy street is full of cars and buses"
+              },
+              {
+                "id": "o3",
+                "label": "A warm blanket keeps you cosy at night"
+              },
+              {
+                "id": "o4",
+                "label": "A tasty meal makes everybody very happy"
+              }
+            ]
+          },
+          {
+            "id": "u20_l2_q3",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"We should always tell the truth to our friends\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "We should always tell the truth to our friends",
+            "wordBank": [
+              "We",
+              "should",
+              "always",
+              "tell",
+              "the",
+              "truth",
+              "to",
+              "our",
+              "friends",
+              "never",
+              "lie"
+            ],
+            "explanation": "\"tell the truth\" تعني نقول الحقيقة 💬.",
+            "promptEmoji": "💬"
+          },
+          {
+            "id": "u20_l2_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Saying sorry can fix a problem between two friends\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Saying sorry can fix a problem between two friends",
+            "wordBank": [
+              "Saying",
+              "sorry",
+              "can",
+              "fix",
+              "a",
+              "problem",
+              "between",
+              "two",
+              "friends",
+              "start",
+              "cause"
+            ],
+            "explanation": "\"saying sorry\" تعني الاعتذار 🙏.",
+            "promptEmoji": "🙏"
+          },
+          {
+            "id": "u20_l2_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🤝",
+            "answer": "Good friends listen to each other with care",
+            "explanation": "الأصدقاء الجيدون يستمعون لبعضهم باهتمام 🤝."
+          }
+        ]
+      },
+      {
+        "id": "u20_l3",
+        "title": "اللطف والتعاون",
+        "icon": "🌟",
+        "xpReward": 80,
+        "questions": [
+          {
+            "id": "u20_l3_q1",
+            "type": "imageMatching",
+            "prompt": "أي جملة تعبّر عن اللطف؟",
+            "instruction": "اختر الإجابة الصحيحة",
+            "promptEmoji": "💐",
+            "correctOptionId": "o1",
+            "explanation": "\"help\" تعني مساعدة 💐.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Helping others makes the world better",
+                "emoji": "💐"
+              },
+              {
+                "id": "o2",
+                "label": "The rocket flew into outer space",
+                "emoji": "🚀"
+              },
+              {
+                "id": "o3",
+                "label": "The market sells fresh vegetables",
+                "emoji": "🥕"
+              },
+              {
+                "id": "o4",
+                "label": "The clock shows half past three",
+                "emoji": "🕒"
+              }
+            ]
+          },
+          {
+            "id": "u20_l3_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "When we share and cooperate everyone feels welcome",
+            "correctOptionId": "o1",
+            "explanation": "\"cooperate\" تعني نتعاون 🤝.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "When we share and cooperate everyone feels welcome"
+              },
+              {
+                "id": "o2",
+                "label": "When it rains the streets become very wet"
+              },
+              {
+                "id": "o3",
+                "label": "When the bell rings the lesson is over"
+              },
+              {
+                "id": "o4",
+                "label": "When the sun sets the sky turns orange"
+              }
+            ]
+          },
+          {
+            "id": "u20_l3_q3",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"A small act of kindness can change someone's whole day\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "A small act of kindness can change someone's whole day",
+            "wordBank": [
+              "A",
+              "small",
+              "act",
+              "of",
+              "kindness",
+              "can",
+              "change",
+              "someone's",
+              "whole",
+              "day",
+              "ruin",
+              "never"
+            ],
+            "explanation": "\"kindness\" تعني اللطف 💛.",
+            "promptEmoji": "💛"
+          },
+          {
+            "id": "u20_l3_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Together we are stronger than we are on our own\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Together we are stronger than we are on our own",
+            "wordBank": [
+              "Together",
+              "we",
+              "are",
+              "stronger",
+              "than",
+              "we",
+              "are",
+              "on",
+              "our",
+              "own",
+              "weaker",
+              "alone"
+            ],
+            "explanation": "\"together we are stronger\" تعني معاً نحن أقوى 💪.",
+            "promptEmoji": "💪"
+          },
+          {
+            "id": "u20_l3_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🌍",
+            "answer": "I want to make the world a kinder place",
+            "explanation": "نطمح لجعل العالم مكاناً أكثر لطفاً 🌍."
+          }
+        ]
+      }
+    ]
   }
 ]
