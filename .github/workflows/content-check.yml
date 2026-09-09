@@ -1,0 +1,44 @@
+name: Content check
+
+# Validates the hand-authored course content (assets/data/units.json) on every
+# pull request and on branch pushes, so a malformed unit/lesson/question is
+# caught in review instead of at runtime. Runs only the content-integrity test,
+# which is pure data + model parsing (no Android build, plugins, or emulator),
+# so it is fast and reliable.
+on:
+  pull_request:
+    paths:
+      - "assets/data/**"
+      - "lib/data/models/**"
+      - "test/content_integrity_test.dart"
+      - ".github/workflows/content-check.yml"
+  push:
+    paths:
+      - "assets/data/**"
+      - "lib/data/models/**"
+      - "test/content_integrity_test.dart"
+      - ".github/workflows/content-check.yml"
+  workflow_dispatch:
+
+jobs:
+  content-check:
+    name: Validate course content
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          # Match the pinned version used by the APK build workflow.
+          flutter-version: "3.29.3"
+          channel: stable
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Run content-integrity test
+        run: flutter test test/content_integrity_test.dart
