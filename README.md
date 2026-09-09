@@ -98,7 +98,7 @@ assets/
 ## 📊 Content schema
 
 Units → Lessons → Questions are defined in `assets/data/units.json` and parsed
-by the model classes. Seeded with **12 units, 36 lessons and 165 questions**
+by the model classes. Seeded with **14 units, 42 lessons and 195 questions**
 spanning all four question types, with a **difficulty that ramps up** as the
 child advances (each unit carries a `difficulty` tier shown on its banner):
 
@@ -116,6 +116,8 @@ child advances (each unit carries a `difficulty` tier shown on its banner):
 | 10 | Around Town | متقدّم (advanced) |
 | 11 | Nature World | متقدّم (advanced) |
 | 12 | Hobbies & Sports | متقدّم (advanced) |
+| 13 | Days & Seasons | متقدّم (advanced) |
+| 14 | Shopping & Market | متقدّم (advanced) |
 
 Early units teach single words with short 4-word sentences; later units move to
 full sentences and questions — longer word-jumbles (up to 6 words with extra

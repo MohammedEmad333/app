@@ -4046,5 +4046,771 @@
         ]
       }
     ]
+  },
+  {
+    "id": "unit_13",
+    "title": "الوحدة ١٣: الأيام والفصول",
+    "subtitle": "أيام الأسبوع والشهور والفصول",
+    "colorValue": 4286470082,
+    "difficulty": 4,
+    "lessons": [
+      {
+        "id": "u13_l1",
+        "title": "أيام الأسبوع",
+        "icon": "📅",
+        "xpReward": 50,
+        "questions": [
+          {
+            "id": "u13_l1_q1",
+            "type": "imageMatching",
+            "prompt": "أي كلمة تعني \"يوم الجمعة\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "📅",
+            "correctOptionId": "o1",
+            "explanation": "\"Friday\" تعني الجمعة 📅.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Friday",
+                "emoji": "🕌"
+              },
+              {
+                "id": "o2",
+                "label": "Monday",
+                "emoji": "🌙"
+              },
+              {
+                "id": "o3",
+                "label": "Sunday",
+                "emoji": "☀️"
+              },
+              {
+                "id": "o4",
+                "label": "Saturday",
+                "emoji": "⭐"
+              }
+            ]
+          },
+          {
+            "id": "u13_l1_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الإجابة",
+            "instruction": "اضغط زر التشغيل ثم اختر الإجابة",
+            "audioText": "Today is Monday",
+            "correctOptionId": "o1",
+            "explanation": "\"Monday\" تعني الاثنين 📅.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Today is Monday"
+              },
+              {
+                "id": "o2",
+                "label": "Today is Tuesday"
+              },
+              {
+                "id": "o3",
+                "label": "Today is Sunday"
+              },
+              {
+                "id": "o4",
+                "label": "Today is Friday"
+              }
+            ]
+          },
+          {
+            "id": "u13_l1_q3",
+            "type": "imageMatching",
+            "prompt": "أي جملة تعني \"أراك غداً\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "🌅",
+            "correctOptionId": "o1",
+            "explanation": "\"tomorrow\" تعني غداً 🌅.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "See you tomorrow",
+                "emoji": "🌅"
+              },
+              {
+                "id": "o2",
+                "label": "See you today",
+                "emoji": "☀️"
+              },
+              {
+                "id": "o3",
+                "label": "Good night now",
+                "emoji": "🌙"
+              },
+              {
+                "id": "o4",
+                "label": "Have a nice day",
+                "emoji": "😊"
+              }
+            ]
+          },
+          {
+            "id": "u13_l1_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"We go to school every Sunday\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "We go to school every Sunday",
+            "wordBank": [
+              "We",
+              "go",
+              "to",
+              "school",
+              "every",
+              "Sunday",
+              "Friday"
+            ],
+            "explanation": "\"Sunday\" تعني الأحد 📅.",
+            "promptEmoji": "📅"
+          },
+          {
+            "id": "u13_l1_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "📅",
+            "answer": "There are seven days in a week",
+            "explanation": "\"week\" تعني أسبوع، وفيه سبعة أيام 📅."
+          }
+        ]
+      },
+      {
+        "id": "u13_l2",
+        "title": "الشهور",
+        "icon": "🗓️",
+        "xpReward": 55,
+        "questions": [
+          {
+            "id": "u13_l2_q1",
+            "type": "imageMatching",
+            "prompt": "أي كلمة تعني \"يناير\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "🗓️",
+            "correctOptionId": "o1",
+            "explanation": "\"January\" تعني يناير 🗓️.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "January",
+                "emoji": "❄️"
+              },
+              {
+                "id": "o2",
+                "label": "July",
+                "emoji": "☀️"
+              },
+              {
+                "id": "o3",
+                "label": "April",
+                "emoji": "🌸"
+              },
+              {
+                "id": "o4",
+                "label": "October",
+                "emoji": "🍂"
+              }
+            ]
+          },
+          {
+            "id": "u13_l2_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الإجابة",
+            "instruction": "اضغط زر التشغيل ثم اختر الإجابة",
+            "audioText": "My birthday is in June",
+            "correctOptionId": "o1",
+            "explanation": "\"June\" تعني يونيو 🎂.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "My birthday is in June"
+              },
+              {
+                "id": "o2",
+                "label": "My birthday is in May"
+              },
+              {
+                "id": "o3",
+                "label": "My birthday is in March"
+              },
+              {
+                "id": "o4",
+                "label": "My birthday is in July"
+              }
+            ]
+          },
+          {
+            "id": "u13_l2_q3",
+            "type": "imageMatching",
+            "prompt": "أي كلمة تعني \"ديسمبر\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "❄️",
+            "correctOptionId": "o2",
+            "explanation": "\"December\" تعني ديسمبر ❄️.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "August",
+                "emoji": "🌻"
+              },
+              {
+                "id": "o2",
+                "label": "December",
+                "emoji": "❄️"
+              },
+              {
+                "id": "o3",
+                "label": "May",
+                "emoji": "🌷"
+              },
+              {
+                "id": "o4",
+                "label": "March",
+                "emoji": "🌱"
+              }
+            ]
+          },
+          {
+            "id": "u13_l2_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"There are twelve months in a year\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "There are twelve months in a year",
+            "wordBank": [
+              "There",
+              "are",
+              "twelve",
+              "months",
+              "in",
+              "a",
+              "year",
+              "week"
+            ],
+            "explanation": "\"year\" تعني سنة، وفيها اثنا عشر شهراً 🗓️.",
+            "promptEmoji": "🗓️"
+          },
+          {
+            "id": "u13_l2_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🎉",
+            "answer": "The new year starts in January",
+            "explanation": "\"January\" هو أول شهر في السنة 🗓️."
+          }
+        ]
+      },
+      {
+        "id": "u13_l3",
+        "title": "الفصول الأربعة",
+        "icon": "🍂",
+        "xpReward": 60,
+        "questions": [
+          {
+            "id": "u13_l3_q1",
+            "type": "imageMatching",
+            "prompt": "أي كلمة تعني \"الصيف\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "☀️",
+            "correctOptionId": "o1",
+            "explanation": "\"Summer\" تعني الصيف ☀️.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Summer",
+                "emoji": "☀️"
+              },
+              {
+                "id": "o2",
+                "label": "Winter",
+                "emoji": "❄️"
+              },
+              {
+                "id": "o3",
+                "label": "Spring",
+                "emoji": "🌸"
+              },
+              {
+                "id": "o4",
+                "label": "Autumn",
+                "emoji": "🍂"
+              }
+            ]
+          },
+          {
+            "id": "u13_l3_q2",
+            "type": "imageMatching",
+            "prompt": "أي كلمة تعني \"الشتاء\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "❄️",
+            "correctOptionId": "o2",
+            "explanation": "\"Winter\" تعني الشتاء ❄️.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Spring",
+                "emoji": "🌷"
+              },
+              {
+                "id": "o2",
+                "label": "Winter",
+                "emoji": "❄️"
+              },
+              {
+                "id": "o3",
+                "label": "Summer",
+                "emoji": "🏖️"
+              },
+              {
+                "id": "o4",
+                "label": "Autumn",
+                "emoji": "🍁"
+              }
+            ]
+          },
+          {
+            "id": "u13_l3_q3",
+            "type": "audioListening",
+            "prompt": "استمع واختر الإجابة",
+            "instruction": "اضغط زر التشغيل ثم اختر الإجابة",
+            "audioText": "I like spring because flowers grow",
+            "correctOptionId": "o1",
+            "explanation": "\"spring\" تعني الربيع 🌸.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "I like spring because flowers grow"
+              },
+              {
+                "id": "o2",
+                "label": "I like summer because it is hot"
+              },
+              {
+                "id": "o3",
+                "label": "I like winter because it is cold"
+              },
+              {
+                "id": "o4",
+                "label": "I like autumn because leaves fall"
+              }
+            ]
+          },
+          {
+            "id": "u13_l3_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"In winter the weather is very cold\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "In winter the weather is very cold",
+            "wordBank": [
+              "In",
+              "winter",
+              "the",
+              "weather",
+              "is",
+              "very",
+              "cold",
+              "hot"
+            ],
+            "explanation": "\"cold\" تعني بارد ❄️.",
+            "promptEmoji": "❄️"
+          },
+          {
+            "id": "u13_l3_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🍂",
+            "answer": "Autumn leaves are red and yellow",
+            "explanation": "\"autumn\" تعني الخريف 🍂."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit_14",
+    "title": "الوحدة ١٤: التسوّق والسوق",
+    "subtitle": "تسوّق واحسب المال بالإنجليزية",
+    "colorValue": 4278225275,
+    "difficulty": 4,
+    "lessons": [
+      {
+        "id": "u14_l1",
+        "title": "في المتجر",
+        "icon": "🛒",
+        "xpReward": 55,
+        "questions": [
+          {
+            "id": "u14_l1_q1",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Shop\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "🏬",
+            "correctOptionId": "o1",
+            "explanation": "\"Shop\" تعني متجر 🏬.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Shop",
+                "emoji": "🏬"
+              },
+              {
+                "id": "o2",
+                "label": "School",
+                "emoji": "🏫"
+              },
+              {
+                "id": "o3",
+                "label": "Bank",
+                "emoji": "🏦"
+              },
+              {
+                "id": "o4",
+                "label": "Home",
+                "emoji": "🏠"
+              }
+            ]
+          },
+          {
+            "id": "u14_l1_q2",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Basket\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "🧺",
+            "correctOptionId": "o2",
+            "explanation": "\"Basket\" تعني سلّة 🧺.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Bag",
+                "emoji": "👜"
+              },
+              {
+                "id": "o2",
+                "label": "Basket",
+                "emoji": "🧺"
+              },
+              {
+                "id": "o3",
+                "label": "Box",
+                "emoji": "📦"
+              },
+              {
+                "id": "o4",
+                "label": "Cart",
+                "emoji": "🛒"
+              }
+            ]
+          },
+          {
+            "id": "u14_l1_q3",
+            "type": "audioListening",
+            "prompt": "استمع واختر الإجابة",
+            "instruction": "اضغط زر التشغيل ثم اختر الإجابة",
+            "audioText": "I put the apples in my basket",
+            "correctOptionId": "o1",
+            "explanation": "\"basket\" تعني سلّة 🧺.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "I put the apples in my basket"
+              },
+              {
+                "id": "o2",
+                "label": "I put the books in my bag"
+              },
+              {
+                "id": "o3",
+                "label": "I pay the money to the man"
+              },
+              {
+                "id": "o4",
+                "label": "I take the cart to the door"
+              }
+            ]
+          },
+          {
+            "id": "u14_l1_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"We buy fresh bread at the shop\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "We buy fresh bread at the shop",
+            "wordBank": [
+              "We",
+              "buy",
+              "fresh",
+              "bread",
+              "at",
+              "the",
+              "shop",
+              "old"
+            ],
+            "explanation": "\"buy\" تعني نشتري 🛒.",
+            "promptEmoji": "🛒"
+          },
+          {
+            "id": "u14_l1_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🛒",
+            "answer": "The market has many good things",
+            "explanation": "\"market\" تعني سوق 🛒."
+          }
+        ]
+      },
+      {
+        "id": "u14_l2",
+        "title": "المال والأسعار",
+        "icon": "💰",
+        "xpReward": 55,
+        "questions": [
+          {
+            "id": "u14_l2_q1",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Money\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "💵",
+            "correctOptionId": "o1",
+            "explanation": "\"Money\" تعني مال 💵.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Money",
+                "emoji": "💵"
+              },
+              {
+                "id": "o2",
+                "label": "Key",
+                "emoji": "🔑"
+              },
+              {
+                "id": "o3",
+                "label": "Phone",
+                "emoji": "📱"
+              },
+              {
+                "id": "o4",
+                "label": "Clock",
+                "emoji": "⏰"
+              }
+            ]
+          },
+          {
+            "id": "u14_l2_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الإجابة",
+            "instruction": "اضغط زر التشغيل ثم اختر الإجابة",
+            "audioText": "How much is this toy",
+            "correctOptionId": "o1",
+            "explanation": "\"How much\" تعني بكم 💰.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "How much is this toy"
+              },
+              {
+                "id": "o2",
+                "label": "Where is the shop"
+              },
+              {
+                "id": "o3",
+                "label": "What is your name"
+              },
+              {
+                "id": "o4",
+                "label": "When do you go home"
+              }
+            ]
+          },
+          {
+            "id": "u14_l2_q3",
+            "type": "imageMatching",
+            "prompt": "أي جملة تعني \"It is cheap\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "💰",
+            "correctOptionId": "o1",
+            "explanation": "\"cheap\" تعني رخيص 💰.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "It is cheap",
+                "emoji": "💰"
+              },
+              {
+                "id": "o2",
+                "label": "It is expensive",
+                "emoji": "💎"
+              },
+              {
+                "id": "o3",
+                "label": "It is heavy",
+                "emoji": "🪨"
+              },
+              {
+                "id": "o4",
+                "label": "It is broken",
+                "emoji": "🔧"
+              }
+            ]
+          },
+          {
+            "id": "u14_l2_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"This red bag costs ten dollars\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "This red bag costs ten dollars",
+            "wordBank": [
+              "This",
+              "red",
+              "bag",
+              "costs",
+              "ten",
+              "dollars",
+              "cents"
+            ],
+            "explanation": "\"costs\" تعني يكلّف 💵.",
+            "promptEmoji": "💵"
+          },
+          {
+            "id": "u14_l2_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "💳",
+            "answer": "Can I pay with this money please",
+            "explanation": "\"pay\" تعني أدفع 💳."
+          }
+        ]
+      },
+      {
+        "id": "u14_l3",
+        "title": "قائمة التسوّق",
+        "icon": "📝",
+        "xpReward": 60,
+        "questions": [
+          {
+            "id": "u14_l3_q1",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Milk\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "🥛",
+            "correctOptionId": "o1",
+            "explanation": "\"Milk\" تعني حليب 🥛.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Milk",
+                "emoji": "🥛"
+              },
+              {
+                "id": "o2",
+                "label": "Bread",
+                "emoji": "🍞"
+              },
+              {
+                "id": "o3",
+                "label": "Cheese",
+                "emoji": "🧀"
+              },
+              {
+                "id": "o4",
+                "label": "Eggs",
+                "emoji": "🥚"
+              }
+            ]
+          },
+          {
+            "id": "u14_l3_q2",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Bread\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "🍞",
+            "correctOptionId": "o2",
+            "explanation": "\"Bread\" تعني خبز 🍞.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Butter",
+                "emoji": "🧈"
+              },
+              {
+                "id": "o2",
+                "label": "Bread",
+                "emoji": "🍞"
+              },
+              {
+                "id": "o3",
+                "label": "Rice",
+                "emoji": "🍚"
+              },
+              {
+                "id": "o4",
+                "label": "Sugar",
+                "emoji": "🧂"
+              }
+            ]
+          },
+          {
+            "id": "u14_l3_q3",
+            "type": "audioListening",
+            "prompt": "استمع واختر الإجابة",
+            "instruction": "اضغط زر التشغيل ثم اختر الإجابة",
+            "audioText": "We need milk and eggs today",
+            "correctOptionId": "o1",
+            "explanation": "\"need\" تعني نحتاج 📝.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "We need milk and eggs today"
+              },
+              {
+                "id": "o2",
+                "label": "We need bread and cheese now"
+              },
+              {
+                "id": "o3",
+                "label": "We buy fruit and water here"
+              },
+              {
+                "id": "o4",
+                "label": "We want tea and sugar please"
+              }
+            ]
+          },
+          {
+            "id": "u14_l3_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Please add some cheese to the list\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Please add some cheese to the list",
+            "wordBank": [
+              "Please",
+              "add",
+              "some",
+              "cheese",
+              "to",
+              "the",
+              "list",
+              "milk"
+            ],
+            "explanation": "\"list\" تعني قائمة 📝.",
+            "promptEmoji": "📝"
+          },
+          {
+            "id": "u14_l3_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "✅",
+            "answer": "I have everything on my list",
+            "explanation": "\"list\" تعني القائمة 📝."
+          }
+        ]
+      }
+    ]
   }
 ]
