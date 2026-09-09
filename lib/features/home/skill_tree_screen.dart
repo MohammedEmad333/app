@@ -381,9 +381,9 @@ class _UnitSection extends StatelessWidget {
   }
 
   /// Small pill showing the unit's difficulty as filled/empty dots plus an
-  /// Arabic label (سهل / متوسط / صعب / متقدّم).
+  /// Arabic label (سهل / متوسط / صعب / متقدّم / خبير / بطل).
   Widget _difficultyPill(int difficulty) {
-    const maxTier = 4;
+    const maxTier = 6;
     final tier = difficulty.clamp(1, maxTier);
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),

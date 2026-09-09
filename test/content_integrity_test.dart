@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:lingokids/core/l10n/app_strings.dart';
 import 'package:lingokids/data/models/question.dart';
 import 'package:lingokids/data/models/unit.dart';
 
@@ -25,7 +26,7 @@ void main() {
   });
 
   test('units.json parses into at least the seeded units', () {
-    expect(units.length, greaterThanOrEqualTo(12));
+    expect(units.length, greaterThanOrEqualTo(22));
   });
 
   test('unit ids are unique and units have lessons', () {
@@ -34,8 +35,18 @@ void main() {
       expect(u.id, isNotEmpty);
       expect(ids.add(u.id), isTrue, reason: 'duplicate unit id: ${u.id}');
       expect(u.lessons, isNotEmpty, reason: '${u.id} has no lessons');
-      expect(u.difficulty, greaterThanOrEqualTo(1));
+      // Difficulty tiers run 1 (سهل) … 6 (بطل); every unit must sit in range
+      // and carry a non-empty Arabic label so the difficulty pill can render.
+      expect(u.difficulty, inInclusiveRange(1, 6),
+          reason: '${u.id} difficulty ${u.difficulty} is out of range');
+      expect(AppStrings.difficultyLabel(u.difficulty), isNotEmpty);
     }
+  });
+
+  test('difficulty labels are distinct across the six tiers', () {
+    final labels = [for (var t = 1; t <= 6; t++) AppStrings.difficultyLabel(t)];
+    expect(labels.every((l) => l.isNotEmpty), isTrue);
+    expect(labels.toSet().length, 6, reason: 'tiers should map to 6 distinct labels');
   });
 
   test('lesson ids are unique and every lesson has questions', () {

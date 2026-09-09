@@ -34,8 +34,12 @@ class AppStrings {
         return 'متوسط';
       case 3:
         return 'صعب';
-      default:
+      case 4:
         return 'متقدّم';
+      case 5:
+        return 'خبير';
+      default:
+        return 'بطل';
     }
   }
 
