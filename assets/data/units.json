@@ -2137,5 +2137,1149 @@
         ]
       }
     ]
+  },
+  {
+    "id": "unit_8",
+    "title": "الوحدة ٨: المدرسة والتعلّم",
+    "subtitle": "أدوات الصف وموادّه المفضّلة",
+    "colorValue": 4293675161,
+    "difficulty": 4,
+    "lessons": [
+      {
+        "id": "u8_l1",
+        "title": "أدوات المدرسة",
+        "icon": "🎒",
+        "xpReward": 45,
+        "questions": [
+          {
+            "id": "u8_l1_q1",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Pencil\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "✏️",
+            "correctOptionId": "o1",
+            "explanation": "\"Pencil\" تعني قلم رصاص ✏️.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Pencil",
+                "emoji": "✏️"
+              },
+              {
+                "id": "o2",
+                "label": "Book",
+                "emoji": "📖"
+              },
+              {
+                "id": "o3",
+                "label": "Bag",
+                "emoji": "🎒"
+              },
+              {
+                "id": "o4",
+                "label": "Scissors",
+                "emoji": "✂️"
+              }
+            ]
+          },
+          {
+            "id": "u8_l1_q2",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Book\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "📖",
+            "correctOptionId": "o2",
+            "explanation": "\"Book\" تعني كتاب 📖.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Ruler",
+                "emoji": "📏"
+              },
+              {
+                "id": "o2",
+                "label": "Book",
+                "emoji": "📖"
+              },
+              {
+                "id": "o3",
+                "label": "Pen",
+                "emoji": "🖊️"
+              },
+              {
+                "id": "o4",
+                "label": "Eraser",
+                "emoji": "🧽"
+              }
+            ]
+          },
+          {
+            "id": "u8_l1_q3",
+            "type": "audioListening",
+            "prompt": "استمع واختر الإجابة",
+            "instruction": "اضغط زر التشغيل ثم اختر الإجابة",
+            "audioText": "This is my school bag",
+            "correctOptionId": "o1",
+            "explanation": "\"school bag\" تعني حقيبة المدرسة 🎒.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "This is my school bag"
+              },
+              {
+                "id": "o2",
+                "label": "This is my new pen"
+              },
+              {
+                "id": "o3",
+                "label": "This is my big book"
+              },
+              {
+                "id": "o4",
+                "label": "This is my red ruler"
+              }
+            ]
+          },
+          {
+            "id": "u8_l1_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"I have a pencil and a book\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "I have a pencil and a book",
+            "wordBank": [
+              "I",
+              "have",
+              "a",
+              "pencil",
+              "and",
+              "book",
+              "pen"
+            ],
+            "explanation": "\"pencil\" تعني قلم رصاص و\"book\" تعني كتاب ✏️.",
+            "promptEmoji": "✏️"
+          },
+          {
+            "id": "u8_l1_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🎒",
+            "answer": "My bag is full of books",
+            "explanation": "نستخدم هذه الجملة لنتحدث عن حقيبتنا 🎒."
+          }
+        ]
+      },
+      {
+        "id": "u8_l2",
+        "title": "في الصف",
+        "icon": "🏫",
+        "xpReward": 50,
+        "questions": [
+          {
+            "id": "u8_l2_q1",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Teacher\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "👩‍🏫",
+            "correctOptionId": "o1",
+            "explanation": "\"Teacher\" تعني معلّم 👩‍🏫.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Teacher",
+                "emoji": "👩‍🏫"
+              },
+              {
+                "id": "o2",
+                "label": "Student",
+                "emoji": "🧒"
+              },
+              {
+                "id": "o3",
+                "label": "Doctor",
+                "emoji": "🧑‍⚕️"
+              },
+              {
+                "id": "o4",
+                "label": "Farmer",
+                "emoji": "🧑‍🌾"
+              }
+            ]
+          },
+          {
+            "id": "u8_l2_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الإجابة",
+            "instruction": "اضغط زر التشغيل ثم اختر الإجابة",
+            "audioText": "The teacher writes on the board",
+            "correctOptionId": "o1",
+            "explanation": "\"board\" تعني السبّورة 🖊️.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "The teacher writes on the board"
+              },
+              {
+                "id": "o2",
+                "label": "The student reads a book"
+              },
+              {
+                "id": "o3",
+                "label": "The boy plays in the park"
+              },
+              {
+                "id": "o4",
+                "label": "The girl sings a song"
+              }
+            ]
+          },
+          {
+            "id": "u8_l2_q3",
+            "type": "imageMatching",
+            "prompt": "أي جملة تعني \"I read a book\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "📖",
+            "correctOptionId": "o1",
+            "explanation": "\"read\" تعني أقرأ 📖.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "I read a book",
+                "emoji": "📖"
+              },
+              {
+                "id": "o2",
+                "label": "I ride a bike",
+                "emoji": "🚲"
+              },
+              {
+                "id": "o3",
+                "label": "I eat an apple",
+                "emoji": "🍎"
+              },
+              {
+                "id": "o4",
+                "label": "I run fast",
+                "emoji": "🏃"
+              }
+            ]
+          },
+          {
+            "id": "u8_l2_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"The student listens to the teacher\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "The student listens to the teacher",
+            "wordBank": [
+              "The",
+              "student",
+              "listens",
+              "to",
+              "the",
+              "teacher",
+              "sings"
+            ],
+            "explanation": "\"listens\" تعني يستمع 👂.",
+            "promptEmoji": "👂"
+          },
+          {
+            "id": "u8_l2_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "✋",
+            "answer": "I raise my hand in class",
+            "explanation": "نرفع أيدينا لنسأل في الصف ✋."
+          }
+        ]
+      },
+      {
+        "id": "u8_l3",
+        "title": "المواد الدراسية",
+        "icon": "📚",
+        "xpReward": 55,
+        "questions": [
+          {
+            "id": "u8_l3_q1",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Math\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "➗",
+            "correctOptionId": "o1",
+            "explanation": "\"Math\" تعني الرياضيات ➗.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Math",
+                "emoji": "➗"
+              },
+              {
+                "id": "o2",
+                "label": "Art",
+                "emoji": "🎨"
+              },
+              {
+                "id": "o3",
+                "label": "Music",
+                "emoji": "🎵"
+              },
+              {
+                "id": "o4",
+                "label": "Science",
+                "emoji": "🔬"
+              }
+            ]
+          },
+          {
+            "id": "u8_l3_q2",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Art\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "🎨",
+            "correctOptionId": "o2",
+            "explanation": "\"Art\" تعني الفن 🎨.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Science",
+                "emoji": "🔬"
+              },
+              {
+                "id": "o2",
+                "label": "Art",
+                "emoji": "🎨"
+              },
+              {
+                "id": "o3",
+                "label": "Math",
+                "emoji": "➗"
+              },
+              {
+                "id": "o4",
+                "label": "Sport",
+                "emoji": "⚽"
+              }
+            ]
+          },
+          {
+            "id": "u8_l3_q3",
+            "type": "audioListening",
+            "prompt": "استمع واختر الإجابة",
+            "instruction": "اضغط زر التشغيل ثم اختر الإجابة",
+            "audioText": "I like science class",
+            "correctOptionId": "o1",
+            "explanation": "\"science\" تعني العلوم 🔬.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "I like science class"
+              },
+              {
+                "id": "o2",
+                "label": "I like music class"
+              },
+              {
+                "id": "o3",
+                "label": "I like art class"
+              },
+              {
+                "id": "o4",
+                "label": "I like math class"
+              }
+            ]
+          },
+          {
+            "id": "u8_l3_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"My favourite subject is science\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "My favourite subject is science",
+            "wordBank": [
+              "My",
+              "favourite",
+              "subject",
+              "is",
+              "science",
+              "art",
+              "the"
+            ],
+            "explanation": "\"favourite subject\" تعني المادة المفضّلة 🔬.",
+            "promptEmoji": "🔬"
+          },
+          {
+            "id": "u8_l3_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🌟",
+            "answer": "I learn something new every day",
+            "explanation": "نتعلّم شيئاً جديداً كل يوم في المدرسة 🌟."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit_9",
+    "title": "الوحدة ٩: الجسم والصحة",
+    "subtitle": "سمِّ جسمك واعتنِ بصحتك",
+    "colorValue": 4279286145,
+    "difficulty": 4,
+    "lessons": [
+      {
+        "id": "u9_l1",
+        "title": "أجزاء الجسم",
+        "icon": "🧑",
+        "xpReward": 45,
+        "questions": [
+          {
+            "id": "u9_l1_q1",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Hand\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "✋",
+            "correctOptionId": "o1",
+            "explanation": "\"Hand\" تعني يد ✋.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Hand",
+                "emoji": "✋"
+              },
+              {
+                "id": "o2",
+                "label": "Foot",
+                "emoji": "🦶"
+              },
+              {
+                "id": "o3",
+                "label": "Eye",
+                "emoji": "👁️"
+              },
+              {
+                "id": "o4",
+                "label": "Ear",
+                "emoji": "👂"
+              }
+            ]
+          },
+          {
+            "id": "u9_l1_q2",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Eye\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "👁️",
+            "correctOptionId": "o2",
+            "explanation": "\"Eye\" تعني عين 👁️.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Nose",
+                "emoji": "👃"
+              },
+              {
+                "id": "o2",
+                "label": "Eye",
+                "emoji": "👁️"
+              },
+              {
+                "id": "o3",
+                "label": "Mouth",
+                "emoji": "👄"
+              },
+              {
+                "id": "o4",
+                "label": "Hand",
+                "emoji": "✋"
+              }
+            ]
+          },
+          {
+            "id": "u9_l1_q3",
+            "type": "audioListening",
+            "prompt": "استمع واختر الإجابة",
+            "instruction": "اضغط زر التشغيل ثم اختر الإجابة",
+            "audioText": "I have two eyes",
+            "correctOptionId": "o1",
+            "explanation": "\"two eyes\" تعني عينان 👀.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "I have two eyes"
+              },
+              {
+                "id": "o2",
+                "label": "I have two hands"
+              },
+              {
+                "id": "o3",
+                "label": "I have one nose"
+              },
+              {
+                "id": "o4",
+                "label": "I have two feet"
+              }
+            ]
+          },
+          {
+            "id": "u9_l1_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"I clap with my two hands\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "I clap with my two hands",
+            "wordBank": [
+              "I",
+              "clap",
+              "with",
+              "my",
+              "two",
+              "hands",
+              "feet"
+            ],
+            "explanation": "\"hands\" تعني اليدين 👏.",
+            "promptEmoji": "👏"
+          },
+          {
+            "id": "u9_l1_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "👃",
+            "answer": "I can touch my nose",
+            "explanation": "نستخدم \"touch\" لنقول ألمس 👃."
+          }
+        ]
+      },
+      {
+        "id": "u9_l2",
+        "title": "الصحة والعناية",
+        "icon": "💪",
+        "xpReward": 50,
+        "questions": [
+          {
+            "id": "u9_l2_q1",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Doctor\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "🧑‍⚕️",
+            "correctOptionId": "o1",
+            "explanation": "\"Doctor\" تعني طبيب 🧑‍⚕️.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Doctor",
+                "emoji": "🧑‍⚕️"
+              },
+              {
+                "id": "o2",
+                "label": "Teacher",
+                "emoji": "👩‍🏫"
+              },
+              {
+                "id": "o3",
+                "label": "Cook",
+                "emoji": "🧑‍🍳"
+              },
+              {
+                "id": "o4",
+                "label": "Driver",
+                "emoji": "🧑‍✈️"
+              }
+            ]
+          },
+          {
+            "id": "u9_l2_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الإجابة",
+            "instruction": "اضغط زر التشغيل ثم اختر الإجابة",
+            "audioText": "Wash your hands before you eat",
+            "correctOptionId": "o1",
+            "explanation": "\"wash\" تعني اغسل 🧼.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Wash your hands before you eat"
+              },
+              {
+                "id": "o2",
+                "label": "Brush your teeth every night"
+              },
+              {
+                "id": "o3",
+                "label": "Drink a glass of water"
+              },
+              {
+                "id": "o4",
+                "label": "Sleep early every day"
+              }
+            ]
+          },
+          {
+            "id": "u9_l2_q3",
+            "type": "imageMatching",
+            "prompt": "أي جملة تعني \"I feel sick\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "🤒",
+            "correctOptionId": "o1",
+            "explanation": "\"sick\" تعني مريض 🤒.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "I feel sick",
+                "emoji": "🤒"
+              },
+              {
+                "id": "o2",
+                "label": "I feel happy",
+                "emoji": "😊"
+              },
+              {
+                "id": "o3",
+                "label": "I feel strong",
+                "emoji": "💪"
+              },
+              {
+                "id": "o4",
+                "label": "I feel sleepy",
+                "emoji": "😴"
+              }
+            ]
+          },
+          {
+            "id": "u9_l2_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"I brush my teeth every morning\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "I brush my teeth every morning",
+            "wordBank": [
+              "I",
+              "brush",
+              "my",
+              "teeth",
+              "every",
+              "morning",
+              "night"
+            ],
+            "explanation": "\"brush my teeth\" تعني أنظّف أسناني 🪥.",
+            "promptEmoji": "🪥"
+          },
+          {
+            "id": "u9_l2_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "💪",
+            "answer": "I want to stay healthy and strong",
+            "explanation": "نأكل جيداً لنبقى أصحّاء وأقوياء 💪."
+          }
+        ]
+      },
+      {
+        "id": "u9_l3",
+        "title": "الملابس",
+        "icon": "👕",
+        "xpReward": 55,
+        "questions": [
+          {
+            "id": "u9_l3_q1",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Shirt\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "👕",
+            "correctOptionId": "o1",
+            "explanation": "\"Shirt\" تعني قميص 👕.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Shirt",
+                "emoji": "👕"
+              },
+              {
+                "id": "o2",
+                "label": "Shoes",
+                "emoji": "👟"
+              },
+              {
+                "id": "o3",
+                "label": "Hat",
+                "emoji": "🧢"
+              },
+              {
+                "id": "o4",
+                "label": "Socks",
+                "emoji": "🧦"
+              }
+            ]
+          },
+          {
+            "id": "u9_l3_q2",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Shoes\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "👟",
+            "correctOptionId": "o2",
+            "explanation": "\"Shoes\" تعني حذاء 👟.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Dress",
+                "emoji": "👗"
+              },
+              {
+                "id": "o2",
+                "label": "Shoes",
+                "emoji": "👟"
+              },
+              {
+                "id": "o3",
+                "label": "Coat",
+                "emoji": "🧥"
+              },
+              {
+                "id": "o4",
+                "label": "Hat",
+                "emoji": "🧢"
+              }
+            ]
+          },
+          {
+            "id": "u9_l3_q3",
+            "type": "audioListening",
+            "prompt": "استمع واختر الإجابة",
+            "instruction": "اضغط زر التشغيل ثم اختر الإجابة",
+            "audioText": "I wear a red hat",
+            "correctOptionId": "o1",
+            "explanation": "\"wear\" تعني ألبس 🧢.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "I wear a red hat"
+              },
+              {
+                "id": "o2",
+                "label": "I wear blue shoes"
+              },
+              {
+                "id": "o3",
+                "label": "I wear a green shirt"
+              },
+              {
+                "id": "o4",
+                "label": "I wear white socks"
+              }
+            ]
+          },
+          {
+            "id": "u9_l3_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"She wears a beautiful blue dress\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "She wears a beautiful blue dress",
+            "wordBank": [
+              "She",
+              "wears",
+              "a",
+              "beautiful",
+              "blue",
+              "dress",
+              "shirt"
+            ],
+            "explanation": "\"dress\" تعني فستان 👗.",
+            "promptEmoji": "👗"
+          },
+          {
+            "id": "u9_l3_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "👟",
+            "answer": "I put on my shoes and go out",
+            "explanation": "\"put on\" تعني ألبس 👟."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit_10",
+    "title": "الوحدة ١٠: حول المدينة",
+    "subtitle": "الأماكن والمواصلات والاتجاهات",
+    "colorValue": 4294286859,
+    "difficulty": 4,
+    "lessons": [
+      {
+        "id": "u10_l1",
+        "title": "أماكن في المدينة",
+        "icon": "🏙️",
+        "xpReward": 50,
+        "questions": [
+          {
+            "id": "u10_l1_q1",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Hospital\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "🏥",
+            "correctOptionId": "o1",
+            "explanation": "\"Hospital\" تعني مستشفى 🏥.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Hospital",
+                "emoji": "🏥"
+              },
+              {
+                "id": "o2",
+                "label": "School",
+                "emoji": "🏫"
+              },
+              {
+                "id": "o3",
+                "label": "Park",
+                "emoji": "🏞️"
+              },
+              {
+                "id": "o4",
+                "label": "Shop",
+                "emoji": "🏬"
+              }
+            ]
+          },
+          {
+            "id": "u10_l1_q2",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Park\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "🏞️",
+            "correctOptionId": "o2",
+            "explanation": "\"Park\" تعني حديقة 🏞️.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Bank",
+                "emoji": "🏦"
+              },
+              {
+                "id": "o2",
+                "label": "Park",
+                "emoji": "🏞️"
+              },
+              {
+                "id": "o3",
+                "label": "House",
+                "emoji": "🏠"
+              },
+              {
+                "id": "o4",
+                "label": "School",
+                "emoji": "🏫"
+              }
+            ]
+          },
+          {
+            "id": "u10_l1_q3",
+            "type": "audioListening",
+            "prompt": "استمع واختر الإجابة",
+            "instruction": "اضغط زر التشغيل ثم اختر الإجابة",
+            "audioText": "The park is next to the school",
+            "correctOptionId": "o1",
+            "explanation": "\"next to\" تعني بجانب 🏞️.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "The park is next to the school"
+              },
+              {
+                "id": "o2",
+                "label": "The shop is near my house"
+              },
+              {
+                "id": "o3",
+                "label": "The bank is behind the park"
+              },
+              {
+                "id": "o4",
+                "label": "The zoo is far away"
+              }
+            ]
+          },
+          {
+            "id": "u10_l1_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"We go to the park on Friday\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "We go to the park on Friday",
+            "wordBank": [
+              "We",
+              "go",
+              "to",
+              "the",
+              "park",
+              "on",
+              "Friday",
+              "school"
+            ],
+            "explanation": "\"park\" تعني حديقة 🏞️.",
+            "promptEmoji": "🏞️"
+          },
+          {
+            "id": "u10_l1_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🏙️",
+            "answer": "There is a big shop in my city",
+            "explanation": "\"city\" تعني مدينة 🏙️."
+          }
+        ]
+      },
+      {
+        "id": "u10_l2",
+        "title": "وسائل النقل",
+        "icon": "🚗",
+        "xpReward": 55,
+        "questions": [
+          {
+            "id": "u10_l2_q1",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Bus\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "🚌",
+            "correctOptionId": "o1",
+            "explanation": "\"Bus\" تعني حافلة 🚌.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Bus",
+                "emoji": "🚌"
+              },
+              {
+                "id": "o2",
+                "label": "Car",
+                "emoji": "🚗"
+              },
+              {
+                "id": "o3",
+                "label": "Train",
+                "emoji": "🚆"
+              },
+              {
+                "id": "o4",
+                "label": "Plane",
+                "emoji": "✈️"
+              }
+            ]
+          },
+          {
+            "id": "u10_l2_q2",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Train\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "🚆",
+            "correctOptionId": "o2",
+            "explanation": "\"Train\" تعني قطار 🚆.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Bike",
+                "emoji": "🚲"
+              },
+              {
+                "id": "o2",
+                "label": "Train",
+                "emoji": "🚆"
+              },
+              {
+                "id": "o3",
+                "label": "Boat",
+                "emoji": "⛵"
+              },
+              {
+                "id": "o4",
+                "label": "Car",
+                "emoji": "🚗"
+              }
+            ]
+          },
+          {
+            "id": "u10_l2_q3",
+            "type": "audioListening",
+            "prompt": "استمع واختر الإجابة",
+            "instruction": "اضغط زر التشغيل ثم اختر الإجابة",
+            "audioText": "I go to school by bus",
+            "correctOptionId": "o1",
+            "explanation": "\"by bus\" تعني بالحافلة 🚌.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "I go to school by bus"
+              },
+              {
+                "id": "o2",
+                "label": "I go to school by car"
+              },
+              {
+                "id": "o3",
+                "label": "I go to school by bike"
+              },
+              {
+                "id": "o4",
+                "label": "I go to school by train"
+              }
+            ]
+          },
+          {
+            "id": "u10_l2_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"My father drives a fast car\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "My father drives a fast car",
+            "wordBank": [
+              "My",
+              "father",
+              "drives",
+              "a",
+              "fast",
+              "car",
+              "bus"
+            ],
+            "explanation": "\"drives\" تعني يقود 🚗.",
+            "promptEmoji": "🚗"
+          },
+          {
+            "id": "u10_l2_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🚆",
+            "answer": "The train is faster than the bus",
+            "explanation": "\"faster than\" تعني أسرع من 🚆."
+          }
+        ]
+      },
+      {
+        "id": "u10_l3",
+        "title": "الاتجاهات",
+        "icon": "🗺️",
+        "xpReward": 60,
+        "questions": [
+          {
+            "id": "u10_l3_q1",
+            "type": "imageMatching",
+            "prompt": "أي جملة تعني \"Turn left\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "⬅️",
+            "correctOptionId": "o1",
+            "explanation": "\"left\" تعني يسار ⬅️.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Turn left",
+                "emoji": "⬅️"
+              },
+              {
+                "id": "o2",
+                "label": "Turn right",
+                "emoji": "➡️"
+              },
+              {
+                "id": "o3",
+                "label": "Go up",
+                "emoji": "⬆️"
+              },
+              {
+                "id": "o4",
+                "label": "Go down",
+                "emoji": "⬇️"
+              }
+            ]
+          },
+          {
+            "id": "u10_l3_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الإجابة",
+            "instruction": "اضغط زر التشغيل ثم اختر الإجابة",
+            "audioText": "Stop at the red light",
+            "correctOptionId": "o1",
+            "explanation": "\"stop\" تعني قف 🛑.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Stop at the red light"
+              },
+              {
+                "id": "o2",
+                "label": "Go at the green light"
+              },
+              {
+                "id": "o3",
+                "label": "Turn right at the shop"
+              },
+              {
+                "id": "o4",
+                "label": "Walk to the park"
+              }
+            ]
+          },
+          {
+            "id": "u10_l3_q3",
+            "type": "imageMatching",
+            "prompt": "أي صورة تعني \"Turn right\"؟",
+            "instruction": "اختر الصورة الصحيحة",
+            "promptEmoji": "➡️",
+            "correctOptionId": "o2",
+            "explanation": "\"right\" تعني يمين ➡️.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Turn left",
+                "emoji": "⬅️"
+              },
+              {
+                "id": "o2",
+                "label": "Turn right",
+                "emoji": "➡️"
+              },
+              {
+                "id": "o3",
+                "label": "Stop here",
+                "emoji": "🛑"
+              },
+              {
+                "id": "o4",
+                "label": "Go straight",
+                "emoji": "⬆️"
+              }
+            ]
+          },
+          {
+            "id": "u10_l3_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Go straight and then turn right\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Go straight and then turn right",
+            "wordBank": [
+              "Go",
+              "straight",
+              "and",
+              "then",
+              "turn",
+              "right",
+              "left"
+            ],
+            "explanation": "\"go straight\" تعني اذهب مستقيماً ⬆️.",
+            "promptEmoji": "🧭"
+          },
+          {
+            "id": "u10_l3_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🗺️",
+            "answer": "Can you show me the way please",
+            "explanation": "نسأل عن الطريق بأدب 🗺️."
+          }
+        ]
+      }
+    ]
   }
 ]
