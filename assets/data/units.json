@@ -4812,5 +4812,1457 @@
         ]
       }
     ]
+  },
+  {
+    "id": "unit_15",
+    "title": "الوحدة ١٥: القصص والحكايات",
+    "subtitle": "اقرأ القصص وافهم الحبكة والعبرة",
+    "colorValue": 4287837162,
+    "difficulty": 5,
+    "lessons": [
+      {
+        "id": "u15_l1",
+        "title": "أبطال القصص",
+        "icon": "🦸",
+        "xpReward": 60,
+        "questions": [
+          {
+            "id": "u15_l1_q1",
+            "type": "imageMatching",
+            "prompt": "من هو \"the hero\" في القصة؟",
+            "instruction": "اختر الإجابة الصحيحة",
+            "promptEmoji": "🦸",
+            "correctOptionId": "o1",
+            "explanation": "\"hero\" تعني البطل 🦸.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "The hero saves the day",
+                "emoji": "🦸"
+              },
+              {
+                "id": "o2",
+                "label": "The dragon breathes fire",
+                "emoji": "🐉"
+              },
+              {
+                "id": "o3",
+                "label": "The witch casts a spell",
+                "emoji": "🧙"
+              },
+              {
+                "id": "o4",
+                "label": "The king wears a crown",
+                "emoji": "👑"
+              }
+            ]
+          },
+          {
+            "id": "u15_l1_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "The brave knight fought the dragon",
+            "correctOptionId": "o1",
+            "explanation": "\"knight\" تعني الفارس ⚔️.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "The brave knight fought the dragon"
+              },
+              {
+                "id": "o2",
+                "label": "The kind fairy helped the girl"
+              },
+              {
+                "id": "o3",
+                "label": "The wise old man told a story"
+              },
+              {
+                "id": "o4",
+                "label": "The little mouse found the cheese"
+              }
+            ]
+          },
+          {
+            "id": "u15_l1_q3",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Once upon a time there was a princess\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Once upon a time there was a princess",
+            "wordBank": [
+              "Once",
+              "upon",
+              "a",
+              "time",
+              "there",
+              "was",
+              "princess",
+              "prince",
+              "castle"
+            ],
+            "explanation": "\"Once upon a time\" هي بداية القصص الكلاسيكية 📖.",
+            "promptEmoji": "📖"
+          },
+          {
+            "id": "u15_l1_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"The clever fox tricked the hungry wolf again\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "The clever fox tricked the hungry wolf again",
+            "wordBank": [
+              "The",
+              "clever",
+              "fox",
+              "tricked",
+              "the",
+              "hungry",
+              "wolf",
+              "again",
+              "sheep",
+              "quickly"
+            ],
+            "explanation": "\"clever\" تعني ذكي و\"tricked\" تعني خدع 🦊.",
+            "promptEmoji": "🦊"
+          },
+          {
+            "id": "u15_l1_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🎉",
+            "answer": "They all lived happily ever after",
+            "explanation": "نختم القصص بهذه الجملة السعيدة 🎉."
+          }
+        ]
+      },
+      {
+        "id": "u15_l2",
+        "title": "حبكة القصة",
+        "icon": "📜",
+        "xpReward": 65,
+        "questions": [
+          {
+            "id": "u15_l2_q1",
+            "type": "imageMatching",
+            "prompt": "ماذا يعني \"the beginning\"؟",
+            "instruction": "اختر الإجابة الصحيحة",
+            "promptEmoji": "🌅",
+            "correctOptionId": "o1",
+            "explanation": "\"beginning\" تعني البداية 🌅.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "The beginning of the story",
+                "emoji": "🌅"
+              },
+              {
+                "id": "o2",
+                "label": "The end of the book",
+                "emoji": "🔚"
+              },
+              {
+                "id": "o3",
+                "label": "The middle of the page",
+                "emoji": "📄"
+              },
+              {
+                "id": "o4",
+                "label": "The cover of the novel",
+                "emoji": "📕"
+              }
+            ]
+          },
+          {
+            "id": "u15_l2_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "In the end the hero found the treasure",
+            "correctOptionId": "o1",
+            "explanation": "\"in the end\" تعني في النهاية 💰.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "In the end the hero found the treasure"
+              },
+              {
+                "id": "o2",
+                "label": "At first the map was very hard to read"
+              },
+              {
+                "id": "o3",
+                "label": "Suddenly the door opened by itself"
+              },
+              {
+                "id": "o4",
+                "label": "Later the friends walked back home"
+              }
+            ]
+          },
+          {
+            "id": "u15_l2_q3",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"The story teaches us to always be kind\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "The story teaches us to always be kind",
+            "wordBank": [
+              "The",
+              "story",
+              "teaches",
+              "us",
+              "to",
+              "always",
+              "be",
+              "kind",
+              "never",
+              "rude"
+            ],
+            "explanation": "\"teaches us\" تعني تعلّمنا، وهذه هي العبرة 💡.",
+            "promptEmoji": "💡"
+          },
+          {
+            "id": "u15_l2_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"After many adventures the travellers returned home safe\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "After many adventures the travellers returned home safe",
+            "wordBank": [
+              "After",
+              "many",
+              "adventures",
+              "the",
+              "travellers",
+              "returned",
+              "home",
+              "safe",
+              "lost",
+              "tired"
+            ],
+            "explanation": "\"adventures\" تعني مغامرات 🧭.",
+            "promptEmoji": "🧭"
+          },
+          {
+            "id": "u15_l2_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "📜",
+            "answer": "My favourite part of the story is the ending",
+            "explanation": "نتحدّث عن الجزء المفضّل في القصة 📜."
+          }
+        ]
+      },
+      {
+        "id": "u15_l3",
+        "title": "احكِ قصتك",
+        "icon": "✍️",
+        "xpReward": 70,
+        "questions": [
+          {
+            "id": "u15_l3_q1",
+            "type": "imageMatching",
+            "prompt": "أي جملة تصف شخصية \"brave\"؟",
+            "instruction": "اختر الإجابة الصحيحة",
+            "promptEmoji": "🦁",
+            "correctOptionId": "o1",
+            "explanation": "\"brave\" تعني شجاع 🦁.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "She was brave and never gave up",
+                "emoji": "🦁"
+              },
+              {
+                "id": "o2",
+                "label": "He was tired and went to sleep",
+                "emoji": "😴"
+              },
+              {
+                "id": "o3",
+                "label": "They were hungry and ate lunch",
+                "emoji": "🍽️"
+              },
+              {
+                "id": "o4",
+                "label": "It was cold and started to rain",
+                "emoji": "🌧️"
+              }
+            ]
+          },
+          {
+            "id": "u15_l3_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "The wise owl gave the children good advice",
+            "correctOptionId": "o1",
+            "explanation": "\"advice\" تعني نصيحة 🦉.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "The wise owl gave the children good advice"
+              },
+              {
+                "id": "o2",
+                "label": "The noisy parrot repeated every single word"
+              },
+              {
+                "id": "o3",
+                "label": "The tiny ant carried a very heavy load"
+              },
+              {
+                "id": "o4",
+                "label": "The lazy cat slept all day in the sun"
+              }
+            ]
+          },
+          {
+            "id": "u15_l3_q3",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"If you believe in yourself you can do anything\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "If you believe in yourself you can do anything",
+            "wordBank": [
+              "If",
+              "you",
+              "believe",
+              "in",
+              "yourself",
+              "you",
+              "can",
+              "do",
+              "anything",
+              "nothing"
+            ],
+            "explanation": "\"believe in yourself\" تعني آمن بنفسك 🌟.",
+            "promptEmoji": "🌟"
+          },
+          {
+            "id": "u15_l3_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"The characters learned that friendship is more important\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "The characters learned that friendship is more important",
+            "wordBank": [
+              "The",
+              "characters",
+              "learned",
+              "that",
+              "friendship",
+              "is",
+              "more",
+              "important",
+              "money",
+              "less"
+            ],
+            "explanation": "\"friendship\" تعني الصداقة 🤝.",
+            "promptEmoji": "🤝"
+          },
+          {
+            "id": "u15_l3_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "✍️",
+            "answer": "I want to write my own adventure story",
+            "explanation": "نعبّر عن رغبتنا في تأليف قصة مغامرات ✍️."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit_16",
+    "title": "الوحدة ١٦: العلوم والفضاء",
+    "subtitle": "اكتشف الكواكب والتجارب والطاقة",
+    "colorValue": 4278355143,
+    "difficulty": 5,
+    "lessons": [
+      {
+        "id": "u16_l1",
+        "title": "نظام الفضاء",
+        "icon": "🪐",
+        "xpReward": 60,
+        "questions": [
+          {
+            "id": "u16_l1_q1",
+            "type": "imageMatching",
+            "prompt": "أي كلمة تعني \"الكوكب\"؟",
+            "instruction": "اختر الإجابة الصحيحة",
+            "promptEmoji": "🪐",
+            "correctOptionId": "o1",
+            "explanation": "\"planet\" تعني كوكب 🪐.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Planet",
+                "emoji": "🪐"
+              },
+              {
+                "id": "o2",
+                "label": "Star",
+                "emoji": "⭐"
+              },
+              {
+                "id": "o3",
+                "label": "Moon",
+                "emoji": "🌙"
+              },
+              {
+                "id": "o4",
+                "label": "Comet",
+                "emoji": "☄️"
+              }
+            ]
+          },
+          {
+            "id": "u16_l1_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "The Earth moves around the Sun",
+            "correctOptionId": "o1",
+            "explanation": "\"moves around\" تعني يدور حول ☀️.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "The Earth moves around the Sun"
+              },
+              {
+                "id": "o2",
+                "label": "The Moon shines brightly at night"
+              },
+              {
+                "id": "o3",
+                "label": "The stars are very far away"
+              },
+              {
+                "id": "o4",
+                "label": "The rocket flies into deep space"
+              }
+            ]
+          },
+          {
+            "id": "u16_l1_q3",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Astronauts travel to space in a rocket\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Astronauts travel to space in a rocket",
+            "wordBank": [
+              "Astronauts",
+              "travel",
+              "to",
+              "space",
+              "in",
+              "a",
+              "rocket",
+              "car",
+              "slowly"
+            ],
+            "explanation": "\"astronauts\" تعني روّاد الفضاء 🚀.",
+            "promptEmoji": "🚀"
+          },
+          {
+            "id": "u16_l1_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"The Sun is a giant ball of hot gas\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "The Sun is a giant ball of hot gas",
+            "wordBank": [
+              "The",
+              "Sun",
+              "is",
+              "a",
+              "giant",
+              "ball",
+              "of",
+              "hot",
+              "gas",
+              "cold",
+              "small"
+            ],
+            "explanation": "\"giant\" تعني عملاق و\"gas\" تعني غاز ☀️.",
+            "promptEmoji": "☀️"
+          },
+          {
+            "id": "u16_l1_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🌙",
+            "answer": "One day I want to visit the moon",
+            "explanation": "نحلم بزيارة القمر يوماً ما 🌙."
+          }
+        ]
+      },
+      {
+        "id": "u16_l2",
+        "title": "تجارب علمية",
+        "icon": "🧪",
+        "xpReward": 65,
+        "questions": [
+          {
+            "id": "u16_l2_q1",
+            "type": "imageMatching",
+            "prompt": "أي كلمة تعني \"التجربة\"؟",
+            "instruction": "اختر الإجابة الصحيحة",
+            "promptEmoji": "🧪",
+            "correctOptionId": "o1",
+            "explanation": "\"experiment\" تعني تجربة 🧪.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Experiment",
+                "emoji": "🧪"
+              },
+              {
+                "id": "o2",
+                "label": "Question",
+                "emoji": "❓"
+              },
+              {
+                "id": "o3",
+                "label": "Answer",
+                "emoji": "✅"
+              },
+              {
+                "id": "o4",
+                "label": "Machine",
+                "emoji": "⚙️"
+              }
+            ]
+          },
+          {
+            "id": "u16_l2_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "Water turns into ice when it is very cold",
+            "correctOptionId": "o1",
+            "explanation": "\"turns into\" تعني يتحوّل إلى 🧊.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Water turns into ice when it is very cold"
+              },
+              {
+                "id": "o2",
+                "label": "Plants need sunlight to grow tall and green"
+              },
+              {
+                "id": "o3",
+                "label": "The magnet pulls the small metal pins"
+              },
+              {
+                "id": "o4",
+                "label": "Sound travels quickly through the open air"
+              }
+            ]
+          },
+          {
+            "id": "u16_l2_q3",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Scientists ask questions and look for the answers\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Scientists ask questions and look for the answers",
+            "wordBank": [
+              "Scientists",
+              "ask",
+              "questions",
+              "and",
+              "look",
+              "for",
+              "the",
+              "answers",
+              "problems",
+              "quietly"
+            ],
+            "explanation": "\"scientists\" تعني العلماء 🔬.",
+            "promptEmoji": "🔬"
+          },
+          {
+            "id": "u16_l2_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Plants make their own food using the sunlight\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Plants make their own food using the sunlight",
+            "wordBank": [
+              "Plants",
+              "make",
+              "their",
+              "own",
+              "food",
+              "using",
+              "the",
+              "sunlight",
+              "water",
+              "buy"
+            ],
+            "explanation": "\"using the sunlight\" تعني باستخدام ضوء الشمس 🌱.",
+            "promptEmoji": "🌱"
+          },
+          {
+            "id": "u16_l2_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🧪",
+            "answer": "I love doing science experiments at school",
+            "explanation": "نعبّر عن حبّنا للتجارب العلمية 🧪."
+          }
+        ]
+      },
+      {
+        "id": "u16_l3",
+        "title": "الطبيعة والطاقة",
+        "icon": "⚡",
+        "xpReward": 70,
+        "questions": [
+          {
+            "id": "u16_l3_q1",
+            "type": "imageMatching",
+            "prompt": "أي كلمة تعني \"الطاقة\"؟",
+            "instruction": "اختر الإجابة الصحيحة",
+            "promptEmoji": "⚡",
+            "correctOptionId": "o1",
+            "explanation": "\"energy\" تعني طاقة ⚡.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Energy",
+                "emoji": "⚡"
+              },
+              {
+                "id": "o2",
+                "label": "Water",
+                "emoji": "💧"
+              },
+              {
+                "id": "o3",
+                "label": "Stone",
+                "emoji": "🪨"
+              },
+              {
+                "id": "o4",
+                "label": "Cloud",
+                "emoji": "☁️"
+              }
+            ]
+          },
+          {
+            "id": "u16_l3_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "The sun gives us light and clean energy",
+            "correctOptionId": "o1",
+            "explanation": "\"clean energy\" تعني طاقة نظيفة ☀️.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "The sun gives us light and clean energy"
+              },
+              {
+                "id": "o2",
+                "label": "The wind pushes the big white sailboat"
+              },
+              {
+                "id": "o3",
+                "label": "The river flows down from the high mountain"
+              },
+              {
+                "id": "o4",
+                "label": "The fire keeps the cold campers warm"
+              }
+            ]
+          },
+          {
+            "id": "u16_l3_q3",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"We should protect nature and save the planet\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "We should protect nature and save the planet",
+            "wordBank": [
+              "We",
+              "should",
+              "protect",
+              "nature",
+              "and",
+              "save",
+              "the",
+              "planet",
+              "waste",
+              "harm"
+            ],
+            "explanation": "\"protect nature\" تعني نحمي الطبيعة 🌍.",
+            "promptEmoji": "🌍"
+          },
+          {
+            "id": "u16_l3_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Recycling paper helps to keep our world clean\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Recycling paper helps to keep our world clean",
+            "wordBank": [
+              "Recycling",
+              "paper",
+              "helps",
+              "to",
+              "keep",
+              "our",
+              "world",
+              "clean",
+              "dirty",
+              "throw"
+            ],
+            "explanation": "\"recycling\" تعني إعادة التدوير ♻️.",
+            "promptEmoji": "♻️"
+          },
+          {
+            "id": "u16_l3_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🌍",
+            "answer": "Everyone must take care of our beautiful planet",
+            "explanation": "يجب أن نعتني بكوكبنا الجميل 🌍."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit_17",
+    "title": "الوحدة ١٧: دول وثقافات",
+    "subtitle": "تعرّف على شعوب العالم وعاداته",
+    "colorValue": 4290007817,
+    "difficulty": 6,
+    "lessons": [
+      {
+        "id": "u17_l1",
+        "title": "دول العالم",
+        "icon": "🗺️",
+        "xpReward": 70,
+        "questions": [
+          {
+            "id": "u17_l1_q1",
+            "type": "imageMatching",
+            "prompt": "أي كلمة تعني \"بلد\"؟",
+            "instruction": "اختر الإجابة الصحيحة",
+            "promptEmoji": "🗺️",
+            "correctOptionId": "o1",
+            "explanation": "\"country\" تعني بلد 🗺️.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Country",
+                "emoji": "🗺️"
+              },
+              {
+                "id": "o2",
+                "label": "City",
+                "emoji": "🏙️"
+              },
+              {
+                "id": "o3",
+                "label": "Street",
+                "emoji": "🛣️"
+              },
+              {
+                "id": "o4",
+                "label": "Village",
+                "emoji": "🏡"
+              }
+            ]
+          },
+          {
+            "id": "u17_l1_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "People speak different languages in different countries",
+            "correctOptionId": "o1",
+            "explanation": "\"languages\" تعني لغات 🗣️.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "People speak different languages in different countries"
+              },
+              {
+                "id": "o2",
+                "label": "Children play the same games all over the world"
+              },
+              {
+                "id": "o3",
+                "label": "Every family enjoys eating dinner together at home"
+              },
+              {
+                "id": "o4",
+                "label": "Some animals travel very far to find warm places"
+              }
+            ]
+          },
+          {
+            "id": "u17_l1_q3",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Egypt is a beautiful country with a long history\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Egypt is a beautiful country with a long history",
+            "wordBank": [
+              "Egypt",
+              "is",
+              "a",
+              "beautiful",
+              "country",
+              "with",
+              "a",
+              "long",
+              "history",
+              "short",
+              "boring"
+            ],
+            "explanation": "\"history\" تعني تاريخ، ومصر بلد عريق 🏛️.",
+            "promptEmoji": "🏛️"
+          },
+          {
+            "id": "u17_l1_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Travelling helps us learn about new places and people\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Travelling helps us learn about new places and people",
+            "wordBank": [
+              "Travelling",
+              "helps",
+              "us",
+              "learn",
+              "about",
+              "new",
+              "places",
+              "and",
+              "people",
+              "old",
+              "forget"
+            ],
+            "explanation": "\"travelling\" تعني السفر ✈️.",
+            "promptEmoji": "✈️"
+          },
+          {
+            "id": "u17_l1_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🌍",
+            "answer": "I would love to visit many countries one day",
+            "explanation": "نعبّر عن حلمنا بزيارة بلدان كثيرة 🌍."
+          }
+        ]
+      },
+      {
+        "id": "u17_l2",
+        "title": "عادات وتقاليد",
+        "icon": "🎎",
+        "xpReward": 75,
+        "questions": [
+          {
+            "id": "u17_l2_q1",
+            "type": "imageMatching",
+            "prompt": "ماذا تعني كلمة \"culture\"؟",
+            "instruction": "اختر الإجابة الصحيحة",
+            "promptEmoji": "🎎",
+            "correctOptionId": "o1",
+            "explanation": "\"culture\" تعني ثقافة 🎎.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Culture is our way of life",
+                "emoji": "🎎"
+              },
+              {
+                "id": "o2",
+                "label": "Weather changes every season",
+                "emoji": "🌦️"
+              },
+              {
+                "id": "o3",
+                "label": "Money is used to buy things",
+                "emoji": "💵"
+              },
+              {
+                "id": "o4",
+                "label": "Science explains how things work",
+                "emoji": "🔬"
+              }
+            ]
+          },
+          {
+            "id": "u17_l2_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "Every culture has its own special food and music",
+            "correctOptionId": "o1",
+            "explanation": "\"special\" تعني مميّز 🎶.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Every culture has its own special food and music"
+              },
+              {
+                "id": "o2",
+                "label": "Most people wake up early to go to work"
+              },
+              {
+                "id": "o3",
+                "label": "The teacher explained the lesson very slowly today"
+              },
+              {
+                "id": "o4",
+                "label": "Our neighbours planted many trees in their garden"
+              }
+            ]
+          },
+          {
+            "id": "u17_l2_q3",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"We should respect the traditions of other people\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "We should respect the traditions of other people",
+            "wordBank": [
+              "We",
+              "should",
+              "respect",
+              "the",
+              "traditions",
+              "of",
+              "other",
+              "people",
+              "ignore",
+              "ours"
+            ],
+            "explanation": "\"traditions\" تعني تقاليد و\"respect\" تعني نحترم 🤝.",
+            "promptEmoji": "🤝"
+          },
+          {
+            "id": "u17_l2_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Learning about other cultures makes the world friendlier\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Learning about other cultures makes the world friendlier",
+            "wordBank": [
+              "Learning",
+              "about",
+              "other",
+              "cultures",
+              "makes",
+              "the",
+              "world",
+              "friendlier",
+              "smaller",
+              "harder"
+            ],
+            "explanation": "\"cultures\" تعني ثقافات 🌏.",
+            "promptEmoji": "🌏"
+          },
+          {
+            "id": "u17_l2_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🌏",
+            "answer": "Different cultures make our world more interesting",
+            "explanation": "التنوّع الثقافي يجعل العالم أجمل 🌏."
+          }
+        ]
+      },
+      {
+        "id": "u17_l3",
+        "title": "المهن حول العالم",
+        "icon": "🧑‍🔧",
+        "xpReward": 80,
+        "questions": [
+          {
+            "id": "u17_l3_q1",
+            "type": "imageMatching",
+            "prompt": "أي كلمة تعني \"مهندس\"؟",
+            "instruction": "اختر الإجابة الصحيحة",
+            "promptEmoji": "👷",
+            "correctOptionId": "o1",
+            "explanation": "\"engineer\" تعني مهندس 👷.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Engineer",
+                "emoji": "👷"
+              },
+              {
+                "id": "o2",
+                "label": "Pilot",
+                "emoji": "🧑‍✈️"
+              },
+              {
+                "id": "o3",
+                "label": "Chef",
+                "emoji": "🧑‍🍳"
+              },
+              {
+                "id": "o4",
+                "label": "Artist",
+                "emoji": "🧑‍🎨"
+              }
+            ]
+          },
+          {
+            "id": "u17_l3_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "A scientist studies the world to understand it better",
+            "correctOptionId": "o1",
+            "explanation": "\"studies\" تعني يدرس 🔬.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "A scientist studies the world to understand it better"
+              },
+              {
+                "id": "o2",
+                "label": "A farmer grows healthy food for the whole town"
+              },
+              {
+                "id": "o3",
+                "label": "A nurse takes good care of the sick patients"
+              },
+              {
+                "id": "o4",
+                "label": "A builder makes strong houses for many families"
+              }
+            ]
+          },
+          {
+            "id": "u17_l3_q3",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"When I grow up I want to be a doctor\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "When I grow up I want to be a doctor",
+            "wordBank": [
+              "When",
+              "I",
+              "grow",
+              "up",
+              "I",
+              "want",
+              "to",
+              "be",
+              "a",
+              "doctor",
+              "yesterday"
+            ],
+            "explanation": "\"grow up\" تعني أكبر، ونتحدّث عن المستقبل 🩺.",
+            "promptEmoji": "🩺"
+          },
+          {
+            "id": "u17_l3_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Every job is important and helps our community grow\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Every job is important and helps our community grow",
+            "wordBank": [
+              "Every",
+              "job",
+              "is",
+              "important",
+              "and",
+              "helps",
+              "our",
+              "community",
+              "grow",
+              "useless",
+              "stop"
+            ],
+            "explanation": "\"community\" تعني المجتمع 🏘️.",
+            "promptEmoji": "🏘️"
+          },
+          {
+            "id": "u17_l3_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🤝",
+            "answer": "People with different jobs help each other every day",
+            "explanation": "أصحاب المهن المختلفة يساعدون بعضهم 🤝."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit_18",
+    "title": "الوحدة ١٨: محادثات متقدّمة",
+    "subtitle": "عبّر عن رأيك وخطّط لمستقبلك",
+    "colorValue": 4290646588,
+    "difficulty": 6,
+    "lessons": [
+      {
+        "id": "u18_l1",
+        "title": "التعبير عن الرأي",
+        "icon": "💭",
+        "xpReward": 70,
+        "questions": [
+          {
+            "id": "u18_l1_q1",
+            "type": "imageMatching",
+            "prompt": "أي جملة تعبّر عن رأي؟",
+            "instruction": "اختر الإجابة الصحيحة",
+            "promptEmoji": "💭",
+            "correctOptionId": "o1",
+            "explanation": "\"I think\" تعني أعتقد 💭.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "I think reading is really important",
+                "emoji": "💭"
+              },
+              {
+                "id": "o2",
+                "label": "Please close the window now",
+                "emoji": "🪟"
+              },
+              {
+                "id": "o3",
+                "label": "What time is it in London",
+                "emoji": "🕐"
+              },
+              {
+                "id": "o4",
+                "label": "The bag is under the table",
+                "emoji": "👜"
+              }
+            ]
+          },
+          {
+            "id": "u18_l1_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "In my opinion everyone should learn a new language",
+            "correctOptionId": "o1",
+            "explanation": "\"in my opinion\" تعني في رأيي 💬.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "In my opinion everyone should learn a new language"
+              },
+              {
+                "id": "o2",
+                "label": "On the weekend we usually visit our grandparents"
+              },
+              {
+                "id": "o3",
+                "label": "Before dinner the children washed their dirty hands"
+              },
+              {
+                "id": "o4",
+                "label": "During the summer the days are long and hot"
+              }
+            ]
+          },
+          {
+            "id": "u18_l1_q3",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"I agree with you because your idea is very good\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "I agree with you because your idea is very good",
+            "wordBank": [
+              "I",
+              "agree",
+              "with",
+              "you",
+              "because",
+              "your",
+              "idea",
+              "is",
+              "very",
+              "good",
+              "wrong"
+            ],
+            "explanation": "\"I agree with you\" تعني أنا أتّفق معك 🤝.",
+            "promptEmoji": "🤝"
+          },
+          {
+            "id": "u18_l1_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Although it was raining we still enjoyed the trip\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Although it was raining we still enjoyed the trip",
+            "wordBank": [
+              "Although",
+              "it",
+              "was",
+              "raining",
+              "we",
+              "still",
+              "enjoyed",
+              "the",
+              "trip",
+              "sunny",
+              "cancelled"
+            ],
+            "explanation": "\"although\" تعني على الرغم من 🌧️.",
+            "promptEmoji": "🌧️"
+          },
+          {
+            "id": "u18_l1_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "😊",
+            "answer": "I believe that helping others makes us happy",
+            "explanation": "نعبّر عن قناعة أن مساعدة الآخرين تسعدنا 😊."
+          }
+        ]
+      },
+      {
+        "id": "u18_l2",
+        "title": "حلّ المشكلات",
+        "icon": "🧩",
+        "xpReward": 75,
+        "questions": [
+          {
+            "id": "u18_l2_q1",
+            "type": "imageMatching",
+            "prompt": "أي جملة تقترح حلاً؟",
+            "instruction": "اختر الإجابة الصحيحة",
+            "promptEmoji": "💡",
+            "correctOptionId": "o1",
+            "explanation": "\"we could\" تعني يمكننا 💡.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "We could ask the teacher for help",
+                "emoji": "💡"
+              },
+              {
+                "id": "o2",
+                "label": "The sky is blue and clear",
+                "emoji": "🌤️"
+              },
+              {
+                "id": "o3",
+                "label": "My shoes are new and clean",
+                "emoji": "👟"
+              },
+              {
+                "id": "o4",
+                "label": "The cat is sleeping on the sofa",
+                "emoji": "🐈"
+              }
+            ]
+          },
+          {
+            "id": "u18_l2_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "If we work together we can solve this problem",
+            "correctOptionId": "o1",
+            "explanation": "\"work together\" تعني نعمل معاً 🤝.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "If we work together we can solve this problem"
+              },
+              {
+                "id": "o2",
+                "label": "The train arrives at the station every hour"
+              },
+              {
+                "id": "o3",
+                "label": "She bought a beautiful gift for her friend"
+              },
+              {
+                "id": "o4",
+                "label": "The garden is full of colourful spring flowers"
+              }
+            ]
+          },
+          {
+            "id": "u18_l2_q3",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Let us make a plan before we start the project\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Let us make a plan before we start the project",
+            "wordBank": [
+              "Let",
+              "us",
+              "make",
+              "a",
+              "plan",
+              "before",
+              "we",
+              "start",
+              "the",
+              "project",
+              "after",
+              "finish"
+            ],
+            "explanation": "\"make a plan\" تعني نضع خطة 📋.",
+            "promptEmoji": "📋"
+          },
+          {
+            "id": "u18_l2_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"Even when things are hard we should never give up\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "Even when things are hard we should never give up",
+            "wordBank": [
+              "Even",
+              "when",
+              "things",
+              "are",
+              "hard",
+              "we",
+              "should",
+              "never",
+              "give",
+              "up",
+              "always",
+              "easy"
+            ],
+            "explanation": "\"never give up\" تعني لا تستسلم أبداً 💪.",
+            "promptEmoji": "💪"
+          },
+          {
+            "id": "u18_l2_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🗣️",
+            "answer": "Talking about a problem often helps us find answers",
+            "explanation": "الحديث عن المشكلة يساعد في إيجاد الحلول 🗣️."
+          }
+        ]
+      },
+      {
+        "id": "u18_l3",
+        "title": "التخطيط للمستقبل",
+        "icon": "🌟",
+        "xpReward": 80,
+        "questions": [
+          {
+            "id": "u18_l3_q1",
+            "type": "imageMatching",
+            "prompt": "أي جملة تتحدّث عن المستقبل؟",
+            "instruction": "اختر الإجابة الصحيحة",
+            "promptEmoji": "🔮",
+            "correctOptionId": "o1",
+            "explanation": "\"will\" تدل على المستقبل 🔮.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Next year I will study very hard",
+                "emoji": "🔮"
+              },
+              {
+                "id": "o2",
+                "label": "Yesterday I played with my friends",
+                "emoji": "🕐"
+              },
+              {
+                "id": "o3",
+                "label": "Right now I am eating my lunch",
+                "emoji": "🍽️"
+              },
+              {
+                "id": "o4",
+                "label": "Last night I watched a good film",
+                "emoji": "📺"
+              }
+            ]
+          },
+          {
+            "id": "u18_l3_q2",
+            "type": "audioListening",
+            "prompt": "استمع واختر الجملة",
+            "instruction": "اضغط زر التشغيل ثم اختر الجملة",
+            "audioText": "When I finish school I hope to become an engineer",
+            "correctOptionId": "o1",
+            "explanation": "\"I hope to\" تعني آمل أن 🎓.",
+            "options": [
+              {
+                "id": "o1",
+                "label": "When I finish school I hope to become an engineer"
+              },
+              {
+                "id": "o2",
+                "label": "After the game the tired players drank cold water"
+              },
+              {
+                "id": "o3",
+                "label": "The busy market was full of fresh fruit today"
+              },
+              {
+                "id": "o4",
+                "label": "Our teacher gave us an interesting book to read"
+              }
+            ]
+          },
+          {
+            "id": "u18_l3_q3",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"In the future people will travel between the planets\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "In the future people will travel between the planets",
+            "wordBank": [
+              "In",
+              "the",
+              "future",
+              "people",
+              "will",
+              "travel",
+              "between",
+              "the",
+              "planets",
+              "past",
+              "walked"
+            ],
+            "explanation": "\"in the future\" تعني في المستقبل 🚀.",
+            "promptEmoji": "🚀"
+          },
+          {
+            "id": "u18_l3_q4",
+            "type": "wordJumble",
+            "prompt": "كوّن الجملة: \"If I study every day I will reach my dreams\"",
+            "instruction": "رتّب الكلمات لتكوين الجملة",
+            "answer": "If I study every day I will reach my dreams",
+            "wordBank": [
+              "If",
+              "I",
+              "study",
+              "every",
+              "day",
+              "I",
+              "will",
+              "reach",
+              "my",
+              "dreams",
+              "forget",
+              "never"
+            ],
+            "explanation": "\"reach my dreams\" تعني أحقّق أحلامي 🌟.",
+            "promptEmoji": "🌟"
+          },
+          {
+            "id": "u18_l3_q5",
+            "type": "speechRecognition",
+            "prompt": "انطق الجملة بصوتٍ عالٍ",
+            "instruction": "اضغط الميكروفون وانطق بوضوح",
+            "promptEmoji": "🎉",
+            "answer": "I will keep learning English until I speak it well",
+            "explanation": "سأستمرّ في تعلّم الإنجليزية حتى أتقنها 🎉."
+          }
+        ]
+      }
+    ]
   }
 ]

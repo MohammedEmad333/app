@@ -98,7 +98,7 @@ assets/
 ## 📊 Content schema
 
 Units → Lessons → Questions are defined in `assets/data/units.json` and parsed
-by the model classes. Seeded with **14 units, 42 lessons and 195 questions**
+by the model classes. Seeded with **18 units, 54 lessons and 255 questions**
 spanning all four question types, with a **difficulty that ramps up** as the
 child advances (each unit carries a `difficulty` tier shown on its banner):
 
@@ -118,11 +118,19 @@ child advances (each unit carries a `difficulty` tier shown on its banner):
 | 12 | Hobbies & Sports | متقدّم (advanced) |
 | 13 | Days & Seasons | متقدّم (advanced) |
 | 14 | Shopping & Market | متقدّم (advanced) |
+| 15 | Stories & Tales | خبير (expert) |
+| 16 | Science & Space | خبير (expert) |
+| 17 | Countries & Cultures | بطل (champion) |
+| 18 | Advanced Conversations | بطل (champion) |
+
+The `difficulty` tier runs from **1 to 6**, each with its own Arabic label and
+dot count on the unit banner: سهل (easy) · متوسط (medium) · صعب (hard) · متقدّم
+(advanced) · خبير (expert) · بطل (champion).
 
 Early units teach single words with short 4-word sentences; later units move to
-full sentences and questions — longer word-jumbles (up to 6 words with extra
-decoy chips), phrase-level audio/image choices, and 5 questions per lesson with
-higher XP. **Units unlock one after another** — a unit stays locked (dimmed,
+full sentences and questions — longer word-jumbles (up to 8 words with extra
+decoy chips), phrase-level audio/image choices, paragraph-length reading and
+opinion prompts, and 5 questions per lesson with higher XP. **Units unlock one after another** — a unit stays locked (dimmed,
 with a lock badge) until the previous unit is fully completed, so the harder
 content is earned. Add new units or lessons by appending to the JSON — no code
 changes needed.
