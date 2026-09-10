@@ -98,7 +98,7 @@ assets/
 ## 📊 Content schema
 
 Units → Lessons → Questions are defined in `assets/data/units.json` and parsed
-by the model classes. Seeded with **22 units, 66 lessons and 315 questions**
+by the model classes. Seeded with **24 units, 72 lessons and 345 questions**
 spanning all four question types, with a **difficulty that ramps up** as the
 child advances (each unit carries a `difficulty` tier shown on its banner):
 
@@ -126,6 +126,8 @@ child advances (each unit carries a `difficulty` tier shown on its banner):
 | 20 | Feelings & Friendship | بطل (champion) |
 | 21 | In the Kitchen | خبير (expert) |
 | 22 | Travel & Adventure | بطل (champion) |
+| 23 | Money & Saving | خبير (expert) |
+| 24 | Our Planet & Environment | بطل (champion) |
 
 The `difficulty` tier runs from **1 to 6**, each with its own Arabic label and
 dot count on the unit banner: سهل (easy) · متوسط (medium) · صعب (hard) · متقدّم
