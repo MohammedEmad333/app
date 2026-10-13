@@ -56,13 +56,15 @@ class UserProgress extends Equatable {
   double get dailyGoalProgress => (dailyXp / dailyGoal).clamp(0.0, 1.0);
   bool get dailyGoalMet => dailyXp >= dailyGoal;
 
+  static const Object _unset = Object();
+
   UserProgress copyWith({
     String? name,
     int? xp,
     int? streak,
     int? hearts,
     DateTime? lastActiveDate,
-    DateTime? heartsRefilledAt,
+    Object? heartsRefilledAt = _unset,
     Set<String>? completedLessonIds,
     int? dailyXp,
     DateTime? dailyXpDate,
@@ -74,7 +76,9 @@ class UserProgress extends Equatable {
       streak: streak ?? this.streak,
       hearts: hearts ?? this.hearts,
       lastActiveDate: lastActiveDate ?? this.lastActiveDate,
-      heartsRefilledAt: heartsRefilledAt ?? this.heartsRefilledAt,
+      heartsRefilledAt: identical(heartsRefilledAt, _unset)
+          ? this.heartsRefilledAt
+          : heartsRefilledAt as DateTime?,
       completedLessonIds: completedLessonIds ?? this.completedLessonIds,
       dailyXp: dailyXp ?? this.dailyXp,
       dailyXpDate: dailyXpDate ?? this.dailyXpDate,
