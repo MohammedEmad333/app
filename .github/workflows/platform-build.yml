@@ -40,6 +40,15 @@ jobs:
           sed -i 's/minSdk = flutter.minSdkVersion/minSdk = 24/' android/app/build.gradle.kts
           sed -i 's/compileSdk = flutter.compileSdkVersion/compileSdk = 36/' android/app/build.gradle.kts
           sed -i 's/ndkVersion = flutter.ndkVersion/ndkVersion = "27.0.12077973"/' android/app/build.gradle.kts
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          path = Path('android/settings.gradle.kts')
+          content = path.read_text()
+          content, count = re.subn(r'(id\("org.jetbrains.kotlin.android"\)\s+version\s+")[^"]+"', lambda m: m.group(1) + '2.2.20' + '"', content)
+          assert count == 1, 'Kotlin Gradle plugin declaration not found'
+          path.write_text(content)
+          PY
       - run: flutter pub get
       - name: Build debug APK
         run: flutter build apk --debug
