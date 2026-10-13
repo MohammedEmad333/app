@@ -7,6 +7,18 @@ import 'package:lingokids/data/models/user_progress.dart';
 import 'package:lingokids/features/lesson/cubit/lesson_cubit.dart';
 import 'package:lingokids/features/progress/progress_cubit.dart';
 import 'package:lingokids/services/storage_service.dart';
+import 'package:lingokids/services/audio_service.dart';
+
+class SilentAudioService extends AudioService {
+  @override
+  Future<void> correct() async {}
+
+  @override
+  Future<void> wrong() async {}
+
+  @override
+  Future<void> celebrate() async {}
+}
 
 class FakeProgressCubit extends ProgressCubit {
   FakeProgressCubit()
@@ -66,6 +78,7 @@ void main() {
     final runner = LessonCubit(
       lesson: sampleLesson(),
       progressCubit: progress,
+      audio: SilentAudioService(),
     );
     await runner.next();
     expect(runner.state.currentIndex, 0);
@@ -81,6 +94,7 @@ void main() {
     final runner = LessonCubit(
       lesson: sampleLesson(),
       progressCubit: progress,
+      audio: SilentAudioService(),
     );
     final first = runner.submitAnswer(isCorrect: false);
     final second = runner.submitAnswer(isCorrect: false);
@@ -100,6 +114,7 @@ void main() {
     final runner = LessonCubit(
       lesson: sampleLesson(questions: 1),
       progressCubit: progress,
+      audio: SilentAudioService(),
     );
     await runner.submitAnswer(isCorrect: true);
     final first = runner.next();
