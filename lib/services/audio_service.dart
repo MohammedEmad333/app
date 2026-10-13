@@ -5,10 +5,10 @@ import 'package:flutter/foundation.dart';
 /// celebration). Effects are loaded from bundled assets when present and fail
 /// silently if an asset is missing, so the demo runs even without audio files.
 class AudioService {
-  AudioService._();
-  static final AudioService instance = AudioService._();
+  AudioService();
+  static final AudioService instance = AudioService();
 
-  final AudioPlayer _sfxPlayer = AudioPlayer(playerId: 'sfx');
+  late final AudioPlayer _sfxPlayer = AudioPlayer(playerId: 'sfx');
 
   Future<void> _play(String asset) async {
     try {
