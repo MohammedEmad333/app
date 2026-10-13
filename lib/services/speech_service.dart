@@ -70,6 +70,6 @@ class SpeechService {
     final a = norm(spoken);
     final b = norm(expected);
     if (a.isEmpty) return false;
-    return a == b || a.contains(b) || b.contains(a);
+    return a == b;
   }
 }
