@@ -202,3 +202,7 @@ device TTS and a code-driven confetti celebration, so nothing extra is required.
   the `QuestionWidget` contract, and a branch in `buildQuestionWidget`.
 - **Swap emoji for artwork:** set `imageAsset` on options and render
   `Image.asset` in the question widgets.
+
+### Android build requirements
+
+After generating the Android runner with `flutter create --platforms=android .`, configure `android/app/build.gradle.kts` to use at least `minSdk = 24`, `compileSdk = 36` and `ndkVersion = "27.0.12077973"` and Kotlin Gradle plugin version `2.2.20` in `android/settings.gradle.kts` (required by the current speech/audio plugins). The CI build verifies these settings. These generated platform files are not tracked in this repository, so repeat the settings whenever regenerating the runner.
