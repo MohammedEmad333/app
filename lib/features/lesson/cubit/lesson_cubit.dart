@@ -53,31 +53,31 @@ class LessonCubit extends Cubit<LessonState> {
     if (state.status != LessonStatus.inProgress || _answerPending) return;
     _answerPending = true;
     try {
-    final qid = state.currentQuestion.id;
-    if (isCorrect) {
-      _audio.correct();
-      HapticFeedback.mediumImpact();
-      await _progress.clearMistake(qid);
-      emit(state.copyWith(
-        status: LessonStatus.answered,
-        lastAnswerCorrect: true,
-        correctCount: state.correctCount + 1,
-      ));
-    } else {
-      _audio.wrong();
-      HapticFeedback.heavyImpact();
-      await _progress.addMistake(qid);
-      if (!_noStakes) {
-        await _progress.loseHeart();
+      final qid = state.currentQuestion.id;
+      if (isCorrect) {
+        _audio.correct();
+        HapticFeedback.mediumImpact();
+        await _progress.clearMistake(qid);
+        emit(state.copyWith(
+          status: LessonStatus.answered,
+          lastAnswerCorrect: true,
+          correctCount: state.correctCount + 1,
+        ));
+      } else {
+        _audio.wrong();
+        HapticFeedback.heavyImpact();
+        await _progress.addMistake(qid);
+        if (!_noStakes) {
+          await _progress.loseHeart();
+        }
+        emit(state.copyWith(
+          status: LessonStatus.answered,
+          lastAnswerCorrect: false,
+          hearts: _noStakes ? state.hearts : _progress.state.hearts,
+        ));
       }
-      emit(state.copyWith(
-        status: LessonStatus.answered,
-        lastAnswerCorrect: false,
-        hearts: _noStakes ? state.hearts : _progress.state.hearts,
-      ));
-    }
     } finally {
-      _answerPending = false;
+        _answerPending = false;
     }
   }
 
@@ -86,24 +86,24 @@ class LessonCubit extends Cubit<LessonState> {
     if (state.status != LessonStatus.answered || _advancePending) return;
     _advancePending = true;
     try {
-    // Out of hearts -> the lesson fails (no-stakes runs never fail).
-    if (!_noStakes && state.lastAnswerCorrect == false && state.hearts <= 0) {
-      emit(state.copyWith(status: LessonStatus.failed));
-      return;
-    }
-
-    if (state.isLastQuestion) {
-      await _finish();
-      return;
-    }
-
-    emit(state.copyWith(
-      currentIndex: state.currentIndex + 1,
-      status: LessonStatus.inProgress,
-      clearLastAnswer: true,
-    ));
+      // Out of hearts -> the lesson fails (no-stakes runs never fail).
+      if (!_noStakes && state.lastAnswerCorrect == false && state.hearts <= 0) {
+        emit(state.copyWith(status: LessonStatus.failed));
+        return;
+      }
+  
+      if (state.isLastQuestion) {
+        await _finish();
+        return;
+      }
+  
+      emit(state.copyWith(
+        currentIndex: state.currentIndex + 1,
+        status: LessonStatus.inProgress,
+        clearLastAnswer: true,
+      ));
     } finally {
-      _advancePending = false;
+        _advancePending = false;
     }
   }
 
