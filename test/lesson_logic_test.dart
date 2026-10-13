@@ -193,8 +193,9 @@ void main() {
       expect(SpeechService.matches('  HORSE ', 'Horse'), isTrue);
     });
 
-    test('accepts containment', () {
-      expect(SpeechService.matches('a tiger', 'Tiger'), isTrue);
+    test('requires the complete phrase', () {
+      expect(SpeechService.matches('a tiger', 'Tiger'), isFalse);
+      expect(SpeechService.matches('Tiger', 'a tiger'), isFalse);
     });
 
     test('rejects empty and mismatched speech', () {
