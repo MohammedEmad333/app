@@ -5,7 +5,14 @@ import '../data/models/user_progress.dart';
 /// Persists [UserProgress] to a Hive box as a plain map (no generated
 /// adapters needed). Also owns the streak + hearts business rules.
 class StorageService {
-  StorageService._();
+  StorageService._() : _now = DateTime.now;
+
+  /// Used by persistence tests without initializing platform storage.
+  StorageService.forTesting(Box box, {DateTime Function()? now})
+      : _box = box,
+        _now = now ?? DateTime.now;
+
+  final DateTime Function() _now;
   static final StorageService instance = StorageService._();
 
   static const String _boxName = 'user_progress';
@@ -24,7 +31,13 @@ class StorageService {
   UserProgress load() {
     final raw = _box.get(_key);
     if (raw is Map) {
-      return _applyPassiveRules(UserProgress.fromMap(raw));
+      final stored = UserProgress.fromMap(raw);
+      final restored = _applyPassiveRules(stored);
+      if (restored != stored) {
+        // Hive writes are visible immediately; storage is flushed asynchronously.
+        _box.put(_key, restored.toMap());
+      }
+      return restored;
     }
     return const UserProgress();
   }
@@ -43,7 +56,7 @@ class StorageService {
     final since = p.heartsRefilledAt;
     if (since == null) return p;
 
-    final elapsed = DateTime.now().difference(since);
+    final elapsed = _now().difference(since);
     final regained = elapsed.inMinutes ~/ heartRefillInterval.inMinutes;
     if (regained <= 0) return p;
 
@@ -64,7 +77,7 @@ class StorageService {
     required int xpReward,
     bool markCompleted = true,
   }) async {
-    final today = _dateOnly(DateTime.now());
+    final today = _dateOnly(_now());
     final last = current.lastActiveDate == null
         ? null
         : _dateOnly(current.lastActiveDate!);
