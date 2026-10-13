@@ -77,7 +77,7 @@ class LessonCubit extends Cubit<LessonState> {
         ));
       }
     } finally {
-        _answerPending = false;
+      _answerPending = false;
     }
   }
 
@@ -91,19 +91,19 @@ class LessonCubit extends Cubit<LessonState> {
         emit(state.copyWith(status: LessonStatus.failed));
         return;
       }
-  
+
       if (state.isLastQuestion) {
         await _finish();
         return;
       }
-  
+
       emit(state.copyWith(
         currentIndex: state.currentIndex + 1,
         status: LessonStatus.inProgress,
         clearLastAnswer: true,
       ));
     } finally {
-        _advancePending = false;
+      _advancePending = false;
     }
   }
 
