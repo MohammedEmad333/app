@@ -6,7 +6,8 @@ import '../../services/storage_service.dart';
 /// Holds the learner's global state (XP, streak, hearts, completed lessons)
 /// and mediates every persistent mutation through [StorageService].
 class ProgressCubit extends Cubit<UserProgress> {
-  ProgressCubit(this._storage) : super(_storage.load());
+  ProgressCubit(this._storage, {UserProgress? initialProgress})
+      : super(initialProgress ?? _storage.load());
 
   final StorageService _storage;
 
