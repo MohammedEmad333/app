@@ -120,7 +120,7 @@ class StorageService {
     if (current.hearts <= 0) return current;
     final updated = current.copyWith(
       hearts: current.hearts - 1,
-      heartsRefilledAt: current.heartsRefilledAt ?? DateTime.now(),
+      heartsRefilledAt: current.heartsRefilledAt ?? _now(),
     );
     await save(updated);
     return updated;
