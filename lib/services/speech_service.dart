@@ -37,11 +37,11 @@ class SpeechService {
     if (!ready) return false;
     try {
       await _speech.listen(
-        listenFor: const Duration(seconds: 6),
-        pauseFor: const Duration(seconds: 3),
-        localeId: 'en_US',
         onResult: (r) => onResult(r.recognizedWords, r.finalResult),
         listenOptions: SpeechListenOptions(
+          listenFor: const Duration(seconds: 6),
+          pauseFor: const Duration(seconds: 3),
+          localeId: 'en_US',
           partialResults: true,
           cancelOnError: true,
         ),
@@ -70,6 +70,6 @@ class SpeechService {
     final a = norm(spoken);
     final b = norm(expected);
     if (a.isEmpty) return false;
-    return a == b || a.contains(b) || b.contains(a);
+    return a == b;
   }
 }

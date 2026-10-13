@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_text_styles.dart';
-import '../../../data/models/question.dart';
 import '../../../services/tts_service.dart';
 import 'question_widget.dart';
 
