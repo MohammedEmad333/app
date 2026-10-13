@@ -206,3 +206,13 @@ device TTS and a code-driven confetti celebration, so nothing extra is required.
 ### Android build requirements
 
 After generating the Android runner with `flutter create --platforms=android .`, configure `android/app/build.gradle.kts` to use at least `minSdk = 24`, `compileSdk = 36` and `ndkVersion = "27.0.12077973"` and Kotlin Gradle plugin version `2.2.20` in `android/settings.gradle.kts` (required by the current speech/audio plugins). The CI build verifies these settings. These generated platform files are not tracked in this repository, so repeat the settings whenever regenerating the runner.
+
+### Android release signing and device verification
+
+The current CI `app-release.apk` is a **release-mode smoke-test artifact**, not a production-signed distributable. The generated Flutter Android project may default to debug signing even for `--release`. Never publish it to Google Play or treat its certificate as a production identity.
+
+After `flutter create --platforms=android .`, run `python3 tool/configure_android.py` to apply plugin SDK/Kotlin requirements and explicitly declare `RECORD_AUDIO` and `INTERNET` in the main manifest. Android requests microphone access at runtime; permission must be optional so listening remains usable without a microphone.
+
+For a production release, create a private upload keystore outside the repository, configure `signingConfigs.release` in the generated Gradle runner and protect keystore bytes, passwords, and aliases using local secured storage or GitHub Actions secrets. Do **not** commit `key.properties`, `.jks`, `.keystore`, or passwords. Verify the actual certificate with `apksigner verify --print-certs app-release.apk` before distribution. Use a unique application ID under your control.
+
+Device acceptance checklist: install the production-signed release on a physical Android device; test onboarding and restart persistence, heart regeneration, playback of English TTS, microphone permission grant/denial, speech recognition with English locale, offline lesson loading, and upgrades from the previous signed build. Until those checks pass, release readiness remains unverified.
