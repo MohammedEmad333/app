@@ -33,6 +33,8 @@ jobs:
           flutter-version: '3.29.3'
           channel: stable
           cache: true
+      - name: Test Android configuration idempotency
+        run: python3 -m unittest discover -s tool -p 'test_*.py'
       - name: Generate Android runner if missing
         run: flutter create --platforms=android .
       - name: Configure Android compatibility and permissions
@@ -47,6 +49,28 @@ jobs:
           print('Required Android permissions present')
           PY
       - run: flutter pub get
+      - name: Install required Android NDK with retry
+        shell: bash
+        run: |
+          set -euo pipefail
+          NDK_VERSION="27.0.12077973"
+          SDK_ROOT="${ANDROID_SDK_ROOT:-${ANDROID_HOME:-/usr/local/lib/android/sdk}}"
+          SDKMANAGER="$SDK_ROOT/cmdline-tools/latest/bin/sdkmanager"
+          if [ ! -x "$SDKMANAGER" ]; then
+            SDKMANAGER="$(command -v sdkmanager)"
+          fi
+          for attempt in 1 2 3; do
+            rm -rf "$SDK_ROOT/ndk/$NDK_VERSION"
+            if "$SDKMANAGER" --sdk_root="$SDK_ROOT" "ndk;$NDK_VERSION" < <(yes) && \
+               test -f "$SDK_ROOT/ndk/$NDK_VERSION/source.properties"; then
+              echo "NDK installed and validated"
+              exit 0
+            fi
+            echo "NDK installation attempt $attempt failed"
+            sleep $((attempt * 10))
+          done
+          echo "Unable to install the required Android NDK" >&2
+          exit 1
       - name: Build debug APK
         run: flutter build apk --debug
       - name: Build release APK (CI smoke test only)
