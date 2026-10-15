@@ -61,7 +61,7 @@ jobs:
           fi
           for attempt in 1 2 3; do
             rm -rf "$SDK_ROOT/ndk/$NDK_VERSION"
-            if yes | "$SDKMANAGER" --sdk_root="$SDK_ROOT" "ndk;$NDK_VERSION" && \
+            if "$SDKMANAGER" --sdk_root="$SDK_ROOT" "ndk;$NDK_VERSION" < <(yes) && \
                test -f "$SDK_ROOT/ndk/$NDK_VERSION/source.properties"; then
               echo "NDK installed and validated"
               exit 0
