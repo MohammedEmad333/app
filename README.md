@@ -216,3 +216,14 @@ After `flutter create --platforms=android .`, run `python3 tool/configure_androi
 For a production release, create a private upload keystore outside the repository, configure `signingConfigs.release` in the generated Gradle runner and protect keystore bytes, passwords, and aliases using local secured storage or GitHub Actions secrets. Do **not** commit `key.properties`, `.jks`, `.keystore`, or passwords. Verify the actual certificate with `apksigner verify --print-certs app-release.apk` before distribution. Use a unique application ID under your control.
 
 Device acceptance checklist: install the production-signed release on a physical Android device; test onboarding and restart persistence, heart regeneration, playback of English TTS, microphone permission grant/denial, speech recognition with English locale, offline lesson loading, and upgrades from the previous signed build. Until those checks pass, release readiness remains unverified.
+
+### Verify downloaded CI APK artifacts
+
+The Android CI artifact contains `app-release.apk` and `SHA256SUMS.txt`.
+After downloading and extracting the artifact, run the following from the directory containing both files:
+
+```bash
+sha256sum --check SHA256SUMS.txt
+```
+
+Expected output: `app-release.apk: OK`. If verification fails, do not install or distribute the file; download the artifact again and investigate. SHA-256 verifies file integrity against the accompanying manifest, **not** publisher identity or production signing. For certificate identity, compare the certificate fingerprint from `apksigner verify --print-certs app-release.apk` to a trusted fingerprint communicated independently by the publisher. The CI smoke-test APK is not a production release.
