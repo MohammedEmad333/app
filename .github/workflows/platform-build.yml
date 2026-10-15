@@ -34,7 +34,8 @@ jobs:
           channel: stable
           cache: true
       - name: Test Android configuration idempotency
-        run: python3 -m unittest discover -s tool -p 'test_*.py'\n      - name: Generate Android runner if missing
+        run: python3 -m unittest discover -s tool -p 'test_*.py'
+      - name: Generate Android runner if missing
         run: flutter create --platforms=android .
       - name: Configure Android compatibility and permissions
         run: python3 tool/configure_android.py
