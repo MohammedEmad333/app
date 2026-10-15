@@ -15,6 +15,6 @@ jobs:
           channel: stable
           flutter-version: '3.27.4'
           cache: true
-      - run: flutter pub get
+      - name: Test generated Android configuration\n        run: python3 -m unittest discover -s tool -p 'test_*.py'\n      - run: flutter pub get
       - run: flutter analyze --no-fatal-infos
       - run: flutter test
