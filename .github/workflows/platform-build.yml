@@ -75,6 +75,17 @@ jobs:
         run: flutter build apk --debug
       - name: Build release APK (CI smoke test only)
         run: flutter build apk --release
+      - name: Verify release APK integrity and signing identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          APK=build/app/outputs/flutter-apk/app-release.apk
+          test -s "$APK"
+          unzip -t "$APK" >/dev/null
+          APKSIGNER="$(find "${ANDROID_SDK_ROOT:-$ANDROID_HOME}/build-tools" -type f -name apksigner | sort -V | tail -1)"
+          test -n "$APKSIGNER"
+          "$APKSIGNER" verify --verbose --print-certs "$APK"
+          sha256sum "$APK"
       - name: Archive release APK
         uses: actions/upload-artifact@v4
         with:
