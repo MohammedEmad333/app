@@ -26,6 +26,12 @@ pubspec.lock
 **/android/.gradle/
 **/android/local.properties
 **/android/key.properties
+# Never commit private Android upload/signing credentials
+*.jks
+*.keystore
+*.p12
+*.pfx
+**/android/*.properties.local
 
 # iOS / macOS
 **/ios/Pods/
