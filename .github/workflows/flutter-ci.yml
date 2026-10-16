@@ -25,6 +25,8 @@ jobs:
           cache: true
       - name: Test generated Android configuration
         run: python3 -m unittest discover -s tool -p 'test_*.py'
+      - name: Validate course content
+        run: python3 tool/validate_content.py
       - name: Check Android release prerequisites
         run: python3 tool/check_android_release.py
       - run: flutter pub get
