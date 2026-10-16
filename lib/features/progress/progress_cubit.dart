@@ -97,6 +97,22 @@ class ProgressCubit extends Cubit<UserProgress> {
     }).map((entry) => entry.key).toSet();
   }
 
+  /// Due question IDs ordered oldest-first so missed reviews are not starved.
+  List<String> orderedReviewsDue({DateTime? now}) {
+    final time = now ?? DateTime.now();
+    final entries = state.reviewSchedules.entries.where((entry) {
+      final due = DateTime.tryParse(entry.value['dueAt']?.toString() ?? '');
+      return due != null && !due.isAfter(time);
+    }).toList();
+    entries.sort((a, b) {
+      final first = DateTime.parse(a.value['dueAt'].toString());
+      final second = DateTime.parse(b.value['dueAt'].toString());
+      final order = first.compareTo(second);
+      return order != 0 ? order : a.key.compareTo(b.key);
+    });
+    return entries.map((entry) => entry.key).toList();
+  }
+
   Future<void> refillHearts() async {
     emit(await _storage.refillHearts(state));
   }
