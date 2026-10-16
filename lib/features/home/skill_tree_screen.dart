@@ -64,6 +64,8 @@ class _SkillTreeScreenState extends State<SkillTreeScreen> {
                             dailyXp: progress.dailyXp,
                             goal: UserProgress.dailyGoal,
                           ),
+                          if (context.read<ProgressCubit>().reviewsDue().isNotEmpty)
+                            _dueReviewBanner(context),
                           if (progress.hasMistakes)
                             _reviewBanner(context, progress),
                           for (int u = 0; u < units.length; u++)
@@ -122,6 +124,24 @@ class _SkillTreeScreenState extends State<SkillTreeScreen> {
     );
   }
 
+  Widget _dueReviewBanner(BuildContext context) {
+    final dueIds = context.read<ProgressCubit>().reviewsDue();
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 4, 16, 4),
+      child: ListTile(
+        tileColor: AppColors.purple.withValues(alpha: 0.12),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+        ),
+        leading: const Icon(Icons.schedule_rounded, color: AppColors.purple),
+        title: const Text('حان وقت مراجعة كلماتك'),
+        subtitle: Text('أسئلة جاهزة للمراجعة: ${dueIds.length}'),
+        trailing: const Icon(Icons.arrow_forward_rounded),
+        onTap: () => _startReviewIds(context, dueIds),
+      ),
+    );
+  }
+
   Widget _reviewBanner(BuildContext context, UserProgress progress) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 4, 16, 4),
@@ -164,8 +184,13 @@ class _SkillTreeScreenState extends State<SkillTreeScreen> {
 
   Future<void> _startReview(
       BuildContext context, UserProgress progress) async {
+    await _startReviewIds(context, progress.mistakeQuestionIds);
+  }
+
+  Future<void> _startReviewIds(
+      BuildContext context, Iterable<String> questionIds) async {
     final lesson = await ContentRepository.instance
-        .buildReviewLesson(progress.mistakeQuestionIds);
+        .buildReviewLesson(questionIds);
     if (!context.mounted) return;
     if (lesson.questions.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
