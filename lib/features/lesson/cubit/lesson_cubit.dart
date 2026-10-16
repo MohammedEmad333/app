@@ -54,6 +54,7 @@ class LessonCubit extends Cubit<LessonState> {
     _answerPending = true;
     try {
       final qid = state.currentQuestion.id;
+      await _progress.recordReviewAnswer(qid, isCorrect);
       if (isCorrect) {
         _audio.correct();
         HapticFeedback.mediumImpact();
