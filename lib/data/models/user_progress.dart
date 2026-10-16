@@ -15,6 +15,7 @@ class UserProgress extends Equatable {
     this.dailyXp = 0,
     this.dailyXpDate,
     this.mistakeQuestionIds = const {},
+    this.reviewSchedules = const {},
   });
 
   /// The learner's name, collected during onboarding. Empty until set.
@@ -47,6 +48,9 @@ class UserProgress extends Equatable {
   /// Drives the "review your mistakes" flow.
   final Set<String> mistakeQuestionIds;
 
+  /// Question id to spaced-review state (repetitions and next due ISO date).
+  final Map<String, Map<String, dynamic>> reviewSchedules;
+
   bool get hasMistakes => mistakeQuestionIds.isNotEmpty;
   int get mistakeCount => mistakeQuestionIds.length;
 
@@ -69,6 +73,7 @@ class UserProgress extends Equatable {
     int? dailyXp,
     DateTime? dailyXpDate,
     Set<String>? mistakeQuestionIds,
+    Map<String, Map<String, dynamic>>? reviewSchedules,
   }) {
     return UserProgress(
       name: name ?? this.name,
@@ -83,6 +88,7 @@ class UserProgress extends Equatable {
       dailyXp: dailyXp ?? this.dailyXp,
       dailyXpDate: dailyXpDate ?? this.dailyXpDate,
       mistakeQuestionIds: mistakeQuestionIds ?? this.mistakeQuestionIds,
+      reviewSchedules: reviewSchedules ?? this.reviewSchedules,
     );
   }
 
@@ -97,6 +103,7 @@ class UserProgress extends Equatable {
         'dailyXp': dailyXp,
         'dailyXpDate': dailyXpDate?.toIso8601String(),
         'mistakeQuestionIds': mistakeQuestionIds.toList(),
+        'reviewSchedules': reviewSchedules,
       };
 
   factory UserProgress.fromMap(Map<dynamic, dynamic> map) {
@@ -116,6 +123,10 @@ class UserProgress extends Equatable {
           ((map['mistakeQuestionIds'] as List<dynamic>?) ?? [])
               .map((e) => e.toString())
               .toSet(),
+      reviewSchedules: (map['reviewSchedules'] is Map)
+          ? (map['reviewSchedules'] as Map).map((key, value) => MapEntry(
+              key.toString(), Map<String, dynamic>.from(value as Map)))
+          : const {},
     );
   }
 
@@ -136,5 +147,6 @@ class UserProgress extends Equatable {
         dailyXp,
         dailyXpDate,
         mistakeQuestionIds,
+        reviewSchedules,
       ];
 }

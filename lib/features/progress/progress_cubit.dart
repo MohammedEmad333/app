@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../data/models/user_progress.dart';
+import '../../core/learning/review_schedule.dart';
 import '../../services/storage_service.dart';
 
 /// Holds the learner's global state (XP, streak, hearts, completed lessons)
@@ -55,6 +56,45 @@ class ProgressCubit extends Cubit<UserProgress> {
     );
     await _storage.save(updated);
     emit(updated);
+  }
+
+  /// Record the answer and persist its next spaced-review due date.
+  Future<void> recordReviewAnswer(String questionId, bool correct,
+      {DateTime? now}) async {
+    final current = state.reviewSchedules[questionId];
+    ReviewSchedule? previous;
+    if (current != null) {
+      final dueAt = DateTime.tryParse(current['dueAt']?.toString() ?? '');
+      final repetitions = current['repetitions'];
+      if (dueAt != null && repetitions is int && repetitions >= 0) {
+        previous = ReviewSchedule(repetitions: repetitions, dueAt: dueAt);
+      }
+    }
+    final schedule = ReviewSchedule.afterAnswer(
+      now: now ?? DateTime.now(),
+      correct: correct,
+      previous: previous,
+    );
+    final updated = state.copyWith(
+      reviewSchedules: {
+        ...state.reviewSchedules,
+        questionId: {
+          'repetitions': schedule.repetitions,
+          'dueAt': schedule.dueAt.toIso8601String(),
+        },
+      },
+    );
+    await _storage.save(updated);
+    emit(updated);
+  }
+
+  /// All question IDs with review dates at or before [now].
+  Set<String> reviewsDue({DateTime? now}) {
+    final time = now ?? DateTime.now();
+    return state.reviewSchedules.entries.where((entry) {
+      final due = DateTime.tryParse(entry.value['dueAt']?.toString() ?? '');
+      return due != null && !due.isAfter(time);
+    }).map((entry) => entry.key).toSet();
   }
 
   Future<void> refillHearts() async {
