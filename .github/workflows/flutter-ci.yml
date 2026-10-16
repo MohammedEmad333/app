@@ -31,6 +31,8 @@ jobs:
       - run: flutter analyze --no-fatal-infos
       - name: Run Flutter tests with coverage
         run: flutter test --coverage
+      - name: Summarize Flutter test coverage
+        run: python3 tool/coverage_summary.py coverage/lcov.info
       - name: Archive Flutter test coverage
         uses: actions/upload-artifact@v4
         with:
