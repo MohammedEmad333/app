@@ -24,7 +24,7 @@ class ReviewSchedule {
     }
     final count = (previous?.repetitions ?? 0) + 1;
     const days = <int>[1, 3, 7, 14, 30];
-    final interval = days[(count - 1).clamp(0, days.length - 1)];
+    final interval = days[(count - 1).clamp(0, days.length - 1).toInt()];
     return ReviewSchedule(
       repetitions: count,
       dueAt: now.add(Duration(days: interval)),
