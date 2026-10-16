@@ -31,6 +31,10 @@ class FakeProgressCubit extends ProgressCubit {
   int completions = 0;
 
   @override
+  Future<void> recordReviewAnswer(String questionId, bool correct,
+      {DateTime? now}) async {}
+
+  @override
   Future<void> addMistake(String questionId) async {
     if (delayMistake != null) await delayMistake;
   }
