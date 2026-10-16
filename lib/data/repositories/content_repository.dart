@@ -41,13 +41,14 @@ class ContentRepository {
   Future<Lesson> buildReviewLesson(
     Iterable<String> questionIds, {
     int max = 12,
+    bool shuffle = true,
   }) async {
     final index = await questionIndex();
     final questions = <Question>[
       for (final id in questionIds)
         if (index[id] != null) index[id]!,
     ];
-    questions.shuffle();
+    if (shuffle) questions.shuffle();
     final selected =
         questions.length > max ? questions.sublist(0, max) : questions;
     return Lesson(
