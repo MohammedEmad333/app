@@ -9,9 +9,15 @@ def summarize(path):
         if not raw.startswith("DA:"):
             continue
         parts = raw[3:].split(",")
-        if len(parts) < 2:
+        if len(parts) not in (2, 3):
             raise ValueError(f"Malformed LCOV DA entry: {raw}")
-        count = int(parts[1])
+        try:
+            line = int(parts[0])
+            count = int(parts[1])
+        except ValueError as exc:
+            raise ValueError(f"Malformed LCOV DA entry: {raw}") from exc
+        if line <= 0:
+            raise ValueError(f"Invalid LCOV line number: {raw}")
         if count < 0:
             raise ValueError(f"Negative LCOV hit count: {raw}")
         found += 1
