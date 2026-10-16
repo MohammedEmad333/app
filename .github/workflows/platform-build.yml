@@ -96,3 +96,4 @@ jobs:
             build/app/outputs/flutter-apk/app-release.apk
             build/app/outputs/flutter-apk/SHA256SUMS.txt
           retention-days: 7
+          if-no-files-found: error
