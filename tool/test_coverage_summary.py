@@ -28,6 +28,10 @@ class CoverageSummaryTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.summarize_content("DA:1,not-a-number\n")
 
+    def test_negative_hit_count_fails(self):
+        with self.assertRaisesRegex(ValueError, "Negative LCOV hit count"):
+            self.summarize_content("DA:1,-1\\n")
+
     def test_multiple_files_are_aggregated(self):
         self.assertEqual(self.summarize_content("SF:lib/a.dart\nDA:1,0\nend_of_record\nSF:lib/b.dart\nDA:1,3\nend_of_record\n"), (1, 2))
 
