@@ -12,6 +12,8 @@ def summarize(path):
         if len(parts) < 2:
             raise ValueError(f"Malformed LCOV DA entry: {raw}")
         count = int(parts[1])
+        if count < 0:
+            raise ValueError(f"Negative LCOV hit count: {raw}")
         found += 1
         hit += count > 0
     if not found:
