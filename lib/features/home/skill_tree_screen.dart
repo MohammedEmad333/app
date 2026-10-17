@@ -135,7 +135,9 @@ class _SkillTreeScreenState extends State<SkillTreeScreen> {
         ),
         leading: const Icon(Icons.schedule_rounded, color: AppColors.purple),
         title: const Text('حان وقت مراجعة كلماتك'),
-        subtitle: Text('أسئلة جاهزة للمراجعة: ${dueIds.length}'),
+        subtitle: Text(dueIds.length <= 12
+            ? 'أسئلة جاهزة للمراجعة: ${dueIds.length}'
+            : 'أسئلة مستحقة: ${dueIds.length} — سنبدأ بأقدم 12 سؤالًا'),
         trailing: const Icon(Icons.arrow_forward_rounded),
         onTap: () => _startReviewIds(context, dueIds, shuffle: false),
       ),
