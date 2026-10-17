@@ -28,4 +28,22 @@ void main() {
     expect(progress.reviewsDue(now: DateTime.utc(2026, 10, 16)), isEmpty);
     await progress.close();
   });
+  test('overdue reviews are prioritized chronologically', () async {
+    final now = DateTime.utc(2026, 10, 17, 12);
+    final progress = ProgressCubit(
+      StorageService.instance,
+      initialProgress: UserProgress(reviewSchedules: {
+        'later': {'repetitions': 1, 'dueAt': now.subtract(const Duration(hours: 1)).toIso8601String()},
+        'oldest': {'repetitions': 0, 'dueAt': now.subtract(const Duration(days: 3)).toIso8601String()},
+        'upcoming': {'repetitions': 2, 'dueAt': now.add(const Duration(days: 1)).toIso8601String()},
+        'same-b': {'repetitions': 1, 'dueAt': now.toIso8601String()},
+        'same-a': {'repetitions': 1, 'dueAt': now.toIso8601String()},
+        'broken': {'repetitions': 0, 'dueAt': 'bad-date'},
+      }),
+    );
+    expect(progress.orderedReviewsDue(now: now),
+        ['oldest', 'later', 'same-a', 'same-b']);
+    await progress.close();
+  });
+
 }

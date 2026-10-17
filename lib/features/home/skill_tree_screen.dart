@@ -125,7 +125,7 @@ class _SkillTreeScreenState extends State<SkillTreeScreen> {
   }
 
   Widget _dueReviewBanner(BuildContext context) {
-    final dueIds = context.read<ProgressCubit>().reviewsDue();
+    final dueIds = context.read<ProgressCubit>().orderedReviewsDue();
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 4, 16, 4),
       child: ListTile(
@@ -137,7 +137,7 @@ class _SkillTreeScreenState extends State<SkillTreeScreen> {
         title: const Text('حان وقت مراجعة كلماتك'),
         subtitle: Text('أسئلة جاهزة للمراجعة: ${dueIds.length}'),
         trailing: const Icon(Icons.arrow_forward_rounded),
-        onTap: () => _startReviewIds(context, dueIds),
+        onTap: () => _startReviewIds(context, dueIds, shuffle: false),
       ),
     );
   }
@@ -188,9 +188,10 @@ class _SkillTreeScreenState extends State<SkillTreeScreen> {
   }
 
   Future<void> _startReviewIds(
-      BuildContext context, Iterable<String> questionIds) async {
+      BuildContext context, Iterable<String> questionIds,
+      {bool shuffle = true}) async {
     final lesson = await ContentRepository.instance
-        .buildReviewLesson(questionIds);
+        .buildReviewLesson(questionIds, shuffle: shuffle);
     if (!context.mounted) return;
     if (lesson.questions.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
