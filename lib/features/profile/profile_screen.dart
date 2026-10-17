@@ -65,7 +65,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   const SizedBox(height: 28),
                   if (context.read<ProgressCubit>().orderedReviewsDue().isNotEmpty) ...[
                     PopButton(
-                      label: 'راجع الأسئلة المستحقة',
+                      label: 'راجع الأسئلة المستحقة (${AppStrings.arDigits(context.read<ProgressCubit>().orderedReviewsDue().length)})',
                       color: AppColors.purple,
                       shadowColor: AppColors.purpleDark,
                       icon: Icons.schedule_rounded,
