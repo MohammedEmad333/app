@@ -42,6 +42,7 @@ class ContentRepository {
     Iterable<String> questionIds, {
     int max = 12,
     bool shuffle = true,
+    String title = 'مراجعة الأخطاء',
   }) async {
     final index = await questionIndex();
     final questions = <Question>[
@@ -53,7 +54,7 @@ class ContentRepository {
         questions.length > max ? questions.sublist(0, max) : questions;
     return Lesson(
       id: 'review',
-      title: 'مراجعة الأخطاء',
+      title: title,
       icon: '🔁',
       xpReward: 15,
       questions: selected,
