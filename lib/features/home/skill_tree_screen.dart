@@ -57,7 +57,13 @@ class _SkillTreeScreenState extends State<SkillTreeScreen> {
                 Expanded(
                   child: BlocBuilder<ProgressCubit, UserProgress>(
                     builder: (context, progress) {
-                      return ListView(
+                      return RefreshIndicator(
+                        onRefresh: () async {
+                          context.read<ProgressCubit>().refresh();
+                          if (mounted) setState(() {});
+                        },
+                        child: ListView(
+                        physics: const AlwaysScrollableScrollPhysics(),
                         padding: const EdgeInsets.only(top: 8, bottom: 40),
                         children: [
                           DailyGoalBanner(
@@ -82,6 +88,7 @@ class _SkillTreeScreenState extends State<SkillTreeScreen> {
                               onLockedTap: () => _showLocked(context),
                             ),
                         ],
+                        ),
                       );
                     },
                   ),
