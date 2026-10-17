@@ -139,7 +139,8 @@ class _SkillTreeScreenState extends State<SkillTreeScreen> {
             ? 'أسئلة جاهزة للمراجعة: ${dueIds.length}'
             : 'أسئلة مستحقة: ${dueIds.length} — سنبدأ بأقدم 12 سؤالًا'),
         trailing: const Icon(Icons.arrow_forward_rounded),
-        onTap: () => _startReviewIds(context, dueIds, shuffle: false),
+        onTap: () => _startReviewIds(context, dueIds,
+            shuffle: false, title: 'مراجعة الكلمات المستحقة'),
       ),
     );
   }
@@ -191,9 +192,9 @@ class _SkillTreeScreenState extends State<SkillTreeScreen> {
 
   Future<void> _startReviewIds(
       BuildContext context, Iterable<String> questionIds,
-      {bool shuffle = true}) async {
+      {bool shuffle = true, String title = 'مراجعة الأخطاء'}) async {
     final lesson = await ContentRepository.instance
-        .buildReviewLesson(questionIds, shuffle: shuffle);
+        .buildReviewLesson(questionIds, shuffle: shuffle, title: title);
     if (!context.mounted) return;
     if (lesson.questions.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
