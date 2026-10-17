@@ -63,6 +63,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   const SizedBox(height: 12),
                   _achievements(p, units),
                   const SizedBox(height: 28),
+                  if (context.read<ProgressCubit>().orderedReviewsDue().isNotEmpty) ...[
+                    PopButton(
+                      label: 'راجع الأسئلة المستحقة',
+                      color: AppColors.purple,
+                      shadowColor: AppColors.purpleDark,
+                      icon: Icons.schedule_rounded,
+                      onPressed: () => _startDueReview(context),
+                    ),
+                    const SizedBox(height: 14),
+                  ],
                   if (p.hasMistakes) ...[
                     PopButton(
                       label: AppStrings.reviewButton(p.mistakeCount),
@@ -272,6 +282,22 @@ class _ProfileScreenState extends State<ProfileScreen> {
           const SizedBox(height: 2),
           Text(label, style: AppTextStyles.caption),
         ],
+      ),
+    );
+  }
+
+  Future<void> _startDueReview(BuildContext context) async {
+    final ids = context.read<ProgressCubit>().orderedReviewsDue();
+    if (ids.isEmpty) return;
+    final lesson = await ContentRepository.instance.buildReviewLesson(
+      ids,
+      shuffle: false,
+      title: 'مراجعة الكلمات المستحقة',
+    );
+    if (!context.mounted || lesson.questions.isEmpty) return;
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) => LessonRunnerScreen(lesson: lesson, review: true),
       ),
     );
   }
