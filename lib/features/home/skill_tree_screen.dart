@@ -24,17 +24,35 @@ class SkillTreeScreen extends StatefulWidget {
   State<SkillTreeScreen> createState() => _SkillTreeScreenState();
 }
 
-class _SkillTreeScreenState extends State<SkillTreeScreen> {
+class _SkillTreeScreenState extends State<SkillTreeScreen>
+    with WidgetsBindingObserver {
   late Future<List<Unit>> _unitsFuture;
 
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
     _unitsFuture = ContentRepository.instance.loadUnits();
     // Regenerate hearts based on elapsed time when returning to the map.
     WidgetsBinding.instance.addPostFrameCallback(
-      (_) => context.read<ProgressCubit>().refresh(),
+      (_) {
+        if (mounted) context.read<ProgressCubit>().refresh();
+      },
     );
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed && mounted) {
+      context.read<ProgressCubit>().refresh();
+      setState(() {}); // Re-evaluate time-dependent review eligibility.
+    }
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
   }
 
   @override
