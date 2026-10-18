@@ -96,8 +96,14 @@ class _ProfileScreenState extends State<ProfileScreen>
               final into = ProfileScreen.xpIntoLevel(p.xp);
               final dueCount = context.read<ProgressCubit>().orderedReviewsDue().length;
               final scheduledCount = p.reviewSchedules.length;
-              return ListView(
-                padding: const EdgeInsets.all(20),
+              return RefreshIndicator(
+                onRefresh: () async {
+                  context.read<ProgressCubit>().refresh();
+                  if (mounted) setState(() {});
+                },
+                child: ListView(
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  padding: const EdgeInsets.all(20),
                 children: [
                   _levelCard(level, into, p),
                   const SizedBox(height: 20),
@@ -170,6 +176,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                     onPressed: () => _confirmReset(context),
                   ),
                 ],
+                ),
               );
             },
           );
