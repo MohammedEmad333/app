@@ -46,4 +46,24 @@ void main() {
     await progress.close();
   });
 
+  test('upcoming count ignores invalid dates and excludes due reviews', () async {
+    final now = DateTime.utc(2026, 10, 19, 12);
+    final progress = ProgressCubit(
+      StorageService.instance,
+      initialProgress: UserProgress(reviewSchedules: {
+        'due': {'repetitions': 1, 'dueAt': now.toIso8601String()},
+        'future': {
+          'repetitions': 2,
+          'dueAt': now.add(const Duration(days: 1)).toIso8601String(),
+        },
+        'invalid': {'repetitions': 1, 'dueAt': 'bad-date'},
+        'missing': {'repetitions': 0},
+      }),
+    );
+    expect(progress.reviewsDue(now: now), {'due'});
+    expect(progress.upcomingReviewsCount(now: now), 1);
+    expect(progress.upcomingReviewsCount(now: now.add(const Duration(days: 2))), 0);
+    await progress.close();
+  });
+
 }
