@@ -95,7 +95,8 @@ class _ProfileScreenState extends State<ProfileScreen>
               final level = ProfileScreen.levelFor(p.xp);
               final into = ProfileScreen.xpIntoLevel(p.xp);
               final dueCount = context.read<ProgressCubit>().orderedReviewsDue().length;
-              final scheduledCount = p.reviewSchedules.length;
+              final upcomingCount = context.read<ProgressCubit>().upcomingReviewsCount();
+              final scheduledCount = dueCount + upcomingCount;
               return RefreshIndicator(
                 onRefresh: () async {
                   context.read<ProgressCubit>().refresh();
@@ -111,7 +112,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                   if (scheduledCount > 0) ...[
                     const SizedBox(height: 14),
                     Semantics(
-                      label: 'تقدم المراجعة: ${AppStrings.arDigits(dueCount)} مستحقة، ${AppStrings.arDigits(scheduledCount - dueCount)} مجدولة لاحقًا',
+                      label: 'تقدم المراجعة: ${AppStrings.arDigits(dueCount)} مستحقة، ${AppStrings.arDigits(upcomingCount)} مجدولة لاحقًا',
                       child: Card(
                         child: Padding(
                           padding: const EdgeInsets.all(16),
@@ -121,7 +122,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                               const SizedBox(width: 12),
                               Expanded(
                                 child: Text(
-                                  'المراجعة: ${AppStrings.arDigits(dueCount)} مستحقة • ${AppStrings.arDigits(scheduledCount - dueCount)} لاحقًا',
+                                  'المراجعة: ${AppStrings.arDigits(dueCount)} مستحقة • ${AppStrings.arDigits(upcomingCount)} لاحقًا',
                                   style: AppTextStyles.body,
                                 ),
                               ),
