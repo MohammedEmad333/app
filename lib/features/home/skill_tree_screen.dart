@@ -45,6 +45,29 @@ class _SkillTreeScreenState extends State<SkillTreeScreen> {
         child: FutureBuilder<List<Unit>>(
           future: _unitsFuture,
           builder: (context, snapshot) {
+            if (snapshot.hasError) {
+              return Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(24),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Icon(Icons.error_outline_rounded, size: 48,
+                          color: AppColors.wrong),
+                      const SizedBox(height: 12),
+                      const Text('تعذر تحميل الدروس'),
+                      const SizedBox(height: 12),
+                      ElevatedButton(
+                        onPressed: () => setState(() {
+                          _unitsFuture = ContentRepository.instance.loadUnits();
+                        }),
+                        child: const Text('إعادة المحاولة'),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            }
             if (!snapshot.hasData) {
               return const Center(child: CircularProgressIndicator());
             }
