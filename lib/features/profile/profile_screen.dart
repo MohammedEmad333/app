@@ -98,7 +98,7 @@ class _ProfileScreenState extends State<ProfileScreen>
               final scheduledCount = p.reviewSchedules.length;
               return RefreshIndicator(
                 onRefresh: () async {
-                  await context.read<ProgressCubit>().refresh();
+                  context.read<ProgressCubit>().refresh();
                   if (mounted) setState(() {});
                 },
                 child: ListView(
