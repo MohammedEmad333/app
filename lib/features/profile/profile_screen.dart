@@ -78,6 +78,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             builder: (context, p) {
               final level = ProfileScreen.levelFor(p.xp);
               final into = ProfileScreen.xpIntoLevel(p.xp);
+              final dueCount = context.read<ProgressCubit>().orderedReviewsDue().length;
               return ListView(
                 padding: const EdgeInsets.all(20),
                 children: [
@@ -89,9 +90,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   const SizedBox(height: 12),
                   _achievements(p, units),
                   const SizedBox(height: 28),
-                  if (context.read<ProgressCubit>().orderedReviewsDue().isNotEmpty) ...[
+                  if (dueCount > 0) ...[
                     PopButton(
-                      label: 'راجع الأسئلة المستحقة (${AppStrings.arDigits(context.read<ProgressCubit>().orderedReviewsDue().length)})',
+                      label: dueCount > 12
+                          ? 'راجع أقدم ١٢ من ${AppStrings.arDigits(dueCount)} سؤالًا مستحقًا'
+                          : 'راجع الأسئلة المستحقة (${AppStrings.arDigits(dueCount)})',
                       color: AppColors.purple,
                       shadowColor: AppColors.purpleDark,
                       icon: Icons.schedule_rounded,
