@@ -30,7 +30,7 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  late final Future<List<Unit>> _unitsFuture;
+  late Future<List<Unit>> _unitsFuture;
 
   @override
   void initState() {
@@ -47,7 +47,33 @@ class _ProfileScreenState extends State<ProfileScreen> {
       body: FutureBuilder<List<Unit>>(
         future: _unitsFuture,
         builder: (context, snapshot) {
-          final units = snapshot.data ?? const <Unit>[];
+          if (snapshot.hasError) {
+            return Center(
+              child: Padding(
+                padding: const EdgeInsets.all(24),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Icon(Icons.error_outline_rounded,
+                        color: AppColors.wrong, size: 48),
+                    const SizedBox(height: 12),
+                    const Text('تعذر تحميل بيانات الدروس والإنجازات'),
+                    const SizedBox(height: 12),
+                    ElevatedButton(
+                      onPressed: () => setState(() {
+                        _unitsFuture = ContentRepository.instance.loadUnits();
+                      }),
+                      child: const Text('إعادة المحاولة'),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          }
+          if (!snapshot.hasData) {
+            return const Center(child: CircularProgressIndicator());
+          }
+          final units = snapshot.data!;
           return BlocBuilder<ProgressCubit, UserProgress>(
             builder: (context, p) {
               final level = ProfileScreen.levelFor(p.xp);
