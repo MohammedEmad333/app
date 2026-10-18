@@ -79,12 +79,36 @@ class _ProfileScreenState extends State<ProfileScreen> {
               final level = ProfileScreen.levelFor(p.xp);
               final into = ProfileScreen.xpIntoLevel(p.xp);
               final dueCount = context.read<ProgressCubit>().orderedReviewsDue().length;
+              final scheduledCount = p.reviewSchedules.length;
               return ListView(
                 padding: const EdgeInsets.all(20),
                 children: [
                   _levelCard(level, into, p),
                   const SizedBox(height: 20),
                   _statsGrid(p),
+                  if (scheduledCount > 0) ...[
+                    const SizedBox(height: 14),
+                    Semantics(
+                      label: 'تقدم المراجعة: ${AppStrings.arDigits(dueCount)} مستحقة، ${AppStrings.arDigits(scheduledCount - dueCount)} مجدولة لاحقًا',
+                      child: Card(
+                        child: Padding(
+                          padding: const EdgeInsets.all(16),
+                          child: Row(
+                            children: [
+                              const Icon(Icons.event_available_rounded, color: AppColors.purple),
+                              const SizedBox(width: 12),
+                              Expanded(
+                                child: Text(
+                                  'المراجعة: ${AppStrings.arDigits(dueCount)} مستحقة • ${AppStrings.arDigits(scheduledCount - dueCount)} لاحقًا',
+                                  style: AppTextStyles.body,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                   const SizedBox(height: 28),
                   _sectionTitle(AppStrings.achievements),
                   const SizedBox(height: 12),
