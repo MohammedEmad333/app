@@ -97,6 +97,15 @@ class ProgressCubit extends Cubit<UserProgress> {
     }).map((entry) => entry.key).toSet();
   }
 
+  /// Count future reviews with valid due timestamps; ignore corrupt records.
+  int upcomingReviewsCount({DateTime? now}) {
+    final time = now ?? DateTime.now();
+    return state.reviewSchedules.values.where((entry) {
+      final due = DateTime.tryParse(entry['dueAt']?.toString() ?? '');
+      return due != null && due.isAfter(time);
+    }).length;
+  }
+
   /// Due question IDs ordered oldest-first so missed reviews are not starved.
   List<String> orderedReviewsDue({DateTime? now}) {
     final time = now ?? DateTime.now();
