@@ -66,4 +66,18 @@ void main() {
     await progress.close();
   });
 
+  test('timezone-offset review dates are compared by instant', () async {
+    final now = DateTime.utc(2026, 10, 19, 12);
+    final progress = ProgressCubit(
+      StorageService.instance,
+      initialProgress: UserProgress(reviewSchedules: {
+        'due-offset': {'repetitions': 1, 'dueAt': '2026-10-19T15:00:00+03:00'},
+        'future-offset': {'repetitions': 1, 'dueAt': '2026-10-19T16:00:00+03:00'},
+      }),
+    );
+    expect(progress.orderedReviewsDue(now: now), ['due-offset']);
+    expect(progress.upcomingReviewsCount(now: now), 1);
+    await progress.close();
+  });
+
 }
