@@ -136,7 +136,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                   if (nextReview != null) ...[
                     const SizedBox(height: 6),
                     Text(
-                      'المراجعة القادمة: ${MaterialLocalizations.of(context).formatMediumDate(nextReview)}',
+                      'المراجعة القادمة: ${MaterialLocalizations.of(context).formatMediumDate(nextReview.toLocal())} • ${MaterialLocalizations.of(context).formatTimeOfDay(TimeOfDay.fromDateTime(nextReview.toLocal()))}',
                       style: AppTextStyles.caption,
                     ),
                   ],
