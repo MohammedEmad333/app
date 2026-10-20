@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -27,11 +29,17 @@ class SkillTreeScreen extends StatefulWidget {
 class _SkillTreeScreenState extends State<SkillTreeScreen>
     with WidgetsBindingObserver {
   late Future<List<Unit>> _unitsFuture;
+  Timer? _dueReviewTimer;
 
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
+    _dueReviewTimer = Timer.periodic(const Duration(minutes: 1), (_) {
+      if (mounted && WidgetsBinding.instance.lifecycleState == AppLifecycleState.resumed) {
+        setState(() {}); // New spaced reviews can become due without navigation.
+      }
+    });
     _unitsFuture = ContentRepository.instance.loadUnits();
     // Regenerate hearts based on elapsed time when returning to the map.
     WidgetsBinding.instance.addPostFrameCallback(
@@ -51,6 +59,7 @@ class _SkillTreeScreenState extends State<SkillTreeScreen>
 
   @override
   void dispose() {
+    _dueReviewTimer?.cancel();
     WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
