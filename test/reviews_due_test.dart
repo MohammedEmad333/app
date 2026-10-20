@@ -97,4 +97,20 @@ void main() {
     await progress.close();
   });
 
+  test('next review picks the earliest instant across timezone offsets', () async {
+    final now = DateTime.utc(2026, 10, 20, 12);
+    final progress = ProgressCubit(
+      StorageService.instance,
+      initialProgress: UserProgress(reviewSchedules: {
+        'later': {'dueAt': '2026-10-20T18:00:00+03:00'},
+        'earlier': {'dueAt': '2026-10-20T14:00:00+01:00'},
+        'already-due': {'dueAt': '2026-10-20T12:00:00Z'},
+        'invalid': {'dueAt': 'broken'},
+      }),
+    );
+    expect(progress.nextReviewAt(now: now), DateTime.utc(2026, 10, 20, 13));
+    expect(progress.upcomingReviewsCount(now: now), 2);
+    await progress.close();
+  });
+
 }
