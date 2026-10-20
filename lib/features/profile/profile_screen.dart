@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -32,11 +33,18 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen>
     with WidgetsBindingObserver {
   late Future<List<Unit>> _unitsFuture;
+  Timer? _reviewStatusTimer;
 
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
+    _reviewStatusTimer = Timer.periodic(const Duration(minutes: 1), (_) {
+      if (mounted &&
+          WidgetsBinding.instance.lifecycleState == AppLifecycleState.resumed) {
+        setState(() {}); // A scheduled review may have just become due.
+      }
+    });
     _unitsFuture = ContentRepository.instance.loadUnits();
   }
 
@@ -50,6 +58,7 @@ class _ProfileScreenState extends State<ProfileScreen>
 
   @override
   void dispose() {
+    _reviewStatusTimer?.cancel();
     WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
