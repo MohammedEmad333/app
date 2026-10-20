@@ -106,6 +106,18 @@ class ProgressCubit extends Cubit<UserProgress> {
     }).length;
   }
 
+  /// Nearest valid future review date, or null if none are scheduled.
+  DateTime? nextReviewAt({DateTime? now}) {
+    final time = now ?? DateTime.now();
+    DateTime? nearest;
+    for (final schedule in state.reviewSchedules.values) {
+      final due = DateTime.tryParse(schedule['dueAt']?.toString() ?? '');
+      if (due == null || !due.isAfter(time)) continue;
+      if (nearest == null || due.isBefore(nearest)) nearest = due;
+    }
+    return nearest;
+  }
+
   /// Due question IDs ordered oldest-first so missed reviews are not starved.
   List<String> orderedReviewsDue({DateTime? now}) {
     final time = now ?? DateTime.now();

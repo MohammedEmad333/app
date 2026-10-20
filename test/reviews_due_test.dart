@@ -80,4 +80,21 @@ void main() {
     await progress.close();
   });
 
+  test('next review date ignores invalid and overdue schedules', () async {
+    final now = DateTime.utc(2026, 10, 20, 12);
+    final first = now.add(const Duration(hours: 2));
+    final progress = ProgressCubit(
+      StorageService.instance,
+      initialProgress: UserProgress(reviewSchedules: {
+        'invalid': {'dueAt': 'bad-date'},
+        'due': {'dueAt': now.toIso8601String()},
+        'later': {'dueAt': now.add(const Duration(days: 2)).toIso8601String()},
+        'next': {'dueAt': first.toIso8601String()},
+      }),
+    );
+    expect(progress.nextReviewAt(now: now), first);
+    expect(progress.nextReviewAt(now: now.add(const Duration(days: 3))), isNull);
+    await progress.close();
+  });
+
 }

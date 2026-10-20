@@ -97,6 +97,7 @@ class _ProfileScreenState extends State<ProfileScreen>
               final dueCount = context.read<ProgressCubit>().orderedReviewsDue().length;
               final upcomingCount = context.read<ProgressCubit>().upcomingReviewsCount();
               final scheduledCount = dueCount + upcomingCount;
+              final nextReview = context.read<ProgressCubit>().nextReviewAt();
               return RefreshIndicator(
                 onRefresh: () async {
                   context.read<ProgressCubit>().refresh();
@@ -130,6 +131,13 @@ class _ProfileScreenState extends State<ProfileScreen>
                           ),
                         ),
                       ),
+                    ),
+                  ],
+                  if (nextReview != null) ...[
+                    const SizedBox(height: 6),
+                    Text(
+                      'المراجعة القادمة: ${MaterialLocalizations.of(context).formatMediumDate(nextReview)}',
+                      style: AppTextStyles.caption,
                     ),
                   ],
                   const SizedBox(height: 28),
