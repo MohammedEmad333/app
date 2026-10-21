@@ -183,7 +183,15 @@ class _LessonRunnerViewState extends State<_LessonRunnerView> {
               color: widget.noStakes ? AppColors.blue : AppColors.primary,
             ),
           ),
-          const SizedBox(width: 12),
+          const SizedBox(width: 8),
+          Semantics(
+            label: 'السؤال ${AppStrings.arDigits(state.currentIndex + 1)} من ${AppStrings.arDigits(state.totalQuestions)}',
+            child: Text(
+              '${AppStrings.arDigits(state.currentIndex + 1)}/${AppStrings.arDigits(state.totalQuestions)}',
+              style: AppTextStyles.caption,
+            ),
+          ),
+          const SizedBox(width: 8),
           if (widget.noStakes)
             Container(
               padding:
