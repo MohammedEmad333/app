@@ -119,6 +119,30 @@ class _ProfileScreenState extends State<ProfileScreen>
                   _levelCard(level, into, p),
                   const SizedBox(height: 20),
                   _statsGrid(p),
+                  if (scheduledCount == 0) ...[
+                    const SizedBox(height: 14),
+                    Semantics(
+                      label: 'لا توجد مراجعات مجدولة. أجب عن أسئلة الدروس لبدء المراجعة.',
+                      child: Card(
+                        child: Padding(
+                          padding: const EdgeInsets.all(16),
+                          child: Row(
+                            children: [
+                              const Icon(Icons.auto_stories_rounded,
+                                  color: AppColors.purple),
+                              const SizedBox(width: 12),
+                              Expanded(
+                                child: Text(
+                                  'لا توجد مراجعات بعد. أجب عن أسئلة الدروس لتبدأ المراجعة تلقائيًا.',
+                                  style: AppTextStyles.body,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                   if (scheduledCount > 0) ...[
                     const SizedBox(height: 14),
                     Semantics(
