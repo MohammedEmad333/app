@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../l10n/app_strings.dart';
 import '../theme/app_colors.dart';
 
 /// Rounded, animated progress bar for the top of the lesson runner.
@@ -20,7 +21,8 @@ class LessonProgressBar extends StatelessWidget {
       builder: (context, constraints) {
         final clamped = progress.clamp(0.0, 1.0);
         return Semantics(
-          label: '${(clamped * 100).round()} percent complete',
+          label: 'تقدم الدرس',
+          value: '${AppStrings.arDigits((clamped * 100).round())} بالمئة',
           child: Container(
             height: 16,
             decoration: BoxDecoration(
