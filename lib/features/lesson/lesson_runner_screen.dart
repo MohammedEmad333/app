@@ -186,9 +186,23 @@ class _LessonRunnerViewState extends State<_LessonRunnerView> {
             },
           ),
           Expanded(
-            child: LessonProgressBar(
-              progress: state.progress,
-              color: widget.noStakes ? AppColors.blue : AppColors.primary,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text(
+                  state.lesson.title,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: AppTextStyles.caption,
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 4),
+                LessonProgressBar(
+                  progress: state.progress,
+                  color: widget.noStakes ? AppColors.blue : AppColors.primary,
+                ),
+              ],
             ),
           ),
           const SizedBox(width: 8),
