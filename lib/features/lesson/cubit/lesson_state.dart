@@ -27,9 +27,17 @@ class LessonState extends Equatable {
 
   int get totalQuestions => lesson.questions.length;
 
-  /// Progress across the lesson, counting the current question as underway.
-  double get progress =>
-      totalQuestions == 0 ? 0 : currentIndex / totalQuestions;
+  /// Completed-answer progress, including the current question after checking.
+  double get progress {
+    if (totalQuestions == 0) return 0;
+    final completed = currentIndex +
+        (status == LessonStatus.answered ||
+                status == LessonStatus.finished ||
+                status == LessonStatus.failed
+            ? 1
+            : 0);
+    return (completed / totalQuestions).clamp(0.0, 1.0);
+  }
 
   bool get isLastQuestion => currentIndex >= totalQuestions - 1;
 
