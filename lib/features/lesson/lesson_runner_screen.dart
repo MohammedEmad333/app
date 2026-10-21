@@ -61,6 +61,7 @@ class _LessonRunnerView extends StatefulWidget {
 class _LessonRunnerViewState extends State<_LessonRunnerView> {
   /// Correctness of the current candidate answer (null = nothing selected).
   bool? _candidateCorrect;
+  bool _quitDialogOpen = false;
 
   void _onCheck() {
     final cubit = context.read<LessonCubit>();
@@ -73,7 +74,10 @@ class _LessonRunnerViewState extends State<_LessonRunnerView> {
   }
 
   Future<bool> _confirmQuit() async {
-    final result = await showDialog<bool>(
+    if (_quitDialogOpen) return false;
+    _quitDialogOpen = true;
+    try {
+      final result = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
         shape:
@@ -94,7 +98,10 @@ class _LessonRunnerViewState extends State<_LessonRunnerView> {
         ],
       ),
     );
-    return result ?? false;
+      return result ?? false;
+    } finally {
+      _quitDialogOpen = false;
+    }
   }
 
   @override
@@ -169,6 +176,7 @@ class _LessonRunnerViewState extends State<_LessonRunnerView> {
       child: Row(
         children: [
           IconButton(
+            tooltip: 'الخروج من الدرس',
             icon: const Icon(Icons.close_rounded,
                 color: AppColors.inkLight, size: 28),
             onPressed: () async {
