@@ -13,6 +13,7 @@ class FeedbackSheet extends StatelessWidget {
     required this.isCorrect,
     required this.correctAnswer,
     required this.onContinue,
+    this.isAdvancing = false,
     this.explanation,
   });
 
@@ -20,6 +21,7 @@ class FeedbackSheet extends StatelessWidget {
   final String correctAnswer;
   final String? explanation;
   final VoidCallback onContinue;
+  final bool isAdvancing;
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +83,8 @@ class FeedbackSheet extends StatelessWidget {
               shadowColor: isCorrect
                   ? AppColors.primaryDark
                   : AppColors.wrongDark,
-              onPressed: onContinue,
+              enabled: !isAdvancing,
+              onPressed: isAdvancing ? null : onContinue,
             ),
           ],
         ),
