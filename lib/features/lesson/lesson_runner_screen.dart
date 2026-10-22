@@ -79,12 +79,12 @@ class _LessonRunnerViewState extends State<_LessonRunnerView> {
 
   Future<void> _onContinue() async {
     if (_advancingQuestion) return;
-    _advancingQuestion = true;
+    setState(() => _advancingQuestion = true);
     try {
       await context.read<LessonCubit>().next();
       if (mounted) setState(() => _candidateCorrect = null);
     } finally {
-      _advancingQuestion = false;
+      if (mounted) setState(() => _advancingQuestion = false);
     }
   }
 
@@ -177,6 +177,7 @@ class _LessonRunnerViewState extends State<_LessonRunnerView> {
                     correctAnswer: _correctAnswerText(state.currentQuestion),
                     explanation: state.currentQuestion.explanation,
                     onContinue: _onContinue,
+                    isAdvancing: _advancingQuestion,
                   )
                 : null,
           ),
