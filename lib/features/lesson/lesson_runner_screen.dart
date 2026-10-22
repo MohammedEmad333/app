@@ -63,6 +63,7 @@ class _LessonRunnerViewState extends State<_LessonRunnerView> {
   bool? _candidateCorrect;
   bool _quitDialogOpen = false;
   bool _submittingAnswer = false;
+  bool _advancingQuestion = false;
 
   Future<void> _onCheck() async {
     if (_submittingAnswer || _candidateCorrect == null) return;
@@ -76,9 +77,15 @@ class _LessonRunnerViewState extends State<_LessonRunnerView> {
     }
   }
 
-  void _onContinue() {
-    setState(() => _candidateCorrect = null);
-    context.read<LessonCubit>().next();
+  Future<void> _onContinue() async {
+    if (_advancingQuestion) return;
+    _advancingQuestion = true;
+    try {
+      await context.read<LessonCubit>().next();
+      if (mounted) setState(() => _candidateCorrect = null);
+    } finally {
+      _advancingQuestion = false;
+    }
   }
 
   Future<bool> _confirmQuit() async {
