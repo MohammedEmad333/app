@@ -62,10 +62,18 @@ class _LessonRunnerViewState extends State<_LessonRunnerView> {
   /// Correctness of the current candidate answer (null = nothing selected).
   bool? _candidateCorrect;
   bool _quitDialogOpen = false;
+  bool _submittingAnswer = false;
 
-  void _onCheck() {
-    final cubit = context.read<LessonCubit>();
-    cubit.submitAnswer(isCorrect: _candidateCorrect ?? false);
+  Future<void> _onCheck() async {
+    if (_submittingAnswer || _candidateCorrect == null) return;
+    setState(() => _submittingAnswer = true);
+    try {
+      await context.read<LessonCubit>().submitAnswer(
+        isCorrect: _candidateCorrect!,
+      );
+    } finally {
+      if (mounted) setState(() => _submittingAnswer = false);
+    }
   }
 
   void _onContinue() {
@@ -246,7 +254,7 @@ class _LessonRunnerViewState extends State<_LessonRunnerView> {
   }
 
   Widget _checkBar() {
-    final ready = _candidateCorrect != null;
+    final ready = _candidateCorrect != null && !_submittingAnswer;
     return Container(
       padding: const EdgeInsets.fromLTRB(20, 12, 20, 20),
       decoration: const BoxDecoration(
