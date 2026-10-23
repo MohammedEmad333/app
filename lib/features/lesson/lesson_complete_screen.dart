@@ -142,9 +142,13 @@ class _LessonCompleteScreenState extends State<LessonCompleteScreen>
   }
 
   Widget _chest() {
-    return GestureDetector(
-      onTap: _openChest,
-      child: AnimatedBuilder(
+    return Semantics(
+      button: !_chestOpen,
+      label: _chestOpen ? 'تم فتح صندوق المكافأة' : 'افتح صندوق المكافأة',
+      child: InkWell(
+        onTap: _chestOpen ? null : _openChest,
+        borderRadius: BorderRadius.circular(24),
+        child: AnimatedBuilder(
         animation: _chestController,
         builder: (context, child) {
           final wobble = sin(_chestController.value * pi * 3) * 0.05;
@@ -161,6 +165,7 @@ class _LessonCompleteScreenState extends State<LessonCompleteScreen>
             ),
           );
         },
+        ),
       ),
     );
   }
