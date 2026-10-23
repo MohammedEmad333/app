@@ -106,6 +106,14 @@ class _LessonCompleteScreenState extends State<LessonCompleteScreen>
                     ),
                   ],
                   const Spacer(),
+                  if (!_chestOpen)
+                    TextButton(
+                      onPressed: () => Navigator.of(context).pop(),
+                      child: const Text(
+                        'العودة إلى خريطة التعلم',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
                   if (_chestOpen)
                     PopButton(
                       label: AppStrings.continueLabel,
