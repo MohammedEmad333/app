@@ -53,9 +53,12 @@ class FeedbackSheet extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 12),
-                Text(
-                  isCorrect ? AppStrings.correctTitle : AppStrings.wrongTitle,
-                  style: AppTextStyles.heading.copyWith(color: accent),
+                Semantics(
+                  liveRegion: true,
+                  child: Text(
+                    isCorrect ? AppStrings.correctTitle : AppStrings.wrongTitle,
+                    style: AppTextStyles.heading.copyWith(color: accent),
+                  ),
                 ),
               ],
             ),
