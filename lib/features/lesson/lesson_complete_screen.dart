@@ -23,6 +23,13 @@ class LessonCompleteScreen extends StatefulWidget {
   final int accuracyPercent;
   final bool practice;
 
+  /// Short encouragement based on how many answers were correct.
+  static String accuracyFeedback(int percent) {
+    if (percent >= 90) return 'ممتاز! أنت تتقن هذا الدرس!';
+    if (percent >= 60) return 'عمل جيد! استمر في التدريب لتتحسن أكثر.';
+    return 'كل محاولة تعلّمك شيئًا جديدًا. جرّب التدريب مجددًا!';
+  }
+
   @override
   State<LessonCompleteScreen> createState() => _LessonCompleteScreenState();
 }
@@ -89,7 +96,15 @@ class _LessonCompleteScreenState extends State<LessonCompleteScreen>
                   const SizedBox(height: 40),
                   _chest(),
                   const SizedBox(height: 40),
-                  if (_chestOpen) _stats(),
+                  if (_chestOpen) ...[
+                    _stats(),
+                    const SizedBox(height: 20),
+                    Text(
+                      LessonCompleteScreen.accuracyFeedback(widget.accuracyPercent),
+                      textAlign: TextAlign.center,
+                      style: AppTextStyles.body.copyWith(color: Colors.white),
+                    ),
+                  ],
                   const Spacer(),
                   if (_chestOpen)
                     PopButton(
