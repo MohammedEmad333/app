@@ -54,6 +54,31 @@ class UserProgress extends Equatable {
   bool get hasMistakes => mistakeQuestionIds.isNotEmpty;
   int get mistakeCount => mistakeQuestionIds.length;
 
+  /// Orders practice questions by review urgency: due, unplanned, future.
+  List<String> prioritizedMistakeIds({DateTime? now}) {
+    final time = now ?? DateTime.now();
+    DateTime? due(String id) => DateTime.tryParse(
+      reviewSchedules[id]?['dueAt']?.toString() ?? '',
+    );
+    int bucket(String id) {
+      final date = due(id);
+      return date == null ? 1 : (date.isAfter(time) ? 2 : 0);
+    }
+    final sorted = mistakeQuestionIds.toList();
+    sorted.sort((a, b) {
+      final order = bucket(a).compareTo(bucket(b));
+      if (order != 0) return order;
+      final first = due(a);
+      final second = due(b);
+      if (first != null && second != null) {
+        final timeOrder = first.compareTo(second);
+        if (timeOrder != 0) return timeOrder;
+      }
+      return a.compareTo(b);
+    });
+    return sorted;
+  }
+
   bool isLessonCompleted(String id) => completedLessonIds.contains(id);
 
   /// Fraction (0–1) of today's XP goal that has been reached.

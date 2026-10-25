@@ -244,7 +244,8 @@ class _SkillTreeScreenState extends State<SkillTreeScreen>
 
   Future<void> _startReview(
       BuildContext context, UserProgress progress) async {
-    await _startReviewIds(context, progress.mistakeQuestionIds);
+    await _startReviewIds(context, progress.prioritizedMistakeIds(),
+        shuffle: false, title: 'مراجعة الأخطاء حسب الأولوية');
   }
 
   Future<void> _startReviewIds(
