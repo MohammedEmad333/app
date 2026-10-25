@@ -51,6 +51,12 @@ class UserProgress extends Equatable {
   /// Question id to spaced-review state (repetitions and next due ISO date).
   final Map<String, Map<String, dynamic>> reviewSchedules;
 
+  /// Unresolved questions missed at least twice across attempts.
+  int get difficultQuestionCount => mistakeQuestionIds.where((id) {
+    final count = reviewSchedules[id]?['mistakeCount'];
+    return count is int && count >= 2;
+  }).length;
+
   bool get hasMistakes => mistakeQuestionIds.isNotEmpty;
   int get mistakeCount => mistakeQuestionIds.length;
 
