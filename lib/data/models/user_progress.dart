@@ -74,7 +74,12 @@ class UserProgress extends Equatable {
         final timeOrder = first.compareTo(second);
         if (timeOrder != 0) return timeOrder;
       }
-      return a.compareTo(b);
+      int count(String id) {
+        final value = reviewSchedules[id]?['mistakeCount'];
+        return value is int && value > 0 ? value : 0;
+      }
+      final frequency = count(b).compareTo(count(a));
+      return frequency != 0 ? frequency : a.compareTo(b);
     });
     return sorted;
   }
