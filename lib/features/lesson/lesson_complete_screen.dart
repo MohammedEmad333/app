@@ -30,6 +30,13 @@ class LessonCompleteScreen extends StatefulWidget {
     return 'كل محاولة تعلّمك شيئًا جديدًا. جرّب التدريب مجددًا!';
   }
 
+  /// Actionable study tip to show after the reward has been opened.
+  static String nextStepTip(int percent) {
+    if (percent < 60) return 'راجع إجاباتك الخاطئة ثم أعد التدريب.';
+    if (percent < 90) return 'أعد التدريب لتتقن الكلمات الصعبة.';
+    return 'أحسنت! أنت مستعد للدرس التالي.';
+  }
+
   @override
   State<LessonCompleteScreen> createState() => _LessonCompleteScreenState();
 }
@@ -103,6 +110,12 @@ class _LessonCompleteScreenState extends State<LessonCompleteScreen>
                       LessonCompleteScreen.accuracyFeedback(widget.accuracyPercent),
                       textAlign: TextAlign.center,
                       style: AppTextStyles.body.copyWith(color: Colors.white),
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      LessonCompleteScreen.nextStepTip(widget.accuracyPercent),
+                      textAlign: TextAlign.center,
+                      style: AppTextStyles.caption.copyWith(color: Colors.white),
                     ),
                   ],
                   const Spacer(),
