@@ -70,6 +70,10 @@ class ProgressCubit extends Cubit<UserProgress> {
         previous = ReviewSchedule(repetitions: repetitions, dueAt: dueAt);
       }
     }
+    final previousMistakes = current?['mistakeCount'];
+    final mistakeCount = previousMistakes is int && previousMistakes >= 0
+        ? previousMistakes
+        : 0;
     final schedule = ReviewSchedule.afterAnswer(
       now: now ?? DateTime.now(),
       correct: correct,
@@ -80,6 +84,7 @@ class ProgressCubit extends Cubit<UserProgress> {
         ...state.reviewSchedules,
         questionId: {
           'repetitions': schedule.repetitions,
+          'mistakeCount': correct ? mistakeCount : mistakeCount + 1,
           'dueAt': schedule.dueAt.toIso8601String(),
         },
       },
