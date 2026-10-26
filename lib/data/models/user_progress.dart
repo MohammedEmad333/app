@@ -71,6 +71,17 @@ class UserProgress extends Equatable {
     }).length;
   }
 
+  /// Difficult unresolved questions whose scheduled review time has arrived.
+  List<String> prioritizedDifficultQuestionsDue({DateTime? now}) {
+    final time = now ?? DateTime.now();
+    return prioritizedDifficultQuestionIds(now: time).where((id) {
+      final due = DateTime.tryParse(
+        reviewSchedules[id]?['dueAt']?.toString() ?? '',
+      );
+      return due != null && !due.isAfter(time);
+    }).toList();
+  }
+
   /// Difficult unresolved questions, sorted by the existing review priority.
   List<String> prioritizedDifficultQuestionIds({DateTime? now}) =>
       prioritizedMistakeIds(now: now).where((id) {
