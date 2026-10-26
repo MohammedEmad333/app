@@ -81,9 +81,11 @@ class UserProgress extends Equatable {
     sorted.sort((a, b) {
       final order = bucket(a).compareTo(bucket(b));
       if (order != 0) return order;
+      // Within due reviews, help frequently missed items first. For
+      // future reviews, preserve chronological scheduling order.
       final first = due(a);
       final second = due(b);
-      if (first != null && second != null) {
+      if (bucket(a) == 2 && first != null && second != null) {
         final timeOrder = first.compareTo(second);
         if (timeOrder != 0) return timeOrder;
       }
@@ -92,7 +94,12 @@ class UserProgress extends Equatable {
         return value is int && value > 0 ? value : 0;
       }
       final frequency = count(b).compareTo(count(a));
-      return frequency != 0 ? frequency : a.compareTo(b);
+      if (frequency != 0) return frequency;
+      if (first != null && second != null) {
+        final timeOrder = first.compareTo(second);
+        if (timeOrder != 0) return timeOrder;
+      }
+      return a.compareTo(b);
     });
     return sorted;
   }
