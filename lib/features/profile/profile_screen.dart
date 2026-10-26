@@ -107,6 +107,7 @@ class _ProfileScreenState extends State<ProfileScreen>
               final upcomingCount = context.read<ProgressCubit>().upcomingReviewsCount();
               final scheduledCount = dueCount + upcomingCount;
               final nextReview = context.read<ProgressCubit>().nextReviewAt();
+              final difficultDueCount = p.difficultQuestionsDueCount();
               return RefreshIndicator(
                 onRefresh: () async {
                   context.read<ProgressCubit>().refresh();
@@ -181,20 +182,20 @@ class _ProfileScreenState extends State<ProfileScreen>
                             color: AppColors.purple),
                         title: const Text('أسئلة تحتاج تدريبًا إضافيًا'),
                         subtitle: Text(
-                          'لديك ${AppStrings.arDigits(p.difficultQuestionCount)} أسئلة تكرر الخطأ فيها، منها ${AppStrings.arDigits(p.difficultQuestionsDueCount())} مستحقة الآن. اضغط للتدرب عليها.',
+                          'لديك ${AppStrings.arDigits(p.difficultQuestionCount)} أسئلة تكرر الخطأ فيها، منها ${AppStrings.arDigits(difficultDueCount)} مستحقة الآن. اضغط للتدرب عليها.',
                         ),
                         trailing: const Icon(Icons.arrow_forward_rounded),
                         onTap: () => _startDifficultReview(context, p),
                       ),
                     ),
                   ],
-                  if (p.difficultQuestionsDueCount() > 0) ...[
+                  if (difficultDueCount > 0) ...[
                     const SizedBox(height: 8),
                     OutlinedButton.icon(
                       onPressed: () => _startDueDifficultReview(context, p),
                       icon: const Icon(Icons.schedule_rounded),
                       label: Text(
-                        'راجع الأسئلة الصعبة المستحقة الآن (${AppStrings.arDigits(p.difficultQuestionsDueCount())})',
+                        'راجع الأسئلة الصعبة المستحقة الآن (${AppStrings.arDigits(difficultDueCount)})',
                       ),
                     ),
                   ],
