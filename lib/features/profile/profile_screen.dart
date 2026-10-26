@@ -107,7 +107,8 @@ class _ProfileScreenState extends State<ProfileScreen>
               final upcomingCount = context.read<ProgressCubit>().upcomingReviewsCount();
               final scheduledCount = dueCount + upcomingCount;
               final nextReview = context.read<ProgressCubit>().nextReviewAt();
-              final difficultDueCount = p.difficultQuestionsDueCount();
+              final reviewNow = DateTime.now();
+              final difficultDueCount = p.difficultQuestionsDueCount(now: reviewNow);
               return RefreshIndicator(
                 onRefresh: () async {
                   context.read<ProgressCubit>().refresh();
