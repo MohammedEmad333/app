@@ -188,6 +188,16 @@ class _ProfileScreenState extends State<ProfileScreen>
                       ),
                     ),
                   ],
+                  if (p.difficultQuestionsDueCount() > 0) ...[
+                    const SizedBox(height: 8),
+                    OutlinedButton.icon(
+                      onPressed: () => _startDueDifficultReview(context, p),
+                      icon: const Icon(Icons.schedule_rounded),
+                      label: Text(
+                        'راجع الأسئلة الصعبة المستحقة الآن (${AppStrings.arDigits(p.difficultQuestionsDueCount())})',
+                      ),
+                    ),
+                  ],
                   const SizedBox(height: 28),
                   _sectionTitle(AppStrings.achievements),
                   const SizedBox(height: 12),
@@ -438,6 +448,21 @@ class _ProfileScreenState extends State<ProfileScreen>
   Future<void> _startReview(BuildContext context, UserProgress p) async {
     final lesson = await ContentRepository.instance
         .buildReviewLesson(p.prioritizedMistakeIds(), shuffle: false);
+    if (!context.mounted || lesson.questions.isEmpty) return;
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) => LessonRunnerScreen(lesson: lesson, review: true),
+      ),
+    );
+  }
+
+  Future<void> _startDueDifficultReview(
+      BuildContext context, UserProgress p) async {
+    final lesson = await ContentRepository.instance.buildReviewLesson(
+      p.prioritizedDifficultQuestionsDue(),
+      shuffle: false,
+      title: 'الأسئلة الصعبة المستحقة',
+    );
     if (!context.mounted || lesson.questions.isEmpty) return;
     Navigator.of(context).push(
       MaterialPageRoute(
