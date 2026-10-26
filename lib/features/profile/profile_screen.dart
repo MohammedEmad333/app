@@ -173,6 +173,19 @@ class _ProfileScreenState extends State<ProfileScreen>
                       style: AppTextStyles.caption,
                     ),
                   ],
+                  if (p.difficultQuestionCount > 0) ...[
+                    const SizedBox(height: 14),
+                    Card(
+                      child: ListTile(
+                        leading: const Icon(Icons.psychology_alt_rounded,
+                            color: AppColors.purple),
+                        title: const Text('أسئلة تحتاج تدريبًا إضافيًا'),
+                        subtitle: Text(
+                          'لديك ${AppStrings.arDigits(p.difficultQuestionCount)} أسئلة تكرر الخطأ فيها. ابدأ مراجعة الأخطاء للتدرب عليها.',
+                        ),
+                      ),
+                    ),
+                  ],
                   const SizedBox(height: 28),
                   _sectionTitle(AppStrings.achievements),
                   const SizedBox(height: 12),
@@ -422,7 +435,7 @@ class _ProfileScreenState extends State<ProfileScreen>
 
   Future<void> _startReview(BuildContext context, UserProgress p) async {
     final lesson = await ContentRepository.instance
-        .buildReviewLesson(p.mistakeQuestionIds);
+        .buildReviewLesson(p.prioritizedMistakeIds(), shuffle: false);
     if (!context.mounted || lesson.questions.isEmpty) return;
     Navigator.of(context).push(
       MaterialPageRoute(
