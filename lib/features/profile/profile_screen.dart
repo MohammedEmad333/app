@@ -181,7 +181,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                             color: AppColors.purple),
                         title: const Text('أسئلة تحتاج تدريبًا إضافيًا'),
                         subtitle: Text(
-                          'لديك ${AppStrings.arDigits(p.difficultQuestionCount)} أسئلة تكرر الخطأ فيها. اضغط للتدرب عليها الآن.',
+                          'لديك ${AppStrings.arDigits(p.difficultQuestionCount)} أسئلة تكرر الخطأ فيها، منها ${AppStrings.arDigits(p.difficultQuestionsDueCount())} مستحقة الآن. اضغط للتدرب عليها.',
                         ),
                         trailing: const Icon(Icons.arrow_forward_rounded),
                         onTap: () => _startDifficultReview(context, p),
