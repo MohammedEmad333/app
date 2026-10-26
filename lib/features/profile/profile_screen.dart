@@ -196,6 +196,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                       icon: const Icon(Icons.schedule_rounded),
                       label: Text(
                         'راجع الأسئلة الصعبة المستحقة الآن (${AppStrings.arDigits(difficultDueCount)})',
+                        textAlign: TextAlign.center,
                       ),
                     ),
                   ],
