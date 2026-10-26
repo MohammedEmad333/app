@@ -181,8 +181,10 @@ class _ProfileScreenState extends State<ProfileScreen>
                             color: AppColors.purple),
                         title: const Text('أسئلة تحتاج تدريبًا إضافيًا'),
                         subtitle: Text(
-                          'لديك ${AppStrings.arDigits(p.difficultQuestionCount)} أسئلة تكرر الخطأ فيها. ابدأ مراجعة الأخطاء للتدرب عليها.',
+                          'لديك ${AppStrings.arDigits(p.difficultQuestionCount)} أسئلة تكرر الخطأ فيها. اضغط للتدرب عليها الآن.',
                         ),
+                        trailing: const Icon(Icons.arrow_forward_rounded),
+                        onTap: () => _startDifficultReview(context, p),
                       ),
                     ),
                   ],
@@ -436,6 +438,20 @@ class _ProfileScreenState extends State<ProfileScreen>
   Future<void> _startReview(BuildContext context, UserProgress p) async {
     final lesson = await ContentRepository.instance
         .buildReviewLesson(p.prioritizedMistakeIds(), shuffle: false);
+    if (!context.mounted || lesson.questions.isEmpty) return;
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) => LessonRunnerScreen(lesson: lesson, review: true),
+      ),
+    );
+  }
+
+  Future<void> _startDifficultReview(BuildContext context, UserProgress p) async {
+    final lesson = await ContentRepository.instance.buildReviewLesson(
+      p.prioritizedDifficultQuestionIds(),
+      shuffle: false,
+      title: 'تدريب الأسئلة الصعبة',
+    );
     if (!context.mounted || lesson.questions.isEmpty) return;
     Navigator.of(context).push(
       MaterialPageRoute(
