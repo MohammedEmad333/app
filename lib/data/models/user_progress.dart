@@ -57,6 +57,20 @@ class UserProgress extends Equatable {
     return count is int && count >= 2;
   }).length;
 
+  /// Difficult questions that are actually due now; missing/invalid dates
+  /// do not count as scheduled due reviews.
+  int difficultQuestionsDueCount({DateTime? now}) {
+    final time = now ?? DateTime.now();
+    return mistakeQuestionIds.where((id) {
+      final mistakes = reviewSchedules[id]?['mistakeCount'];
+      if (mistakes is! int || mistakes < 2) return false;
+      final due = DateTime.tryParse(
+        reviewSchedules[id]?['dueAt']?.toString() ?? '',
+      );
+      return due != null && !due.isAfter(time);
+    }).length;
+  }
+
   /// Difficult unresolved questions, sorted by the existing review priority.
   List<String> prioritizedDifficultQuestionIds({DateTime? now}) =>
       prioritizedMistakeIds(now: now).where((id) {
