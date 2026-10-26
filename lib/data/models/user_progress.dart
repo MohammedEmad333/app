@@ -57,6 +57,13 @@ class UserProgress extends Equatable {
     return count is int && count >= 2;
   }).length;
 
+  /// Difficult unresolved questions, sorted by the existing review priority.
+  List<String> prioritizedDifficultQuestionIds({DateTime? now}) =>
+      prioritizedMistakeIds(now: now).where((id) {
+        final count = reviewSchedules[id]?['mistakeCount'];
+        return count is int && count >= 2;
+      }).toList();
+
   bool get hasMistakes => mistakeQuestionIds.isNotEmpty;
   int get mistakeCount => mistakeQuestionIds.length;
 
