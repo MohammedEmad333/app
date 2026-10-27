@@ -4,7 +4,7 @@ import 'package:lingokids/features/grammar/grammar_lessons_screen.dart';
 
 void main() {
   testWidgets('wrong grammar answer can be retried and corrected', (tester) async {
-    await tester.pumpWidget(const MaterialApp(
+    await tester.pumpWidget(MaterialApp(
       home: GrammarDetailScreen(topic: grammarTopics[0]),
     ));
     await tester.tap(find.text('He').last);
