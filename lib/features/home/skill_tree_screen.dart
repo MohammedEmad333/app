@@ -12,6 +12,7 @@ import '../../data/models/unit.dart';
 import '../../data/models/user_progress.dart';
 import '../../data/repositories/content_repository.dart';
 import '../lesson/lesson_runner_screen.dart';
+import '../grammar/grammar_lessons_screen.dart';
 import '../profile/profile_screen.dart';
 import '../progress/progress_cubit.dart';
 import 'widgets/lesson_node.dart';
@@ -119,6 +120,18 @@ class _SkillTreeScreenState extends State<SkillTreeScreen>
                           DailyGoalBanner(
                             dailyXp: progress.dailyXp,
                             goal: UserProgress.dailyGoal,
+                          ),
+                          Card(
+                            margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                            child: ListTile(
+                              leading: const Icon(Icons.menu_book_rounded, color: AppColors.purple),
+                              title: const Text('دروس القواعد الإنجليزية'),
+                              subtitle: const Text('شرح القواعد والأمثلة والتدريبات — مستقل عن الوحدات'),
+                              trailing: const Icon(Icons.chevron_left_rounded),
+                              onTap: () => Navigator.of(context).push(
+                                MaterialPageRoute(builder: (_) => const GrammarLessonsScreen()),
+                              ),
+                            ),
                           ),
                           if (context.read<ProgressCubit>().reviewsDue().isNotEmpty)
                             _dueReviewBanner(context),
