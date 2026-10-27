@@ -4,8 +4,10 @@ import 'package:lingokids/features/grammar/grammar_lessons_screen.dart';
 
 void main() {
   test('grammar catalog covers core introductory topics', () {
-    expect(grammarTopics.length, greaterThanOrEqualTo(8));
+    expect(grammarTopics.length, greaterThanOrEqualTo(16));
     expect(grammarTopics.map((t) => t.title).toSet().length, grammarTopics.length);
+    expect(grammarTopics.any((t) => t.title == 'الماضي البسيط'), isTrue);
+    expect(grammarTopics.any((t) => t.title == 'حروف الجر للمكان'), isTrue);
     for (final topic in grammarTopics) {
       expect(topic.rule, isNotEmpty);
       expect(topic.examples, isNotEmpty);
