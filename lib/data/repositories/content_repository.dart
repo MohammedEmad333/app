@@ -13,6 +13,7 @@ class ContentRepository {
   static final ContentRepository instance = ContentRepository._();
 
   static const String _assetPath = 'assets/data/units.json';
+  static const String _additionalAssetPath = 'assets/data/additional_units.json';
 
   List<Unit>? _cache;
 
@@ -20,7 +21,9 @@ class ContentRepository {
     if (_cache != null) return _cache!;
     final raw = await rootBundle.loadString(_assetPath);
     final decoded = json.decode(raw) as List<dynamic>;
-    _cache = decoded
+    final additionalRaw = await rootBundle.loadString(_additionalAssetPath);
+    final additional = json.decode(additionalRaw) as List<dynamic>;
+    _cache = [...decoded, ...additional]
         .map((e) => Unit.fromJson(e as Map<String, dynamic>))
         .toList();
     return _cache!;
