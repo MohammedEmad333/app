@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 /// Grammar lessons are independent of vocabulary units and lesson XP.
 class GrammarTopic {
@@ -104,6 +105,14 @@ class _GrammarDetailScreenState extends State<GrammarDetailScreen> {
   int attempts = 0;
   int? bonusSelection;
   int bonusAttempts = 0;
+  bool saved = false;
+
+  Future<void> _saveCompletion() async {
+    if (saved) return;
+    final box = await Hive.openBox('grammar_progress');
+    await box.put(widget.topic.title, DateTime.now().toIso8601String());
+    if (mounted) setState(() => saved = true);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -164,6 +173,13 @@ class _GrammarDetailScreenState extends State<GrammarDetailScreen> {
                   bonusAttempts++;
                 }),
               ),
+            if (bonusSelection == 0) ...[
+              ElevatedButton.icon(
+                onPressed: saved ? null : _saveCompletion,
+                icon: const Icon(Icons.check_circle_outline),
+                label: Text(saved ? 'تم حفظ إكمال الدرس' : 'احفظ إكمال الدرس'),
+              ),
+            ],
             if (bonusSelection != null)
               Text(bonusSelection == 0
                 ? 'ممتاز! أكملت السؤالين بنجاح.'
