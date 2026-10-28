@@ -102,6 +102,8 @@ class GrammarDetailScreen extends StatefulWidget {
 class _GrammarDetailScreenState extends State<GrammarDetailScreen> {
   int? selected;
   int attempts = 0;
+  int? bonusSelection;
+  int bonusAttempts = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -143,6 +145,30 @@ class _GrammarDetailScreenState extends State<GrammarDetailScreen> {
                 attempts++;
               }),
             ),
+          if (selected == topic.correctIndex) ...[
+            const Divider(height: 36),
+            Text('السؤال الثاني', style: Theme.of(context).textTheme.titleLarge),
+            const SizedBox(height: 8),
+            const Text('اختر الجملة الصحيحة:'),
+            for (var i = 0; i < 3; i++)
+              RadioListTile<int>(
+                title: Directionality(
+                  textDirection: TextDirection.ltr,
+                  child: Text(i == 0 ? topic.examples.first :
+                    i == 1 ? topic.question : topic.options.last),
+                ),
+                value: i,
+                groupValue: bonusSelection,
+                onChanged: (value) => setState(() {
+                  bonusSelection = value;
+                  bonusAttempts++;
+                }),
+              ),
+            if (bonusSelection != null)
+              Text(bonusSelection == 0
+                ? 'ممتاز! أكملت السؤالين بنجاح.'
+                : 'ليست الإجابة الصحيحة. راجع المثال الأول وحاول مجددًا.'),
+          ],
           if (selected != null) ...[
             Semantics(
               liveRegion: true,

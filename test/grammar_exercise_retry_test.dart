@@ -21,6 +21,7 @@ void main() {
     await tester.drag(find.byType(ListView), const Offset(0, -250));
     await tester.pumpAndSettle();
     expect(find.textContaining('أحسنت! أتقنت هذا التدريب.'), findsOneWidget);
+    await tester.scrollUntilVisible(find.text('عدد المحاولات: 2'), 180);
     expect(find.text('عدد المحاولات: 2'), findsOneWidget);
     expect(find.text('أعد التدريب'), findsOneWidget);
   });
