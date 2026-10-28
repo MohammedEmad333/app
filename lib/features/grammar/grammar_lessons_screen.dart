@@ -101,6 +101,7 @@ class GrammarDetailScreen extends StatefulWidget {
 
 class _GrammarDetailScreenState extends State<GrammarDetailScreen> {
   int? selected;
+  int attempts = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -137,18 +138,38 @@ class _GrammarDetailScreenState extends State<GrammarDetailScreen> {
               title: Text(topic.options[i]),
               value: i,
               groupValue: selected,
-              onChanged: (value) => setState(() => selected = value),
+              onChanged: (value) => setState(() {
+                selected = value;
+                attempts++;
+              }),
             ),
-          if (selected != null)
-            Padding(
-              padding: const EdgeInsets.all(12),
-              child: Text(
-                '${selected == topic.correctIndex ? 'إجابة صحيحة! ' : 'حاول مرة أخرى. '}${topic.reason}',
-                style: TextStyle(
-                  color: selected == topic.correctIndex ? Colors.green.shade700 : Colors.deepOrange,
+          if (selected != null) ...[
+            Semantics(
+              liveRegion: true,
+              child: Padding(
+                padding: const EdgeInsets.all(12),
+                child: Text(
+                  '${selected == topic.correctIndex ? 'أحسنت! أتقنت هذا التدريب.' : 'حاول مرة أخرى.'} ${topic.reason}',
+                  style: TextStyle(
+                    color: selected == topic.correctIndex
+                        ? Colors.green.shade700 : Colors.deepOrange,
+                  ),
                 ),
               ),
             ),
+            const SizedBox(height: 8),
+            OutlinedButton.icon(
+              onPressed: () => setState(() => selected = null),
+              icon: const Icon(Icons.refresh_rounded),
+              label: Text(selected == topic.correctIndex
+                  ? 'أعد التدريب' : 'جرّب من جديد'),
+            ),
+            if (selected == topic.correctIndex)
+              Padding(
+                padding: const EdgeInsets.only(top: 8),
+                child: Text('عدد المحاولات: $attempts'),
+              ),
+          ],
         ],
       ),
     );
