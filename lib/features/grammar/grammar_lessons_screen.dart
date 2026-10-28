@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'grammar_progress_store.dart';
+import 'grammar_quiz_screen.dart';
 
 /// Grammar lessons are independent of vocabulary units and lesson XP.
 class GrammarTopic {
@@ -142,6 +143,14 @@ class _GrammarDetailScreenState extends State<GrammarDetailScreen> {
               ),
             )),
           const SizedBox(height: 24),
+          FilledButton.icon(
+            onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+              builder: (_) => GrammarQuizScreen(topic: topic),
+            )),
+            icon: const Icon(Icons.quiz_outlined),
+            label: const Text('اختبار نهائي: 3 أسئلة'),
+          ),
+          const SizedBox(height: 16),
           Text('اختبر فهمك', style: Theme.of(context).textTheme.titleLarge),
           const SizedBox(height: 8),
           Directionality(
