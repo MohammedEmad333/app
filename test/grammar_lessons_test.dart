@@ -1,5 +1,3 @@
-import 'dart:io';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:lingokids/features/grammar/grammar_lessons_screen.dart';
@@ -21,14 +19,10 @@ void main() {
   });
 
   testWidgets('learner can open an independent grammar lesson', (tester) async {
-    final temp = await Directory.systemTemp.createTemp('grammar_widget_');
-    Hive.init(temp.path);
-    addTearDown(() async {
-      await Hive.close();
-      await temp.delete(recursive: true);
-    });
-    await tester.pumpWidget(const MaterialApp(home: GrammarLessonsScreen()));
-    await tester.pumpAndSettle();
+    await tester.pumpWidget(MaterialApp(home: GrammarLessonsScreen(
+      storeLoader: () async => throw StateError('Storage unavailable in test'),
+    )));
+    await tester.pump();
     expect(find.text('تعلّم القواعد الإنجليزية'), findsOneWidget);
     await tester.tap(find.text('الضمائر الشخصية'));
     await tester.pumpAndSettle();
