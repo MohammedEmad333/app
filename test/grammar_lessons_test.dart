@@ -19,7 +19,10 @@ void main() {
   });
 
   testWidgets('learner can open an independent grammar lesson', (tester) async {
-    await tester.pumpWidget(const MaterialApp(home: GrammarLessonsScreen()));
+    await tester.pumpWidget(MaterialApp(home: GrammarLessonsScreen(
+      storeLoader: () async => throw StateError('Storage unavailable in test'),
+    )));
+    await tester.pump();
     expect(find.text('تعلّم القواعد الإنجليزية'), findsOneWidget);
     await tester.tap(find.text('الضمائر الشخصية'));
     await tester.pumpAndSettle();
