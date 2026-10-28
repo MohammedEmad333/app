@@ -143,14 +143,6 @@ class _GrammarDetailScreenState extends State<GrammarDetailScreen> {
               ),
             )),
           const SizedBox(height: 24),
-          FilledButton.icon(
-            onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-              builder: (_) => GrammarQuizScreen(topic: topic),
-            )),
-            icon: const Icon(Icons.quiz_outlined),
-            label: const Text('اختبار نهائي: 3 أسئلة'),
-          ),
-          const SizedBox(height: 16),
           Text('اختبر فهمك', style: Theme.of(context).textTheme.titleLarge),
           const SizedBox(height: 8),
           Directionality(
@@ -220,6 +212,14 @@ class _GrammarDetailScreenState extends State<GrammarDetailScreen> {
                 child: Text('عدد المحاولات: $attempts'),
               ),
           ],
+          FilledButton.icon(
+            onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+              builder: (_) => GrammarQuizScreen(topic: topic),
+            )),
+            icon: const Icon(Icons.quiz_outlined),
+            label: const Text('اختبار نهائي: 3 أسئلة'),
+          ),
+          const SizedBox(height: 16),
         ],
       ),
     );
