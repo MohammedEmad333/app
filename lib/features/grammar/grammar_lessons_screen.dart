@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'grammar_progress_store.dart';
 
 /// Grammar lessons are independent of vocabulary units and lesson XP.
 class GrammarTopic {
@@ -104,6 +105,19 @@ class _GrammarDetailScreenState extends State<GrammarDetailScreen> {
   int attempts = 0;
   int? bonusSelection;
   int bonusAttempts = 0;
+  bool _completionSaved = false;
+
+  Future<void> _saveCompletion() async {
+    if (_completionSaved) return;
+    _completionSaved = true;
+    try {
+      final store = await GrammarProgressStore.open();
+      await store.markCompleted(widget.topic.title);
+    } catch (_) {
+      _completionSaved = false;
+      // Practice works even if persistent storage is unavailable.
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -162,6 +176,7 @@ class _GrammarDetailScreenState extends State<GrammarDetailScreen> {
                 onChanged: (value) => setState(() {
                   bonusSelection = value;
                   bonusAttempts++;
+                  if (value == 0) _saveCompletion();
                 }),
               ),
             if (bonusSelection != null)
