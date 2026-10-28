@@ -65,27 +65,65 @@ const grammarTopics = <GrammarTopic>[
       'My sister ___ a cat.', ['have', 'has', 'having'], 1, 'نستخدم has مع My sister لأنها مفرد غائب.'),
 ];
 
-class GrammarLessonsScreen extends StatelessWidget {
+class GrammarLessonsScreen extends StatefulWidget {
   const GrammarLessonsScreen({super.key});
+
+  @override
+  State<GrammarLessonsScreen> createState() => _GrammarLessonsScreenState();
+}
+
+class _GrammarLessonsScreenState extends State<GrammarLessonsScreen> {
+  Future<GrammarProgressStore>? _store;
+
+  @override
+  void initState() {
+    super.initState();
+    _store = GrammarProgressStore.open();
+  }
+
+  Future<void> _refresh() async {
+    setState(() => _store = GrammarProgressStore.open());
+  }
 
   @override
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(title: const Text('تعلّم القواعد الإنجليزية')),
-    body: ListView.builder(
-      padding: const EdgeInsets.all(16),
-      itemCount: grammarTopics.length,
-      itemBuilder: (context, index) {
-        final lesson = grammarTopics[index];
-        return Card(
-          child: ListTile(
-            leading: const Icon(Icons.menu_book_rounded),
-            title: Text(lesson.title),
-            subtitle: const Text('شرح مبسّط • أمثلة • سؤال تدريبي'),
-            trailing: const Icon(Icons.chevron_left_rounded),
-            onTap: () => Navigator.of(context).push(MaterialPageRoute(
-              builder: (_) => GrammarDetailScreen(topic: lesson),
-            )),
-          ),
+    body: FutureBuilder<GrammarProgressStore>(
+      future: _store,
+      builder: (context, snapshot) {
+        final store = snapshot.data;
+        return ListView(
+          padding: const EdgeInsets.all(16),
+          children: [
+            if (store != null) ...[
+              Text('تقدّم القواعد: ${store.completedCount} من ${grammarTopics.length}',
+                style: Theme.of(context).textTheme.titleLarge),
+              const SizedBox(height: 8),
+              LinearProgressIndicator(
+                value: store.completedCount / grammarTopics.length,
+                semanticsLabel: 'تقدم دروس القواعد'),
+              const SizedBox(height: 16),
+            ] else if (snapshot.hasError)
+              const Text('يمكنك متابعة الدروس؛ تعذّر قراءة التقدم المحفوظ.'),
+            for (final lesson in grammarTopics)
+              Card(
+                child: ListTile(
+                  leading: Icon(store?.isCompleted(lesson.title) == true
+                    ? Icons.check_circle : Icons.menu_book_rounded),
+                  title: Text(lesson.title),
+                  subtitle: Text(store?.isCompleted(lesson.title) == true
+                    ? 'مكتمل • يمكنك المراجعة'
+                    : 'شرح مبسّط • أمثلة • سؤالان تدريبيان'),
+                  trailing: const Icon(Icons.chevron_left_rounded),
+                  onTap: () async {
+                    await Navigator.of(context).push(MaterialPageRoute(
+                      builder: (_) => GrammarDetailScreen(topic: lesson),
+                    ));
+                    if (mounted) await _refresh();
+                  },
+                ),
+              ),
+          ],
         );
       },
     ),
@@ -183,6 +221,9 @@ class _GrammarDetailScreenState extends State<GrammarDetailScreen> {
               Text(bonusSelection == 0
                 ? 'ممتاز! أكملت السؤالين بنجاح.'
                 : 'ليست الإجابة الصحيحة. راجع المثال الأول وحاول مجددًا.'),
+            if (bonusSelection == 0)
+              Text('نتيجة التدريب: 2/2',
+                style: Theme.of(context).textTheme.titleMedium),
           ],
           if (selected != null) ...[
             Semantics(
