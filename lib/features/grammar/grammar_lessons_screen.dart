@@ -78,11 +78,15 @@ class _GrammarLessonsScreenState extends State<GrammarLessonsScreen> {
   @override
   void initState() {
     super.initState();
-    _store = GrammarProgressStore.open();
+    _store = _loadStore();
+  }
+
+  Future<GrammarProgressStore> _loadStore() async {
+    return GrammarProgressStore.open();
   }
 
   Future<void> _refresh() async {
-    setState(() => _store = GrammarProgressStore.open());
+    setState(() => _store = _loadStore());
   }
 
   @override
