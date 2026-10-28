@@ -137,8 +137,9 @@ class _GrammarLessonsScreenState extends State<GrammarLessonsScreen> {
 }
 
 class GrammarDetailScreen extends StatefulWidget {
-  const GrammarDetailScreen({super.key, required this.topic});
+  const GrammarDetailScreen({super.key, required this.topic, this.onComplete});
   final GrammarTopic topic;
+  final Future<void> Function(String)? onComplete;
 
   @override
   State<GrammarDetailScreen> createState() => _GrammarDetailScreenState();
@@ -155,8 +156,12 @@ class _GrammarDetailScreenState extends State<GrammarDetailScreen> {
     if (_completionSaved) return;
     _completionSaved = true;
     try {
-      final store = await GrammarProgressStore.open();
-      await store.markCompleted(widget.topic.title);
+      if (widget.onComplete != null) {
+        await widget.onComplete!(widget.topic.title);
+      } else {
+        final store = await GrammarProgressStore.open();
+        await store.markCompleted(widget.topic.title);
+      }
     } catch (_) {
       _completionSaved = false;
       // Practice works even if persistent storage is unavailable.
