@@ -10,6 +10,7 @@ void main() {
     await tester.tap(find.text('She').last);
     await tester.pumpAndSettle();
     await tester.scrollUntilVisible(find.text('السؤال الثاني'), 160);
+    await tester.ensureVisible(find.text('I am a student.').last);
     await tester.tap(find.text('I am a student.').last);
     await tester.pumpAndSettle();
     await tester.scrollUntilVisible(find.text('نتيجة التدريب: 2/2'), 160);
