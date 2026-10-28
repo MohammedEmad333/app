@@ -14,12 +14,30 @@ class GrammarProgressStore {
       box.get(topicTitle, defaultValue: false) == true;
 
   int get completedCount =>
-      box.keys.where((key) => box.get(key) == true).length;
+      box.keys.where((key) => !key.toString().startsWith('score:') && box.get(key) == true).length;
+
+  int bestScore(String topicTitle) {
+    final value = box.get('score:$topicTitle');
+    return value is int && value >= 0 ? value : 0;
+  }
+
+  /// Saves the highest score only. Scores are percentages from 0 to 100.
+  Future<void> saveBestScore(String topicTitle, int score) async {
+    if (topicTitle.isEmpty || score < 0 || score > 100) {
+      throw ArgumentError('Topic and score (0–100) are required');
+    }
+    if (score > bestScore(topicTitle)) {
+      await box.put('score:$topicTitle', score);
+    }
+  }
 
   Future<void> markCompleted(String topicTitle) async {
     if (topicTitle.isEmpty) return;
     await box.put(topicTitle, true);
   }
 
-  Future<void> resetTopic(String topicTitle) => box.delete(topicTitle);
+  Future<void> resetTopic(String topicTitle) async {
+    await box.delete(topicTitle);
+    await box.delete('score:$topicTitle');
+  }
 }
