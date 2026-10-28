@@ -5,7 +5,8 @@ import 'package:lingokids/features/grammar/grammar_lessons_screen.dart';
 void main() {
   testWidgets('grammar training shows two-question completion result', (tester) async {
     await tester.pumpWidget(MaterialApp(
-      home: GrammarDetailScreen(topic: grammarTopics[0]),
+      home: GrammarDetailScreen(topic: grammarTopics[0],
+        onComplete: (_) async {}),
     ));
     await tester.tap(find.text('She').last);
     await tester.pumpAndSettle();
