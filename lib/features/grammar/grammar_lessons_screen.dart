@@ -66,7 +66,9 @@ const grammarTopics = <GrammarTopic>[
 ];
 
 class GrammarLessonsScreen extends StatefulWidget {
-  const GrammarLessonsScreen({super.key});
+  const GrammarLessonsScreen({super.key, this.storeLoader});
+
+  final Future<GrammarProgressStore> Function()? storeLoader;
 
   @override
   State<GrammarLessonsScreen> createState() => _GrammarLessonsScreenState();
@@ -82,7 +84,7 @@ class _GrammarLessonsScreenState extends State<GrammarLessonsScreen> {
   }
 
   Future<GrammarProgressStore> _loadStore() async {
-    return GrammarProgressStore.open();
+    return widget.storeLoader?.call() ?? GrammarProgressStore.open();
   }
 
   Future<void> _refresh() async {
