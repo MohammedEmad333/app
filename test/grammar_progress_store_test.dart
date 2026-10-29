@@ -66,4 +66,29 @@ void main() {
     }
   });
 
+  test('practice attempts persist separately from completion and best score', () async {
+    final directory = await Directory.systemTemp.createTemp('grammar_attempts_');
+    Hive.init(directory.path);
+    try {
+      final box = await Hive.openBox('test_grammar_attempts');
+      final store = GrammarProgressStore(box);
+      await store.recordAttempt('Present simple', 50);
+      await store.recordAttempt('Present simple', 100);
+      await store.recordAttempt('Present simple', 50);
+      final reopened = GrammarProgressStore(box);
+      expect(reopened.attemptCount('Present simple'), 3);
+      expect(reopened.bestScore('Present simple'), 100);
+      expect(reopened.completedCount, 0);
+      await reopened.markCompleted('Present simple');
+      expect(reopened.completedCount, 1);
+      await reopened.resetTopic('Present simple');
+      expect(reopened.attemptCount('Present simple'), 0);
+      expect(reopened.bestScore('Present simple'), 0);
+      expect(reopened.completedCount, 0);
+      await box.close();
+    } finally {
+      await directory.delete(recursive: true);
+    }
+  });
+
 }
