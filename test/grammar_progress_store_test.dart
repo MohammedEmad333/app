@@ -144,4 +144,26 @@ void main() {
     }
   });
 
+  test('recent score trend handles improvement, decline and reset', () async {
+    final directory = await Directory.systemTemp.createTemp('grammar_trend_');
+    Hive.init(directory.path);
+    try {
+      final box = await Hive.openBox('test_grammar_trend');
+      final store = GrammarProgressStore(box);
+      expect(store.recentScoreChange('Tenses'), isNull);
+      await store.recordAttempt('Tenses', 50);
+      expect(store.recentScoreChange('Tenses'), isNull);
+      await store.recordAttempt('Tenses', 100);
+      expect(store.recentScoreChange('Tenses'), 50);
+      await store.recordAttempt('Tenses', 50);
+      expect(store.recentScoreChange('Tenses'), -50);
+      expect(store.bestScore('Tenses'), 100);
+      await store.resetTopic('Tenses');
+      expect(store.recentScoreChange('Tenses'), isNull);
+      await box.close();
+    } finally {
+      await directory.delete(recursive: true);
+    }
+  });
+
 }
