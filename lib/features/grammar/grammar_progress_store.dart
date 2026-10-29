@@ -53,6 +53,14 @@ class GrammarProgressStore {
     return scores.isEmpty ? null : scores.last;
   }
 
+  /// Difference between the latest and preceding practice scores.
+  /// Null means there are too few sessions to establish a trend.
+  int? recentScoreChange(String topicTitle) {
+    final scores = recentScores(topicTitle);
+    if (scores.length < 2) return null;
+    return scores.last - scores[scores.length - 2];
+  }
+
   int attemptCount(String topicTitle) {
     final value = box.get('attempts:$topicTitle');
     return value is int && value >= 0 ? value : 0;
