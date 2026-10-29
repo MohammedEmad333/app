@@ -1,0 +1,526 @@
+[
+  {
+    "id": "unit_25",
+    "title": "الوحدة ٢٥: المدرسة والتعلّم",
+    "subtitle": "تحدث عن المدرسة والأدوات والتعليمات",
+    "colorValue": 4282992969,
+    "difficulty": 5,
+    "lessons": [
+      {
+        "id": "u25_l1",
+        "title": "حقيبة المدرسة",
+        "icon": "🎒",
+        "xpReward": 30,
+        "questions": [
+          {
+            "id": "u25_l1_q1",
+            "type": "imageMatching",
+            "prompt": "اختر معنى \"Backpack\"",
+            "instruction": "اختر الكلمة والصورة الصحيحتين",
+            "promptEmoji": "🎒",
+            "correctOptionId": "o1",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Backpack",
+                "emoji": "🎒"
+              },
+              {
+                "id": "o2",
+                "label": "Book",
+                "emoji": "📚"
+              },
+              {
+                "id": "o3",
+                "label": "Pencil",
+                "emoji": "✏️"
+              }
+            ],
+            "explanation": "Backpack — تذكّر هذه الكلمة."
+          },
+          {
+            "id": "u25_l1_q2",
+            "type": "audioListening",
+            "prompt": "استمع إلى الكلمة واختر الإجابة",
+            "instruction": "استمع جيدًا ثم اختر",
+            "audioText": "Book",
+            "correctOptionId": "o2",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Backpack",
+                "emoji": "🎒"
+              },
+              {
+                "id": "o2",
+                "label": "Book",
+                "emoji": "📚"
+              },
+              {
+                "id": "o3",
+                "label": "Pencil",
+                "emoji": "✏️"
+              }
+            ],
+            "explanation": "الكلمة المسموعة هي Book."
+          },
+          {
+            "id": "u25_l1_q3",
+            "type": "wordJumble",
+            "prompt": "رتّب الكلمات: I have a backpack",
+            "instruction": "رتب الكلمات لتكوين الجملة الصحيحة",
+            "answer": "I have a backpack",
+            "wordBank": [
+              "backpack",
+              "a",
+              "have",
+              "I",
+              "today"
+            ],
+            "promptEmoji": "🎒",
+            "explanation": "الجملة الصحيحة: I have a backpack."
+          },
+          {
+            "id": "u25_l1_q4",
+            "type": "speechRecognition",
+            "prompt": "اقرأ العبارة بصوت واضح",
+            "instruction": "اضغط الميكروفون وانطق الإنجليزية",
+            "answer": "Open your book",
+            "promptEmoji": "🗣️",
+            "explanation": "حاول قول: Open your book."
+          }
+        ]
+      },
+      {
+        "id": "u25_l2",
+        "title": "داخل الصف",
+        "icon": "🏫",
+        "xpReward": 30,
+        "questions": [
+          {
+            "id": "u25_l2_q1",
+            "type": "imageMatching",
+            "prompt": "اختر معنى \"Teacher\"",
+            "instruction": "اختر الكلمة والصورة الصحيحتين",
+            "promptEmoji": "👩‍🏫",
+            "correctOptionId": "o1",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Teacher",
+                "emoji": "👩‍🏫"
+              },
+              {
+                "id": "o2",
+                "label": "Student",
+                "emoji": "🧑‍🎓"
+              },
+              {
+                "id": "o3",
+                "label": "School",
+                "emoji": "🏫"
+              }
+            ],
+            "explanation": "Teacher — تذكّر هذه الكلمة."
+          },
+          {
+            "id": "u25_l2_q2",
+            "type": "audioListening",
+            "prompt": "استمع إلى الكلمة واختر الإجابة",
+            "instruction": "استمع جيدًا ثم اختر",
+            "audioText": "Student",
+            "correctOptionId": "o2",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Teacher",
+                "emoji": "👩‍🏫"
+              },
+              {
+                "id": "o2",
+                "label": "Student",
+                "emoji": "🧑‍🎓"
+              },
+              {
+                "id": "o3",
+                "label": "School",
+                "emoji": "🏫"
+              }
+            ],
+            "explanation": "الكلمة المسموعة هي Student."
+          },
+          {
+            "id": "u25_l2_q3",
+            "type": "wordJumble",
+            "prompt": "رتّب الكلمات: This is my teacher",
+            "instruction": "رتب الكلمات لتكوين الجملة الصحيحة",
+            "answer": "This is my teacher",
+            "wordBank": [
+              "teacher",
+              "my",
+              "is",
+              "This",
+              "today"
+            ],
+            "promptEmoji": "🏫",
+            "explanation": "الجملة الصحيحة: This is my teacher."
+          },
+          {
+            "id": "u25_l2_q4",
+            "type": "speechRecognition",
+            "prompt": "اقرأ العبارة بصوت واضح",
+            "instruction": "اضغط الميكروفون وانطق الإنجليزية",
+            "answer": "Please sit down",
+            "promptEmoji": "🗣️",
+            "explanation": "حاول قول: Please sit down."
+          }
+        ]
+      },
+      {
+        "id": "u25_l3",
+        "title": "التعليمات المدرسية",
+        "icon": "📖",
+        "xpReward": 30,
+        "questions": [
+          {
+            "id": "u25_l3_q1",
+            "type": "imageMatching",
+            "prompt": "اختر معنى \"Read\"",
+            "instruction": "اختر الكلمة والصورة الصحيحتين",
+            "promptEmoji": "📖",
+            "correctOptionId": "o1",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Read",
+                "emoji": "📖"
+              },
+              {
+                "id": "o2",
+                "label": "Write",
+                "emoji": "✍️"
+              },
+              {
+                "id": "o3",
+                "label": "Listen",
+                "emoji": "👂"
+              }
+            ],
+            "explanation": "Read — تذكّر هذه الكلمة."
+          },
+          {
+            "id": "u25_l3_q2",
+            "type": "audioListening",
+            "prompt": "استمع إلى الكلمة واختر الإجابة",
+            "instruction": "استمع جيدًا ثم اختر",
+            "audioText": "Write",
+            "correctOptionId": "o2",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Read",
+                "emoji": "📖"
+              },
+              {
+                "id": "o2",
+                "label": "Write",
+                "emoji": "✍️"
+              },
+              {
+                "id": "o3",
+                "label": "Listen",
+                "emoji": "👂"
+              }
+            ],
+            "explanation": "الكلمة المسموعة هي Write."
+          },
+          {
+            "id": "u25_l3_q3",
+            "type": "wordJumble",
+            "prompt": "رتّب الكلمات: I can read",
+            "instruction": "رتب الكلمات لتكوين الجملة الصحيحة",
+            "answer": "I can read",
+            "wordBank": [
+              "read",
+              "can",
+              "I",
+              "today"
+            ],
+            "promptEmoji": "📖",
+            "explanation": "الجملة الصحيحة: I can read."
+          },
+          {
+            "id": "u25_l3_q4",
+            "type": "speechRecognition",
+            "prompt": "اقرأ العبارة بصوت واضح",
+            "instruction": "اضغط الميكروفون وانطق الإنجليزية",
+            "answer": "Raise your hand",
+            "promptEmoji": "🗣️",
+            "explanation": "حاول قول: Raise your hand."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit_26",
+    "title": "الوحدة ٢٦: السلامة والحياة اليومية",
+    "subtitle": "تعلم عبارات السلامة وطلب المساعدة",
+    "colorValue": 4282273022,
+    "difficulty": 5,
+    "lessons": [
+      {
+        "id": "u26_l1",
+        "title": "السلامة على الطريق",
+        "icon": "🚦",
+        "xpReward": 30,
+        "questions": [
+          {
+            "id": "u26_l1_q1",
+            "type": "imageMatching",
+            "prompt": "اختر معنى \"Stop\"",
+            "instruction": "اختر الكلمة والصورة الصحيحتين",
+            "promptEmoji": "🛑",
+            "correctOptionId": "o1",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Stop",
+                "emoji": "🛑"
+              },
+              {
+                "id": "o2",
+                "label": "Walk",
+                "emoji": "🚶"
+              },
+              {
+                "id": "o3",
+                "label": "Traffic light",
+                "emoji": "🚦"
+              }
+            ],
+            "explanation": "Stop — تذكّر هذه الكلمة."
+          },
+          {
+            "id": "u26_l1_q2",
+            "type": "audioListening",
+            "prompt": "استمع إلى الكلمة واختر الإجابة",
+            "instruction": "استمع جيدًا ثم اختر",
+            "audioText": "Walk",
+            "correctOptionId": "o2",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Stop",
+                "emoji": "🛑"
+              },
+              {
+                "id": "o2",
+                "label": "Walk",
+                "emoji": "🚶"
+              },
+              {
+                "id": "o3",
+                "label": "Traffic light",
+                "emoji": "🚦"
+              }
+            ],
+            "explanation": "الكلمة المسموعة هي Walk."
+          },
+          {
+            "id": "u26_l1_q3",
+            "type": "wordJumble",
+            "prompt": "رتّب الكلمات: Stop and look",
+            "instruction": "رتب الكلمات لتكوين الجملة الصحيحة",
+            "answer": "Stop and look",
+            "wordBank": [
+              "look",
+              "and",
+              "Stop",
+              "today"
+            ],
+            "promptEmoji": "🚦",
+            "explanation": "الجملة الصحيحة: Stop and look."
+          },
+          {
+            "id": "u26_l1_q4",
+            "type": "speechRecognition",
+            "prompt": "اقرأ العبارة بصوت واضح",
+            "instruction": "اضغط الميكروفون وانطق الإنجليزية",
+            "answer": "Wait for the green light",
+            "promptEmoji": "🗣️",
+            "explanation": "حاول قول: Wait for the green light."
+          }
+        ]
+      },
+      {
+        "id": "u26_l2",
+        "title": "طلب المساعدة",
+        "icon": "🙋",
+        "xpReward": 30,
+        "questions": [
+          {
+            "id": "u26_l2_q1",
+            "type": "imageMatching",
+            "prompt": "اختر معنى \"Help\"",
+            "instruction": "اختر الكلمة والصورة الصحيحتين",
+            "promptEmoji": "🆘",
+            "correctOptionId": "o1",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Help",
+                "emoji": "🆘"
+              },
+              {
+                "id": "o2",
+                "label": "Doctor",
+                "emoji": "🧑‍⚕️"
+              },
+              {
+                "id": "o3",
+                "label": "Phone",
+                "emoji": "📱"
+              }
+            ],
+            "explanation": "Help — تذكّر هذه الكلمة."
+          },
+          {
+            "id": "u26_l2_q2",
+            "type": "audioListening",
+            "prompt": "استمع إلى الكلمة واختر الإجابة",
+            "instruction": "استمع جيدًا ثم اختر",
+            "audioText": "Doctor",
+            "correctOptionId": "o2",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Help",
+                "emoji": "🆘"
+              },
+              {
+                "id": "o2",
+                "label": "Doctor",
+                "emoji": "🧑‍⚕️"
+              },
+              {
+                "id": "o3",
+                "label": "Phone",
+                "emoji": "📱"
+              }
+            ],
+            "explanation": "الكلمة المسموعة هي Doctor."
+          },
+          {
+            "id": "u26_l2_q3",
+            "type": "wordJumble",
+            "prompt": "رتّب الكلمات: Please help me",
+            "instruction": "رتب الكلمات لتكوين الجملة الصحيحة",
+            "answer": "Please help me",
+            "wordBank": [
+              "me",
+              "help",
+              "Please",
+              "today"
+            ],
+            "promptEmoji": "🙋",
+            "explanation": "الجملة الصحيحة: Please help me."
+          },
+          {
+            "id": "u26_l2_q4",
+            "type": "speechRecognition",
+            "prompt": "اقرأ العبارة بصوت واضح",
+            "instruction": "اضغط الميكروفون وانطق الإنجليزية",
+            "answer": "I need help",
+            "promptEmoji": "🗣️",
+            "explanation": "حاول قول: I need help."
+          }
+        ]
+      },
+      {
+        "id": "u26_l3",
+        "title": "عادات صحية",
+        "icon": "🧼",
+        "xpReward": 30,
+        "questions": [
+          {
+            "id": "u26_l3_q1",
+            "type": "imageMatching",
+            "prompt": "اختر معنى \"Wash\"",
+            "instruction": "اختر الكلمة والصورة الصحيحتين",
+            "promptEmoji": "🧼",
+            "correctOptionId": "o1",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Wash",
+                "emoji": "🧼"
+              },
+              {
+                "id": "o2",
+                "label": "Water",
+                "emoji": "💧"
+              },
+              {
+                "id": "o3",
+                "label": "Sleep",
+                "emoji": "😴"
+              }
+            ],
+            "explanation": "Wash — تذكّر هذه الكلمة."
+          },
+          {
+            "id": "u26_l3_q2",
+            "type": "audioListening",
+            "prompt": "استمع إلى الكلمة واختر الإجابة",
+            "instruction": "استمع جيدًا ثم اختر",
+            "audioText": "Water",
+            "correctOptionId": "o2",
+            "options": [
+              {
+                "id": "o1",
+                "label": "Wash",
+                "emoji": "🧼"
+              },
+              {
+                "id": "o2",
+                "label": "Water",
+                "emoji": "💧"
+              },
+              {
+                "id": "o3",
+                "label": "Sleep",
+                "emoji": "😴"
+              }
+            ],
+            "explanation": "الكلمة المسموعة هي Water."
+          },
+          {
+            "id": "u26_l3_q3",
+            "type": "wordJumble",
+            "prompt": "رتّب الكلمات: Wash your hands",
+            "instruction": "رتب الكلمات لتكوين الجملة الصحيحة",
+            "answer": "Wash your hands",
+            "wordBank": [
+              "hands",
+              "your",
+              "Wash",
+              "today"
+            ],
+            "promptEmoji": "🧼",
+            "explanation": "الجملة الصحيحة: Wash your hands."
+          },
+          {
+            "id": "u26_l3_q4",
+            "type": "speechRecognition",
+            "prompt": "اقرأ العبارة بصوت واضح",
+            "instruction": "اضغط الميكروفون وانطق الإنجليزية",
+            "answer": "Drink clean water",
+            "promptEmoji": "🗣️",
+            "explanation": "حاول قول: Drink clean water."
+          }
+        ]
+      }
+    ]
+  }
+]
