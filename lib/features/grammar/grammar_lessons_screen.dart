@@ -170,7 +170,7 @@ class _GrammarLessonsScreenState extends State<GrammarLessonsScreen> {
                     ? Icons.check_circle : Icons.menu_book_rounded),
                   title: Text(lesson.title),
                   subtitle: Text(store?.isCompleted(lesson.title) == true
-                    ? 'مكتمل • أفضل درجة: ${store!.bestScore(lesson.title)}% • المحاولات: ${store.attemptCount(lesson.title)} • آخر درجة: ${store.latestScore(lesson.title) ?? 0}%${store.needsReview(lesson.title) ? ' • يحتاج مراجعة' : ''}'
+                    ? 'مكتمل • أفضل درجة: ${store!.bestScore(lesson.title)}% • المحاولات: ${store.attemptCount(lesson.title)} • آخر درجة: ${store.latestScore(lesson.title) ?? 0}%${store.recentScoreChange(lesson.title) == null ? '' : ' • التغير: ${store.recentScoreChange(lesson.title)! > 0 ? '+' : ''}${store.recentScoreChange(lesson.title)} نقطة'}${store.needsReview(lesson.title) ? ' • يحتاج مراجعة' : ''}'
                     : 'شرح مبسّط • أمثلة • سؤالان تدريبيان'),
                   trailing: const Icon(Icons.chevron_left_rounded),
                   onTap: () async {
