@@ -153,7 +153,7 @@ class _GrammarLessonsScreenState extends State<GrammarLessonsScreen> {
                     ? Icons.check_circle : Icons.menu_book_rounded),
                   title: Text(lesson.title),
                   subtitle: Text(store?.isCompleted(lesson.title) == true
-                    ? 'مكتمل • يمكنك المراجعة'
+                    ? 'مكتمل • أفضل درجة: ${store!.bestScore(lesson.title)}% • المحاولات: ${store.attemptCount(lesson.title)}'
                     : 'شرح مبسّط • أمثلة • سؤالان تدريبيان'),
                   trailing: const Icon(Icons.chevron_left_rounded),
                   onTap: () async {
@@ -195,6 +195,8 @@ class _GrammarDetailScreenState extends State<GrammarDetailScreen> {
         await widget.onComplete!(widget.topic.title);
       } else {
         final store = await GrammarProgressStore.open();
+        await store.recordAttempt(widget.topic.title,
+          attempts == 1 && bonusAttempts == 1 ? 100 : 50);
         await store.markCompleted(widget.topic.title);
       }
     } catch (_) {
@@ -271,7 +273,7 @@ class _GrammarDetailScreenState extends State<GrammarDetailScreen> {
               ),
             if (bonusSelection != null)
               Text(bonusSelection == topic.secondCorrectIndex
-                ? 'ممتاز! أكملت السؤالين بنجاح.'
+                ? 'أكملت السؤالين بنجاح. يمكنك إعادة التدريب لتحسين درجتك.'
                 : 'ليست الإجابة الصحيحة. راجع المثال الأول وحاول مجددًا.'),
             if (bonusSelection == topic.secondCorrectIndex)
               Text('نتيجة التدريب: 2/2',
