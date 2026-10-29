@@ -22,12 +22,14 @@ void main() {
   });
   test('new grammar lessons have separate second questions and valid answer keys', () {
     final topics = grammarTopics.where((topic) => topic.secondQuestion != null).toList();
-    expect(topics.length, 3);
+    expect(topics.length, grammarTopics.length);
     for (final topic in topics) {
       expect(topic.secondQuestion, isNotEmpty);
       expect(topic.secondOptions, hasLength(3));
       expect(topic.secondCorrectIndex, inInclusiveRange(0, 2));
       expect(topic.secondQuestion, isNot(topic.question));
+      expect(topic.secondOptions!.toSet().length, 3);
+      expect(topic.secondOptions!.every((option) => option.trim().isNotEmpty), isTrue);
     }
   });
 }
