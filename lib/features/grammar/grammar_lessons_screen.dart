@@ -111,6 +111,7 @@ class GrammarLessonsScreen extends StatefulWidget {
 
 class _GrammarLessonsScreenState extends State<GrammarLessonsScreen> {
   Future<GrammarProgressStore>? _store;
+  bool _reviewOnly = false;
 
   @override
   void initState() {
@@ -143,17 +144,25 @@ class _GrammarLessonsScreenState extends State<GrammarLessonsScreen> {
               LinearProgressIndicator(
                 value: store.completedCount / grammarTopics.length,
                 semanticsLabel: 'تقدم دروس القواعد'),
+              const SizedBox(height: 12),
+              Text('درجات كاملة: ${store.perfectScoreCount(grammarTopics.map((t) => t.title))} • تحتاج مراجعة: ${store.reviewNeededCount(grammarTopics.map((t) => t.title))}'),
+              SwitchListTile(
+                title: const Text('عرض الدروس التي تحتاج مراجعة فقط'),
+                value: _reviewOnly,
+                onChanged: (value) => setState(() => _reviewOnly = value),
+              ),
               const SizedBox(height: 16),
             ] else if (snapshot.hasError)
               const Text('يمكنك متابعة الدروس؛ تعذّر قراءة التقدم المحفوظ.'),
             for (final lesson in grammarTopics)
+              if (!_reviewOnly || store == null || store.needsReview(lesson.title))
               Card(
                 child: ListTile(
                   leading: Icon(store?.isCompleted(lesson.title) == true
                     ? Icons.check_circle : Icons.menu_book_rounded),
                   title: Text(lesson.title),
                   subtitle: Text(store?.isCompleted(lesson.title) == true
-                    ? 'مكتمل • أفضل درجة: ${store!.bestScore(lesson.title)}% • المحاولات: ${store.attemptCount(lesson.title)}'
+                    ? 'مكتمل • أفضل درجة: ${store!.bestScore(lesson.title)}% • المحاولات: ${store.attemptCount(lesson.title)}${store.needsReview(lesson.title) ? ' • يحتاج مراجعة' : ''}'
                     : 'شرح مبسّط • أمثلة • سؤالان تدريبيان'),
                   trailing: const Icon(Icons.chevron_left_rounded),
                   onTap: () async {
