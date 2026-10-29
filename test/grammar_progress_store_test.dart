@@ -91,4 +91,31 @@ void main() {
     }
   });
 
+  test('review dashboard reports mastered and weak completed topics', () async {
+    final directory = await Directory.systemTemp.createTemp('grammar_review_');
+    Hive.init(directory.path);
+    try {
+      final box = await Hive.openBox('test_grammar_review');
+      final store = GrammarProgressStore(box);
+      const topics = ['One', 'Two', 'Three'];
+      await store.markCompleted('One');
+      await store.recordAttempt('One', 50);
+      await store.markCompleted('Two');
+      await store.recordAttempt('Two', 100);
+      expect(store.needsReview('One'), isTrue);
+      expect(store.needsReview('Two'), isFalse);
+      expect(store.needsReview('Three'), isFalse);
+      expect(store.reviewNeededCount(topics), 1);
+      expect(store.perfectScoreCount(topics), 1);
+      await store.recordAttempt('One', 100);
+      expect(store.reviewNeededCount(topics), 0);
+      expect(store.perfectScoreCount(topics), 2);
+      await store.resetTopic('Two');
+      expect(store.perfectScoreCount(topics), 1);
+      await box.close();
+    } finally {
+      await directory.delete(recursive: true);
+    }
+  });
+
 }
