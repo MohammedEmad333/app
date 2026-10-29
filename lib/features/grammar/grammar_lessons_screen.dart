@@ -100,6 +100,12 @@ const grammarTopics = <GrammarTopic>[
       secondQuestion: 'We ___ two pencils.', secondOptions: ['have', 'has', 'having'], secondCorrectIndex: 0),
 ];
 
+/// A perfect score requires answering both questions on the first try.
+class GrammarAssessmentScore {
+  static int fromAttempts(int first, int second) =>
+      first == 1 && second == 1 ? 100 : 50;
+}
+
 class GrammarLessonsScreen extends StatefulWidget {
   const GrammarLessonsScreen({super.key, this.storeLoader});
 
@@ -205,7 +211,7 @@ class _GrammarDetailScreenState extends State<GrammarDetailScreen> {
       } else {
         final store = await GrammarProgressStore.open();
         await store.recordAttempt(widget.topic.title,
-          attempts == 1 && bonusAttempts == 1 ? 100 : 50);
+          GrammarAssessmentScore.fromAttempts(attempts, bonusAttempts));
         await store.markCompleted(widget.topic.title);
       }
     } catch (_) {
@@ -249,9 +255,11 @@ class _GrammarDetailScreenState extends State<GrammarDetailScreen> {
               title: Text(topic.options[i]),
               value: i,
               groupValue: selected,
-              onChanged: (value) => setState(() {
+              onChanged: _completionSaved ? null : (value) => setState(() {
                 selected = value;
                 attempts++;
+                // Changing the first answer invalidates a previous second choice.
+                bonusSelection = null;
               }),
             ),
           if (selected == topic.correctIndex) ...[
@@ -274,7 +282,7 @@ class _GrammarDetailScreenState extends State<GrammarDetailScreen> {
                 ),
                 value: i,
                 groupValue: bonusSelection,
-                onChanged: (value) => setState(() {
+                onChanged: _completionSaved ? null : (value) => setState(() {
                   bonusSelection = value;
                   bonusAttempts++;
                   if (value == topic.secondCorrectIndex) _saveCompletion();
@@ -304,7 +312,13 @@ class _GrammarDetailScreenState extends State<GrammarDetailScreen> {
             ),
             const SizedBox(height: 8),
             OutlinedButton.icon(
-              onPressed: () => setState(() => selected = null),
+              onPressed: () => setState(() {
+                selected = null;
+                bonusSelection = null;
+                attempts = 0;
+                bonusAttempts = 0;
+                _completionSaved = false;
+              }),
               icon: const Icon(Icons.refresh_rounded),
               label: Text(selected == topic.correctIndex
                   ? 'أعد التدريب' : 'جرّب من جديد'),

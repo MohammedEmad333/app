@@ -32,4 +32,32 @@ void main() {
       expect(topic.secondOptions!.every((option) => option.trim().isNotEmpty), isTrue);
     }
   });
+  test('grammar score reflects first-try accuracy', () {
+    expect(GrammarAssessmentScore.fromAttempts(1, 1), 100);
+    expect(GrammarAssessmentScore.fromAttempts(2, 1), 50);
+    expect(GrammarAssessmentScore.fromAttempts(1, 2), 50);
+    expect(GrammarAssessmentScore.fromAttempts(3, 4), 50);
+  });
+
+  testWidgets('second answer cannot record completion twice without a new session', (tester) async {
+    var completions = 0;
+    await tester.pumpWidget(MaterialApp(
+      home: GrammarDetailScreen(
+        topic: grammarTopics[0],
+        onComplete: (_) async { completions++; },
+      ),
+    ));
+    await tester.tap(find.text('She').last);
+    await tester.pumpAndSettle();
+    await tester.scrollUntilVisible(find.text('السؤال الثاني'), 160);
+    final answer = find.byType(RadioListTile<int>).at(3);
+    await tester.ensureVisible(answer);
+    await tester.drag(find.byType(ListView), const Offset(0, -220));
+    await tester.pumpAndSettle();
+    await tester.tap(answer);
+    await tester.pumpAndSettle();
+    expect(completions, 1);
+    expect(tester.widget<RadioListTile<int>>(answer).onChanged, isNull);
+  });
+
 }
