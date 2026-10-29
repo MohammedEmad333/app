@@ -160,8 +160,10 @@ class _GrammarLessonsScreenState extends State<GrammarLessonsScreen> {
               const SizedBox(height: 16),
             ] else if (snapshot.hasError)
               const Text('يمكنك متابعة الدروس؛ تعذّر قراءة التقدم المحفوظ.'),
-            for (final lesson in grammarTopics)
-              if (!_reviewOnly || store == null || store.needsReview(lesson.title))
+            for (final lesson in (_reviewOnly && store != null
+                ? [for (final title in store.prioritizedReviewTopics(grammarTopics.map((t) => t.title)))
+                    grammarTopics.firstWhere((t) => t.title == title)]
+                : grammarTopics))
               Card(
                 child: ListTile(
                   leading: Icon(store?.isCompleted(lesson.title) == true
