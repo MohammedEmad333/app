@@ -9,6 +9,7 @@ void main() {
     final units = await ContentRepository.instance.loadUnits();
     final additions = units.where((u) => u.id == 'unit_25' || u.id == 'unit_26').toList();
     expect(additions.length, 2);
+    expect(additions.expand((unit) => unit.lessons).length, 6);
     final all = units.expand((u) => u.lessons).expand((l) => l.questions).toList();
     expect(all.map((q) => q.id).toSet().length, all.length);
     for (final unit in additions) {
