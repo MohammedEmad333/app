@@ -14,7 +14,7 @@ class GrammarProgressStore {
       box.get(topicTitle, defaultValue: false) == true;
 
   int get completedCount =>
-      box.keys.where((key) => !key.toString().startsWith('score:') && !key.toString().startsWith('attempts:') && box.get(key) == true).length;
+      box.keys.where((key) => !key.toString().startsWith('score:') && !key.toString().startsWith('attempts:') && !key.toString().startsWith('history:') && box.get(key) == true).length;
 
   int bestScore(String topicTitle) {
     final value = box.get('score:$topicTitle');
@@ -41,6 +41,18 @@ class GrammarProgressStore {
   int perfectScoreCount(Iterable<String> topicTitles) =>
       topicTitles.where((title) => isCompleted(title) && bestScore(title) == 100).length;
 
+  /// The latest ten completed practice scores, oldest first.
+  List<int> recentScores(String topicTitle) {
+    final value = box.get('history:$topicTitle');
+    if (value is! List) return <int>[];
+    return value.whereType<int>().where((n) => n >= 0 && n <= 100).toList();
+  }
+
+  int? latestScore(String topicTitle) {
+    final scores = recentScores(topicTitle);
+    return scores.isEmpty ? null : scores.last;
+  }
+
   int attemptCount(String topicTitle) {
     final value = box.get('attempts:$topicTitle');
     return value is int && value >= 0 ? value : 0;
@@ -53,6 +65,9 @@ class GrammarProgressStore {
     }
     await box.put('attempts:$topicTitle', attemptCount(topicTitle) + 1);
     await saveBestScore(topicTitle, score);
+    final history = recentScores(topicTitle)..add(score);
+    await box.put('history:$topicTitle', history.length <= 10
+        ? history : history.sublist(history.length - 10));
   }
 
   Future<void> markCompleted(String topicTitle) async {
@@ -64,5 +79,6 @@ class GrammarProgressStore {
     await box.delete(topicTitle);
     await box.delete('score:$topicTitle');
     await box.delete('attempts:$topicTitle');
+    await box.delete('history:$topicTitle');
   }
 }
