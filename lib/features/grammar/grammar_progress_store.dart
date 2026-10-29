@@ -67,6 +67,12 @@ class GrammarProgressStore {
     return scores.isEmpty ? null : scores.last;
   }
 
+  /// Change between two most recent scores, or null if unavailable.
+  int? recentScoreChange(String topicTitle) {
+    final scores = recentScores(topicTitle);
+    return scores.length < 2 ? null : scores.last - scores[scores.length - 2];
+  }
+
   int attemptCount(String topicTitle) {
     final value = box.get('attempts:$topicTitle');
     return value is int && value >= 0 ? value : 0;
