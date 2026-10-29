@@ -41,6 +41,20 @@ class GrammarProgressStore {
   int perfectScoreCount(Iterable<String> topicTitles) =>
       topicTitles.where((title) => isCompleted(title) && bestScore(title) == 100).length;
 
+  /// Prioritizes completed topics with the weakest recent performance.
+  List<String> prioritizedReviewTopics(Iterable<String> titles) {
+    final pending = titles.where(needsReview).toList();
+    pending.sort((a, b) {
+      final latestA = latestScore(a) ?? bestScore(a);
+      final latestB = latestScore(b) ?? bestScore(b);
+      final byScore = latestA.compareTo(latestB);
+      if (byScore != 0) return byScore;
+      final byBest = bestScore(a).compareTo(bestScore(b));
+      return byBest != 0 ? byBest : a.compareTo(b);
+    });
+    return pending;
+  }
+
   /// The latest ten completed practice scores, oldest first.
   List<int> recentScores(String topicTitle) {
     final value = box.get('history:$topicTitle');
