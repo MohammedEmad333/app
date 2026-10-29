@@ -32,4 +32,11 @@ void main() {
       expect(topic.secondOptions!.every((option) => option.trim().isNotEmpty), isTrue);
     }
   });
+  test('grammar score reflects first-try accuracy', () {
+    expect(GrammarAssessmentScore.fromAttempts(1, 1), 100);
+    expect(GrammarAssessmentScore.fromAttempts(2, 1), 50);
+    expect(GrammarAssessmentScore.fromAttempts(1, 2), 50);
+    expect(GrammarAssessmentScore.fromAttempts(3, 4), 50);
+  });
+
 }
