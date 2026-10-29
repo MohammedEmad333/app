@@ -4,7 +4,8 @@ import 'grammar_progress_store.dart';
 /// Grammar lessons are independent of vocabulary units and lesson XP.
 class GrammarTopic {
   const GrammarTopic(this.title, this.rule, this.examples, this.question,
-      this.options, this.correctIndex, this.reason);
+      this.options, this.correctIndex, this.reason,
+      {this.secondQuestion, this.secondOptions, this.secondCorrectIndex = 0});
   final String title;
   final String rule;
   final List<String> examples;
@@ -12,6 +13,9 @@ class GrammarTopic {
   final List<String> options;
   final int correctIndex;
   final String reason;
+  final String? secondQuestion;
+  final List<String>? secondOptions;
+  final int secondCorrectIndex;
 }
 
 const grammarTopics = <GrammarTopic>[
@@ -62,13 +66,19 @@ const grammarTopics = <GrammarTopic>[
       'She can ___ English.', ['speaks', 'speak', 'speaking'], 1, 'بعد can نستخدم الفعل الأساسي speak.'),
   GrammarTopic('المضارع التام Present Perfect', 'نستخدم have / has مع التصريف الثالث للفعل للحديث عن تجربة أو حدث له صلة بالحاضر. نستخدم has مع he / she / it.',
       ['I have finished my homework.', 'She has visited Jerusalem.', 'They have eaten lunch.'],
-      'She ___ finished her work.', ['have', 'has', 'is'], 1, 'نستخدم has مع She ثم التصريف الثالث finished.'),
+      'She ___ finished her work.', ['have', 'has', 'is'], 1, 'نستخدم has مع She ثم التصريف الثالث finished.',
+      secondQuestion: 'They ___ eaten breakfast.',
+      secondOptions: ['have', 'has', 'are'], secondCorrectIndex: 0),
   GrammarTopic('الماضي المستمر Past Continuous', 'نستخدم was / were مع الفعل المنتهي بـ ing لوصف حدث كان مستمرًا في وقت محدد في الماضي. نستخدم was مع I / he / she / it وwere مع you / we / they.',
       ['I was reading at eight.', 'They were playing outside.', 'She was sleeping.'],
-      'They ___ studying yesterday evening.', ['was', 'were', 'are'], 1, 'نستخدم were مع They لوصف فعل مستمر في الماضي.'),
+      'They ___ studying yesterday evening.', ['was', 'were', 'are'], 1, 'نستخدم were مع They لوصف فعل مستمر في الماضي.',
+      secondQuestion: 'He ___ sleeping at nine last night.',
+      secondOptions: ['were', 'was', 'is'], secondCorrectIndex: 1),
   GrammarTopic('حروف الجر للوقت in / on / at', 'نستخدم in مع الأشهر والسنوات وأجزاء اليوم، وon مع الأيام والتواريخ، وat مع أوقات الساعة المحددة.',
       ['in October', 'on Monday', 'at seven o’clock'],
-      'My lesson starts ___ seven.', ['in', 'on', 'at'], 2, 'نستخدم at قبل الوقت المحدد.'),
+      'My lesson starts ___ seven.', ['in', 'on', 'at'], 2, 'نستخدم at قبل الوقت المحدد.',
+      secondQuestion: 'We have English class ___ Monday.',
+      secondOptions: ['in', 'at', 'on'], secondCorrectIndex: 2),
   GrammarTopic('have / has', 'نستخدم have مع I / you / we / they، وhas مع he / she / it للتعبير عن الملكية.',
       ['I have a pencil.', 'He has a bike.', 'They have books.'],
       'My sister ___ a cat.', ['have', 'has', 'having'], 1, 'نستخدم has مع My sister لأنها مفرد غائب.'),
@@ -221,27 +231,33 @@ class _GrammarDetailScreenState extends State<GrammarDetailScreen> {
             const Divider(height: 36),
             Text('السؤال الثاني', style: Theme.of(context).textTheme.titleLarge),
             const SizedBox(height: 8),
-            const Text('اختر المثال الذي ورد في شرح القاعدة:'),
+            Text(topic.secondQuestion == null
+              ? 'اختر المثال الذي ورد في شرح القاعدة:'
+              : 'اختر الإجابة الصحيحة للسؤال الثاني:'),
+            if (topic.secondQuestion != null)
+              Directionality(textDirection: TextDirection.ltr,
+                child: Text(topic.secondQuestion!, textAlign: TextAlign.left)),
             for (var i = 0; i < 3; i++)
               RadioListTile<int>(
                 title: Directionality(
                   textDirection: TextDirection.ltr,
-                  child: Text(i == 0 ? topic.examples.first :
-                    i == 1 ? topic.question : topic.options.last),
+                  child: Text(topic.secondOptions?[i] ?? (i == 0
+                    ? topic.examples.first
+                    : i == 1 ? topic.question : topic.options.last)),
                 ),
                 value: i,
                 groupValue: bonusSelection,
                 onChanged: (value) => setState(() {
                   bonusSelection = value;
                   bonusAttempts++;
-                  if (value == 0) _saveCompletion();
+                  if (value == topic.secondCorrectIndex) _saveCompletion();
                 }),
               ),
             if (bonusSelection != null)
-              Text(bonusSelection == 0
+              Text(bonusSelection == topic.secondCorrectIndex
                 ? 'ممتاز! أكملت السؤالين بنجاح.'
                 : 'ليست الإجابة الصحيحة. راجع المثال الأول وحاول مجددًا.'),
-            if (bonusSelection == 0)
+            if (bonusSelection == topic.secondCorrectIndex)
               Text('نتيجة التدريب: 2/2',
                 style: Theme.of(context).textTheme.titleMedium),
           ],
