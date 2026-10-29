@@ -60,6 +60,15 @@ const grammarTopics = <GrammarTopic>[
   GrammarTopic('can / cannot', 'نستخدم can للقدرة، وcannot أو can’t لعدم القدرة، ثم الفعل الأساسي.',
       ['I can swim.', 'A bird can fly.', 'A fish cannot walk.'],
       'She can ___ English.', ['speaks', 'speak', 'speaking'], 1, 'بعد can نستخدم الفعل الأساسي speak.'),
+  GrammarTopic('المضارع التام Present Perfect', 'نستخدم have / has مع التصريف الثالث للفعل للحديث عن تجربة أو حدث له صلة بالحاضر. نستخدم has مع he / she / it.',
+      ['I have finished my homework.', 'She has visited Jerusalem.', 'They have eaten lunch.'],
+      'She ___ finished her work.', ['have', 'has', 'is'], 1, 'نستخدم has مع She ثم التصريف الثالث finished.'),
+  GrammarTopic('الماضي المستمر Past Continuous', 'نستخدم was / were مع الفعل المنتهي بـ ing لوصف حدث كان مستمرًا في وقت محدد في الماضي. نستخدم was مع I / he / she / it وwere مع you / we / they.',
+      ['I was reading at eight.', 'They were playing outside.', 'She was sleeping.'],
+      'They ___ studying yesterday evening.', ['was', 'were', 'are'], 1, 'نستخدم were مع They لوصف فعل مستمر في الماضي.'),
+  GrammarTopic('حروف الجر للوقت in / on / at', 'نستخدم in مع الأشهر والسنوات وأجزاء اليوم، وon مع الأيام والتواريخ، وat مع أوقات الساعة المحددة.',
+      ['in October', 'on Monday', 'at seven o’clock'],
+      'My lesson starts ___ seven.', ['in', 'on', 'at'], 2, 'نستخدم at قبل الوقت المحدد.'),
   GrammarTopic('have / has', 'نستخدم have مع I / you / we / they، وhas مع he / she / it للتعبير عن الملكية.',
       ['I have a pencil.', 'He has a bike.', 'They have books.'],
       'My sister ___ a cat.', ['have', 'has', 'having'], 1, 'نستخدم has مع My sister لأنها مفرد غائب.'),
@@ -212,7 +221,7 @@ class _GrammarDetailScreenState extends State<GrammarDetailScreen> {
             const Divider(height: 36),
             Text('السؤال الثاني', style: Theme.of(context).textTheme.titleLarge),
             const SizedBox(height: 8),
-            const Text('اختر الجملة الصحيحة:'),
+            const Text('اختر المثال الذي ورد في شرح القاعدة:'),
             for (var i = 0; i < 3; i++)
               RadioListTile<int>(
                 title: Directionality(
