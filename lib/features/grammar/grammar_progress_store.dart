@@ -31,6 +31,16 @@ class GrammarProgressStore {
     }
   }
 
+  /// A completed topic needs revision until its best score reaches 100%.
+  bool needsReview(String topicTitle) =>
+      isCompleted(topicTitle) && bestScore(topicTitle) < 100;
+
+  int reviewNeededCount(Iterable<String> topicTitles) =>
+      topicTitles.where(needsReview).length;
+
+  int perfectScoreCount(Iterable<String> topicTitles) =>
+      topicTitles.where((title) => isCompleted(title) && bestScore(title) == 100).length;
+
   int attemptCount(String topicTitle) {
     final value = box.get('attempts:$topicTitle');
     return value is int && value >= 0 ? value : 0;
