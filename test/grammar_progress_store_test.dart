@@ -144,4 +144,27 @@ void main() {
     }
   });
 
+  test('grammar review prioritizes weakest latest performance', () async {
+    final directory = await Directory.systemTemp.createTemp('grammar_priority_');
+    Hive.init(directory.path);
+    try {
+      final box = await Hive.openBox('test_grammar_priority');
+      final store = GrammarProgressStore(box);
+      for (final title in ['Alpha', 'Beta', 'Gamma']) {
+        await store.markCompleted(title);
+      }
+      await store.recordAttempt('Alpha', 50);
+      await store.recordAttempt('Beta', 75);
+      await store.recordAttempt('Gamma', 100);
+      expect(store.prioritizedReviewTopics(['Beta', 'Gamma', 'Alpha']),
+          ['Alpha', 'Beta']);
+      await store.recordAttempt('Alpha', 100);
+      expect(store.prioritizedReviewTopics(['Beta', 'Gamma', 'Alpha']),
+          ['Beta']);
+      await box.close();
+    } finally {
+      await directory.delete(recursive: true);
+    }
+  });
+
 }
