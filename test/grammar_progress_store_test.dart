@@ -118,4 +118,30 @@ void main() {
     }
   });
 
+  test('recent grammar scores are bounded, ordered, and resettable', () async {
+    final directory = await Directory.systemTemp.createTemp('grammar_history_');
+    Hive.init(directory.path);
+    try {
+      final box = await Hive.openBox('test_grammar_history');
+      final store = GrammarProgressStore(box);
+      expect(store.latestScore('Grammar'), isNull);
+      for (var i = 0; i < 12; i++) {
+        await store.recordAttempt('Grammar', i.isEven ? 50 : 100);
+      }
+      final second = GrammarProgressStore(box);
+      expect(second.recentScores('Grammar'), hasLength(10));
+      expect(second.recentScores('Grammar').first, 50);
+      expect(second.latestScore('Grammar'), 100);
+      expect(second.attemptCount('Grammar'), 12);
+      expect(second.bestScore('Grammar'), 100);
+      expect(second.completedCount, 0);
+      await second.resetTopic('Grammar');
+      expect(second.recentScores('Grammar'), isEmpty);
+      expect(second.latestScore('Grammar'), isNull);
+      await box.close();
+    } finally {
+      await directory.delete(recursive: true);
+    }
+  });
+
 }
