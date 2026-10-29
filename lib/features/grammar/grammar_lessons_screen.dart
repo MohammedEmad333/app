@@ -157,6 +157,26 @@ class _GrammarLessonsScreenState extends State<GrammarLessonsScreen> {
                 value: _reviewOnly,
                 onChanged: (value) => setState(() => _reviewOnly = value),
               ),
+              if (store.reviewNeededCount(grammarTopics.map((t) => t.title)) > 0)
+                FilledButton.icon(
+                  icon: const Icon(Icons.school_rounded),
+                  label: const Text('ابدأ مراجعة أضعف قاعدة'),
+                  onPressed: () async {
+                    final title = store.prioritizedReviewTopics(
+                      grammarTopics.map((t) => t.title)).first;
+                    final topic = grammarTopics.firstWhere((t) => t.title == title);
+                    await Navigator.of(context).push(MaterialPageRoute(
+                      builder: (_) => GrammarDetailScreen(topic: topic),
+                    ));
+                    if (mounted) await _refresh();
+                  },
+                ),
+              if (_reviewOnly && store.reviewNeededCount(
+                  grammarTopics.map((t) => t.title)) == 0)
+                const Padding(
+                  padding: EdgeInsets.all(12),
+                  child: Text('لا توجد دروس مكتملة تحتاج إلى مراجعة حاليًا.'),
+                ),
               const SizedBox(height: 16),
             ] else if (snapshot.hasError)
               const Text('يمكنك متابعة الدروس؛ تعذّر قراءة التقدم المحفوظ.'),
