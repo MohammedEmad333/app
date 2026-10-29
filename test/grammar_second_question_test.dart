@@ -10,6 +10,6 @@ void main() {
     await tester.pumpAndSettle();
     await tester.scrollUntilVisible(find.text('السؤال الثاني'), 200);
     expect(find.text('السؤال الثاني'), findsOneWidget);
-    expect(find.text('اختر المثال الذي ورد في شرح القاعدة:'), findsOneWidget);
+    expect(find.text('اختر الإجابة الصحيحة للسؤال الثاني:'), findsOneWidget);
   });
 }

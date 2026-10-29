@@ -4,7 +4,8 @@ import 'grammar_progress_store.dart';
 /// Grammar lessons are independent of vocabulary units and lesson XP.
 class GrammarTopic {
   const GrammarTopic(this.title, this.rule, this.examples, this.question,
-      this.options, this.correctIndex, this.reason);
+      this.options, this.correctIndex, this.reason,
+      {this.secondQuestion, this.secondOptions, this.secondCorrectIndex = 0});
   final String title;
   final String rule;
   final List<String> examples;
@@ -12,66 +13,91 @@ class GrammarTopic {
   final List<String> options;
   final int correctIndex;
   final String reason;
+  final String? secondQuestion;
+  final List<String>? secondOptions;
+  final int secondCorrectIndex;
 }
 
 const grammarTopics = <GrammarTopic>[
   GrammarTopic('الضمائر الشخصية', 'نستخدم I للمتكلم، وYou للمخاطب، وHe للولد، وShe للبنت، وIt للشيء أو الحيوان، وWe للجمع الذي يشملنا، وThey للآخرين.',
       ['I am a student.', 'She is happy.', 'They are friends.'],
-      '___ is my mother.', ['He', 'She', 'They'], 1, 'نستخدم She مع الأم.'),
+      '___ is my mother.', ['He', 'She', 'They'], 1, 'نستخدم She مع الأم.',
+      secondQuestion: '___ are my friends.', secondOptions: ['They', 'He', 'It'], secondCorrectIndex: 0),
   GrammarTopic('فعل الكينونة am / is / are', 'نستخدم am مع I، وis مع he / she / it، وare مع you / we / they.',
       ['I am ready.', 'He is kind.', 'We are happy.'],
-      'They ___ students.', ['am', 'is', 'are'], 2, 'نستخدم are مع They.'),
+      'They ___ students.', ['am', 'is', 'are'], 2, 'نستخدم are مع They.',
+      secondQuestion: 'I ___ happy.', secondOptions: ['is', 'am', 'are'], secondCorrectIndex: 1),
   GrammarTopic('a / an', 'نستخدم a قبل الصوت الساكن، وan قبل الصوت المتحرك. المهم هو صوت بداية الكلمة.',
       ['a book', 'an apple', 'an orange'],
-      'I have ___ apple.', ['a', 'an', 'are'], 1, 'كلمة apple تبدأ بصوت متحرك.'),
+      'I have ___ apple.', ['a', 'an', 'are'], 1, 'كلمة apple تبدأ بصوت متحرك.',
+      secondQuestion: 'She has ___ umbrella.', secondOptions: ['a', 'an', 'the'], secondCorrectIndex: 1),
   GrammarTopic('المفرد والجمع', 'غالبًا نضيف s للاسم عند الحديث عن أكثر من واحد، لكن بعض الكلمات لها جمع غير منتظم.',
       ['one cat / two cats', 'one book / three books', 'one child / two children'],
-      'I have two ___.', ['cat', 'cats', 'a cat'], 1, 'بعد two نستخدم الاسم بصيغة الجمع.'),
+      'I have two ___.', ['cat', 'cats', 'a cat'], 1, 'بعد two نستخدم الاسم بصيغة الجمع.',
+      secondQuestion: 'There are three ___.', secondOptions: ['books', 'book', 'a book'], secondCorrectIndex: 0),
   GrammarTopic('المضارع البسيط', 'نستخدم المضارع البسيط للعادات والحقائق. نضيف s غالبًا مع he / she / it في الإثبات.',
       ['I play every day.', 'She plays football.', 'He likes milk.'],
-      'She ___ to school.', ['go', 'goes', 'going'], 1, 'في الإثبات نستخدم goes مع She.'),
+      'She ___ to school.', ['go', 'goes', 'going'], 1, 'في الإثبات نستخدم goes مع She.',
+      secondQuestion: 'He ___ milk every morning.', secondOptions: ['drink', 'drinks', 'drinking'], secondCorrectIndex: 1),
   GrammarTopic('المضارع المستمر', 'نستخدم am / is / are ثم الفعل مع ing لوصف شيء يحدث الآن.',
       ['I am reading.', 'He is running.', 'They are playing.'],
-      'We ___ studying now.', ['am', 'is', 'are'], 2, 'نستخدم are مع We.'),
+      'We ___ studying now.', ['am', 'is', 'are'], 2, 'نستخدم are مع We.',
+      secondQuestion: 'He ___ eating now.', secondOptions: ['am', 'are', 'is'], secondCorrectIndex: 2),
   GrammarTopic('النفي باستخدام do / does', 'نستخدم do not مع I / you / we / they، وdoes not مع he / she / it، ثم الفعل الأساسي.',
       ['I do not like tea.', 'She does not play tennis.'],
-      'He ___ like coffee.', ['do not', 'does not', 'is not'], 1, 'نستخدم does not مع He.'),
+      'He ___ like coffee.', ['do not', 'does not', 'is not'], 1, 'نستخدم does not مع He.',
+      secondQuestion: 'They ___ play chess.', secondOptions: ['does not', 'do not', 'is not'], secondCorrectIndex: 1),
   GrammarTopic('السؤال باستخدام Do / Does', 'نبدأ السؤال بـ Do مع I / you / we / they، وبـ Does مع he / she / it ثم الفعل الأساسي.',
       ['Do you like apples?', 'Does she read books?'],
-      '___ he play football?', ['Do', 'Does', 'Is'], 1, 'يبدأ السؤال بـ Does مع He.'),
+      '___ he play football?', ['Do', 'Does', 'Is'], 1, 'يبدأ السؤال بـ Does مع He.',
+      secondQuestion: '___ they speak English?', secondOptions: ['Does', 'Are', 'Do'], secondCorrectIndex: 2),
   GrammarTopic('الماضي البسيط', 'نستخدم الماضي البسيط لأحداث انتهت. نضيف ed للأفعال المنتظمة، بينما تتغير بعض الأفعال غير المنتظمة مثل go إلى went.',
       ['I played yesterday.', 'She visited her aunt.', 'He went home.'],
-      'Yesterday, I ___ football.', ['play', 'played', 'playing'], 1, 'yesterday تدل على الماضي، لذلك نستخدم played.'),
+      'Yesterday, I ___ football.', ['play', 'played', 'playing'], 1, 'yesterday تدل على الماضي، لذلك نستخدم played.',
+      secondQuestion: 'Last week, he ___ his grandmother.', secondOptions: ['visited', 'visit', 'visiting'], secondCorrectIndex: 0),
   GrammarTopic('المستقبل باستخدام will', 'نستخدم will ثم الفعل الأساسي للتحدث عن المستقبل أو اتخاذ قرار.',
       ['I will study tomorrow.', 'She will help you.', 'We will visit grandma.'],
-      'Tomorrow, we ___ play.', ['will', 'are', 'did'], 0, 'بعد will يأتي الفعل الأساسي play.'),
+      'Tomorrow, we ___ play.', ['will', 'are', 'did'], 0, 'بعد will يأتي الفعل الأساسي play.',
+      secondQuestion: 'She will ___ tomorrow.', secondOptions: ['comes', 'come', 'coming'], secondCorrectIndex: 1),
   GrammarTopic('الصفات', 'الصفة تصف الشخص أو الشيء. غالبًا تأتي قبل الاسم أو بعد فعل الكينونة.',
       ['a small cat', 'The sky is blue.', 'She is kind.'],
-      'This is a ___ bag.', ['happy', 'red', 'quickly'], 1, 'red صفة مناسبة لوصف لون الحقيبة.'),
+      'This is a ___ bag.', ['happy', 'red', 'quickly'], 1, 'red صفة مناسبة لوصف لون الحقيبة.',
+      secondQuestion: 'The water is ___.', secondOptions: ['cold', 'quickly', 'run'], secondCorrectIndex: 0),
   GrammarTopic('المقارنة باستخدام -er / more', 'نقارن بين شيئين باستعمال الصفة المقارنة وthan. نضيف er غالبًا للصفات القصيرة ونستخدم more مع كثير من الصفات الطويلة.',
       ['Ali is taller than Omar.', 'This book is more interesting than that one.'],
-      'A giraffe is ___ than a cat.', ['tall', 'taller', 'tallest'], 1, 'نستخدم taller than عند المقارنة بين شيئين.'),
+      'A giraffe is ___ than a cat.', ['tall', 'taller', 'tallest'], 1, 'نستخدم taller than عند المقارنة بين شيئين.',
+      secondQuestion: 'This road is ___ than that one.', secondOptions: ['longest', 'longer', 'long'], secondCorrectIndex: 1),
   GrammarTopic('التفضيل باستخدام -est / most', 'نستخدم the مع صيغة التفضيل عند مقارنة شخص أو شيء بمجموعة. غالبًا نضيف est أو نستخدم most.',
       ['This is the tallest tree.', 'She is the most careful student.'],
-      'He is the ___ boy in the class.', ['tall', 'taller', 'tallest'], 2, 'نستخدم the tallest للمقارنة مع كل أفراد المجموعة.'),
+      'He is the ___ boy in the class.', ['tall', 'taller', 'tallest'], 2, 'نستخدم the tallest للمقارنة مع كل أفراد المجموعة.',
+      secondQuestion: 'This is the ___ room in the house.', secondOptions: ['big', 'bigger', 'biggest'], secondCorrectIndex: 2),
   GrammarTopic('حروف الجر للمكان', 'تحدد in وon وunder وnext to مكان الشيء بالنسبة لغيره.',
       ['The toy is in the box.', 'The book is on the table.', 'The cat is under the chair.'],
-      'The book is ___ the table.', ['on', 'happy', 'run'], 0, 'on تعني على سطح الشيء.'),
+      'The book is ___ the table.', ['on', 'happy', 'run'], 0, 'on تعني على سطح الشيء.',
+      secondQuestion: 'The ball is ___ the box, not outside it.', secondOptions: ['in', 'above', 'next'], secondCorrectIndex: 0),
   GrammarTopic('can / cannot', 'نستخدم can للقدرة، وcannot أو can’t لعدم القدرة، ثم الفعل الأساسي.',
       ['I can swim.', 'A bird can fly.', 'A fish cannot walk.'],
-      'She can ___ English.', ['speaks', 'speak', 'speaking'], 1, 'بعد can نستخدم الفعل الأساسي speak.'),
+      'She can ___ English.', ['speaks', 'speak', 'speaking'], 1, 'بعد can نستخدم الفعل الأساسي speak.',
+      secondQuestion: 'They can ___ fast.', secondOptions: ['runs', 'running', 'run'], secondCorrectIndex: 2),
   GrammarTopic('المضارع التام Present Perfect', 'نستخدم have / has مع التصريف الثالث للفعل للحديث عن تجربة أو حدث له صلة بالحاضر. نستخدم has مع he / she / it.',
       ['I have finished my homework.', 'She has visited Jerusalem.', 'They have eaten lunch.'],
-      'She ___ finished her work.', ['have', 'has', 'is'], 1, 'نستخدم has مع She ثم التصريف الثالث finished.'),
+      'She ___ finished her work.', ['have', 'has', 'is'], 1, 'نستخدم has مع She ثم التصريف الثالث finished.',
+      secondQuestion: 'They ___ eaten breakfast.',
+      secondOptions: ['have', 'has', 'are'], secondCorrectIndex: 0),
   GrammarTopic('الماضي المستمر Past Continuous', 'نستخدم was / were مع الفعل المنتهي بـ ing لوصف حدث كان مستمرًا في وقت محدد في الماضي. نستخدم was مع I / he / she / it وwere مع you / we / they.',
       ['I was reading at eight.', 'They were playing outside.', 'She was sleeping.'],
-      'They ___ studying yesterday evening.', ['was', 'were', 'are'], 1, 'نستخدم were مع They لوصف فعل مستمر في الماضي.'),
+      'They ___ studying yesterday evening.', ['was', 'were', 'are'], 1, 'نستخدم were مع They لوصف فعل مستمر في الماضي.',
+      secondQuestion: 'He ___ sleeping at nine last night.',
+      secondOptions: ['were', 'was', 'is'], secondCorrectIndex: 1),
   GrammarTopic('حروف الجر للوقت in / on / at', 'نستخدم in مع الأشهر والسنوات وأجزاء اليوم، وon مع الأيام والتواريخ، وat مع أوقات الساعة المحددة.',
       ['in October', 'on Monday', 'at seven o’clock'],
-      'My lesson starts ___ seven.', ['in', 'on', 'at'], 2, 'نستخدم at قبل الوقت المحدد.'),
+      'My lesson starts ___ seven.', ['in', 'on', 'at'], 2, 'نستخدم at قبل الوقت المحدد.',
+      secondQuestion: 'We have English class ___ Monday.',
+      secondOptions: ['in', 'at', 'on'], secondCorrectIndex: 2),
   GrammarTopic('have / has', 'نستخدم have مع I / you / we / they، وhas مع he / she / it للتعبير عن الملكية.',
       ['I have a pencil.', 'He has a bike.', 'They have books.'],
-      'My sister ___ a cat.', ['have', 'has', 'having'], 1, 'نستخدم has مع My sister لأنها مفرد غائب.'),
+      'My sister ___ a cat.', ['have', 'has', 'having'], 1, 'نستخدم has مع My sister لأنها مفرد غائب.',
+      secondQuestion: 'We ___ two pencils.', secondOptions: ['have', 'has', 'having'], secondCorrectIndex: 0),
 ];
 
 class GrammarLessonsScreen extends StatefulWidget {
@@ -221,27 +247,33 @@ class _GrammarDetailScreenState extends State<GrammarDetailScreen> {
             const Divider(height: 36),
             Text('السؤال الثاني', style: Theme.of(context).textTheme.titleLarge),
             const SizedBox(height: 8),
-            const Text('اختر المثال الذي ورد في شرح القاعدة:'),
+            Text(topic.secondQuestion == null
+              ? 'اختر المثال الذي ورد في شرح القاعدة:'
+              : 'اختر الإجابة الصحيحة للسؤال الثاني:'),
+            if (topic.secondQuestion != null)
+              Directionality(textDirection: TextDirection.ltr,
+                child: Text(topic.secondQuestion!, textAlign: TextAlign.left)),
             for (var i = 0; i < 3; i++)
               RadioListTile<int>(
                 title: Directionality(
                   textDirection: TextDirection.ltr,
-                  child: Text(i == 0 ? topic.examples.first :
-                    i == 1 ? topic.question : topic.options.last),
+                  child: Text(topic.secondOptions?[i] ?? (i == 0
+                    ? topic.examples.first
+                    : i == 1 ? topic.question : topic.options.last)),
                 ),
                 value: i,
                 groupValue: bonusSelection,
                 onChanged: (value) => setState(() {
                   bonusSelection = value;
                   bonusAttempts++;
-                  if (value == 0) _saveCompletion();
+                  if (value == topic.secondCorrectIndex) _saveCompletion();
                 }),
               ),
             if (bonusSelection != null)
-              Text(bonusSelection == 0
+              Text(bonusSelection == topic.secondCorrectIndex
                 ? 'ممتاز! أكملت السؤالين بنجاح.'
                 : 'ليست الإجابة الصحيحة. راجع المثال الأول وحاول مجددًا.'),
-            if (bonusSelection == 0)
+            if (bonusSelection == topic.secondCorrectIndex)
               Text('نتيجة التدريب: 2/2',
                 style: Theme.of(context).textTheme.titleMedium),
           ],
