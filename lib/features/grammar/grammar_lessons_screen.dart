@@ -138,6 +138,7 @@ class GrammarLessonsScreen extends StatefulWidget {
 class _GrammarLessonsScreenState extends State<GrammarLessonsScreen> {
   Future<GrammarProgressStore>? _store;
   bool _reviewOnly = false;
+  bool _regressionOnly = false;
   String _searchQuery = '';
   String _selectedLevel = 'الكل';
 
@@ -187,6 +188,35 @@ class _GrammarLessonsScreenState extends State<GrammarLessonsScreen> {
                 value: _reviewOnly,
                 onChanged: (value) => setState(() => _reviewOnly = value),
               ),
+              SwitchListTile(
+                title: const Text('عرض الدروس التي تراجع أدائي فيها'),
+                subtitle: const Text('آخر نتيجة أقل من أفضل نتيجة سابقة'),
+                value: _regressionOnly,
+                onChanged: (value) => setState(() => _regressionOnly = value),
+              ),
+              Builder(builder: (context) {
+                final average = store.recentPracticeAverage(grammarTopics.map((t) => t.title));
+                final regressions = store.regressionReviewTopics(grammarTopics.map((t) => t.title));
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text('متوسط التدريب الأخير: ${average == null ? 'لا توجد محاولات' : '${average.toStringAsFixed(0)}%'}'),
+                    Text('قواعد تحتاج استعادة الإتقان: ${regressions.length}'),
+                    if (regressions.isNotEmpty)
+                      OutlinedButton.icon(
+                        icon: const Icon(Icons.trending_down),
+                        label: const Text('راجع القاعدة التي انخفض أداؤك فيها'),
+                        onPressed: () async {
+                          final topic = grammarTopics.firstWhere((t) => t.title == regressions.first);
+                          await Navigator.of(context).push(MaterialPageRoute(
+                            builder: (_) => GrammarDetailScreen(topic: topic),
+                          ));
+                          if (mounted) await _refresh();
+                        },
+                      ),
+                  ],
+                );
+              }),
               if (store.reviewNeededCount(grammarTopics.map((t) => t.title)) > 0)
                 FilledButton.icon(
                   icon: const Icon(Icons.school_rounded),
@@ -237,6 +267,7 @@ class _GrammarLessonsScreenState extends State<GrammarLessonsScreen> {
                 ? [for (final title in store.prioritizedReviewTopics(grammarTopics.map((t) => t.title)))
                     grammarTopics.firstWhere((t) => t.title == title)]
                 : grammarTopics).where((topic) =>
+                    (!_regressionOnly || (store != null && store.regressionReviewTopics(grammarTopics.map((t) => t.title)).contains(topic.title))) &&
                     (_selectedLevel == 'الكل' || topic.level == _selectedLevel) &&
                     (topic.title.toLowerCase().contains(_searchQuery) ||
                     topic.rule.toLowerCase().contains(_searchQuery))))

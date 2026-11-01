@@ -21,6 +21,7 @@ Updated: 2026-11-01
 - [x] Add A1/A2/B1-inspired learning bands and selectable level filtering without changing Hive keys.
 - [ ] Validate CEFR mappings pedagogically and extend higher-level content.
 - [x] Add mastery average best-score and total attempts using existing Hive keys.
+- [x] Add recent practice average and regression-aware review using existing Hive histories.
 - [ ] Add robust migration tests for saved Hive progress.
 - [ ] Extend grammar practice with accessible keyboard and screen reader flows.
 - [ ] Improve vocabulary spaced repetition using deterministic review scheduling tests.

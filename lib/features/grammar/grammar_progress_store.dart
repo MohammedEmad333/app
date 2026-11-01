@@ -52,6 +52,41 @@ class GrammarProgressStore {
     );
   }
 
+  /// Recent score average for a single topic; null means no attempts recorded.
+  double? recentAverageScore(String topicTitle) {
+    final scores = recentScores(topicTitle);
+    if (scores.isEmpty) return null;
+    return scores.reduce((a, b) => a + b) / scores.length;
+  }
+
+  /// Average score across recent attempts for all known topics.
+  /// Returns null when the learner has no recorded practice attempts.
+  double? recentPracticeAverage(Iterable<String> topicTitles) {
+    var sum = 0;
+    var count = 0;
+    for (final title in topicTitles.toSet()) {
+      for (final score in recentScores(title)) {
+        sum += score;
+        count++;
+      }
+    }
+    return count == 0 ? null : sum / count;
+  }
+
+  /// Topics completed at least once but with a latest score below mastery.
+  /// Unlike best-score review, this catches performance regression.
+  List<String> regressionReviewTopics(Iterable<String> topicTitles) {
+    final titles = topicTitles.toSet().where(isCompleted).where((title) {
+      final latest = latestScore(title);
+      return latest != null && latest < bestScore(title);
+    }).toList();
+    titles.sort((a, b) {
+      final scoreOrder = (latestScore(a) ?? 0).compareTo(latestScore(b) ?? 0);
+      return scoreOrder != 0 ? scoreOrder : a.compareTo(b);
+    });
+    return titles;
+  }
+
   int reviewNeededCount(Iterable<String> topicTitles) =>
       topicTitles.where(needsReview).length;
 
