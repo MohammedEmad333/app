@@ -188,4 +188,52 @@ void main() {
     }
   });
 
+  test('existing saved progress survives store reopen and catalog metrics', () async {
+    final directory = await Directory.systemTemp.createTemp('grammar_legacy_');
+    Hive.init(directory.path);
+    try {
+      final box = await Hive.openBox('test_grammar_legacy');
+      await box.put('Legacy', true);
+      await box.put('score:Legacy', 100);
+      await box.put('attempts:Legacy', 3);
+      await box.put('history:Legacy', [50, 100, 50]);
+      final store = GrammarProgressStore(box);
+      expect(store.isCompleted('Legacy'), isTrue);
+      expect(store.bestScore('Legacy'), 100);
+      expect(store.attemptCount('Legacy'), 3);
+      expect(store.latestScore('Legacy'), 50);
+      final summary = store.masterySummary(['Legacy', 'New']);
+      expect(summary.completedTopics, 1);
+      expect(summary.perfectTopics, 1);
+      expect(summary.totalAttempts, 3);
+      expect(summary.averageBestScore, 100);
+      await box.close();
+    } finally {
+      await directory.delete(recursive: true);
+    }
+  });
+
+  test('catalog metrics ignore stale and duplicated topic names', () async {
+    final directory = await Directory.systemTemp.createTemp('grammar_catalog_');
+    Hive.init(directory.path);
+    try {
+      final box = await Hive.openBox('test_grammar_catalog');
+      final store = GrammarProgressStore(box);
+      await store.markCompleted('Active');
+      await store.recordAttempt('Active', 50);
+      await store.recordAttempt('Active', 100);
+      await store.markCompleted('Removed');
+      await store.recordAttempt('Removed', 100);
+      final summary = store.masterySummary(['Active', 'Active', 'New']);
+      expect(summary.totalTopics, 2);
+      expect(summary.completedTopics, 1);
+      expect(summary.perfectTopics, 1);
+      expect(summary.totalAttempts, 2);
+      expect(summary.completionRatio, 0.5);
+      await box.close();
+    } finally {
+      await directory.delete(recursive: true);
+    }
+  });
+
 }
