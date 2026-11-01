@@ -14,9 +14,11 @@ Updated: 2026-11-01
 - Do not introduce a second competing grammar catalog or screen.
 
 ## Next engineering tasks
-- [ ] Run Flutter analyze and test in CI; fix any failing checks.
+- [x] PR #105 passed Flutter CI and platform smoke tests and merged into main.
+- [ ] Run Flutter analyze and test for the new grammar search PR; fix any failing checks.
 - [ ] Separate the existing hard-coded grammar topic catalog into a repository without changing existing progress identifiers.
-- [ ] Add topic search, filtering and CEFR level metadata.
+- [x] Add live grammar topic search (title and explanation) without modifying saved progress keys.
+- [ ] Add CEFR level metadata and level filtering.
 - [ ] Add mastery analytics and robust migration tests for saved Hive progress.
 - [ ] Extend grammar practice with accessible keyboard and screen reader flows.
 - [ ] Improve vocabulary spaced repetition using deterministic review scheduling tests.
