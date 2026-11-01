@@ -15,6 +15,12 @@ mechanics. Built with **Flutter** + **flutter_bloc**.
 
 ---
 
+## Learning expansion
+
+The standalone Grammar Academy content foundation lives in `assets/data/grammar_topics.json` and `lib/features/grammar/data/grammar_catalog.dart`. It currently includes four A1 grammar topics with explanations and multiple-choice questions. **This is a content/data foundation only; the grammar UI and progress tracking are not yet wired into the app.** See [Learning Expansion Roadmap](docs/LEARNING_EXPANSION_ROADMAP.md) for implementation status and next steps.
+
+---
+
 ## ✨ Features
 
 ### 1. Skill Tree / Map screen
