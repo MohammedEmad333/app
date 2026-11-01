@@ -35,6 +35,23 @@ class GrammarProgressStore {
   bool needsReview(String topicTitle) =>
       isCompleted(topicTitle) && bestScore(topicTitle) < 100;
 
+  /// Aggregate mastery across the current catalog (not stale Hive keys).
+  GrammarMasterySummary masterySummary(Iterable<String> topicTitles) {
+    final titles = topicTitles.toSet();
+    final completed = titles.where(isCompleted).toList();
+    final perfect = completed.where((title) => bestScore(title) == 100).length;
+    final attempts = titles.fold<int>(0, (sum, title) => sum + attemptCount(title));
+    final average = completed.isEmpty ? 0.0 :
+        completed.map(bestScore).reduce((a, b) => a + b) / completed.length;
+    return GrammarMasterySummary(
+      totalTopics: titles.length,
+      completedTopics: completed.length,
+      perfectTopics: perfect,
+      totalAttempts: attempts,
+      averageBestScore: average,
+    );
+  }
+
   int reviewNeededCount(Iterable<String> topicTitles) =>
       topicTitles.where(needsReview).length;
 
@@ -101,4 +118,24 @@ class GrammarProgressStore {
     await box.delete('attempts:$topicTitle');
     await box.delete('history:$topicTitle');
   }
+}
+
+/// Immutable grammar analytics calculated from existing persisted scores.
+class GrammarMasterySummary {
+  const GrammarMasterySummary({
+    required this.totalTopics,
+    required this.completedTopics,
+    required this.perfectTopics,
+    required this.totalAttempts,
+    required this.averageBestScore,
+  });
+
+  final int totalTopics;
+  final int completedTopics;
+  final int perfectTopics;
+  final int totalAttempts;
+  final double averageBestScore;
+
+  int get reviewTopics => completedTopics - perfectTopics;
+  double get completionRatio => totalTopics == 0 ? 0 : completedTopics / totalTopics;
 }
