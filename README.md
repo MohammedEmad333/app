@@ -15,6 +15,12 @@ mechanics. Built with **Flutter** + **flutter_bloc**.
 
 ---
 
+## Learning expansion
+
+The application already includes a standalone Grammar Lessons screen, quizzes and persistent grammar progress. The expansion roadmap tracks further improvements, not a replacement academy. See [Learning Expansion Roadmap](docs/LEARNING_EXPANSION_ROADMAP.md).
+
+---
+
 ## ✨ Features
 
 ### 1. Skill Tree / Map screen
