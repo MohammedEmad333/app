@@ -17,7 +17,8 @@ Updated: 2026-11-01
 - [ ] Run Flutter analyze and test in CI; fix any failing checks.
 - [ ] Separate the existing hard-coded grammar topic catalog into a repository without changing existing progress identifiers.
 - [ ] Add topic search, filtering and CEFR level metadata.
-- [ ] Add mastery analytics and robust migration tests for saved Hive progress.
+- [x] Add average best-score and total-attempt mastery summary from existing Hive keys.
+- [ ] Add robust migration tests for saved Hive progress.
 - [ ] Extend grammar practice with accessible keyboard and screen reader flows.
 - [ ] Improve vocabulary spaced repetition using deterministic review scheduling tests.
 - [ ] Add reading, listening and writing practice without duplicating existing lesson types.
