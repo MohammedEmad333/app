@@ -18,7 +18,8 @@ Updated: 2026-11-01
 - [ ] Run Flutter analyze and test for the new grammar search PR; fix any failing checks.
 - [ ] Separate the existing hard-coded grammar topic catalog into a repository without changing existing progress identifiers.
 - [x] Add live grammar topic search (title and explanation) without modifying saved progress keys.
-- [ ] Add CEFR level metadata and level filtering.
+- [x] Add A1/A2/B1-inspired learning bands and selectable level filtering without changing Hive keys.
+- [ ] Validate CEFR mappings pedagogically and extend higher-level content.
 - [x] Add mastery average best-score and total attempts using existing Hive keys.
 - [ ] Add robust migration tests for saved Hive progress.
 - [ ] Extend grammar practice with accessible keyboard and screen reader flows.

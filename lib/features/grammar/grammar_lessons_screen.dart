@@ -17,6 +17,25 @@ class GrammarTopic {
   final String? secondQuestion;
   final List<String>? secondOptions;
   final int secondCorrectIndex;
+
+  /// CEFR-inspired learning band; title remains the stable Hive progress key.
+  String get level {
+    const intermediateTopics = {
+      'المضارع التام Present Perfect',
+      'الماضي المستمر Past Continuous',
+      'المقارنة باستخدام -er / more',
+      'التفضيل باستخدام -est / most',
+    };
+    const elementaryTopics = {
+      'المضارع البسيط', 'المضارع المستمر',
+      'النفي باستخدام do / does', 'السؤال باستخدام Do / Does',
+      'الماضي البسيط', 'المستقبل باستخدام will',
+      'حروف الجر للوقت in / on / at',
+    };
+    if (intermediateTopics.contains(title)) return 'B1';
+    if (elementaryTopics.contains(title)) return 'A2';
+    return 'A1';
+  }
 }
 
 const grammarTopics = <GrammarTopic>[
@@ -120,6 +139,7 @@ class _GrammarLessonsScreenState extends State<GrammarLessonsScreen> {
   Future<GrammarProgressStore>? _store;
   bool _reviewOnly = false;
   String _searchQuery = '';
+  String _selectedLevel = 'الكل';
 
   @override
   void initState() {
@@ -200,12 +220,26 @@ class _GrammarLessonsScreenState extends State<GrammarLessonsScreen> {
               onChanged: (value) => setState(() => _searchQuery = value.trim().toLowerCase()),
             ),
             const SizedBox(height: 12),
+            Wrap(
+              spacing: 8,
+              runSpacing: 4,
+              children: [
+                for (final level in const ['الكل', 'A1', 'A2', 'B1'])
+                  ChoiceChip(
+                    label: Text(level),
+                    selected: _selectedLevel == level,
+                    onSelected: (_) => setState(() => _selectedLevel = level),
+                  ),
+              ],
+            ),
+            const SizedBox(height: 12),
             for (final lesson in (_reviewOnly && store != null
                 ? [for (final title in store.prioritizedReviewTopics(grammarTopics.map((t) => t.title)))
                     grammarTopics.firstWhere((t) => t.title == title)]
                 : grammarTopics).where((topic) =>
-                    topic.title.toLowerCase().contains(_searchQuery) ||
-                    topic.rule.toLowerCase().contains(_searchQuery)))
+                    (_selectedLevel == 'الكل' || topic.level == _selectedLevel) &&
+                    (topic.title.toLowerCase().contains(_searchQuery) ||
+                    topic.rule.toLowerCase().contains(_searchQuery))))
               Card(
                 child: ListTile(
                   leading: Icon(store?.isCompleted(lesson.title) == true
