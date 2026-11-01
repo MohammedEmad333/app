@@ -1,38 +1,26 @@
 # LingoKids — Learning Expansion Roadmap
 
-Status: Foundation content and loader implemented on feature branch; UI integration pending.
+Updated: 2026-11-01
 
-## Baseline
-Flutter + flutter_bloc + Hive; existing unit skill tree, question runner, XP, streaks, achievements and mistake review. Do not replace or duplicate these systems.
+## Verified existing functionality
+- Standalone Grammar Lessons screen linked from the skill tree.
+- Twenty grammar topics defined in `lib/features/grammar/grammar_lessons_screen.dart`, including explanations, examples, and two assessment questions.
+- Grammar quiz flow, score calculation, Hive-backed progress and review prioritization.
+- Vocabulary unit skill tree, XP, streaks, achievements, and spaced mistake review.
 
-## Phase 1 — Grammar Academy
-- [x] Independent grammar topic schema and JSON loader
-- [x] Initial A1 topics with explanations, examples and multiple-choice assessments
-- [ ] Grammar topic list and detail screens
-- [ ] Dedicated grammar quiz flow, answer feedback and completion
-- [ ] Persist grammar mastery independently of unit completion
-- [ ] Automated model, loader and widget tests
+## This PR
+- Add automated content integrity and score tests for the existing Grammar Academy.
+- Update project documentation to avoid claiming the academy is absent.
+- Do not introduce a second competing grammar catalog or screen.
 
-## Phase 2 — Vocabulary and spaced review
-- [ ] Vocabulary cards extracted from canonical lesson content
-- [ ] Persist per-item review state and due dates in Hive
-- [ ] Review scheduling with deterministic tests
-- [ ] Offline-first UI and error handling
-
-## Phase 3 — Skills
-- [ ] Reading comprehension studio
-- [ ] Listening studio
-- [ ] Writing coach
-- [ ] Pronunciation lab with explicit microphone consent
-
-## Phase 4 — Personalization
-- [ ] Placement assessment
-- [ ] Adaptive practice
-- [ ] Skill mastery analytics
-- [ ] Optional AI conversation with child-safety and privacy review
+## Next engineering tasks
+- [ ] Run Flutter analyze and test in CI; fix any failing checks.
+- [ ] Separate the existing hard-coded grammar topic catalog into a repository without changing existing progress identifiers.
+- [ ] Add topic search, filtering and CEFR level metadata.
+- [ ] Add mastery analytics and robust migration tests for saved Hive progress.
+- [ ] Extend grammar practice with accessible keyboard and screen reader flows.
+- [ ] Improve vocabulary spaced repetition using deterministic review scheduling tests.
+- [ ] Add reading, listening and writing practice without duplicating existing lesson types.
 
 ## Quality gates
-Run flutter analyze and flutter test; verify Arabic RTL and English LTR content, offline assets, accessibility and navigation. No merge before CI passes. One cohesive PR per tested feature slice. Delete merged feature branches.
-
-## Content contract
-assets/data/grammar_topics.json is a list of unique topic IDs. Each topic contains id, title, level, explanation, examples and questions. Each question contains prompt, options (at least two), correctIndex (zero-based) and explanation. No progress is written by the catalog loader.
+Do not merge without confirming the relevant CI checks. Verify Arabic RTL and English LTR, saved progress compatibility, offline content and accessibility. Delete merged branches.
