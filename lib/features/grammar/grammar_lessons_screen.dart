@@ -153,6 +153,14 @@ class _GrammarLessonsScreenState extends State<GrammarLessonsScreen> {
                 value: store.completedCount / grammarTopics.length,
                 semanticsLabel: 'تقدم دروس القواعد'),
               const SizedBox(height: 12),
+              Builder(builder: (context) {
+                final summary = store.masterySummary(grammarTopics.map((t) => t.title));
+                return Semantics(
+                  label: 'متوسط أفضل الدرجات ${summary.averageBestScore.toStringAsFixed(0)} بالمئة، عدد المحاولات ${summary.totalAttempts}',
+                  child: Text('متوسط الإتقان: ${summary.averageBestScore.toStringAsFixed(0)}% • إجمالي المحاولات: ${summary.totalAttempts}'),
+                );
+              }),
+              const SizedBox(height: 8),
               Text('درجات كاملة: ${store.perfectScoreCount(grammarTopics.map((t) => t.title))} • تحتاج مراجعة: ${store.reviewNeededCount(grammarTopics.map((t) => t.title))}'),
               SwitchListTile(
                 title: const Text('عرض الدروس التي تحتاج مراجعة فقط'),
