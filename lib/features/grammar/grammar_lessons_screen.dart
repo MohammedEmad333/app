@@ -248,6 +248,13 @@ class _GrammarDetailScreenState extends State<GrammarDetailScreen> {
     final topic = widget.topic;
     return Scaffold(
       appBar: AppBar(title: Text(topic.title)),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+          builder: (_) => GrammarQuizScreen(topic: topic),
+        )),
+        icon: const Icon(Icons.quiz_outlined),
+        label: const Text('الاختبار النهائي'),
+      ),
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [
@@ -319,14 +326,6 @@ class _GrammarDetailScreenState extends State<GrammarDetailScreen> {
               Text('نتيجة التدريب: 2/2',
                 style: Theme.of(context).textTheme.titleMedium),
           ],
-          const SizedBox(height: 20),
-          FilledButton.icon(
-            onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-              builder: (_) => GrammarQuizScreen(topic: topic),
-            )),
-            icon: const Icon(Icons.quiz_outlined),
-            label: const Text('الاختبار النهائي: 3 أسئلة'),
-          ),
           if (selected != null) ...[
             Semantics(
               liveRegion: true,
