@@ -1,0 +1,134 @@
+[
+  {
+    "id": "pronouns",
+    "title": "الضمائر الشخصية",
+    "level": "A1",
+    "explanation": "نستخدم I للحديث عن أنفسنا، وHe للولد، وShe للبنت، وThey للجمع.",
+    "examples": [
+      "I am happy.",
+      "She is a student.",
+      "They are friends."
+    ],
+    "questions": [
+      {
+        "prompt": "___ am a student.",
+        "options": [
+          "I",
+          "He",
+          "They"
+        ],
+        "correctIndex": 0,
+        "explanation": "نستخدم I مع am."
+      },
+      {
+        "prompt": "___ is my sister.",
+        "options": [
+          "He",
+          "She",
+          "We"
+        ],
+        "correctIndex": 1,
+        "explanation": "She ضمير المؤنث المفرد."
+      }
+    ]
+  },
+  {
+    "id": "verb-to-be",
+    "title": "فعل الكون am / is / are",
+    "level": "A1",
+    "explanation": "نستخدم am مع I، وis مع he/she/it، وare مع you/we/they.",
+    "examples": [
+      "I am ready.",
+      "He is kind.",
+      "We are happy."
+    ],
+    "questions": [
+      {
+        "prompt": "They ___ happy.",
+        "options": [
+          "is",
+          "am",
+          "are"
+        ],
+        "correctIndex": 2,
+        "explanation": "They تأخذ are."
+      },
+      {
+        "prompt": "She ___ a teacher.",
+        "options": [
+          "are",
+          "is",
+          "am"
+        ],
+        "correctIndex": 1,
+        "explanation": "She تأخذ is."
+      }
+    ]
+  },
+  {
+    "id": "articles",
+    "title": "أدوات التنكير a / an",
+    "level": "A1",
+    "explanation": "نستخدم an قبل الصوت المتحرك وa قبل الصوت الساكن.",
+    "examples": [
+      "an apple",
+      "a book",
+      "an orange"
+    ],
+    "questions": [
+      {
+        "prompt": "I have ___ apple.",
+        "options": [
+          "a",
+          "an",
+          "the"
+        ],
+        "correctIndex": 1,
+        "explanation": "apple تبدأ بصوت متحرك."
+      },
+      {
+        "prompt": "This is ___ book.",
+        "options": [
+          "an",
+          "a",
+          "are"
+        ],
+        "correctIndex": 1,
+        "explanation": "book تبدأ بصوت ساكن."
+      }
+    ]
+  },
+  {
+    "id": "present-simple",
+    "title": "المضارع البسيط",
+    "level": "A1",
+    "explanation": "نستخدم المضارع البسيط للعادات. نضيف s غالبًا للفعل مع he/she/it.",
+    "examples": [
+      "I play every day.",
+      "She plays football.",
+      "We read books."
+    ],
+    "questions": [
+      {
+        "prompt": "He ___ every day.",
+        "options": [
+          "play",
+          "plays",
+          "playing"
+        ],
+        "correctIndex": 1,
+        "explanation": "مع He نضيف s إلى play."
+      },
+      {
+        "prompt": "They ___ English.",
+        "options": [
+          "studies",
+          "study",
+          "studying"
+        ],
+        "correctIndex": 1,
+        "explanation": "مع They نستخدم صيغة الفعل الأساسية."
+      }
+    ]
+  }
+]
