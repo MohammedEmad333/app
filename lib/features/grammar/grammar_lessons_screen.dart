@@ -119,6 +119,7 @@ class GrammarLessonsScreen extends StatefulWidget {
 class _GrammarLessonsScreenState extends State<GrammarLessonsScreen> {
   Future<GrammarProgressStore>? _store;
   bool _reviewOnly = false;
+  String _searchQuery = '';
 
   @override
   void initState() {
@@ -181,10 +182,22 @@ class _GrammarLessonsScreenState extends State<GrammarLessonsScreen> {
               const SizedBox(height: 16),
             ] else if (snapshot.hasError)
               const Text('يمكنك متابعة الدروس؛ تعذّر قراءة التقدم المحفوظ.'),
+            TextField(
+              decoration: const InputDecoration(
+                labelText: 'ابحث عن قاعدة',
+                hintText: 'مثال: المضارع، الماضي، المقارنة',
+                prefixIcon: Icon(Icons.search),
+                border: OutlineInputBorder(),
+              ),
+              onChanged: (value) => setState(() => _searchQuery = value.trim().toLowerCase()),
+            ),
+            const SizedBox(height: 12),
             for (final lesson in (_reviewOnly && store != null
                 ? [for (final title in store.prioritizedReviewTopics(grammarTopics.map((t) => t.title)))
                     grammarTopics.firstWhere((t) => t.title == title)]
-                : grammarTopics))
+                : grammarTopics).where((topic) =>
+                    topic.title.toLowerCase().contains(_searchQuery) ||
+                    topic.rule.toLowerCase().contains(_searchQuery)))
               Card(
                 child: ListTile(
                   leading: Icon(store?.isCompleted(lesson.title) == true
