@@ -236,4 +236,46 @@ void main() {
     }
   });
 
+  test('spaced review schedule persists and reset clears it', () async {
+    final directory = await Directory.systemTemp.createTemp('grammar_schedule_');
+    Hive.init(directory.path);
+    try {
+      final box = await Hive.openBox('test_grammar_schedule');
+      final store = GrammarProgressStore(box);
+      final today = DateTime(2026, 11, 5);
+      await store.markCompleted('Weak');
+      await store.markCompleted('Perfect');
+      expect(store.dueReviewTopics(['Weak', 'Perfect'], now: today),
+          ['Perfect', 'Weak']);
+      await store.scheduleReview('Weak', 50, now: today);
+      await store.scheduleReview('Perfect', 100, now: today);
+      final reopened = GrammarProgressStore(box);
+      expect(reopened.isReviewDue('Weak', now: today), isFalse);
+      expect(reopened.isReviewDue('Weak', now: today.add(const Duration(days: 1))), isTrue);
+      expect(reopened.isReviewDue('Perfect', now: today.add(const Duration(days: 6))), isFalse);
+      expect(reopened.isReviewDue('Perfect', now: today.add(const Duration(days: 7))), isTrue);
+      await reopened.resetTopic('Weak');
+      expect(reopened.nextReviewAt('Weak'), isNull);
+      expect(reopened.isReviewDue('Weak', now: today), isFalse);
+      await box.close();
+    } finally {
+      await directory.delete(recursive: true);
+    }
+  });
+
+  test('spaced review rejects invalid scores', () async {
+    final directory = await Directory.systemTemp.createTemp('grammar_schedule_validation_');
+    Hive.init(directory.path);
+    try {
+      final box = await Hive.openBox('test_grammar_schedule_validation');
+      final store = GrammarProgressStore(box);
+      await expectLater(store.scheduleReview('Topic', -1), throwsArgumentError);
+      await expectLater(store.scheduleReview('Topic', 101), throwsArgumentError);
+      await expectLater(store.scheduleReview('', 50), throwsArgumentError);
+      await box.close();
+    } finally {
+      await directory.delete(recursive: true);
+    }
+  });
+
 }
