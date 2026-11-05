@@ -30,3 +30,11 @@ Updated: 2026-11-01
 
 ## Quality gates
 Do not merge without confirming the relevant CI checks. Verify Arabic RTL and English LTR, saved progress compatibility, offline content and accessibility. Delete merged branches.
+
+
+### Local grammar spaced review (2026-11-05)
+- Score-based review intervals: 1 day below 75%, 3 days at 75–99%, 7 days at 100%.
+- Saved in Hive under `review-at:<topic title>`, preserving existing completion, history and score keys.
+- Previously completed topics without a review timestamp are due immediately.
+- The grammar academy includes a due-review filter and count; resetting a topic clears its schedule.
+- This is a local heuristic, not a validated spaced-repetition algorithm; notifications and vocabulary scheduling remain future work.

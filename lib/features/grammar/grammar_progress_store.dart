@@ -14,7 +14,7 @@ class GrammarProgressStore {
       box.get(topicTitle, defaultValue: false) == true;
 
   int get completedCount =>
-      box.keys.where((key) => !key.toString().startsWith('score:') && !key.toString().startsWith('attempts:') && !key.toString().startsWith('history:') && box.get(key) == true).length;
+      box.keys.where((key) => !key.toString().startsWith('score:') && !key.toString().startsWith('attempts:') && !key.toString().startsWith('history:') && !key.toString().startsWith('review-at:') && box.get(key) == true).length;
 
   int bestScore(String topicTitle) {
     final value = box.get('score:$topicTitle');
@@ -87,6 +87,45 @@ class GrammarProgressStore {
     return titles;
   }
 
+  /// A local, deterministic review schedule based on the last recorded attempt.
+  /// Existing progress without timestamps is due immediately; no migration needed.
+  DateTime? nextReviewAt(String title) {
+    final value = box.get('review-at:$title');
+    if (value is! int) return null;
+    return DateTime.fromMillisecondsSinceEpoch(value);
+  }
+
+  bool isReviewDue(String title, {DateTime? now}) {
+    if (!isCompleted(title)) return false;
+    final scheduled = nextReviewAt(title);
+    return scheduled == null || !scheduled.isAfter(now ?? DateTime.now());
+  }
+
+  List<String> dueReviewTopics(Iterable<String> titles, {DateTime? now}) {
+    final current = now ?? DateTime.now();
+    final due = titles.toSet().where((title) =>
+        isReviewDue(title, now: current)).toList();
+    due.sort((a, b) {
+      final aTime = nextReviewAt(a);
+      final bTime = nextReviewAt(b);
+      if (aTime == null && bTime != null) return -1;
+      if (bTime == null && aTime != null) return 1;
+      final order = aTime == null ? 0 : aTime.compareTo(bTime!);
+      return order != 0 ? order : a.compareTo(b);
+    });
+    return due;
+  }
+
+  /// Schedule shorter review intervals for weaker answers. No server needed.
+  Future<void> scheduleReview(String title, int score, {DateTime? now}) async {
+    if (title.trim().isEmpty || score < 0 || score > 100) {
+      throw ArgumentError('Valid title and score (0–100) required');
+    }
+    final days = score == 100 ? 7 : score >= 75 ? 3 : 1;
+    final next = (now ?? DateTime.now()).add(Duration(days: days));
+    await box.put('review-at:$title', next.millisecondsSinceEpoch);
+  }
+
   int reviewNeededCount(Iterable<String> topicTitles) =>
       topicTitles.where(needsReview).length;
 
@@ -140,6 +179,7 @@ class GrammarProgressStore {
     final history = recentScores(topicTitle)..add(score);
     await box.put('history:$topicTitle', history.length <= 10
         ? history : history.sublist(history.length - 10));
+    await scheduleReview(topicTitle, score);
   }
 
   Future<void> markCompleted(String topicTitle) async {
@@ -152,6 +192,7 @@ class GrammarProgressStore {
     await box.delete('score:$topicTitle');
     await box.delete('attempts:$topicTitle');
     await box.delete('history:$topicTitle');
+    await box.delete('review-at:$topicTitle');
   }
 }
 

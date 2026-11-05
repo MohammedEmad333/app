@@ -139,6 +139,7 @@ class _GrammarLessonsScreenState extends State<GrammarLessonsScreen> {
   Future<GrammarProgressStore>? _store;
   bool _reviewOnly = false;
   bool _regressionOnly = false;
+  bool _dueOnly = false;
   String _searchQuery = '';
   String _selectedLevel = 'الكل';
 
@@ -187,6 +188,12 @@ class _GrammarLessonsScreenState extends State<GrammarLessonsScreen> {
                 title: const Text('عرض الدروس التي تحتاج مراجعة فقط'),
                 value: _reviewOnly,
                 onChanged: (value) => setState(() => _reviewOnly = value),
+              ),
+              SwitchListTile(
+                title: const Text('عرض القواعد المستحقة للمراجعة'),
+                subtitle: Text('مستحقة الآن: ${store.dueReviewTopics(grammarTopics.map((t) => t.title)).length}'),
+                value: _dueOnly,
+                onChanged: (value) => setState(() => _dueOnly = value),
               ),
               SwitchListTile(
                 title: const Text('عرض الدروس التي تراجع أدائي فيها'),
@@ -267,6 +274,7 @@ class _GrammarLessonsScreenState extends State<GrammarLessonsScreen> {
                 ? [for (final title in store.prioritizedReviewTopics(grammarTopics.map((t) => t.title)))
                     grammarTopics.firstWhere((t) => t.title == title)]
                 : grammarTopics).where((topic) =>
+                    (!_dueOnly || (store != null && store.isReviewDue(topic.title))) &&
                     (!_regressionOnly || (store != null && store.regressionReviewTopics(grammarTopics.map((t) => t.title)).contains(topic.title))) &&
                     (_selectedLevel == 'الكل' || topic.level == _selectedLevel) &&
                     (topic.title.toLowerCase().contains(_searchQuery) ||
